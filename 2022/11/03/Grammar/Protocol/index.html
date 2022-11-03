@@ -16,21 +16,21 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="协议基本用法 协议的语法格式  1234&#x2F;&#x2F;协议的语法格式protocol MyProtocol &amp;#123;    &#x2F;&#x2F;body&amp;#125;   class、struct、enum 都可以遵守协议，如果需要遵守多个协议，可以使用逗号分隔  123struct CJLTeacher: Protocol1, Protocol2 &amp;#123; &amp;#125;">
+    <meta name="description" content="协议基本用法 协议的语法格式  1234&#x2F;&#x2F;协议的语法格式protocol MyProtocol &amp;#123;    &#x2F;&#x2F;body&amp;#125;   class、struct、enum 都可以遵守协议，如果需要遵守多个协议，可以使用逗号分隔  123struct OneClass: Protocol1, Protocol2 &amp;#123; &amp;#125;  class中有superClass，一般是放在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Protocol协议">
+<meta property="og:title" content="Protocol协议基础">
 <meta property="og:url" content="http://example.com/2022/11/03/Grammar/Protocol/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="协议基本用法 协议的语法格式  1234&#x2F;&#x2F;协议的语法格式protocol MyProtocol &amp;#123;    &#x2F;&#x2F;body&amp;#125;   class、struct、enum 都可以遵守协议，如果需要遵守多个协议，可以使用逗号分隔  123struct CJLTeacher: Protocol1, Protocol2 &amp;#123; &amp;#125;">
+<meta property="og:description" content="协议基本用法 协议的语法格式  1234&#x2F;&#x2F;协议的语法格式protocol MyProtocol &amp;#123;    &#x2F;&#x2F;body&amp;#125;   class、struct、enum 都可以遵守协议，如果需要遵守多个协议，可以使用逗号分隔  123struct OneClass: Protocol1, Protocol2 &amp;#123; &amp;#125;  class中有superClass，一般是放在">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-03T11:28:01.218Z">
-<meta property="article:modified_time" content="2022-11-03T12:53:12.847Z">
+<meta property="article:modified_time" content="2022-11-03T12:56:47.156Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Protocol协议 - YoYo</title>
+  <title>Protocol协议基础 - YoYo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Protocol协议"></span>
+            <span id="subtitle" data-typed-text="Protocol协议基础"></span>
           
         </div>
 
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          157 words
+          338 words
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          2 mins
+          3 mins
         
       </span>
     
@@ -267,12 +267,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Protocol协议</h1>
+            <h1 style="display: none">Protocol协议基础</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h1><h1 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h1><blockquote>
+                <h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><blockquote>
 <p>协议的语法格式</p>
 </blockquote>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-comment">//协议的语法格式</span><br><span class="hljs-keyword">protocol</span> <span class="hljs-title class_">MyProtocol</span> &#123;<br>    <span class="hljs-comment">//body</span><br>&#125;<br></code></pre></td></tr></table></figure>
@@ -280,7 +280,17 @@
 <blockquote>
 <p>class、struct、enum 都可以遵守协议，如果需要遵守多个协议，可以使用逗号分隔</p>
 </blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">CJLTeacher</span>: <span class="hljs-title class_">Protocol1</span>, <span class="hljs-title class_">Protocol2</span> &#123;<br> <br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">OneClass</span>: <span class="hljs-title class_">Protocol1</span>, <span class="hljs-title class_">Protocol2</span> &#123;<br> <br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>class中有superClass，一般是放在遵守的协议之前</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">OneClass</span>: <span class="hljs-title class_">Protocol1</span>, <span class="hljs-title class_">Protocol2</span> &#123;<br> <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="协议中添加属性"><a href="#协议中添加属性" class="headerlink" title="协议中添加属性"></a>协议中添加属性</h2><ul>
+<li>属性必须明确是可读的&#x2F;可读可写的</li>
+<li>变量属性 用var而不是let</li>
+</ul>
+ <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs swift"> <span class="hljs-keyword">protocol</span> <span class="hljs-title class_">OneProtocol</span> &#123;<br>    <span class="hljs-keyword">var</span> age: <span class="hljs-type">Int</span> &#123;<span class="hljs-keyword">get</span> <span class="hljs-keyword">set</span>&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -318,7 +328,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Protocol协议</div>
+      <div>Protocol协议基础</div>
       <div>http://example.com/2022/11/03/Grammar/Protocol/</div>
     </div>
     <div class="license-meta">
