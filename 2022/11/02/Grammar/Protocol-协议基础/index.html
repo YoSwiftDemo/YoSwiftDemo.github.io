@@ -19,14 +19,16 @@
     <meta name="description" content="协议基本用法 协议的语法格式  1234&#x2F;&#x2F;协议的语法格式protocol MyProtocol &amp;#123;    &#x2F;&#x2F;body&amp;#125;   class、struct、enum 都可以遵守协议，如果需要遵守多个协议，可以使用逗号分隔  123struct OneClass: Protocol1, Protocol2 &amp;#123; &amp;#125;  class中有superClass，一般是放在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Protocol协议基础">
-<meta property="og:url" content="http://example.com/2022/11/02/Grammar/Protocol/index.html">
+<meta property="og:url" content="http://example.com/2022/11/02/Grammar/Protocol-%E5%8D%8F%E8%AE%AE%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="YoYo">
 <meta property="og:description" content="协议基本用法 协议的语法格式  1234&#x2F;&#x2F;协议的语法格式protocol MyProtocol &amp;#123;    &#x2F;&#x2F;body&amp;#125;   class、struct、enum 都可以遵守协议，如果需要遵守多个协议，可以使用逗号分隔  123struct OneClass: Protocol1, Protocol2 &amp;#123; &amp;#125;  class中有superClass，一般是放在">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/11/04/5ab76a02123d282b.png">
 <meta property="article:published_time" content="2022-11-02T12:23:12.000Z">
-<meta property="article:modified_time" content="2022-11-03T14:21:21.616Z">
+<meta property="article:modified_time" content="2022-11-04T03:59:07.847Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/11/04/5ab76a02123d282b.png">
   
   
   
@@ -218,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          2.7k words
         
       </span>
     
@@ -229,7 +231,7 @@
         
         
         
-          9 mins
+          23 mins
         
       </span>
     
@@ -301,10 +303,25 @@
 <p>协议中也可以定义初始化方法<br>实现初始化器时，必须使用<code>required</code>关键字</p>
 </blockquote>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-keyword">protocol</span> <span class="hljs-title class_">OneProtocol</span> &#123;<br>    <span class="hljs-keyword">init</span>(<span class="hljs-params">age</span>: <span class="hljs-type">Int</span>)<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Teacher</span>: <span class="hljs-title class_">OneProtocol</span>&#123;<br>    <span class="hljs-keyword">var</span> age: <span class="hljs-type">Int</span><br>    <span class="hljs-keyword">required</span> <span class="hljs-keyword">init</span>(<span class="hljs-params">age</span>: <span class="hljs-type">Int</span>) &#123;<br>        <span class="hljs-keyword">self</span>.age <span class="hljs-operator">=</span> age<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="协议进阶-将协议作为类型"><a href="#协议进阶-将协议作为类型" class="headerlink" title="协议进阶- 将协议作为类型"></a>协议进阶- 将协议作为类型</h2><ul>
+<li><p>作为<code>函数</code>、<code>方法</code>或者初始化程序中的<code>参数类型</code>或者<code>返回值</code></p>
+</li>
+<li><p>作为<code>常量</code>、<code>变量</code>或<code>属性的类型</code></p>
+</li>
+<li><p>作为<code>数组</code>、<code>字典</code>或者其他容器中项目的类型</p>
+</li>
+</ul>
+<h3 id="通过继承基类实现"><a href="#通过继承基类实现" class="headerlink" title="通过继承基类实现"></a>通过<code>继承基类</code>实现</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Shape</span>&#123;<br>    <span class="hljs-keyword">var</span> area: <span class="hljs-type">Double</span>&#123;<br>        <span class="hljs-keyword">get</span>&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Circle</span>: <span class="hljs-title class_">Shape</span>&#123;<br>    <span class="hljs-keyword">var</span> radius: <span class="hljs-type">Double</span><br>   <br>    <span class="hljs-keyword">init</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">radius</span>: <span class="hljs-type">Double</span>) &#123;<br>        <span class="hljs-keyword">self</span>.radius <span class="hljs-operator">=</span> radius<br>    &#125;<br>    <br>    <span class="hljs-keyword">override</span> <span class="hljs-keyword">var</span> area: <span class="hljs-type">Double</span>&#123;<br>        <span class="hljs-keyword">get</span>&#123;<br>            <span class="hljs-keyword">return</span> radius <span class="hljs-operator">*</span> radius <span class="hljs-operator">*</span> <span class="hljs-number">3.14</span><br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span>: <span class="hljs-title class_">Shape</span>&#123;<br>    <span class="hljs-keyword">var</span> width, height: <span class="hljs-type">Double</span><br>    <span class="hljs-keyword">init</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">width</span>: <span class="hljs-type">Double</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">height</span>: <span class="hljs-type">Double</span>) &#123;<br>        <span class="hljs-keyword">self</span>.width <span class="hljs-operator">=</span> width<br>        <span class="hljs-keyword">self</span>.height <span class="hljs-operator">=</span> height<br>    &#125;<br>    <br>    <span class="hljs-keyword">override</span> <span class="hljs-keyword">var</span> area: <span class="hljs-type">Double</span>&#123;<br>        <span class="hljs-keyword">get</span>&#123;<br>            <span class="hljs-keyword">return</span> width <span class="hljs-operator">*</span> height<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">var</span> circle: <span class="hljs-type">Shape</span> <span class="hljs-operator">=</span> <span class="hljs-type">Circle</span>.<span class="hljs-keyword">init</span>(<span class="hljs-number">10.0</span>)<br><span class="hljs-keyword">var</span> rectangle: <span class="hljs-type">Shape</span> <span class="hljs-operator">=</span> <span class="hljs-type">Rectangle</span>.<span class="hljs-keyword">init</span>(<span class="hljs-number">10.0</span>, <span class="hljs-number">20.0</span>)<br><br><span class="hljs-keyword">var</span> shapes: [<span class="hljs-type">Shape</span>] <span class="hljs-operator">=</span> [circle, rectangle]<br><span class="hljs-keyword">for</span> shape <span class="hljs-keyword">in</span> shapes&#123;<br>    <span class="hljs-built_in">print</span>(shape.area)<br>&#125;<br><br><span class="hljs-operator">&lt;!--</span>打印结果<span class="hljs-operator">--&gt;</span><br><span class="hljs-number">314.0</span><br><span class="hljs-number">200.0</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>对于数组来说，当前的大小是固定的，因为当前存放的都是引用类型（即占8字节），其存储结构如下所示 </p>
+</blockquote>
+<p><img src="https://s3.bmp.ovh/imgs/2022/11/04/5ab76a02123d282b.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="通过协议实现"><a href="#通过协议实现" class="headerlink" title="通过协议实现"></a>通过协议实现</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-comment">//通过协议实现：area必须有一个默认实现</span><br><span class="hljs-keyword">protocol</span> <span class="hljs-title class_">Shape</span> &#123;<br>    <span class="hljs-keyword">var</span> area: <span class="hljs-type">Double</span> &#123;<span class="hljs-keyword">get</span>&#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Circle</span>: <span class="hljs-title class_">Shape</span>&#123;<br>    <span class="hljs-keyword">var</span> radius: <span class="hljs-type">Double</span><br><br>    <span class="hljs-keyword">init</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">radius</span>: <span class="hljs-type">Double</span>) &#123;<br>        <span class="hljs-keyword">self</span>.radius <span class="hljs-operator">=</span> radius<br>    &#125;<br><br>    <span class="hljs-keyword">var</span> area: <span class="hljs-type">Double</span>&#123;<br>        <span class="hljs-keyword">get</span>&#123;<br>            <span class="hljs-keyword">return</span> radius <span class="hljs-operator">*</span> radius <span class="hljs-operator">*</span> <span class="hljs-number">3.14</span><br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rectangle</span>: <span class="hljs-title class_">Shape</span>&#123;<br>    <span class="hljs-keyword">var</span> width, height: <span class="hljs-type">Double</span><br>    <span class="hljs-keyword">init</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">width</span>: <span class="hljs-type">Double</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">height</span>: <span class="hljs-type">Double</span>) &#123;<br>        <span class="hljs-keyword">self</span>.width <span class="hljs-operator">=</span> width<br>        <span class="hljs-keyword">self</span>.height <span class="hljs-operator">=</span> height<br>    &#125;<br><br>    <span class="hljs-keyword">var</span> area: <span class="hljs-type">Double</span>&#123;<br>        <span class="hljs-keyword">get</span>&#123;<br>            <span class="hljs-keyword">return</span> width <span class="hljs-operator">*</span> height<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">var</span> circle: <span class="hljs-type">Shape</span> <span class="hljs-operator">=</span> <span class="hljs-type">Circle</span>.<span class="hljs-keyword">init</span>(<span class="hljs-number">10.0</span>)<br><span class="hljs-keyword">var</span> rectangle: <span class="hljs-type">Shape</span> <span class="hljs-operator">=</span> <span class="hljs-type">Rectangle</span>.<span class="hljs-keyword">init</span>(<span class="hljs-number">10.0</span>, <span class="hljs-number">20.0</span>)<br><br><span class="hljs-keyword">var</span> shapes: [<span class="hljs-type">Shape</span>] <span class="hljs-operator">=</span> [circle, rectangle]<br><span class="hljs-keyword">for</span> shape <span class="hljs-keyword">in</span> shapes&#123;<br>    <span class="hljs-built_in">print</span>(shape.area)<br>&#125;<br><br><span class="hljs-operator">&lt;!--</span>打印结果<span class="hljs-operator">--&gt;</span><br><span class="hljs-number">314.0</span><br><span class="hljs-number">200.0</span><br></code></pre></td></tr></table></figure>
 
-
-
-
+<ul>
+<li>当数组中的元素指定的Shape是类时，数组中存储的都是引用类型的地址，那么问题来了，如果数组指定的Shape是一个协议时，数组中存储的是什么？</li>
+<li>协议的底层存储结构：24字节valueBuffer + vwt（8字节） + pwt（8字节</li>
+</ul>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7001872073253453838">https://juejin.cn/post/7001872073253453838</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.legendsmb.com/2020/05/03/xo%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">https://www.legendsmb.com/2020/05/03/xo%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</a></p>
@@ -329,6 +346,13 @@
   <a href="/categories/Grammar/" class="category-chain-item">Grammar</a>
   
   
+    <span>></span>
+    
+  <a href="/categories/Grammar/Protocol/" class="category-chain-item">Protocol</a>
+  
+  
+
+  
 
       </span>
     
@@ -347,7 +371,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Protocol协议基础</div>
-      <div>http://example.com/2022/11/02/Grammar/Protocol/</div>
+      <div>http://example.com/2022/11/02/Grammar/Protocol-协议基础/</div>
     </div>
     <div class="license-meta">
       
@@ -400,6 +424,12 @@
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2022/11/02/Grammar/Protocol-%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" title="Protocol-协议总结">
+                        <span class="hidden-mobile">Protocol-协议总结</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
