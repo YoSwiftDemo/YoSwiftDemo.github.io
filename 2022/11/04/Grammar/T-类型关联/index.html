@@ -16,15 +16,15 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="类型关联 当我们定义协议时，有时声明一个或多个关联类型作为协议定义的一部分是很有用的关联类型的作用，主要提供某个类型的占位名称，然后作为协议的一部分去使用关联类型的实际使用类型直到协议被实现时才会指定关联类型使用关键字associatedtype指定。  类型关联的使用">
+    <meta name="description" content="类型关联 当我们定义协议时，有时声明一个或多个关联类型作为协议定义的一部分是很有用的关联类型的作用，主要提供某个类型的占位名称，然后作为协议的一部分去使用关联类型的实际使用类型直到协议被实现时才会指定关联类型使用关键字associatedtype指定。  类型关联的使用12345678910111213141516171819202122232425262728293031&#x2F;&#x2F;定义协议使用类型关联">
 <meta property="og:type" content="article">
 <meta property="og:title" content="T-类型关联">
 <meta property="og:url" content="http://example.com/2022/11/04/Grammar/T-%E7%B1%BB%E5%9E%8B%E5%85%B3%E8%81%94/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="类型关联 当我们定义协议时，有时声明一个或多个关联类型作为协议定义的一部分是很有用的关联类型的作用，主要提供某个类型的占位名称，然后作为协议的一部分去使用关联类型的实际使用类型直到协议被实现时才会指定关联类型使用关键字associatedtype指定。  类型关联的使用">
+<meta property="og:description" content="类型关联 当我们定义协议时，有时声明一个或多个关联类型作为协议定义的一部分是很有用的关联类型的作用，主要提供某个类型的占位名称，然后作为协议的一部分去使用关联类型的实际使用类型直到协议被实现时才会指定关联类型使用关键字associatedtype指定。  类型关联的使用12345678910111213141516171819202122232425262728293031&#x2F;&#x2F;定义协议使用类型关联">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-04T12:23:12.000Z">
-<meta property="article:modified_time" content="2022-11-04T07:34:41.643Z">
+<meta property="article:modified_time" content="2022-11-04T07:54:34.568Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          132 words
+          737 words
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          2 mins
+          7 mins
         
       </span>
     
@@ -275,7 +275,9 @@
                 <h1 id="类型关联"><a href="#类型关联" class="headerlink" title="类型关联"></a>类型关联</h1><blockquote>
 <p>当我们定义协议时，有时声明一个或多个关联类型作为协议定义的一部分是很有用的<br>关联类型的作用，主要提供某个类型的占位名称，然后作为协议的一部分去使用<br>关联类型的实际使用类型直到协议被实现时才会指定<br>关联类型使用关键字<code>associatedtype</code>指定。</p>
 </blockquote>
-<h2 id="类型关联的使用"><a href="#类型关联的使用" class="headerlink" title="类型关联的使用"></a>类型关联的使用</h2>
+<h2 id="类型关联的使用"><a href="#类型关联的使用" class="headerlink" title="类型关联的使用"></a>类型关联的使用</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-comment">//定义协议使用类型关联</span><br><span class="hljs-keyword">protocol</span> <span class="hljs-title class_">Container</span> &#123;<br>    <span class="hljs-keyword">associatedtype</span> <span class="hljs-type">Item</span><br>    <span class="hljs-keyword">mutating</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">append</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">item</span> : <span class="hljs-type">Item</span>)<br>    <span class="hljs-keyword">var</span> count : <span class="hljs-type">Int</span>&#123;<span class="hljs-keyword">get</span>&#125;<br>    <span class="hljs-keyword">subscript</span>(<span class="hljs-params">i</span>:<span class="hljs-type">Int</span>)-&gt;<span class="hljs-type">Item</span>&#123;<span class="hljs-keyword">get</span>&#125; <span class="hljs-comment">//下标访问</span><br>    <br>&#125;<br><span class="hljs-comment">//定义整型Stack类型</span><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">IntStack</span> : <span class="hljs-title class_">Container</span> &#123;<br>    <span class="hljs-keyword">var</span> items <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>    <span class="hljs-keyword">mutating</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">push</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">item</span>:<span class="hljs-type">Int</span>)&#123;<br>        items.append(item)<br>    &#125;<br>    <span class="hljs-keyword">mutating</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">pop</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">item</span>:<span class="hljs-type">Int</span>) -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">return</span> items.removeLast()<br>    &#125;<br>    <span class="hljs-comment">//实现协议时，需要明确关联类型的实际类型</span><br>    <span class="hljs-keyword">typealias</span> <span class="hljs-type">Item</span> <span class="hljs-operator">=</span> <span class="hljs-type">Int</span> <span class="hljs-comment">//!&lt; ①</span><br><br>    <span class="hljs-keyword">mutating</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">append</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">item</span>: <span class="hljs-type">Item</span>) &#123;<span class="hljs-comment">//!&lt; ①若不存在，此处可直接 Int</span><br>        push(item)<br>    &#125;<br>    <br>    <span class="hljs-keyword">var</span> count: <span class="hljs-type">Int</span> &#123;<br>        items.count<br>    &#125;<br>    <span class="hljs-keyword">subscript</span>(<span class="hljs-params">i</span>: <span class="hljs-type">Int</span>) -&gt; <span class="hljs-type">Int</span> &#123;<br>        items[i]<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
                 
               </div>
             
