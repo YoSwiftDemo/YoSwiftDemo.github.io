@@ -109,7 +109,7 @@
   
   
   <entry>
-    <title>T-泛型基础</title>
+    <title>CSS</title>
     <link href="/2022/11/04/HTML/css/"/>
     <url>/2022/11/04/HTML/css/</url>
     
@@ -121,6 +121,27 @@
       <category>HTML</category>
       
       <category>CSS</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JDDemo</title>
+    <link href="/2022/11/04/HTML/JDDemo/"/>
+    <url>/2022/11/04/HTML/JDDemo/</url>
+    
+    <content type="html"><![CDATA[<h2 id="icon图标"><a href="#icon图标" class="headerlink" title="icon图标"></a>icon图标</h2><p> icon图标 <a href="http://www.jd.com/favicon.ico">www.jd.com/favicon.ico</a><br><a href="https://www.bilibili.com/video/BV1TW411M7eh?p=3&vd_source=35d887e513452db700d753cd11b73d41">icon</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+      <category>JDDemo</category>
       
     </categories>
     
