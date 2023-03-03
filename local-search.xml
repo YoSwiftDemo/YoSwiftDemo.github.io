@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>CSS</title>
+    <link href="/2022/12/04/HTML/css/"/>
+    <url>/2022/12/04/HTML/css/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.runoob.com/cssref/css3-pr-justify-content.html">CSS资料</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Initialization-构造过程</title>
     <link href="/2022/11/04/Grammar/Initialization-%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B/"/>
     <url>/2022/11/04/Grammar/Initialization-%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B/</url>
@@ -142,27 +163,6 @@
       <category>HTML</category>
       
       <category>Base</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>CSS</title>
-    <link href="/2022/11/04/HTML/CSS/"/>
-    <url>/2022/11/04/HTML/CSS/</url>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.runoob.com/cssref/css3-pr-justify-content.html">CSS资料</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-      <category>CSS</category>
       
     </categories>
     
