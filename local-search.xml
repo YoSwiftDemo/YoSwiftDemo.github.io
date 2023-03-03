@@ -113,7 +113,7 @@
     <link href="/2022/11/04/HTML/css/"/>
     <url>/2022/11/04/HTML/css/</url>
     
-    <content type="html"><![CDATA[<p>12312312</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://www.runoob.com/cssref/css3-pr-justify-content.html">CSS</a></p>]]></content>
     
     
     <categories>
@@ -172,6 +172,27 @@
   
   
   <entry>
+    <title>HTML中引用Vue</title>
+    <link href="/2022/11/04/HTML/HTML-%E5%BC%95%E5%85%A5Vue.js/"/>
+    <url>/2022/11/04/HTML/HTML-%E5%BC%95%E5%85%A5Vue.js/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://juejin.cn/post/7112975842514305038">VUE3+element-plus</a><br><a href="https://www.jianshu.com/p/35d0e4b8e0cc">这个也好用</a><br><a href="https://blog.51cto.com/u_15119353/5059142">2.0引用</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+      <category>Vue</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hexo</title>
     <link href="/2022/11/03/Hexo/Hexo/"/>
     <url>/2022/11/03/Hexo/Hexo/</url>
@@ -184,19 +205,6 @@
       <category>Hexo</category>
       
     </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2022/11/03/HTML/HTML-%E5%BC%95%E5%85%A5Vue.js/"/>
-    <url>/2022/11/03/HTML/HTML-%E5%BC%95%E5%85%A5Vue.js/</url>
-    
-    <content type="html"><![CDATA[<html><body>  <div id="app"></div>  <script src="https://unpkg.com/vue@next"></script>  <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>  <script><pre><code class="hljs">const options = &#123;  moduleCache: &#123;    vue: Vue  &#125;,  async getFile(url) &#123;        const res = await fetch(url);    if ( !res.ok )      throw Object.assign(new Error(res.statusText + &#39; &#39; + url), &#123; res &#125;);    return &#123;      getContentData: asBinary =&gt; asBinary ? res.arrayBuffer() : res.text(),    &#125;  &#125;,  addStyle(textContent) &#123;    const style = Object.assign(document.createElement(&#39;style&#39;), &#123; textContent &#125;);    const ref = document.head.getElementsByTagName(&#39;style&#39;)[0] || null;    document.head.insertBefore(style, ref);  &#125;,&#125;const &#123; loadModule &#125; = window[&#39;vue3-sfc-loader&#39;];const app = Vue.createApp(&#123;  components: &#123;    &#39;my-component&#39;: Vue.defineAsyncComponent( () =&gt; loadModule(&#39;./myComponent.vue&#39;, options) )  &#125;,  template: &#39;&lt;my-component&gt;&lt;/my-component&gt;&#39;&#125;);app.mount(&#39;#app&#39;);</code></pre><p>  </script></p></body></html>]]></content>
-    
     
     
   </entry>
