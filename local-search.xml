@@ -46,6 +46,27 @@
   
   
   <entry>
+    <title>2.taro多行隐藏</title>
+    <link href="/2022/12/01/Taro/Dev/2.taro%E5%A4%9A%E8%A1%8C%E9%9A%90%E8%97%8F/"/>
+    <url>/2022/12/01/Taro/Dev/2.taro%E5%A4%9A%E8%A1%8C%E9%9A%90%E8%97%8F/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">word-break</span>: break-all;<br><span class="hljs-attribute">overflow</span>: hidden;<br><span class="hljs-attribute">text-overflow</span>: ellipsis;<br><span class="hljs-attribute">display</span>: -webkit-box;<br>-webkit-box-orient: vertical;<br>box-orient: vertical;<br><span class="hljs-comment">/* 必须保留，autoprefixer 会自动删除过时元素 */</span><br><span class="hljs-comment">/* autoprefixer: off */</span><br>-webkit-box-orient: vertical;<br>-webkit-line-clamp: <span class="hljs-number">2</span>;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Taro</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Initialization-构造过程</title>
     <link href="/2022/11/04/Swift/Initialization-%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B/"/>
     <url>/2022/11/04/Swift/Initialization-%E6%9E%84%E9%80%A0%E8%BF%87%E7%A8%8B/</url>
