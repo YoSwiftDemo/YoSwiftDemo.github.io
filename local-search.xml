@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title>Taro -s刷新问题.md</title>
+    <title>4.taro上传阿里OSS图片</title>
     <link href="/2023/12/01/Taro/Dev/4.taro%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8COSS%E5%9B%BE%E7%89%87/"/>
     <url>/2023/12/01/Taro/Dev/4.taro%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8COSS%E5%9B%BE%E7%89%87/</url>
     
@@ -485,9 +485,30 @@
   
   
   <entry>
+    <title>0.taro兼容微信登录问题</title>
+    <link href="/2022/11/01/Taro/Dev/0.taro%E5%85%BC%E5%AE%B9%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/"/>
+    <url>/2022/11/01/Taro/Dev/0.taro%E5%85%BC%E5%AE%B9%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>taro1.0支持旧版本 获取用户信息</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">if</span> (process.env.TARO_ENV === <span class="hljs-string">&#x27;weapp&#x27;</span>) &#123;<br>  <span class="hljs-keyword">const</span> &#123; code &#125; = <span class="hljs-keyword">await</span> Taro.login()<br>  <span class="hljs-keyword">const</span> &#123; encryptedData, iv, userInfo &#125; = <span class="hljs-keyword">await</span> Taro.getUserInfo(&#123;<br>    withCredentials: <span class="hljs-literal">true</span>,<br>    lang: <span class="hljs-string">&#x27;zh_CN&#x27;</span>,<br>  &#125;)<br></code></pre></td></tr></table></figure><p>最新<br><a href="https://www.likecs.com/show-308649000.html">wx.getUserProfile方法获取用户信息</a></p><p>  &#x2F;**</p><ul><li>点击 登录注册 回调函数。</li><li>@param {Object} e<br>   *&#x2F;<br>  handleGetUserInfo &#x3D; async e &#x3D;&gt; {</li></ul><p><a href="https://blog.csdn.net/xcdm100/article/details/116857728?spm=1001.2101.3001.6650.7&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-7-116857728-blog-128036898.235%5Ev27%5Epc_relevant_3mothn_strategy_and_data_recovery&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-7-116857728-blog-128036898.235%5Ev27%5Epc_relevant_3mothn_strategy_and_data_recovery&amp;utm_relevant_index=11">https://blog.csdn.net/xcdm100/article/details/116857728?spm=1001.2101.3001.6650.7&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-116857728-blog-128036898.235%5Ev27%5Epc_relevant_3mothn_strategy_and_data_recovery&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-116857728-blog-128036898.235%5Ev27%5Epc_relevant_3mothn_strategy_and_data_recovery&amp;utm_relevant_index=11</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Taro</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Vue-Error</title>
-    <link href="/2022/11/01/Taro/0.taro/"/>
-    <url>/2022/11/01/Taro/0.taro/</url>
+    <link href="/2022/11/01/Taro/Demo/0.taro/"/>
+    <url>/2022/11/01/Taro/Demo/0.taro/</url>
     
     <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/weixin_46025371/article/details/123424108">https://blog.csdn.net/weixin_46025371/article/details/123424108</a></p><p><a href="https://static2.cnodejs.org/topic/5eb4ae112d0afc4087f53c9a">https://static2.cnodejs.org/topic/5eb4ae112d0afc4087f53c9a</a></p><p>cloud.init({env: cloud.DYNAMIC_CURRENT_ENV})</p>]]></content>
     
@@ -507,8 +528,8 @@
   
   <entry>
     <title>Taro-init</title>
-    <link href="/2022/11/01/Taro/1.taro-init/"/>
-    <url>/2022/11/01/Taro/1.taro-init/</url>
+    <link href="/2022/11/01/Taro/Demo/1.taro-init/"/>
+    <url>/2022/11/01/Taro/Demo/1.taro-init/</url>
     
     <content type="html"><![CDATA[<p>#安装</p><h2 id="脚手架"><a href="#脚手架" class="headerlink" title="脚手架"></a>脚手架</h2><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs llvm">npm install -g <span class="hljs-title">@tarojs</span>/cli<br>或<br>yarn <span class="hljs-keyword">global</span> <span class="hljs-keyword">add</span> <span class="hljs-title">@tarojs</span>/cli<br></code></pre></td></tr></table></figure><h2 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">taro <span class="hljs-keyword">init</span> yourApp<br></code></pre></td></tr></table></figure><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">npm run dev:h5<span class="hljs-regexp">/weapp/</span>alipay<span class="hljs-regexp">/swan/</span>rn<br>或<br>yarn dev:h5/...<br></code></pre></td></tr></table></figure><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="h5端修改服务路径"><a href="#h5端修改服务路径" class="headerlink" title="h5端修改服务路径"></a>h5端修改服务路径</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css">/config/index<span class="hljs-selector-class">.js</span><br><span class="hljs-selector-tag">h5</span>:&#123;<br>  devServer:&#123;port:<span class="hljs-number">4563</span>,host:<span class="hljs-string">&quot;localhost&quot;</span>&#125;,<br>    ....<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="多端调试"><a href="#多端调试" class="headerlink" title="多端调试"></a>多端调试</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/config/i</span>ndex.js<br>outputRoot: `dist/<span class="hljs-variable">$&#123;process.env.TARO_ENV&#125;</span>`<br><span class="hljs-regexp">//</span>编译生成的文件位于dist下，以各端环境命名h5<span class="hljs-regexp">/weapp/</span>...<br></code></pre></td></tr></table></figure><blockquote><p>对于微信小程序，还需要将project.config.json文件的miniprogramRoot 的路径值改为 dist&#x2F;weapp&#x2F;，这样就可以正常在开发者工具中看到小程序了</p></blockquote><h2 id="alias别名设置"><a href="#alias别名设置" class="headerlink" title="alias别名设置"></a>alias别名设置</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs stylus">config/index<span class="hljs-selector-class">.js</span><br>*如果报错：const path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>)<br>const config = &#123;<br>    ………<br>     alias: &#123;<br>        <span class="hljs-string">&#x27;@/components&#x27;</span>: path<span class="hljs-selector-class">.resolve</span>(__dirname, <span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;src/components&#x27;</span>),<br>        <span class="hljs-string">&#x27;@/utils&#x27;</span>: path<span class="hljs-selector-class">.resolve</span>(__dirname, <span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;src/utils&#x27;</span>),<br>        <span class="hljs-string">&#x27;@/assets&#x27;</span>: path<span class="hljs-selector-class">.resolve</span>(__dirname, <span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;src/assets&#x27;</span>),<br>      &#125;,<br>    ………<br> &#125;<br>根目录的jsconfig.json/tsconfig.json<span class="hljs-comment">//没有时自行创建</span><br>&#123;<br>  <span class="hljs-string">&quot;compilerOptions&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;baseUrl&quot;</span>: <span class="hljs-string">&quot;.&quot;</span>,<br>    <span class="hljs-string">&quot;paths&quot;</span>: &#123;<br>      <span class="hljs-string">&quot;@/components/*&quot;</span>: <span class="hljs-selector-attr">[<span class="hljs-string">&quot;./src/components/*&quot;</span>]</span>,<br>      <span class="hljs-string">&quot;@/utils/*&quot;</span>: <span class="hljs-selector-attr">[<span class="hljs-string">&quot;./src/utils/*&quot;</span>]</span>,<br>      <span class="hljs-string">&quot;@/assets/*&quot;</span>: <span class="hljs-selector-attr">[<span class="hljs-string">&quot;./src/assets/*&quot;</span>]</span>,<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
     
@@ -528,8 +549,8 @@
   
   <entry>
     <title>2.Taro-Router-Events</title>
-    <link href="/2022/11/01/Taro/2.taro-router-events/"/>
-    <url>/2022/11/01/Taro/2.taro-router-events/</url>
+    <link href="/2022/11/01/Taro/Demo/2.taro-router-events/"/>
+    <url>/2022/11/01/Taro/Demo/2.taro-router-events/</url>
     
     <content type="html"><![CDATA[<p>#安装</p><h2 id="脚手架"><a href="#脚手架" class="headerlink" title="脚手架"></a>脚手架</h2><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs llvm">npm install -g <span class="hljs-title">@tarojs</span>/cli<br>或<br>yarn <span class="hljs-keyword">global</span> <span class="hljs-keyword">add</span> <span class="hljs-title">@tarojs</span>/cli<br></code></pre></td></tr></table></figure><h2 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">taro <span class="hljs-keyword">init</span> yourApp<br></code></pre></td></tr></table></figure><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">npm run dev:h5<span class="hljs-regexp">/weapp/</span>alipay<span class="hljs-regexp">/swan/</span>rn<br>或<br>yarn dev:h5/...<br></code></pre></td></tr></table></figure><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="h5端修改服务路径"><a href="#h5端修改服务路径" class="headerlink" title="h5端修改服务路径"></a>h5端修改服务路径</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css">/config/index<span class="hljs-selector-class">.js</span><br><span class="hljs-selector-tag">h5</span>:&#123;<br>  devServer:&#123;port:<span class="hljs-number">4563</span>,host:<span class="hljs-string">&quot;localhost&quot;</span>&#125;,<br>    ....<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="多端调试"><a href="#多端调试" class="headerlink" title="多端调试"></a>多端调试</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/config/i</span>ndex.js<br>outputRoot: `dist/<span class="hljs-variable">$&#123;process.env.TARO_ENV&#125;</span>`<br><span class="hljs-regexp">//</span>编译生成的文件位于dist下，以各端环境命名h5<span class="hljs-regexp">/weapp/</span>...<br></code></pre></td></tr></table></figure><blockquote><p>对于微信小程序，还需要将project.config.json文件的miniprogramRoot 的路径值改为 dist&#x2F;weapp&#x2F;，这样就可以正常在开发者工具中看到小程序了</p></blockquote><h2 id="alias别名设置"><a href="#alias别名设置" class="headerlink" title="alias别名设置"></a>alias别名设置</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs stylus">config/index<span class="hljs-selector-class">.js</span><br>*如果报错：const path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>)<br>const config = &#123;<br>    ………<br>     alias: &#123;<br>        <span class="hljs-string">&#x27;@/components&#x27;</span>: path<span class="hljs-selector-class">.resolve</span>(__dirname, <span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;src/components&#x27;</span>),<br>        <span class="hljs-string">&#x27;@/utils&#x27;</span>: path<span class="hljs-selector-class">.resolve</span>(__dirname, <span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;src/utils&#x27;</span>),<br>        <span class="hljs-string">&#x27;@/assets&#x27;</span>: path<span class="hljs-selector-class">.resolve</span>(__dirname, <span class="hljs-string">&#x27;..&#x27;</span>, <span class="hljs-string">&#x27;src/assets&#x27;</span>),<br>      &#125;,<br>    ………<br> &#125;<br>根目录的jsconfig.json/tsconfig.json<span class="hljs-comment">//没有时自行创建</span><br>&#123;<br>  <span class="hljs-string">&quot;compilerOptions&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;baseUrl&quot;</span>: <span class="hljs-string">&quot;.&quot;</span>,<br>    <span class="hljs-string">&quot;paths&quot;</span>: &#123;<br>      <span class="hljs-string">&quot;@/components/*&quot;</span>: <span class="hljs-selector-attr">[<span class="hljs-string">&quot;./src/components/*&quot;</span>]</span>,<br>      <span class="hljs-string">&quot;@/utils/*&quot;</span>: <span class="hljs-selector-attr">[<span class="hljs-string">&quot;./src/utils/*&quot;</span>]</span>,<br>      <span class="hljs-string">&quot;@/assets/*&quot;</span>: <span class="hljs-selector-attr">[<span class="hljs-string">&quot;./src/assets/*&quot;</span>]</span>,<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
     
@@ -539,27 +560,6 @@
       <category>Taro</category>
       
       <category>Demo</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>0.taro兼容微信登录问题</title>
-    <link href="/2022/11/01/Taro/Dev/0.taro%E5%85%BC%E5%AE%B9%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/"/>
-    <url>/2022/11/01/Taro/Dev/0.taro%E5%85%BC%E5%AE%B9%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>taro1.0支持旧版本 获取用户信息</p></blockquote><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">if</span> (process.env.TARO_ENV === <span class="hljs-string">&#x27;weapp&#x27;</span>) &#123;<br>  <span class="hljs-keyword">const</span> &#123; code &#125; = <span class="hljs-keyword">await</span> Taro.login()<br>  <span class="hljs-keyword">const</span> &#123; encryptedData, iv, userInfo &#125; = <span class="hljs-keyword">await</span> Taro.getUserInfo(&#123;<br>    withCredentials: <span class="hljs-literal">true</span>,<br>    lang: <span class="hljs-string">&#x27;zh_CN&#x27;</span>,<br>  &#125;)<br></code></pre></td></tr></table></figure><p>最新<br><a href="https://www.likecs.com/show-308649000.html">wx.getUserProfile方法获取用户信息</a></p><p>  &#x2F;**</p><ul><li>点击 登录注册 回调函数。</li><li>@param {Object} e<br>   *&#x2F;<br>  handleGetUserInfo &#x3D; async e &#x3D;&gt; {</li></ul><p><a href="https://blog.csdn.net/xcdm100/article/details/116857728?spm=1001.2101.3001.6650.7&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-7-116857728-blog-128036898.235%5Ev27%5Epc_relevant_3mothn_strategy_and_data_recovery&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-7-116857728-blog-128036898.235%5Ev27%5Epc_relevant_3mothn_strategy_and_data_recovery&amp;utm_relevant_index=11">https://blog.csdn.net/xcdm100/article/details/116857728?spm=1001.2101.3001.6650.7&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-116857728-blog-128036898.235%5Ev27%5Epc_relevant_3mothn_strategy_and_data_recovery&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-116857728-blog-128036898.235%5Ev27%5Epc_relevant_3mothn_strategy_and_data_recovery&amp;utm_relevant_index=11</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Taro</category>
-      
-      <category>Dev</category>
       
     </categories>
     
