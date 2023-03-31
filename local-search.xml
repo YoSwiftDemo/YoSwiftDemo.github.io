@@ -4,6 +4,48 @@
   
   
   <entry>
+    <title>Taro -s刷新问题.md</title>
+    <link href="/2023/12/01/Taro/Dev/4.taro%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8COSS%E5%9B%BE%E7%89%87/"/>
+    <url>/2023/12/01/Taro/Dev/4.taro%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8COSS%E5%9B%BE%E7%89%87/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.freesion.com/article/86921005562/">TARO框架中引入阿里云</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Taro</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Taro -s刷新问题.md</title>
+    <link href="/2023/12/01/Taro/Dev/4.taro%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98/"/>
+    <url>/2023/12/01/Taro/Dev/4.taro%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.jianshu.com/p/27bdf0fb0773">修改完成后跳转回上一个页面刷新</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Taro</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CSS</title>
     <link href="/2022/12/04/HTML/css/"/>
     <url>/2022/12/04/HTML/css/</url>
@@ -68,8 +110,29 @@
   
   <entry>
     <title>2.taro云函数问题</title>
-    <link href="/2022/12/01/Taro/Dev/2.taro%E4%BA%91%E5%87%BD%E6%95%B0%E9%97%AE%E9%A2%98/"/>
-    <url>/2022/12/01/Taro/Dev/2.taro%E4%BA%91%E5%87%BD%E6%95%B0%E9%97%AE%E9%A2%98/</url>
+    <link href="/2022/12/01/Taro/Dev/3.taro%E4%BA%91%E5%87%BD%E6%95%B0-Error/"/>
+    <url>/2022/12/01/Taro/Dev/3.taro%E4%BA%91%E5%87%BD%E6%95%B0-Error/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.jianshu.com/p/9647436be448">错误</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Taro</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>3.taro云函数</title>
+    <link href="/2022/12/01/Taro/Dev/3.taro%E4%BA%91%E5%87%BD%E6%95%B0/"/>
+    <url>/2022/12/01/Taro/Dev/3.taro%E4%BA%91%E5%87%BD%E6%95%B0/</url>
     
     <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/weixin_43616817/article/details/119353512">配置</a></p><p>不是所有函数都支持</p><p><a href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF">https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/#用户信息</a></p>]]></content>
     
