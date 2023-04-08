@@ -548,27 +548,6 @@
   
   
   <entry>
-    <title>Vue-Error</title>
-    <link href="/2022/11/01/Vue/Vue-Error/"/>
-    <url>/2022/11/01/Vue/Vue-Error/</url>
-    
-    <content type="html"><![CDATA[<h2 id="Vue-is-not-a-constructor"><a href="#Vue-is-not-a-constructor" class="headerlink" title="Vue is not a constructor"></a>Vue is not a constructor</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//Vue3</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">createApp</span>(&#123;<br>            <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>                <span class="hljs-keyword">return</span> &#123;<br>                    <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;我是xxx&#x27;</span><br>                &#125;<br>            &#125;<br>        &#125;).<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs lasso"><span class="hljs-comment">//Vue2</span><br><span class="hljs-built_in">var</span> app= <span class="hljs-literal">new</span> Vue(&#123;<br>            el:<span class="hljs-string">&#x27;#app&#x27;</span>,<br>            <span class="hljs-built_in">data</span>:&#123;<br>                    message: <span class="hljs-string">&#x27;我是xxx&#x27;</span><br>            &#125;<br>        &#125;)<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>Vue</category>
-      
-      <category>Error</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>0.taro兼容微信登录问题</title>
     <link href="/2022/11/01/Taro/Dev/0.taro%E5%85%BC%E5%AE%B9%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/"/>
     <url>/2022/11/01/Taro/Dev/0.taro%E5%85%BC%E5%AE%B9%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98/</url>
@@ -684,6 +663,27 @@
     <categories>
       
       <category>PHP</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Vue-Error</title>
+    <link href="/2021/11/01/Vue/Dev/Vue-Error/"/>
+    <url>/2021/11/01/Vue/Dev/Vue-Error/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Vue-is-not-a-constructor"><a href="#Vue-is-not-a-constructor" class="headerlink" title="Vue is not a constructor"></a>Vue is not a constructor</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//Vue3</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">createApp</span>(&#123;<br>            <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>                <span class="hljs-keyword">return</span> &#123;<br>                    <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;我是xxx&#x27;</span><br>                &#125;<br>            &#125;<br>        &#125;).<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs lasso"><span class="hljs-comment">//Vue2</span><br><span class="hljs-built_in">var</span> app= <span class="hljs-literal">new</span> Vue(&#123;<br>            el:<span class="hljs-string">&#x27;#app&#x27;</span>,<br>            <span class="hljs-built_in">data</span>:&#123;<br>                    message: <span class="hljs-string">&#x27;我是xxx&#x27;</span><br>            &#125;<br>        &#125;)<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vue</category>
       
       <category>Dev</category>
       
