@@ -82,6 +82,16 @@
 
   
 <meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  (function(){
+    if('{{ page.password }}'){
+      if (prompt('密码') !== '{{ page.password }}'){
+        alert('密码错误');
+        history.back();
+      }
+    }
+  })();
+</script>
 
 
 <body>
@@ -373,8 +383,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/01/PHP/Dev/Php%E7%8E%AF%E5%A2%83/" title="PHP环境搭建">
-                        <span class="hidden-mobile">PHP环境搭建</span>
+                      <a href="/2022/11/01/Taro/Demo/0.Api/" title="Api">
+                        <span class="hidden-mobile">Api</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

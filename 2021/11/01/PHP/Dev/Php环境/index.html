@@ -82,6 +82,16 @@
 
   
 <meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  (function(){
+    if('{{ page.password }}'){
+      if (prompt('密码') !== '{{ page.password }}'){
+        alert('密码错误');
+        history.back();
+      }
+    }
+  })();
+</script>
 
 
 <body>
@@ -398,9 +408,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/01/Taro/Demo/3.Taro%E8%87%AA%E7%94%B1%E6%8B%96%E6%8B%BD%E7%9A%84%E6%BB%91%E5%9D%97/" title="3.Taro自由拖拽的滑块">
+                      <a href="/2022/11/01/Taro/Demo/0.Api/" title="Api">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">3.Taro自由拖拽的滑块</span>
+                        <span class="hidden-mobile">Api</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     

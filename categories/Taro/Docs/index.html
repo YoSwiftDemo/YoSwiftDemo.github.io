@@ -74,6 +74,16 @@
 
   
 <meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  (function(){
+    if('{{ page.password }}'){
+      if (prompt('密码') !== '{{ page.password }}'){
+        alert('密码错误');
+        history.back();
+      }
+    }
+  })();
+</script>
 
 
 <body>
@@ -215,7 +225,7 @@
                 
 
 <div class="list-group">
-  <p class="h4">4 posts in total</p>
+  <p class="h4">5 posts in total</p>
   <hr>
   
   
@@ -247,6 +257,12 @@
     <a href="/2022/11/01/Taro/Demo/0.taro/" class="list-group-item list-group-item-action">
       <time>11-01</time>
       <div class="list-group-item-title">Vue-Error</div>
+    </a>
+  
+    
+    <a href="/2022/11/01/Taro/Demo/0.Api/" class="list-group-item list-group-item-action">
+      <time>11-01</time>
+      <div class="list-group-item-title">Api</div>
     </a>
   
 </div>

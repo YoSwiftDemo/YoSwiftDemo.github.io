@@ -74,6 +74,16 @@
 
   
 <meta name="generator" content="Hexo 6.3.0"></head>
+<script>
+  (function(){
+    if('{{ page.password }}'){
+      if (prompt('密码') !== '{{ page.password }}'){
+        alert('密码错误');
+        history.back();
+      }
+    }
+  })();
+</script>
 
 
 <body>
@@ -215,7 +225,7 @@
                 
 
 <div class="list-group">
-  <p class="h4">33 posts in total</p>
+  <p class="h4">34 posts in total</p>
   <hr>
   
   
@@ -287,7 +297,7 @@
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2022/11/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2022/11/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/archives/2022/11/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2022/11/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2022/11/page/3/#board">3</a><a class="extend next" rel="next" href="/archives/2022/11/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
