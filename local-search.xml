@@ -1187,27 +1187,6 @@
   
   <entry>
     <title>2.小程序-数据绑定</title>
-    <link href="/2021/01/21/MiniProgram/Docs/7.%E5%B0%8F%E7%A8%8B%E5%BA%8F-wxss/"/>
-    <url>/2021/01/21/MiniProgram/Docs/7.%E5%B0%8F%E7%A8%8B%E5%BA%8F-wxss/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>MiniProgram</category>
-      
-      <category>Dev</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>2.小程序-数据绑定</title>
     <link href="/2021/01/21/MiniProgram/Docs/9.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
     <url>/2021/01/21/MiniProgram/Docs/9.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/</url>
     
@@ -1296,6 +1275,27 @@
     <url>/2021/01/20/MiniProgram/Docs/1.%E5%B0%8F%E7%A8%8B%E5%BA%8FJSON%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
     
     <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>7.小程序-wxss</title>
+    <link href="/2020/01/07/MiniProgram/Docs/7.%E5%B0%8F%E7%A8%8B%E5%BA%8F-wxss/"/>
+    <url>/2020/01/07/MiniProgram/Docs/7.%E5%B0%8F%E7%A8%8B%E5%BA%8F-wxss/</url>
+    
+    <content type="html"><![CDATA[<h1 id="wxss与css关系"><a href="#wxss与css关系" class="headerlink" title="wxss与css关系"></a>wxss与css关系</h1><p>-wxx具有css大部分属性，wss扩展很多</p><h2 id="wxss扩展特性"><a href="#wxss扩展特性" class="headerlink" title="wxss扩展特性"></a>wxss扩展特性</h2><ul><li>rpx尺寸单位</li><li>@import样式导入</li></ul><h2 id="rpx尺寸单位-rpx-resposive-pixel"><a href="#rpx尺寸单位-rpx-resposive-pixel" class="headerlink" title="rpx尺寸单位  rpx(resposive pixel)"></a>rpx尺寸单位  rpx(resposive pixel)</h2><ul><li>原理：宽度上等分为750份，当前屏幕总宽度750rpx</li></ul><h2 id="rpx与px单位换算"><a href="#rpx与px单位换算" class="headerlink" title="rpx与px单位换算"></a>rpx与px单位换算</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">iPhone65</span>              <span class="hljs-number">1</span>px=<span class="hljs-number">2</span>.<span class="hljs-number">34</span>rpx<br><span class="hljs-attribute">iPhone6</span> 屏幕宽度<span class="hljs-number">375</span>px  <span class="hljs-number">1</span>px=<span class="hljs-number">2</span>rpx<br><span class="hljs-attribute">iPhone6</span> plus          <span class="hljs-number">1</span>px=<span class="hljs-number">1</span>.<span class="hljs-number">8</span>.<span class="hljs-number">1</span>rpx<br></code></pre></td></tr></table></figure><h1 id="样式导入"><a href="#样式导入" class="headerlink" title="样式导入"></a>样式导入</h1><blockquote><p>@import+导入外联样式表相对路径 ;表示语句结束</p></blockquote><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/**common文件下创建 common.wxss**/</span><br><span class="hljs-selector-class">.name</span> &#123;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span>;<br>&#125;<br></code></pre></td></tr></table></figure><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-comment">/**pagexxx.wxss**/</span><br>@<span class="hljs-keyword">import</span> &quot;/common/common.wxss&quot;;<br><br>&lt;<span class="hljs-keyword">view</span> <span class="hljs-keyword">class</span>=&quot;name&quot;&gt;&lt;<span class="hljs-keyword">view</span>&gt;<br><br></code></pre></td></tr></table></figure><h1 id="全局-局部样式"><a href="#全局-局部样式" class="headerlink" title="全局+局部样式"></a>全局+局部样式</h1><h2 id="定义在-app-wxss-全局样式"><a href="#定义在-app-wxss-全局样式" class="headerlink" title="定义在 app.wxss 全局样式"></a>定义在 app.wxss 全局样式</h2><figure class="highlight roboconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs roboconf">view &#123;<br><span class="hljs-attribute">pading</span>: 10rpx;<br><span class="hljs-attribute">magrin</span>: 10rpx;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="局部样式"><a href="#局部样式" class="headerlink" title="局部样式"></a>局部样式</h2><ul><li>就近原则，覆盖全局样式</li><li>局部样式权重大于或等于全局样式权重，才会覆盖全局样式</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">权重高<br>view<span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">1</span>)&#123;<br><span class="hljs-attribute">background-color</span>: blue;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
