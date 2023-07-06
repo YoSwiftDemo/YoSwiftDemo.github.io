@@ -136,7 +136,7 @@
     <link href="/2023/05/04/Java/Docs/Spring/1.Spring%E5%AE%B9%E5%99%A8%E6%8E%A5%E5%8F%A3/"/>
     <url>/2023/05/04/Java/Docs/Spring/1.Spring%E5%AE%B9%E5%99%A8%E6%8E%A5%E5%8F%A3/</url>
     
-    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="❎❎❎❎❎" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="0a78592845afb95f447cdc1de07865cb69b96d6b764b9ce6000225a71b2dd97c">c8d6a724b68e0a127e5cca7999ad3293525fa728d30fb8d32796d1cdd4bd2e02bb67a59723a3c9abd0139c55ab3ab8426dd9c5e8ade9b1eaafed21eac712ba08b21d3001fb1006be1ac8d3c53f6cec86</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">密码访问</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="❎❎❎❎❎" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="4aa8d7becf6a7fc43466cc0e1400728b4e444ed747af38a516e01b18480a28dd">c8d6a724b68e0a127e5cca7999ad3293e791e3f9d470a5886a2d54a6cc5985d85f64e71890f69bca1f9cfcd72a5edd040891735f971ac1a714e38f47a2ecdf40636f12d3866136f77abb52ac16a087a441aff1092f97948b7aab56bd9af536a52e34ec00b16baf4d7d23fcbb21511bc7eed40741940d3ce03ff475b67b6768ebbb45d22c9c53d8abf42aa6a59f12dd300e666f591b00f3c291df54c37c4467b7122210541d647d6f732224896cdc010c218013110f023c3c12251815d1c7fd748e888b983ba2ecfca2dca1f44578e6c1a39708a12e63346f34f622c2a5176df28545e475a9ccabb463041903a7052b9a200f9f5a3df4f6e6ac065d927659e11d27cd42c33a7908917c1621cd51508539809282f0e74ea5c84f5fe94809696f0c</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">密码访问</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
     
     <categories>
@@ -239,6 +239,29 @@
   
   
   <entry>
+    <title>0.SpringBoot</title>
+    <link href="/2023/03/04/Java/Docs/Spring%20Boot%20/0.SpringBoot/"/>
+    <url>/2023/03/04/Java/Docs/Spring%20Boot%20/0.SpringBoot/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="❎❎❎❎❎" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="4e78dcbd7e67f80736d5072bb5644c399f44e8866cf851e012c3747062e58e04">c8d6a724b68e0a127e5cca7999ad3293655c3457ae5d174a88d97eb4055058a5c0a10e356248921536cc0afd3d5b1dd7ceaf6230e3ff3a0434746ce01842a5a3eaa4662181db4774e6e86ae019a4e4b630d8e7cb27df0731997b4591b970c995753ad2f585bd99a3301edda3683ef0a6148ca8723d749322b4bfe575deda9ed8</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">密码访问</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Docs</category>
+      
+      <category>SpringBoot</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>0.WordPress安装</title>
     <link href="/2023/03/03/Mac/WordPress/0.WordPress%E5%AE%89%E8%A3%85/"/>
     <url>/2023/03/03/Mac/WordPress/0.WordPress%E5%AE%89%E8%A3%85/</url>
@@ -270,69 +293,6 @@
     <categories>
       
       <category>Php</category>
-      
-      <category>Docs</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>0.VantUI 组件库</title>
-    <link href="/2023/02/20/MiniProgram/Dev/0.VantUI%20%E7%BB%84%E4%BB%B6%E5%BA%93/"/>
-    <url>/2023/02/20/MiniProgram/Dev/0.VantUI%20%E7%BB%84%E4%BB%B6%E5%BA%93/</url>
-    
-    <content type="html"><![CDATA[<p><a href="https://gitee.com/vant-contrib/vant-weapp">zujian</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>MiniProgram</category>
-      
-      <category>Docs</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>1.微信小程序之wx.login()与获取手机号getPhoneNumber解密失败问题</title>
-    <link href="/2023/01/21/MiniProgram/Docs/1.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E5%92%8C%E8%8E%B7%E5%8F%96%E6%89%8B%E6%9C%BA%E5%8F%B7/"/>
-    <url>/2023/01/21/MiniProgram/Docs/1.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E5%92%8C%E8%8E%B7%E5%8F%96%E6%89%8B%E6%9C%BA%E5%8F%B7/</url>
-    
-    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/lqlq54321/article/details/126617199">微信小程序之wx.login()与获取手机号getPhoneNumber解密失败问题</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>MiniProgram</category>
-      
-      <category>Docs</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>0.小程序跳转页面方式</title>
-    <link href="/2023/01/20/MiniProgram/Docs/0.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%96%B9%E5%BC%8F/"/>
-    <url>/2023/01/20/MiniProgram/Docs/0.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%96%B9%E5%BC%8F/</url>
-    
-    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/jack_rose_me/article/details/108707329">小程序跳转页面方式</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>MiniProgram</category>
       
       <category>Docs</category>
       
@@ -1070,6 +1030,321 @@
       <category>Vue</category>
       
       <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>0.VantUI 组件库</title>
+    <link href="/2021/02/20/MiniProgram/Dev/0.VantUI%20%E7%BB%84%E4%BB%B6%E5%BA%93/"/>
+    <url>/2021/02/20/MiniProgram/Dev/0.VantUI%20%E7%BB%84%E4%BB%B6%E5%BA%93/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://gitee.com/vant-contrib/vant-weapp">zujian</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>1.微信小程序之wx.login()与获取手机号getPhoneNumber解密失败问题</title>
+    <link href="/2021/01/21/MiniProgram/Dev/1.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E5%92%8C%E8%8E%B7%E5%8F%96%E6%89%8B%E6%9C%BA%E5%8F%B7/"/>
+    <url>/2021/01/21/MiniProgram/Dev/1.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E5%92%8C%E8%8E%B7%E5%8F%96%E6%89%8B%E6%9C%BA%E5%8F%B7/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/lqlq54321/article/details/126617199">微信小程序之wx.login()与获取手机号getPhoneNumber解密失败问题</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2.小程序-数据绑定</title>
+    <link href="/2021/01/21/MiniProgram/Docs/11.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%AF%BC%E8%88%AA/"/>
+    <url>/2021/01/21/MiniProgram/Docs/11.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%AF%BC%E8%88%AA/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2.小程序-数据绑定</title>
+    <link href="/2021/01/21/MiniProgram/Docs/11.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5%E5%9F%BA%E7%A1%80%E5%B8%83%E5%B1%80/"/>
+    <url>/2021/01/21/MiniProgram/Docs/11.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5%E5%9F%BA%E7%A1%80%E5%B8%83%E5%B1%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2.小程序-数据绑定</title>
+    <link href="/2021/01/21/MiniProgram/Docs/2.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/"/>
+    <url>/2021/01/21/MiniProgram/Docs/2.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2.小程序-数据绑定</title>
+    <link href="/2021/01/21/MiniProgram/Docs/3.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/"/>
+    <url>/2021/01/21/MiniProgram/Docs/3.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2.小程序-数据绑定</title>
+    <link href="/2021/01/21/MiniProgram/Docs/6.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/"/>
+    <url>/2021/01/21/MiniProgram/Docs/6.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2.小程序-数据绑定</title>
+    <link href="/2021/01/21/MiniProgram/Docs/8.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%85%8D%E7%BD%AE/"/>
+    <url>/2021/01/21/MiniProgram/Docs/8.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2.小程序-数据绑定</title>
+    <link href="/2021/01/21/MiniProgram/Docs/7.%E5%B0%8F%E7%A8%8B%E5%BA%8F-wxss/"/>
+    <url>/2021/01/21/MiniProgram/Docs/7.%E5%B0%8F%E7%A8%8B%E5%BA%8F-wxss/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2.小程序-数据绑定</title>
+    <link href="/2021/01/21/MiniProgram/Docs/9.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
+    <url>/2021/01/21/MiniProgram/Docs/9.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2.小程序-数据绑定</title>
+    <link href="/2021/01/21/MiniProgram/Docs/4.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E5%8F%82%E5%92%8C%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5_%E5%89%AF%E6%9C%AC/"/>
+    <url>/2021/01/21/MiniProgram/Docs/4.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E4%BA%8B%E4%BB%B6%E4%BC%A0%E5%8F%82%E5%92%8C%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5_%E5%89%AF%E6%9C%AC/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>0.小程序跳转页面方式</title>
+    <link href="/2021/01/20/MiniProgram/Dev/0.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%96%B9%E5%BC%8F/"/>
+    <url>/2021/01/20/MiniProgram/Dev/0.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%96%B9%E5%BC%8F/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/jack_rose_me/article/details/108707329">小程序跳转页面方式</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>0.小程序开发文档总目录</title>
+    <link href="/2021/01/20/MiniProgram/Docs/0.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3%E6%80%BB%E7%9B%AE%E5%BD%95/"/>
+    <url>/2021/01/20/MiniProgram/Docs/0.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3%E6%80%BB%E7%9B%AE%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>1.小程序JSON配置文件</title>
+    <link href="/2021/01/20/MiniProgram/Docs/1.%E5%B0%8F%E7%A8%8B%E5%BA%8FJSON%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    <url>/2021/01/20/MiniProgram/Docs/1.%E5%B0%8F%E7%A8%8B%E5%BA%8FJSON%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2.小程序-数据绑定</title>
+    <link href="/2020/01/05/MiniProgram/Docs/5.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/"/>
+    <url>/2020/01/05/MiniProgram/Docs/5.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="wx-if"><a href="#wx-if" class="headerlink" title="wx:if"></a>wx:if</h1><ul><li>wx:if&#x3D;”“判断是否需要渲染代码块</li></ul><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:if</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">condition</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span>True<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br></code></pre></td></tr></table></figure><h2 id="wx-elif-和wx-else"><a href="#wx-elif-和wx-else" class="headerlink" title="wx:elif 和wx:else"></a>wx:elif 和wx:else</h2><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:if</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">type</span> === <span class="hljs-number">1</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span> 男<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:elif</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">type</span> === <span class="hljs-number">2</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span> 女<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:else</span>&gt;</span>其他<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"></span><br></code></pre></td></tr></table></figure><h2 id="使用wx-if"><a href="#使用wx-if" class="headerlink" title="使用wx:if"></a><block>使用wx:if</h2><ul><li><block> </block>一次性控制多个组件的展示和隐藏</li><li><block>并非组件，仅包裹作用，不会渲染成标签，不会在页面做任何渲染<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">block</span> <span class="hljs-attr">wx:if</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;true&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>viewOne<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">block</span>&gt;</span></span><br></code></pre></td></tr></table></figure></li></ul><h1 id="hidden"><a href="#hidden" class="headerlink" title="hidden"></a>hidden</h1><ul><li>hidden&#x3D;”“  是否影藏</li></ul><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">flag默认true  </span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">hiddden</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">flag</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span>条件=true，影藏元素则显示<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">hiddden</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-comment">&#123;&#123;!flag&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br></code></pre></td></tr></table></figure><h1 id="wx-if-vs-hidden"><a href="#wx-if-vs-hidden" class="headerlink" title="wx:if vs  hidden"></a>wx:if vs  hidden</h1><blockquote><p>1.运行原理</p></blockquote><ul><li>wx:if以动态创建和移除元素的方式，控制元素的展示与影藏</li><li>hidden以切换样式方式（display: none&#x2F;block）,控制元素的显示和影藏<blockquote><p>2.场景</p></blockquote></li><li>频繁切换，hidden</li><li>多条件控制，wx:if wx:elif wx:else</li></ul><p><a href="https://www.bilibili.com/video/BV1834y1676P?p=22&vd_source=35d887e513452db700d753cd11b73d41">video</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Docs</category>
       
     </categories>
     
