@@ -16,15 +16,15 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="YoYo Swift">
+    <meta name="description" content="WXS WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构   WXS 不依赖于运行时的基础库版本，可以在所有版本的小程序中运行。 WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。 WXS 的运行环境和其他 JavaScript 代码是隔离的，WXS 中不能调用其他 JavaScript 文件中定义的函">
 <meta property="og:type" content="article">
 <meta property="og:title" content="15.小程序-WXS">
-<meta property="og:url" content="http://example.com/2020/01/14/MiniProgram/Docs/15.%E5%B0%8F%E7%A8%8B%E5%BA%8F-WXS/index.html">
+<meta property="og:url" content="http://example.com/2020/01/15/MiniProgram/Docs/15.%E5%B0%8F%E7%A8%8B%E5%BA%8F-WXS/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="YoYo Swift">
+<meta property="og:description" content="WXS WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构   WXS 不依赖于运行时的基础库版本，可以在所有版本的小程序中运行。 WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。 WXS 的运行环境和其他 JavaScript 代码是隔离的，WXS 中不能调用其他 JavaScript 文件中定义的函">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-14T04:12:12.000Z">
-<meta property="article:modified_time" content="2023-07-06T14:50:29.685Z">
+<meta property="article:published_time" content="2020-01-15T04:12:12.000Z">
+<meta property="article:modified_time" content="2023-07-06T16:40:41.150Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -206,8 +206,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-01-14 12:12" pubdate>
-          January 14, 2020 pm
+        <time datetime="2020-01-15 12:12" pubdate>
+          January 15, 2020 pm
         </time>
       </span>
     
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 words
+          1.3k words
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          1 mins
+          11 mins
         
       </span>
     
@@ -272,7 +272,56 @@
             
               <div class="markdown-body">
                 
-                
+                <h1 id="WXS"><a href="#WXS" class="headerlink" title="WXS"></a>WXS</h1><blockquote>
+<p>WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构</p>
+</blockquote>
+<ul>
+<li>WXS 不依赖于运行时的基础库版本，可以在所有版本的小程序中运行。</li>
+<li>WXS 与 JavaScript 是不同的语言，有自己的语法，并不和 JavaScript 一致。</li>
+<li>WXS 的运行环境和其他 JavaScript 代码是隔离的，WXS 中不能调用其他 JavaScript 文件中定义的函数，也不能调用小程序提供的API。</li>
+</ul>
+<blockquote>
+<p>wxml中无法调用也面.js定义函数，但是wxml中可以调用wxs中定义函数，因此，小程序中典型应用场景就是 过滤器</p>
+</blockquote>
+<h2 id="wxs有自己数据模型"><a href="#wxs有自己数据模型" class="headerlink" title="wxs有自己数据模型"></a>wxs有自己数据模型</h2><ul>
+<li>number 数值类型</li>
+<li>string 字符串类型</li>
+<li>booleam 布尔类型</li>
+<li>object 对象类型</li>
+<li>function 函数类型</li>
+<li>array 数组类型</li>
+<li>date 日期类型</li>
+<li>regexp 正则</li>
+</ul>
+<h2 id="wxs不支持类意思ES6机器以上语法类型"><a href="#wxs不支持类意思ES6机器以上语法类型" class="headerlink" title="wxs不支持类意思ES6机器以上语法类型"></a>wxs不支持类意思ES6机器以上语法类型</h2><ul>
+<li>不支持 let const 结构赋值 展开运算法 箭头函数 对象属性简写 etc..</li>
+<li>支持 var定义编译量 普通function函数等类似ES5的语法</li>
+</ul>
+<h2 id="wxs遵循CommonJS规范"><a href="#wxs遵循CommonJS规范" class="headerlink" title="wxs遵循CommonJS规范"></a>wxs遵循CommonJS规范</h2><ul>
+<li>module对象</li>
+<li>require()函数</li>
+<li>module.exports对象</li>
+<li></li>
+</ul>
+<h2 id="不能作为组件的时间回调，场景：-过滤器，-配合Mustache语法使用"><a href="#不能作为组件的时间回调，场景：-过滤器，-配合Mustache语法使用" class="headerlink" title="不能作为组件的时间回调，场景： 过滤器， 配合Mustache语法使用"></a>不能作为组件的时间回调，场景： 过滤器， 配合Mustache语法使用</h2><h2 id="隔离性"><a href="#隔离性" class="headerlink" title="隔离性"></a>隔离性</h2><ul>
+<li>wxs不能调js中定位函数</li>
+<li>wxs不能调小程序提供API</li>
+</ul>
+<h1 id="内嵌wxs脚本"><a href="#内嵌wxs脚本" class="headerlink" title="内嵌wxs脚本"></a>内嵌wxs脚本</h1><blockquote>
+<p>wxs 代码可以编写在wxml文件中<wxs>标签内，就像javascript代码可以编写在html的<script>标签中一样<br>wxml文件中每个<wsx></wsx>标签， 必须同module属性，用来指定wxs的模块名称，方便在wxml中访问模块中的成员</p>
+</blockquote>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">m1.toUpper</span>(<span class="hljs-name">username</span>)&#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">wxs</span> <span class="hljs-attr">module</span>=<span class="hljs-string">&quot;m1&quot;</span>&gt;</span></span><br><span class="language-xml">    //把文本转为大写  ab-&gt; AB</span><br><span class="language-xml">    module.exports.toUpper = function(str) &#123;</span><br><span class="language-xml">     retutn str.toUpperCase()</span><br><span class="language-xml">     &#125;</span><br><span class="language-xml"> <span class="hljs-tag">&lt;/<span class="hljs-name">wxs</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<h1 id="外联wxs脚本"><a href="#外联wxs脚本" class="headerlink" title="外联wxs脚本"></a>外联wxs脚本</h1><blockquote>
+<p>wxs 代码可以写在 .wxs为猴嘴的文件内，类似jsvascrip代码写在 .js文件中</p>
+</blockquote>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-comment">//utils 创建 tools.wxs文件</span><br> func <span class="hljs-keyword">to</span><span class="hljs-constructor">Lower(<span class="hljs-params">str</span>)</span> &#123;<br>  retutn str.<span class="hljs-keyword">to</span><span class="hljs-constructor">LowerCase()</span><br> &#125;<br> <br> <span class="hljs-keyword">module</span>.exports = &#123;<br>   toLower: toLower <span class="hljs-comment">//不支持简写</span><br> &#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>在wxml中引入外联wxs脚本时候，必须<wsx>标签添加 module和src属性</li>
+<li>module指定模块名称</li>
+<li>sec指定脚本的路径，必须是相对路径</li>
+</ul>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-comment">&lt;!--调动m2 模块中方法--&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">m2.toLower</span>(<span class="hljs-name">name</span>)&#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-comment">&lt;!--引用外联的 tools.wxs 脚本 并命名为 m2--&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">wxs</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../utils/tools.wxs&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">wxs</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -318,7 +367,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>15.小程序-WXS</div>
-      <div>http://example.com/2020/01/14/MiniProgram/Docs/15.小程序-WXS/</div>
+      <div>http://example.com/2020/01/15/MiniProgram/Docs/15.小程序-WXS/</div>
     </div>
     <div class="license-meta">
       
@@ -330,7 +379,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>January 14, 2020</div>
+          <div>January 15, 2020</div>
         </div>
       
       
@@ -362,9 +411,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/01/14/MiniProgram/Docs/14.%E5%B0%8F%E7%A8%8B%E5%BA%8F-leftCycle/" title="14.小程序-leftCycle">
+                      <a href="/2021/01/20/MiniProgram/Dev/0.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%96%B9%E5%BC%8F/" title="0.小程序跳转页面方式">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">14.小程序-leftCycle</span>
+                        <span class="hidden-mobile">0.小程序跳转页面方式</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -372,8 +421,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/01/13/MiniProgram/Docs/13.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%B7%E6%96%B0Refresh/" title="13.小程序-刷新Refresh">
-                        <span class="hidden-mobile">13.小程序-刷新Refresh</span>
+                      <a href="/2020/01/14/MiniProgram/Docs/14.%E5%B0%8F%E7%A8%8B%E5%BA%8F-leftCycle/" title="14.小程序-leftCycle">
+                        <span class="hidden-mobile">14.小程序-leftCycle</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
