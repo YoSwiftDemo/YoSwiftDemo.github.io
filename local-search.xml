@@ -1166,27 +1166,6 @@
   
   <entry>
     <title>2.小程序-数据绑定</title>
-    <link href="/2021/01/21/MiniProgram/Docs/6.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/"/>
-    <url>/2021/01/21/MiniProgram/Docs/6.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Mustache预防-场景"><a href="#Mustache预防-场景" class="headerlink" title="Mustache预防+场景"></a>Mustache预防+场景</h1><ul><li>绑定内容</li><li>绑定属性</li><li>运算（三元运算，算术运算）</li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>MiniProgram</category>
-      
-      <category>Dev</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>2.小程序-数据绑定</title>
     <link href="/2021/01/21/MiniProgram/Docs/8.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%85%8D%E7%BD%AE/"/>
     <url>/2021/01/21/MiniProgram/Docs/8.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%85%8D%E7%BD%AE/</url>
     
@@ -1324,6 +1303,27 @@
       <category>MiniProgram</category>
       
       <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>6.小程序-列表渲染wx:for</title>
+    <link href="/2020/01/06/MiniProgram/Docs/6.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/"/>
+    <url>/2020/01/06/MiniProgram/Docs/6.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.bilibili.com/video/BV1834y1676P?p=23&spm_id_from=pageDriver&vd_source=35d887e513452db700d753cd11b73d41">video</a></p><h1 id="wx-for"><a href="#wx-for" class="headerlink" title="wx:for"></a>wx:for</h1><h2 id="1-wx-for根据数据循环渲染重复的组件结构"><a href="#1-wx-for根据数据循环渲染重复的组件结构" class="headerlink" title="1.wx:for根据数据循环渲染重复的组件结构"></a>1.wx:for根据数据循环渲染重复的组件结构</h2><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:for</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">array</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">wx:key</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span></span><br><span class="language-xml">索引：</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">index</span>&#125;&#125;</span><span class="language-xml"> 当前项：</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">item</span>&#125;&#125;</span><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br></code></pre></td></tr></table></figure><h2 id="2-手动指定索引和当前项的变量名"><a href="#2-手动指定索引和当前项的变量名" class="headerlink" title="2.手动指定索引和当前项的变量名"></a>2.手动指定索引和当前项的变量名</h2><ul><li>wx:for-index指定指定当前循环项的索引的变量名</li><li>wx:for-item指定指定当前项的变量名<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:for</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">array</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">wx:for-index</span>=<span class="hljs-string">&quot;idx&quot;</span> <span class="hljs-attr">wx:for-item</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">wx:key</span>=<span class="hljs-string">&quot;idx&quot;</span>&gt;</span></span><br><span class="language-xml">索引：</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">id</span>&#125;&#125;</span><span class="language-xml"> 当前项：</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">name</span>&#125;&#125;</span><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br></code></pre></td></tr></table></figure></li></ul><h2 id="3-wx-key"><a href="#3-wx-key" class="headerlink" title="3.wx:key"></a>3.wx:key</h2><blockquote><p>绑定唯一key,提高渲染效率 类似Vue  :key</p></blockquote><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:for</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">userlist</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span><span class="hljs-attr">wx:key</span>=<span class="hljs-string">&quot;id&quot;</span>&gt;</span></span><br><span class="language-xml"></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">item.name</span>&#125;&#125;</span><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Dcos</category>
       
     </categories>
     
