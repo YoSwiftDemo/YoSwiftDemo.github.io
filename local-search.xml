@@ -1102,9 +1102,9 @@
   
   
   <entry>
-    <title>12.小程序-首页基础布局</title>
-    <link href="/2020/01/12/MiniProgram/Docs/12.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5%E5%9F%BA%E7%A1%80%E5%B8%83%E5%B1%80/"/>
-    <url>/2020/01/12/MiniProgram/Docs/12.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5%E5%9F%BA%E7%A1%80%E5%B8%83%E5%B1%80/</url>
+    <title>13.小程序-刷新</title>
+    <link href="/2020/01/13/MiniProgram/Docs/13.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%B7%E6%96%B0/"/>
+    <url>/2020/01/13/MiniProgram/Docs/13.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%B7%E6%96%B0/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -1123,9 +1123,9 @@
   
   
   <entry>
-    <title>11.小程序-导航</title>
-    <link href="/2020/01/11/MiniProgram/Docs/11.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%AF%BC%E8%88%AA/"/>
-    <url>/2020/01/11/MiniProgram/Docs/11.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%AF%BC%E8%88%AA/</url>
+    <title>12.小程序-导航.md</title>
+    <link href="/2020/01/12/MiniProgram/Docs/12.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%AF%BC%E8%88%AA/"/>
+    <url>/2020/01/12/MiniProgram/Docs/12.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%AF%BC%E8%88%AA/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -1135,6 +1135,27 @@
       <category>MiniProgram</category>
       
       <category>Dcos</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>11.小程序-首页基础布局</title>
+    <link href="/2020/01/11/MiniProgram/Docs/11.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5%E5%9F%BA%E7%A1%80%E5%B8%83%E5%B1%80/"/>
+    <url>/2020/01/11/MiniProgram/Docs/11.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E9%A6%96%E9%A1%B5%E5%9F%BA%E7%A1%80%E5%B8%83%E5%B1%80/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Docs</category>
       
     </categories>
     
