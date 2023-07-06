@@ -1102,6 +1102,48 @@
   
   
   <entry>
+    <title>14.小程序-leftCycle</title>
+    <link href="/2020/01/14/MiniProgram/Docs/14.%E5%B0%8F%E7%A8%8B%E5%BA%8F-leftCycle/"/>
+    <url>/2020/01/14/MiniProgram/Docs/14.%E5%B0%8F%E7%A8%8B%E5%BA%8F-leftCycle/</url>
+    
+    <content type="html"><![CDATA[<h1 id="应用生命周期"><a href="#应用生命周期" class="headerlink" title="应用生命周期"></a>应用生命周期</h1><blockquote><p>启动-&gt;运行-&gt;销毁</p></blockquote><ul><li>小程序的应用生命周期函数需要在app.js中进行声明<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">App(&#123;<br>    <span class="hljs-comment">//初始化完成时，执行此函数，全局只触发一次</span><br>   onLaunch: <span class="hljs-keyword">function</span><span class="hljs-params">(options)</span>&#123;<br>       ...初始化...<br>   &#125;,<br>   <span class="hljs-comment">//小程序启动 或从后台进入前台时 触发</span><br>   onShow: <span class="hljs-keyword">function</span><span class="hljs-params">(options)</span>&#123;<br>    ...<br>   &#125;,<br>   <span class="hljs-comment">//小程序从  前台 进入 后台时触发</span><br>    onHide: <span class="hljs-keyword">function</span><span class="hljs-params">()</span>&#123;<br>    ...<br>   &#125;<br>&#125;)<br></code></pre></td></tr></table></figure></li></ul><h1 id="页面生命周期"><a href="#页面生命周期" class="headerlink" title="页面生命周期"></a>页面生命周期</h1><blockquote><p>加载-&gt;渲染-&gt;销毁</p></blockquote><ul><li>小程序的页面生命周期函数需要在 页面.js文件声明</li></ul><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">Page(&#123;<br>   onLoad : <span class="hljs-keyword">function</span><span class="hljs-params">(options)</span> &#123;&#125;,  <span class="hljs-comment">//监听页面加载，1个页面只调用1次</span><br>   onShow : <span class="hljs-keyword">function</span><span class="hljs-params">()</span> &#123;&#125;,         <span class="hljs-comment">//监听页面显示</span><br>   onReady : <span class="hljs-keyword">function</span><span class="hljs-params">()</span> &#123;&#125;,        <span class="hljs-comment">//监听页面首次渲染完成，1个页面只调用1次 对界面内容进行设置的 API 如wx.setNavigationBarTitle，请在onReady之后进行。详见生命周期</span><br>   onHide : <span class="hljs-keyword">function</span><span class="hljs-params">(options)</span> &#123;&#125;,  <span class="hljs-comment">//页面隐藏/切入后台时触发。 如 wx.navigateTo 或底部 tab 切换到其他页面，小程序切入后台等。</span><br>   onUnLoad : <span class="hljs-keyword">function</span><span class="hljs-params">(options)</span> &#123;&#125;, <span class="hljs-comment">//页面卸载时触发。如wx.redirectTo或wx.navigateBack到其他页面时</span><br>&#125;)<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>15.小程序-WXS</title>
+    <link href="/2020/01/14/MiniProgram/Docs/15.%E5%B0%8F%E7%A8%8B%E5%BA%8F-WXS/"/>
+    <url>/2020/01/14/MiniProgram/Docs/15.%E5%B0%8F%E7%A8%8B%E5%BA%8F-WXS/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>MiniProgram</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>13.小程序-刷新Refresh</title>
     <link href="/2020/01/13/MiniProgram/Docs/13.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%B7%E6%96%B0Refresh/"/>
     <url>/2020/01/13/MiniProgram/Docs/13.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%B7%E6%96%B0Refresh/</url>
