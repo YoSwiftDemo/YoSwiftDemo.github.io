@@ -16,15 +16,15 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="YoYo Swift">
+    <meta name="description" content="创建组件 项目目录中 创建 components 创建xx文件，新建Components 生成.js  .json .wxml  .wxss  引用组件局部引用 在页面得 .json 文件中，引入组件  usingComponentst里添加123&amp;#x27;usingComponents&amp;#x27;: &amp;#123;  &quot;my-test&quot;: &quot;&#x2F;components&#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="16.小程序-自定义组件">
 <meta property="og:url" content="http://example.com/2020/01/16/MiniProgram/Docs/16.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="YoYo Swift">
+<meta property="og:description" content="创建组件 项目目录中 创建 components 创建xx文件，新建Components 生成.js  .json .wxml  .wxss  引用组件局部引用 在页面得 .json 文件中，引入组件  usingComponentst里添加123&amp;#x27;usingComponents&amp;#x27;: &amp;#123;  &quot;my-test&quot;: &quot;&#x2F;components&#x2F;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-16T04:12:12.000Z">
-<meta property="article:modified_time" content="2023-07-06T16:43:31.813Z">
+<meta property="article:modified_time" content="2023-07-07T07:16:49.382Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 words
+          9.3k words
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          1 mins
+          78 mins
         
       </span>
     
@@ -272,7 +272,360 @@
             
               <div class="markdown-body">
                 
-                
+                <h1 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h1><ul>
+<li>项目目录中 创建 components</li>
+<li>创建xx文件，新建Components</li>
+<li>生成.js  .json .wxml  .wxss</li>
+</ul>
+<h1 id="引用组件"><a href="#引用组件" class="headerlink" title="引用组件"></a>引用组件</h1><h2 id="局部引用"><a href="#局部引用" class="headerlink" title="局部引用"></a>局部引用</h2><ul>
+<li>在页面得 .json 文件中，引入组件 </li>
+<li>usingComponentst里添加<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs 1c">&#x27;usingComponents&#x27;: &#123;<br>  <span class="hljs-string">&quot;my-test&quot;</span>: <span class="hljs-string">&quot;/components/test/test&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>在页面 .wxml 中使用</li>
+</ul>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-section">&lt;my-test&gt;</span><span class="hljs-section">&lt;\my-test&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="全局引用"><a href="#全局引用" class="headerlink" title="全局引用"></a>全局引用</h2><ul>
+<li>在app.json全局配置文件引用组件</li>
+</ul>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">配置文件中 =&gt;<br><br><span class="hljs-string">&quot;pages&quot;</span>: <span class="hljs-string">...</span>,<br><span class="hljs-string">&quot;window&quot;</span>: <span class="hljs-string">...</span>,<br><span class="hljs-params">----</span>&gt;新增<br>&#x27;usingComponents&#x27;: &#123;<br>  <span class="hljs-string">&quot;my-test2&quot;</span>: <span class="hljs-string">&quot;/components/test2/test2&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>在页面 .wxml 中使用</li>
+<li><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-section">&lt;my-test2&gt;</span><span class="hljs-section">&lt;\my-test2&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="组件页面区别"><a href="#组件页面区别" class="headerlink" title="组件页面区别"></a>组件页面区别</h1><blockquote>
+<p>①组件的.json文件 –&gt; “component”: true,<br>②组件的调用的 Component()函数  , 页面调用Page()<br>③组件的事件处理函数定义到methods节点中</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/**</span><br><span class="hljs-comment">  * 组件的方法列表</span><br><span class="hljs-comment">  */</span><br> methods: &#123;<br><br> &#125;<br></code></pre></td></tr></table></figure>
+
+
+<h1 id="自定义组件样式"><a href="#自定义组件样式" class="headerlink" title="自定义组件样式"></a>自定义组件样式</h1><h2 id="组件样式隔离-注意点"><a href="#组件样式隔离-注意点" class="headerlink" title="组件样式隔离 注意点"></a>组件样式隔离 注意点</h2><blockquote>
+<p>app.wxss全局样式对组件无效<br>只有clas选择器有样式隔离！ id选择器，属性选择，标签选择器不受样式隔离影响<br>在组件和引用组件页面韩总 建议用class选择器，不用 id  属性 标签选择器</p>
+</blockquote>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs arduino">app.wxss里<br><br>text &#123;<br> font-size:<span class="hljs-number">10</span>rpx;<br>&#125;<br>受到影响，自定义组件字体也变小<br></code></pre></td></tr></table></figure>
+
+<h2 id="修改-组件样式隔离-选项"><a href="#修改-组件样式隔离-选项" class="headerlink" title="修改 组件样式隔离 选项"></a>修改 组件样式隔离 选项</h2><blockquote>
+<p>外部控制内部样式： 通过stylesolation<br>isolated 启用样式隔离 （默认）<br>apply-shared 页面影响 自定义组件<br>shared  双向影响</p>
+</blockquote>
+<ul>
+<li>① 在组件 .js 文件新增配置<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs awk">Component(&#123;<br>  <span class="hljs-regexp">//</span>新增<br>  options: &#123;<br>    stylesolation : <span class="hljs-string">&#x27;isolated&#x27;</span><br>  &#125;<br> &#125;)<br></code></pre></td></tr></table></figure></li>
+<li>② 在组件的 .json文件新增配置</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">&#123;<br>  stylesolation : <span class="hljs-string">&#x27;isolated&#x27;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<h1 id="data-数据"><a href="#data-数据" class="headerlink" title="data 数据"></a>data 数据</h1><blockquote>
+<p>在小程序组件中，用于组件末班渲染的私有数据，需要定义到data节点中</p>
+</blockquote>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs dts">Component(<span class="hljs-punctuation">&#123;</span><br> <br>  <span class="hljs-comment">/**</span><br><span class="hljs-comment">   * 组件的初始数据</span><br><span class="hljs-comment">   */</span><br><span class="hljs-symbol">  data:</span> <span class="hljs-punctuation">&#123;</span><br><span class="hljs-symbol">   count:</span> <span class="hljs-number">0</span>,<br><span class="hljs-symbol">   list:</span> []<br>  <span class="hljs-punctuation">&#125;</span>,<br><span class="hljs-punctuation">&#125;</span>)<br></code></pre></td></tr></table></figure>
+
+<h1 id="methods-方法"><a href="#methods-方法" class="headerlink" title="methods 方法"></a>methods 方法</h1><ul>
+<li>在小承租组件中，事件处理函数和自定义方法需要定义到 methods 节点中<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-built_in">Component</span>(&#123;<br>  <span class="hljs-comment">/**</span><br><span class="hljs-comment">   * 组件的方法列表</span><br><span class="hljs-comment">   */</span><br>  methods: &#123;<br>   <span class="hljs-built_in">addCount</span>() &#123;<br>     this<span class="hljs-selector-class">.setData</span>(&#123;count: this<span class="hljs-selector-class">.data</span><span class="hljs-selector-class">.count</span> + <span class="hljs-number">1</span>&#125;)<br>     this.<span class="hljs-built_in">_showCount</span>()<br>   &#125;<br>   <span class="hljs-built_in">_showCount</span>() &#123;<br>      console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">&quot;自定义方法以_开头&quot;</span>)<br>   &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="properties-属性"><a href="#properties-属性" class="headerlink" title="properties 属性"></a>properties 属性</h1><ul>
+<li>在小程序组件中，properties是组件的对外属性，用来接受外界传递到组件的数据<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs arcade">Component(&#123;<br>  <span class="hljs-comment">/**</span><br><span class="hljs-comment">   * 组件的属性列表</span><br><span class="hljs-comment">   */</span><br><br>  properties: &#123;<br>      <span class="hljs-comment">/**  ①完整定义属性的方式，需要色指定默认值，建议用此方式 **/</span><br>      <span class="hljs-built_in">max</span>: &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-built_in">Number</span>,<br>        <span class="hljs-attr">value</span>: <span class="hljs-number">10</span><br>       &#125;,<br>       <span class="hljs-comment">/** ② 简化属性定义方式: 不需要制定默认值时候，建议用 **/</span><br>       <span class="hljs-built_in">max</span>: <span class="hljs-built_in">Number</span><br>  &#125;,<br> &#125;)<br> <br> &lt;my-test <span class="hljs-built_in">max</span>=<span class="hljs-string">&quot;99&quot;</span>&gt;&lt;/my-test&gt;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>data和properties区别<br> data 倾向存组件的私有数据   可读可写<br>properties  倾向存组件的 外界来的数据  可读可写</p>
+</blockquote>
+<h1 id="自定义组件-数据监听器"><a href="#自定义组件-数据监听器" class="headerlink" title="自定义组件 - 数据监听器"></a>自定义组件 - 数据监听器</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php">新建test3组件  在页面引用test3组件<br><span class="hljs-title function_ invoke__">Component</span>(&#123;<br> <span class="hljs-comment">/**</span><br><span class="hljs-comment">   * 组件的初始数据</span><br><span class="hljs-comment">   */</span><br>  <span class="hljs-attr">data</span>: &#123;<br>      <span class="hljs-attr">rgb</span>: &#123; <br>           <span class="hljs-attr">r</span>: <span class="hljs-number">0</span>,<br>           <span class="hljs-attr">g</span>: <span class="hljs-number">0</span> ,<br>           <span class="hljs-attr">b</span>: <span class="hljs-number">0</span><br>       &#125;,<br>       <span class="hljs-attr">fullColor</span>: <span class="hljs-string">&#x27;0, 0, 0&#x27;</span> //更具rgb 对象三个属性，动态计算 fullColor得值，显示color 文本值<br>  &#125;,<br><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>渲染UI结构</p>
+</blockquote>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-comment">//.wxml</span><br>&lt;view style=<span class="hljs-string">&quot;background-color: rgb&#123;&#123;fullColor&#125;&#125;;&quot;</span> <span class="hljs-keyword">class</span>=&quot;<span class="hljs-symbol">colorBox</span>&quot;&gt;色值&lt;/<span class="hljs-symbol">view</span>&gt;<br>&lt;<span class="hljs-symbol">button</span> <span class="hljs-symbol">size</span>=&quot;<span class="hljs-symbol">mini</span>&quot; <span class="hljs-symbol">bindtap</span>=&quot;<span class="hljs-symbol">changeR</span>&quot; <span class="hljs-symbol">type</span>=&quot;<span class="hljs-symbol">default</span>&quot;&gt;<span class="hljs-symbol">R</span>&lt;/<span class="hljs-symbol">button</span>&gt;<br>&lt;<span class="hljs-symbol">button</span> <span class="hljs-symbol">size</span>=&quot;<span class="hljs-symbol">mini</span>&quot;  <span class="hljs-symbol">bindtap</span>=&quot;<span class="hljs-symbol">cahngeG</span>&quot; <span class="hljs-symbol">type</span>=&quot;<span class="hljs-symbol">primary</span>&quot;&gt;<span class="hljs-symbol">G</span>&lt;\<span class="hljs-symbol">button</span>&gt;<br>&lt;<span class="hljs-symbol">buttton</span> <span class="hljs-symbol">size</span>=&quot;<span class="hljs-symbol">mini</span>&quot;  <span class="hljs-symbol">bindtap</span>=&quot;<span class="hljs-symbol">changeB</span>&quot; <span class="hljs-symbol">type</span>=&quot;<span class="hljs-symbol">warn</span>&quot;&gt;<span class="hljs-symbol">B</span>&lt;\<span class="hljs-symbol">button</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css">//<span class="hljs-selector-class">.wxss</span> 样式<br><span class="hljs-selector-class">.colorBox</span> &#123;<br>  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">200</span>rpx;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">24</span>rpx;<br>  <span class="hljs-attribute">color</span>: white;<br>  <span class="hljs-attribute">text-shadow</span>: <span class="hljs-number">0</span>rpx <span class="hljs-number">0</span>rpx <span class="hljs-number">2</span>rpx black;<br>  <span class="hljs-attribute">text-align</span>: center;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">methods: &#123;<br> changeR() &#123;<br>     <span class="hljs-keyword">this</span>.setData(&#123;<br>      <span class="hljs-string">&#x27;rgb.r&#x27;</span>: <span class="hljs-keyword">this</span>.<span class="hljs-keyword">data</span>.rgb.r + <span class="hljs-number">5</span> &gt; <span class="hljs-number">255</span> : <span class="hljs-keyword">this</span>.<span class="hljs-keyword">data</span>.rgb.r + <span class="hljs-number">5</span><br>     &#125;)<br>  &#125;,<br>  changeG() &#123;<br>     <span class="hljs-keyword">this</span>.setData(&#123;<br>      <span class="hljs-string">&#x27;rgb.g&#x27;</span>: <span class="hljs-keyword">this</span>.<span class="hljs-keyword">data</span>.rgb.g + <span class="hljs-number">5</span> &gt; <span class="hljs-number">255</span> : <span class="hljs-keyword">this</span>.<span class="hljs-keyword">data</span>.rgb.g + <span class="hljs-number">5</span><br>     &#125;)<br>  &#125;,<br>   changeB() &#123;<br>     <span class="hljs-keyword">this</span>.setData(&#123;<br>      <span class="hljs-string">&#x27;rgb.r&#x27;</span>: <span class="hljs-keyword">this</span>.<span class="hljs-keyword">data</span>.rgb.b + <span class="hljs-number">5</span> &gt; <span class="hljs-number">255</span> : <span class="hljs-keyword">this</span>.<span class="hljs-keyword">data</span>.rgb.b + <span class="hljs-number">5</span><br>     &#125;)<br>  &#125;,<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>监听对象中指定属性变化</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-title class_">Component</span>(&#123;<br>   <span class="hljs-attr">observers</span>: &#123;<br>    <span class="hljs-comment">//监听rgb 对象 上 r g  b 三个子属性变化</span><br>     <span class="hljs-string">&#x27;rgb.r, rgb.g, rgb.b&#x27;</span> :  <span class="hljs-keyword">function</span>(<span class="hljs-params">r, g , b</span>) &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>( &#123;<br>          <span class="hljs-attr">fullColor</span>: <span class="hljs-string">`<span class="hljs-subst">$&#123;r&#125;</span>,<span class="hljs-subst">$&#123;g&#125;</span>,<span class="hljs-subst">$&#123;b&#125;</span>`</span> <span class="hljs-comment">//fullColor生成新的值</span><br>      &#125;)<br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>监听对象中所有属性的变化</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"> <span class="hljs-attr">observers</span>: &#123;<br>  <span class="hljs-comment">//通配符 **  监听对象中所有属性的变化   拿到obj 对象</span><br>   <span class="hljs-string">&#x27;rgb.**&#x27;</span> :  <span class="hljs-keyword">function</span>(<span class="hljs-params">obj</span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>( &#123;<br>        <span class="hljs-attr">fullColor</span>: <span class="hljs-string">`<span class="hljs-subst">$&#123;obj.r&#125;</span>,<span class="hljs-subst">$&#123;obj.g&#125;</span>,<span class="hljs-subst">$&#123;obj.b&#125;</span>`</span> <span class="hljs-comment">//fullColor生成新的值</span><br>    &#125;)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<h1 id="纯数据字段"><a href="#纯数据字段" class="headerlink" title="纯数据字段"></a>纯数据字段</h1><ul>
+<li>概念：纯数据字段指的是哪些不用于界面渲染的data字段</li>
+<li>场景： 某些data的字段 既不会展示在界面上，也不会传递给其他组件，仅在组件内部使用，带这猴子那个特性的data字段适合被设置为纯数据字段</li>
+<li>有助于提升页面性能</li>
+<li>使用规则： 在Component构造器的options节点中，指定pureDataPattern为正则表达式，字段名符合这个规则表达式的字段将成为纯数据字段</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk">Component(&#123;<br>   options: &#123;<br>      pureDataPattern: <span class="hljs-regexp">/^_/</span>  , <span class="hljs-regexp">//</span>以下划线开头字段<br>   &#125;,<br>   data: &#123;<br>    a: true, <span class="hljs-regexp">//</span>普通数据字段<br>    _b: true, <span class="hljs-regexp">//</span>纯数据字段   只用于业务逻辑处理，不用于界面渲染<br>   <br>   &#125;<br>   <br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h2 id="使用纯数据字段改在数据监听器"><a href="#使用纯数据字段改在数据监听器" class="headerlink" title="使用纯数据字段改在数据监听器"></a>使用纯数据字段改在数据监听器</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-title function_ invoke__">Component</span>(&#123;<br>   <span class="hljs-attr">options</span>: &#123;<br>      <span class="hljs-attr">pureDataPattern</span>: /^_/  , //以下划线开头字段<br>   &#125;,<br>   <span class="hljs-comment">/**</span><br><span class="hljs-comment">   * 组件的初始数据</span><br><span class="hljs-comment">   * pureDataPattern得正则规则， _rgb 带下划线，则为纯数据字段</span><br><span class="hljs-comment">   */</span><br>   <span class="hljs-attr">data</span>: &#123;<br>      <span class="hljs-attr">_rgb</span>: &#123; <br>           <span class="hljs-attr">r</span>: <span class="hljs-number">0</span>,<br>           <span class="hljs-attr">g</span>: <span class="hljs-number">0</span> ,<br>           <span class="hljs-attr">b</span>: <span class="hljs-number">0</span><br>       &#125;,<br>      <span class="hljs-attr">fullColor</span>: <span class="hljs-string">&#x27;0, 0, 0&#x27;</span> //更具rgb 对象三个属性，动态计算 fullColor得值，显示color 文本值<br>  &#125;,<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h1 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h1><h2 id="组件的全部生命周期函数"><a href="#组件的全部生命周期函数" class="headerlink" title="组件的全部生命周期函数"></a>组件的全部生命周期函数</h2><table>
+<thead>
+<tr>
+<th align="left">生命周期函数</th>
+<th align="left">参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">created</td>
+<td align="left">无</td>
+<td align="left">在组件实例刚刚被创建时候执行</td>
+</tr>
+<tr>
+<td align="left">attached</td>
+<td align="left">无</td>
+<td align="left">在组件实例进入页面节点数时执行</td>
+</tr>
+<tr>
+<td align="left">ready</td>
+<td align="left">无</td>
+<td align="left">在组件在视图层布局完成后执行</td>
+</tr>
+<tr>
+<td align="left">moved</td>
+<td align="left">无</td>
+<td align="left">在组件被移动盗节点另外一个位置时执行</td>
+</tr>
+<tr>
+<td align="left">detached</td>
+<td align="left">无</td>
+<td align="left">在组件实例被从页面节点数移除时候执行</td>
+</tr>
+<tr>
+<td align="left">eddor</td>
+<td align="left">Object Error</td>
+<td align="left">每当组件方法抛出错误时候执行</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>①created</p>
+</blockquote>
+<ul>
+<li>不能调用setData</li>
+<li>在这个函数周期内，只应该用于给组件得this 挂载一些自定义的属性字段<blockquote>
+<p>②attached  完全初始化玩不，进入页面节点树后 出发attached函数</p>
+</blockquote>
+</li>
+<li>this.data已被初始化完毕</li>
+<li>大部分初始化工作在此函数，eg:发请求获取初始化数据<blockquote>
+<p>③detached  在组件页面离开页面节点树后，detached函数触发</p>
+</blockquote>
+</li>
+<li>退出一个面，会触发页面内每一个自定义组件detached函数触发</li>
+<li>清理工作，eg:销毁时间监听</li>
+</ul>
+<h2 id="lifttimes-节点"><a href="#lifttimes-节点" class="headerlink" title="lifttimes 节点"></a>lifttimes 节点</h2><ul>
+<li>在小程序组件中，生命周期函数可以直接定义在Component构造器的第一级参数中，可以在lifttimes字段内进行声明（这是推的方式，其优先级最高）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-title class_">Component</span>(&#123;<br>  <span class="hljs-comment">//推荐用法</span><br>  <span class="hljs-attr">lifttimes</span>: &#123;<br>     <span class="hljs-title function_">attached</span>(<span class="hljs-params"></span>) &#123;&#125;,<br>     <span class="hljs-title function_">detached</span>(<span class="hljs-params"></span>) &#123;&#125;<br>  &#125;,<br>  <span class="hljs-comment">//旧式定义方式  不推荐</span><br>   <span class="hljs-title function_">attached</span>(<span class="hljs-params"></span>) &#123;&#125;,<br>   <span class="hljs-title function_">detached</span>(<span class="hljs-params"></span>) &#123;&#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h2 id="组件所在页面的生命周期"><a href="#组件所在页面的生命周期" class="headerlink" title="组件所在页面的生命周期"></a>组件所在页面的生命周期</h2><ul>
+<li>自定义组件的行为需要依赖页面状态的变化，则就徐亚用到组件所在页面的生命周期</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dart">eg： 每当出发页面的<span class="hljs-keyword">show</span>生命周期函数时候，随机生成rgb颜色<br><br></code></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="left">生命周期函数</th>
+<th align="left">参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">show</td>
+<td align="left">无</td>
+<td align="left">组件所在页面 被展示时候执行</td>
+</tr>
+<tr>
+<td align="left">hide</td>
+<td align="left">无</td>
+<td align="left">组件所在页面  被影藏时候执行</td>
+</tr>
+<tr>
+<td align="left">resize</td>
+<td align="left">Object Size</td>
+<td align="left">组件所在页面  尺寸发生变化时候执行</td>
+</tr>
+</tbody></table>
+<h2 id="pageLifrtimes-节点"><a href="#pageLifrtimes-节点" class="headerlink" title="pageLifrtimes 节点"></a>pageLifrtimes 节点</h2><ul>
+<li>组件所在页面的生命周期函数，需要定在pageLifrtimes节点中<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">Component(&#123;<br>  pageLifrtimes: &#123;<br>     show: <span class="hljs-built_in">function</span>() &#123;&#125;,<br>     hide: <span class="hljs-built_in">function</span>() &#123;&#125;,<br>     <span class="hljs-attribute">resize</span>: <span class="hljs-built_in">function</span>(size) &#123;&#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="自定义组件-插槽"><a href="#自定义组件-插槽" class="headerlink" title="自定义组件 - 插槽"></a>自定义组件 - 插槽</h1><ul>
+<li>在自定义组件wxml结构中，提供一个<slot>节点（插槽），用于承载组件使用者提供的wxml结构</li>
+</ul>
+<h2 id="单个插槽"><a href="#单个插槽" class="headerlink" title="单个插槽"></a>单个插槽</h2><ul>
+<li>在小程序中，默认每个自定义组件只允许使用一个<slot>进行占位，这种个数上的限制叫单个插槽</li>
+</ul>
+<blockquote>
+<p> 组件的封装者-</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrapper&quot;</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>这里是组件的内部节点<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br> <span class="hljs-comment">&lt;!--对于不确定的内容，可以用&lt;slot&gt;进行占位，具体的内容由组件的使用者决定--&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>&lt;\view&gt;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>组件得使用者</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">component-tag-name</span>&gt;</span><br> <span class="hljs-comment">&lt;!-- 这部分内容将被放置在组件&lt;slot&gt;的位置上--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>这里是插入到组件slot的内容&lt;\view&gt;<br>&lt;\component-tag-name&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="启用多个插槽"><a href="#启用多个插槽" class="headerlink" title="启用多个插槽"></a>启用多个插槽</h2><blockquote>
+<p>配置 - 在小程序的自定义组件还在那个，需要使用多<slot>插槽时，在组件的.js文件中，在options节点 设置mutipleSlots</p>
+</blockquote>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs dts">Component(<span class="hljs-punctuation">&#123;</span><br><span class="hljs-symbol"> options:</span> <span class="hljs-punctuation">&#123;</span><br><span class="hljs-symbol">    mutipleSlots:</span> true <span class="hljs-comment">//在组件定义时候，启动多slot服务</span><br> <span class="hljs-punctuation">&#125;</span>,<br><span class="hljs-symbol"> properties:</span> ... ,<br><span class="hljs-symbol"> methods:</span>  ...<br> <br><span class="hljs-punctuation">&#125;</span>)<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>构建 - 组件的.wxml中使用多个<slot>标签，以不同的name来区分不同插槽</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--组件模板 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrapper&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--name为before的第1个 slot插槽--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;before&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>---这是一段固定文本内容，分割----&lt;\view&gt;<br>    <span class="hljs-comment">&lt;!--name为after的 第2 个 slot插槽--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;after&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>&lt;\view&gt;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 -带有多个插槽的自定义组件时，需要用slot属性来将节点插入到不同的<slot>中</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--引入组件页面模板 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">component-tag-name</span>&gt;</span><br><br> <span class="hljs-comment">&lt;!--这部分内将放置在组件 &lt;slot name=&quot;before&quot;&gt;的位置上 --&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;before&quot;</span>&gt;</span>这里是插入到组件slot name=&quot;before&quot;中的内容&lt;\view&gt;<br> <br>  <span class="hljs-comment">&lt;!--这部分内将放置在组件 &lt;slot name=&quot;after&quot;&gt;的位置上 --&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;after&quot;</span>&gt;</span>这里是插入到组件slot name=&quot;after&quot;中的内容&lt;\view&gt;<br> <br>&lt;\component-tag-name&gt;<br></code></pre></td></tr></table></figure>
+
+<h1 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h1><h2 id="父子组件通信-方式"><a href="#父子组件通信-方式" class="headerlink" title="父子组件通信 -方式"></a>父子组件通信 -方式</h2><blockquote>
+<p>① 属性绑定</p>
+</blockquote>
+<ul>
+<li>父组件-&gt;子组件的指定属性设置数据，仅能设置json兼容的数据<blockquote>
+<p>② 事件绑定</p>
+</blockquote>
+</li>
+<li>子组件-&gt;父组件传递数据，传递任意数据<blockquote>
+<p>③ 获取组件实例</p>
+</blockquote>
+</li>
+<li>父组件中，通过this.selectComponent()获取子组件实例对象</li>
+<li>通过实例对象，直接访问子组件任意数据和方法</li>
+</ul>
+<h2 id="①-属性绑定-（父传子）"><a href="#①-属性绑定-（父传子）" class="headerlink" title="① 属性绑定 （父传子）"></a>① 属性绑定 （父传子）</h2><ul>
+<li>属性绑定用于实现 （父组件-&gt;子组件），只能传递普通类型的数据，不能传递方法</li>
+</ul>
+<blockquote>
+<p>父组件</p>
+</blockquote>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stata">data: &#123;<br>  <span class="hljs-keyword">count</span>: 0<br>&#125;<br> <span class="hljs-comment">//父组件的wxml 结构</span><br> &lt;my-<span class="hljs-keyword">test</span>  <span class="hljs-keyword">count</span>=<span class="hljs-string">&quot;&#123;&#123;count&#125;&#125;&quot;</span>&gt;&lt;\my-<span class="hljs-keyword">test</span>&gt;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>子组件</p>
+</blockquote>
+<ul>
+<li>子组件在properties节点中声明对应的属性并使用</li>
+</ul>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arcade">properties: &#123;<br>   <span class="hljs-attr">count</span>: <span class="hljs-built_in">Number</span><br>&#125;<br><span class="hljs-comment">//子组件.wxml</span><br>&lt;<span class="hljs-built_in">text</span>&gt;&#123;&#123;<span class="hljs-built_in">count</span>&#125;&#125;&lt;<span class="hljs-built_in">text</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="②-事件绑定（子传父）"><a href="#②-事件绑定（子传父）" class="headerlink" title="② 事件绑定（子传父）"></a>② 事件绑定（子传父）</h2><blockquote>
+<p>传递任意类型数据</p>
+</blockquote>
+<ul>
+<li>在父组件的js中，定义一个函数，这个函数通过自定义事件形式，传递给子组件<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml"><span class="hljs-comment">&lt;!--父组件: 自定义方法会传递给子组件，给子组件调用--&gt;</span></span><br><span class="language-xml">syncCount()</span><span class="hljs-template-variable">&#123;</span><br><span class="hljs-template-variable">  ....</span><br><span class="hljs-template-variable">&#125;</span><br></code></pre></td></tr></table></figure></li>
+<li>在父组件的.wxml中，通过自定义事件的形式，将步骤1的函数引用，传递给子组件<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-comment">&lt;!--1. bind: 自定义事件名称(任意)（推荐） --&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">son-test</span>  <span class="hljs-attr">count</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">count</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">bind:sync</span>=<span class="hljs-string">&quot;syncCount&quot;</span>&gt;</span>&lt;\son-test&gt;</span><br><span class="language-xml"><span class="hljs-comment">&lt;!--2. 在bind后直接写自定义事件名称 自定义事件名称 --&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">son-test</span>  <span class="hljs-attr">count</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">count</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">bindsync</span>=<span class="hljs-string">&quot;syncCount&quot;</span>&gt;</span>&lt;\son-test&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li>在子组件的js种，通过调用this.triggerEvent(‘自定义事件名称’, {参数对象})，将数据发送到父组件<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">子组件<br>methods: &#123;<br> add<span class="hljs-constructor">Count()</span> &#123;<br>  <span class="hljs-comment">//传值给父</span><br>  this.trigger<span class="hljs-constructor">Event(&#x27;<span class="hljs-params">sync</span>&#x27;,&#123;<span class="hljs-params">value</span>: <span class="hljs-params">this</span>.<span class="hljs-params">propertires</span>.<span class="hljs-params">count</span>&#125;)</span><br> &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>在父组件的js中，通过e.detail获取到子组件传递过来的数据<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">syncCount</span><span class="hljs-params">(e)</span></span>&#123;<br>   this<span class="hljs-selector-class">.setData</span>(&#123;<br>     count: e<span class="hljs-selector-class">.detail</span><span class="hljs-selector-class">.value</span><br>   &#125;)<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="③-获取组件实例"><a href="#③-获取组件实例" class="headerlink" title="③ 获取组件实例"></a>③ 获取组件实例</h2><ul>
+<li>父组件调用this.selectComponent(id或class选择器)，获取子组件的实例对象，从而直接访问子组件任意数据和方法，</li>
+<li>调用时候需要传入一个选择器 eg： this.selectComponent(“.my-component”)</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-comment">//.wxml</span><br>&lt;my-test3  count=<span class="hljs-string">&quot;&#123;&#123;count&#125;&#125;&quot;</span>  bind:sync=<span class="hljs-string">&quot;bindCount&quot;</span> class=<span class="hljs-string">&quot;customA&quot;</span> id=<span class="hljs-string">&quot;cA&quot;</span>&gt;&lt;/my-test3&gt;<br>&lt;<span class="hljs-selector-tag">button</span> bindtap=<span class="hljs-string">&quot;getChild&quot;</span>&gt;获取子组件实例&lt;/button&gt;<br><br><span class="hljs-comment">//页面节点平级处</span><br><span class="hljs-function"><span class="hljs-title">getChild</span><span class="hljs-params">()</span></span> &#123;<br>     <span class="hljs-comment">//切记下面参数不能传递标签选择器 &#x27;my-test3&#x27;,不然返回 null</span><br>    const child = this<span class="hljs-selector-class">.selectComponent</span>(<span class="hljs-string">&#x27;.customA&#x27;</span>) <span class="hljs-comment">// &#x27;.customA&#x27;, 也可以传递id选择器 &#x27;#cA&#x27;</span><br>    console<span class="hljs-selector-class">.log</span>(child)<br>    child<span class="hljs-selector-class">.setData</span>(&#123;count: child<span class="hljs-selector-class">.properties</span><span class="hljs-selector-class">.count</span> + <span class="hljs-number">1</span>&#125;)<br>    child<span class="hljs-selector-class">.addCount</span>()<span class="hljs-comment">//掉子组件方法</span><br>&#125; <br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<h1 id="自定义组件-behaviors"><a href="#自定义组件-behaviors" class="headerlink" title="自定义组件 - behaviors"></a>自定义组件 - behaviors</h1><blockquote>
+<p>behavior 是小程序中，用于实现组件代码贡献的特性，（vue.js的mixins）</p>
+</blockquote>
+<h2 id="behavior-工作方式"><a href="#behavior-工作方式" class="headerlink" title="behavior - 工作方式"></a>behavior - 工作方式</h2><blockquote>
+<p>每个 behaviors 可以包含一组属性 数据 生命周期函数 和方法，组件应用它时，他的属性 数据 方法 会被合并到组件中<br>每个组件可以引用多个 behavior， behaviors可以用引用其它 behavior</p>
+</blockquote>
+<h2 id="behavior-创建"><a href="#behavior-创建" class="headerlink" title="behavior - 创建"></a>behavior - 创建</h2><blockquote>
+<p>调用Behavior(Object object)方法 创建一个共享 behavior 实例对象</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>调用Behavior()方法，创建实例对象<br><span class="hljs-regexp">//</span>并使用 module.exports 将 behavior实例对象共享出去<br>module.exports =  Behavior(&#123;<br> <span class="hljs-regexp">//</span>属性节点<br> paoperties: &#123;&#125;,<br> <span class="hljs-regexp">//</span>私有数据节点<br> data: &#123;username: <span class="hljs-string">&#x27;hhh&#x27;</span>&#125;,<br> <span class="hljs-regexp">//</span>事件处理函数和自定义方法节点<br> methods: &#123;&#125;,<br> ...<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h2 id="behavior-导入-使用"><a href="#behavior-导入-使用" class="headerlink" title="behavior -  导入 + 使用"></a>behavior -  导入 + 使用</h2><blockquote>
+<p>在组件中，使用require()方法导入需要的behavior，挂载后即可访问behavior的数据或方法</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">//test组件的.js文件中</span><br><br><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">myBehavior</span> = <span class="hljs-keyword">require</span>(<span class="hljs-string">&#x27;../../behaviors/my-behavior&#x27;</span>)<br><br><span class="hljs-comment">//导入的behavior实例对象，挂载到 behaviors 数组节点中，即可生效</span><br><span class="hljs-title function_ invoke__">Component</span>(&#123;<br>  <span class="hljs-attr">behaviors</span>: [myBehavior],<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">//test组件的.wxml文件中</span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>在behavior中定义数据username：</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">username</span>&#125;&#125;</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="behavior-可用节点"><a href="#behavior-可用节点" class="headerlink" title="behavior - 可用节点"></a>behavior - 可用节点</h2><table>
+<thead>
+<tr>
+<th align="left">可用节点</th>
+<th align="left">type</th>
+<th align="left">是否必填</th>
+<th align="left">描述</th>
+<th align="left">其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">properties</td>
+<td align="left">Object Map</td>
+<td align="left"></td>
+<td align="left">同组件的属性</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">data</td>
+<td align="left">Object</td>
+<td align="left"></td>
+<td align="left">同组件的数据</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">methods</td>
+<td align="left">Object</td>
+<td align="left"></td>
+<td align="left">同自定义组件的方法</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">behaviors</td>
+<td align="left">String Array</td>
+<td align="left"></td>
+<td align="left">引入其他的behavior</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">created</td>
+<td align="left">Function</td>
+<td align="left"></td>
+<td align="left">leftCycle函数</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">attached</td>
+<td align="left">Function</td>
+<td align="left"></td>
+<td align="left">leftCycle函数</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">ready</td>
+<td align="left">Function</td>
+<td align="left"></td>
+<td align="left">leftCycle函数</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">moved</td>
+<td align="left">Function</td>
+<td align="left"></td>
+<td align="left">leftCycle函数</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">detached</td>
+<td align="left">Function</td>
+<td align="left"></td>
+<td align="left">leftCycle函数</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="behavior-同名字段覆盖和组合规则"><a href="#behavior-同名字段覆盖和组合规则" class="headerlink" title="behavior -  同名字段覆盖和组合规则"></a>behavior -  同名字段覆盖和组合规则</h2><blockquote>
+<p>组件和他引用的behavior可以包含同名的字段<br>处理规则：</p>
+</blockquote>
+<ul>
+<li>①data同名的数据字段</li>
+<li>②同名的属性properties 或方法 methods</li>
+<li>③同名的生命周期函数</li>
+</ul>
+
                 
               </div>
             
