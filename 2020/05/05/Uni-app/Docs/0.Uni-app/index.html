@@ -16,15 +16,15 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="YoYo Swift">
+    <meta name="description" content="uni-app - 初始化 uni-app  ui   在微信开发者工具中   设置-&gt; 安全设置 面板，蕲艾服务端口   消除警告   manifest.json 源码视图 消除警告   新增   “checkSiteMap”: false1234567&quot;mp-weixin&quot;: &amp;#123;  &quot;appid&quot;: &quot;2312312&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="0.Uni-app">
 <meta property="og:url" content="http://example.com/2020/05/05/Uni-app/Docs/0.Uni-app/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="YoYo Swift">
+<meta property="og:description" content="uni-app - 初始化 uni-app  ui   在微信开发者工具中   设置-&gt; 安全设置 面板，蕲艾服务端口   消除警告   manifest.json 源码视图 消除警告   新增   “checkSiteMap”: false1234567&quot;mp-weixin&quot;: &amp;#123;  &quot;appid&quot;: &quot;2312312&quot;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-04T16:00:01.000Z">
-<meta property="article:modified_time" content="2023-07-08T09:21:28.470Z">
+<meta property="article:modified_time" content="2023-07-08T15:49:38.902Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 words
+          532 words
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          1 mins
+          5 mins
         
       </span>
     
@@ -272,7 +272,35 @@
             
               <div class="markdown-body">
                 
-                
+                <h1 id="uni-app-初始化"><a href="#uni-app-初始化" class="headerlink" title="uni-app - 初始化"></a>uni-app - 初始化</h1><ul>
+<li>uni-app  ui</li>
+</ul>
+<blockquote>
+<p>在微信开发者工具中</p>
+</blockquote>
+<ul>
+<li>设置-&gt; 安全设置 面板，蕲艾服务端口</li>
+</ul>
+<blockquote>
+<p>消除警告</p>
+</blockquote>
+<ul>
+<li>manifest.json 源码视图</li>
+<li>消除警告   新增   “checkSiteMap”: false<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ada"><span class="hljs-string">&quot;mp-weixin&quot;</span>: &#123;<br>  <span class="hljs-string">&quot;appid&quot;</span>: <span class="hljs-string">&quot;2312312&quot;</span>,<br>  <span class="hljs-string">&quot;setting&quot;</span> : &#123;<br>     <span class="hljs-string">&quot;urlCheck&quot;</span>: <span class="hljs-literal">true</span>,<br>     <span class="hljs-string">&quot;checkSiteMap&quot;</span>: <span class="hljs-literal">false</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="uni-app-git"><a href="#uni-app-git" class="headerlink" title="uni-app -  git"></a>uni-app -  git</h1><h2 id="git-忽略文件"><a href="#git-忽略文件" class="headerlink" title="git - 忽略文件"></a>git - 忽略文件</h2><blockquote>
+<p> 项目目录配置：新增 .gitignore文件（忽略文件）</p>
+</blockquote>
+<ul>
+<li>新建-自定义文件-.gitignore文件<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">/node_modules<br><span class="hljs-regexp">/unpackage/</span>dist<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="git-仓库"><a href="#git-仓库" class="headerlink" title="git - 仓库"></a>git - 仓库</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">git ini <br>git <span class="hljs-keyword">add </span>. <br>git status   检查<br>git commit -m <span class="hljs-string">&quot;init project&quot;</span><br>git status <br><br>git remote <span class="hljs-keyword">add </span> <span class="hljs-keyword">origin </span>git@gitee.com:xxx...git<br>git push -u <span class="hljs-keyword">origin </span> master<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>配置公钥 运行检查</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> -t git<span class="hljs-variable">@gitee</span>.com 检测<br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -362,9 +390,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/20/MiniProgram/Dev/0.%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E6%96%B9%E5%BC%8F/" title="0.小程序跳转页面方式">
+                      <a href="/2020/06/01/Uni-app/Docs/1.Uni-app-tabBar/" title="Uni-app-tabBar">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">0.小程序跳转页面方式</span>
+                        <span class="hidden-mobile">Uni-app-tabBar</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
