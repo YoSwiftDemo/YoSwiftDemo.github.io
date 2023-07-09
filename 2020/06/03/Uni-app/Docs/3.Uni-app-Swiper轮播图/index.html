@@ -16,21 +16,21 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Network 配置 平台限制，小程序不支持axio，而是原生wx.request() 不支持烂机器等全局定制功能uini-app 使用@escook&#x2F;request-miniprogram首次安装  @escook&#x2F;request-miniprogram插件  新项目，安装 npm init -y -&gt; package.json  1npm install @escoo">
+    <meta name="description" content="使用123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&lt;template&gt;	&lt;view&gt;		&lt;!--    轮播区 --&gt;		&lt;swiper :indicator-dots&#x3D;&quot;true&quot; :">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2.Uni-app-Network">
-<meta property="og:url" content="http://example.com/2020/06/01/Uni-app/Docs/2.Uni-app-Network/index.html">
+<meta property="og:title" content="3.Uni-app-Swiper轮播图">
+<meta property="og:url" content="http://example.com/2020/06/03/Uni-app/Docs/3.Uni-app-Swiper%E8%BD%AE%E6%92%AD%E5%9B%BE/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="Network 配置 平台限制，小程序不支持axio，而是原生wx.request() 不支持烂机器等全局定制功能uini-app 使用@escook&#x2F;request-miniprogram首次安装  @escook&#x2F;request-miniprogram插件  新项目，安装 npm init -y -&gt; package.json  1npm install @escoo">
+<meta property="og:description" content="使用123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&lt;template&gt;	&lt;view&gt;		&lt;!--    轮播区 --&gt;		&lt;swiper :indicator-dots&#x3D;&quot;true&quot; :">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-31T16:00:01.000Z">
-<meta property="article:modified_time" content="2023-07-08T16:30:56.979Z">
+<meta property="article:published_time" content="2020-06-02T16:00:01.000Z">
+<meta property="article:modified_time" content="2023-07-09T06:13:10.672Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>2.Uni-app-Network - YoYo</title>
+  <title>3.Uni-app-Swiper轮播图 - YoYo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2.Uni-app-Network"></span>
+            <span id="subtitle" data-typed-text="3.Uni-app-Swiper轮播图"></span>
           
         </div>
 
@@ -206,8 +206,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-06-01 00:00" pubdate>
-          June 1, 2020 am
+        <time datetime="2020-06-03 00:00" pubdate>
+          June 3, 2020 am
         </time>
       </span>
     
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          690 words
+          1.2k words
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          6 mins
+          10 mins
         
       </span>
     
@@ -267,27 +267,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">2.Uni-app-Network</h1>
+            <h1 style="display: none">3.Uni-app-Swiper轮播图</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Network-配置"><a href="#Network-配置" class="headerlink" title="Network 配置"></a>Network 配置</h1><blockquote>
-<p>平台限制，小程序不支持axio，而是原生wx.request() 不支持烂机器等全局定制功能<br>uini-app 使用@escook&#x2F;request-miniprogram<br>首次安装</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@escook/request-miniprogram">@escook&#x2F;request-miniprogram插件</a></p>
-<blockquote>
-<p>新项目，安装 npm init -y -&gt; package.json</p>
-</blockquote>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install @escook/request-miniprogram<br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p>导入</p>
-</blockquote>
-<ul>
-<li>main.js 全局导入<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> 按需导入 <span class="hljs-variable">$http</span> 对象<br>import &#123; <span class="hljs-variable">$http</span> &#125; from <span class="hljs-string">&#x27;@escook/request-miniprogram&#x27;</span><br><br><span class="hljs-regexp">//</span> 将按需导入的 <span class="hljs-variable">$http</span> 挂载到 wx 顶级对象之上，方便全局调用<br>wx.<span class="hljs-variable">$http</span> = <span class="hljs-variable">$http</span><br><br><span class="hljs-regexp">//</span> 在 uni-app 项目中，可以把 <span class="hljs-variable">$http</span> 挂载到 uni 顶级对象之上，方便全局调用<br>uni.<span class="hljs-variable">$http</span> = <span class="hljs-variable">$http</span><br></code></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php"><br>import &#123; <span class="hljs-variable">$http</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@escook/request-miniprogram&#x27;</span><br><br>uni.<span class="hljs-variable">$http</span> =  <span class="hljs-variable">$http</span><br><br><span class="hljs-comment">//请求拦截器</span><br><span class="hljs-variable">$http</span>.beforeRequest =  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>&#123;<br>	uni.<span class="hljs-title function_ invoke__">showLoading</span>(&#123;<br>		<span class="hljs-attr">title</span>:<span class="hljs-string">&#x27;加载中...&#x27;</span><br>	&#125;)<br>&#125;<br><span class="hljs-comment">//响应拦截器</span><br><span class="hljs-variable">$http</span>.afterRequest = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>&#123;<br>  uni.<span class="hljs-title function_ invoke__">hideLoading</span>()<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br>		<span class="hljs-comment">&lt;!--    轮播区 --&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">swiper</span> <span class="hljs-attr">:indicator-dots</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:autoplay</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">:interval</span>=<span class="hljs-string">&quot;3000&quot;</span> <span class="hljs-attr">:duration</span>=<span class="hljs-string">&quot;1000&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">swiper-item</span>  <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item, i) in swiperList&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">i</span> &gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;swiper-item&quot;</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;img&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../static/logo.png&quot;</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">&quot;&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span><br>				  <span class="hljs-comment">&lt;!-- &lt;image :src=&quot;item.image_src&quot;&gt;&lt;/image&gt; --&gt;</span><br>				<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">swiper-item</span>&gt;</span><br>	<br>		<span class="hljs-tag">&lt;/<span class="hljs-name">swiper</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">			<span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">				<span class="hljs-comment">//轮播图-数据</span></span><br><span class="language-javascript">				<span class="hljs-attr">swiperList</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>]</span><br><span class="language-javascript">			&#125;</span><br><span class="language-javascript">		&#125;,</span><br><span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">			<span class="hljs-keyword">async</span> <span class="hljs-title function_">getWiperList</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">				<span class="hljs-keyword">const</span> &#123;</span><br><span class="language-javascript">					<span class="hljs-attr">data</span>: res</span><br><span class="language-javascript">				&#125; = <span class="hljs-keyword">await</span> uni.<span class="hljs-property">$http</span>.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/api/public/v1/home/swiperdata&#x27;</span>)</span><br><span class="language-javascript">				<span class="hljs-keyword">if</span> (res.<span class="hljs-property">meta</span>.<span class="hljs-property">status</span> !== <span class="hljs-number">200</span>) &#123;</span><br><span class="language-javascript">					<span class="hljs-keyword">return</span> uni.<span class="hljs-title function_">showToast</span>(&#123;</span><br><span class="language-javascript">						<span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;请求失败&#x27;</span>,</span><br><span class="language-javascript">						<span class="hljs-attr">duration</span>: <span class="hljs-number">1500</span>,</span><br><span class="language-javascript">						<span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;none&#x27;</span></span><br><span class="language-javascript">					&#125;)</span><br><span class="language-javascript">				&#125;</span><br><span class="language-javascript">				<span class="hljs-variable language_">this</span>.<span class="hljs-property">swiperList</span> = res.<span class="hljs-property">message</span></span><br><span class="language-javascript">			&#125;</span><br><span class="language-javascript">		&#125;,</span><br><span class="language-javascript">		<span class="hljs-title function_">onLoad</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">			<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getWiperList</span>()</span><br><span class="language-javascript">		&#125;</span><br><span class="language-javascript">	&#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> &gt;</span><span class="language-css"></span><br><span class="language-css">	swiper &#123;</span><br><span class="language-css">		<span class="hljs-attribute">height</span>: <span class="hljs-number">330</span>rpx;</span><br><span class="language-css">	<span class="hljs-comment">/* 	.swiper-item,</span></span><br><span class="hljs-comment"><span class="language-css">		image &#123;</span></span><br><span class="hljs-comment"><span class="language-css">			width: 100%;</span></span><br><span class="hljs-comment"><span class="language-css">			height: 100%;</span></span><br><span class="hljs-comment"><span class="language-css">		&#125; */</span></span><br><span class="language-css">	&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -333,8 +318,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2.Uni-app-Network</div>
-      <div>http://example.com/2020/06/01/Uni-app/Docs/2.Uni-app-Network/</div>
+      <div>3.Uni-app-Swiper轮播图</div>
+      <div>http://example.com/2020/06/03/Uni-app/Docs/3.Uni-app-Swiper轮播图/</div>
     </div>
     <div class="license-meta">
       
@@ -346,7 +331,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>June 1, 2020</div>
+          <div>June 3, 2020</div>
         </div>
       
       
@@ -378,9 +363,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/06/01/Uni-app/Docs/1.Uni-app-tabBar/" title="Uni-app-tabBar">
+                      <a href="/2020/06/04/Uni-app/Docs/4.Uni-app-image/" title="4.Uni-app-image">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Uni-app-tabBar</span>
+                        <span class="hidden-mobile">4.Uni-app-image</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -388,8 +373,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/05/05/Uni-app/Docs/0.Uni-app/" title="0.Uni-app">
-                        <span class="hidden-mobile">0.Uni-app</span>
+                      <a href="/2020/06/02/Uni-app/Docs/2.Uni-app-Network/" title="2.Uni-app-Network">
+                        <span class="hidden-mobile">2.Uni-app-Network</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

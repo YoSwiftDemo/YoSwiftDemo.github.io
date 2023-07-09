@@ -16,21 +16,21 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="uni-app - 新增 tabBar pages.json    globalStyle 设置全局导航条样式，注意标题与pages 冲突，pages为准  1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465">
+    <meta name="description" content="Network 配置 平台限制，小程序不支持axio，而是原生wx.request() 不支持烂机器等全局定制功能uini-app 使用@escook&#x2F;request-miniprogram首次安装  @escook&#x2F;request-miniprogram插件  新项目，安装 npm init -y -&gt; package.json  1npm install @escoo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Uni-app-tabBar">
-<meta property="og:url" content="http://example.com/2020/06/01/Uni-app/Docs/1.Uni-app-tabBar/index.html">
+<meta property="og:title" content="2.Uni-app-Network">
+<meta property="og:url" content="http://example.com/2020/06/02/Uni-app/Docs/2.Uni-app-Network/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="uni-app - 新增 tabBar pages.json    globalStyle 设置全局导航条样式，注意标题与pages 冲突，pages为准  1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465">
+<meta property="og:description" content="Network 配置 平台限制，小程序不支持axio，而是原生wx.request() 不支持烂机器等全局定制功能uini-app 使用@escook&#x2F;request-miniprogram首次安装  @escook&#x2F;request-miniprogram插件  新项目，安装 npm init -y -&gt; package.json  1npm install @escoo">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-31T16:00:01.000Z">
-<meta property="article:modified_time" content="2023-07-08T16:05:47.263Z">
+<meta property="article:published_time" content="2020-06-01T16:00:01.000Z">
+<meta property="article:modified_time" content="2023-07-09T06:10:51.162Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Uni-app-tabBar - YoYo</title>
+  <title>2.Uni-app-Network - YoYo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Uni-app-tabBar"></span>
+            <span id="subtitle" data-typed-text="2.Uni-app-Network"></span>
           
         </div>
 
@@ -206,8 +206,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-06-01 00:00" pubdate>
-          June 1, 2020 am
+        <time datetime="2020-06-02 00:00" pubdate>
+          June 2, 2020 am
         </time>
       </span>
     
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k words
+          690 words
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          23 mins
+          6 mins
         
       </span>
     
@@ -267,18 +267,27 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Uni-app-tabBar</h1>
+            <h1 style="display: none">2.Uni-app-Network</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="uni-app-新增-tabBar"><a href="#uni-app-新增-tabBar" class="headerlink" title="uni-app - 新增 tabBar"></a>uni-app - 新增 tabBar</h1><blockquote>
-<p>pages.json </p>
+                <h1 id="Network-配置"><a href="#Network-配置" class="headerlink" title="Network 配置"></a>Network 配置</h1><blockquote>
+<p>平台限制，小程序不支持axio，而是原生wx.request() 不支持烂机器等全局定制功能<br>uini-app 使用@escook&#x2F;request-miniprogram<br>首次安装</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@escook/request-miniprogram">@escook&#x2F;request-miniprogram插件</a></p>
+<blockquote>
+<p>新项目，安装 npm init -y -&gt; package.json</p>
+</blockquote>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install @escook/request-miniprogram<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>导入</p>
 </blockquote>
 <ul>
-<li>globalStyle 设置全局导航条样式，注意标题与pages 冲突，pages为准</li>
+<li>main.js 全局导入<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> 按需导入 <span class="hljs-variable">$http</span> 对象<br>import &#123; <span class="hljs-variable">$http</span> &#125; from <span class="hljs-string">&#x27;@escook/request-miniprogram&#x27;</span><br><br><span class="hljs-regexp">//</span> 将按需导入的 <span class="hljs-variable">$http</span> 挂载到 wx 顶级对象之上，方便全局调用<br>wx.<span class="hljs-variable">$http</span> = <span class="hljs-variable">$http</span><br><br><span class="hljs-regexp">//</span> 在 uni-app 项目中，可以把 <span class="hljs-variable">$http</span> 挂载到 uni 顶级对象之上，方便全局调用<br>uni.<span class="hljs-variable">$http</span> = <span class="hljs-variable">$http</span><br></code></pre></td></tr></table></figure></li>
 </ul>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><code class="hljs awk">&#123;<br>	<span class="hljs-string">&quot;pages&quot;</span>: [&#123;<br>			<span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;pages/home/home&quot;</span>,<br>			<span class="hljs-string">&quot;style&quot;</span>: &#123;<br>				<span class="hljs-string">&quot;navigationBarTitleText&quot;</span>: <span class="hljs-string">&quot;首页&quot;</span>,<br>				<span class="hljs-string">&quot;enablePullDownRefresh&quot;</span>: false<br>			&#125;<br><br>		&#125;, &#123;<br>			<span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;pages/cart/cart&quot;</span>,<br>			<span class="hljs-string">&quot;style&quot;</span>: &#123;<br>				<span class="hljs-string">&quot;navigationBarTitleText&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>				<span class="hljs-string">&quot;enablePullDownRefresh&quot;</span>: false<br>			&#125;<br><br>		&#125;, &#123;<br>			<span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;pages/my/my&quot;</span>,<br>			<span class="hljs-string">&quot;style&quot;</span>: &#123;<br>				<span class="hljs-string">&quot;navigationBarTitleText&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>				<span class="hljs-string">&quot;enablePullDownRefresh&quot;</span>: false<br>			&#125;<br><br>		&#125;,<br>		&#123;<br>			<span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;pages/cate/cate&quot;</span>,<br>			<span class="hljs-string">&quot;style&quot;</span>: &#123;<br>				<span class="hljs-string">&quot;navigationBarTitleText&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>				<span class="hljs-string">&quot;enablePullDownRefresh&quot;</span>: false<br>			&#125;<br><br>		&#125;<br>	],<br>	<span class="hljs-string">&quot;globalStyle&quot;</span>: &#123;<br>		<span class="hljs-string">&quot;navigationBarBackgroundColor&quot;</span>: <span class="hljs-string">&quot;#FF0000&quot;</span>, <span class="hljs-regexp">//</span> 导航栏背景颜色（同状态栏背景色）<br>		<span class="hljs-string">&quot;navigationBarTextStyle&quot;</span>: <span class="hljs-string">&quot;white&quot;</span>, <span class="hljs-regexp">//</span> 导航栏标题颜色及状态栏前景颜色，仅支持 black/white<br>		<span class="hljs-string">&quot;navigationBarTitleText&quot;</span>: <span class="hljs-string">&quot;看上面pages里style 设置 是否为空 &quot;</span>,<br>		<span class="hljs-regexp">//</span> <span class="hljs-string">&quot;navigationStyle&quot;</span>:<span class="hljs-string">&quot;custom&quot;</span>, <span class="hljs-regexp">//</span> 导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看使用注意<br>		<span class="hljs-string">&quot;backgroundColor&quot;</span>: <span class="hljs-string">&quot;#0066CC&quot;</span>, <span class="hljs-regexp">//</span> 下拉显示出来的窗口的背景色<br>		<span class="hljs-string">&quot;backgroundTextStyle&quot;</span>: <span class="hljs-string">&quot;dark&quot;</span>, <span class="hljs-regexp">//</span> 下拉 loading 的样式，仅支持 dark / light<br>		<span class="hljs-string">&quot;enablePullDownRefresh&quot;</span>: true, <span class="hljs-regexp">//</span> 是否开启下拉刷新，详见页面生命周期<br>		<span class="hljs-string">&quot;onReachBottomDistance&quot;</span>: <span class="hljs-number">100</span>, <span class="hljs-regexp">//</span> 页面上拉触底事件触发时距页面底部距离，单位只支持px，详见页面生命周期<br>		<span class="hljs-string">&quot;pageOrientation&quot;</span>: <span class="hljs-string">&quot;auto&quot;</span> <span class="hljs-regexp">//</span> 横屏配置，屏幕旋转设置，仅支持 auto <span class="hljs-regexp">/ portrait /</span> landscape<br>		<span class="hljs-regexp">//</span> <span class="hljs-string">&quot;app-plus&quot;</span>: &#123;<br>		<span class="hljs-regexp">//</span> 	<span class="hljs-string">&quot;background&quot;</span>: <span class="hljs-string">&quot;#efeff4&quot;</span><br>		<span class="hljs-regexp">//</span> &#125;<br>	&#125;,<br>	<span class="hljs-string">&quot;tabBar&quot;</span>: &#123;<br>		<span class="hljs-string">&quot;selectedColor&quot;</span>: <span class="hljs-string">&quot;#000000&quot;</span>,<br>		<span class="hljs-string">&quot;color&quot;</span>: <span class="hljs-string">&quot;#C00000&quot;</span>,<br>		<span class="hljs-string">&quot;list&quot;</span>: [&#123;<br>				<span class="hljs-string">&quot;pagePath&quot;</span>: <span class="hljs-string">&quot;pages/home/home&quot;</span>,<br>				<span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;首页&quot;</span>,<br>				<span class="hljs-string">&quot;iconPath&quot;</span>: <span class="hljs-string">&quot;static/uni.png&quot;</span>,<br>				<span class="hljs-string">&quot;selectedIconPath&quot;</span>: <span class="hljs-string">&quot;static/c9.png&quot;</span><br>			&#125;,<br>			&#123;<br>				<span class="hljs-string">&quot;pagePath&quot;</span>: <span class="hljs-string">&quot;pages/cate/cate&quot;</span>,<br>				<span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;分类&quot;</span>,<br>				<span class="hljs-string">&quot;iconPath&quot;</span>: <span class="hljs-string">&quot;static/uni.png&quot;</span>,<br>				<span class="hljs-string">&quot;selectedIconPath&quot;</span>: <span class="hljs-string">&quot;static/c9.png&quot;</span><br>			&#125;,<br>			&#123;<br>				<span class="hljs-string">&quot;pagePath&quot;</span>: <span class="hljs-string">&quot;pages/cart/cart&quot;</span>,<br>				<span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;购物车&quot;</span>,<br>				<span class="hljs-string">&quot;iconPath&quot;</span>: <span class="hljs-string">&quot;static/uni.png&quot;</span>,<br>				<span class="hljs-string">&quot;selectedIconPath&quot;</span>: <span class="hljs-string">&quot;static/c9.png&quot;</span><br>			&#125;,<br>			&#123;<br>				<span class="hljs-string">&quot;pagePath&quot;</span>: <span class="hljs-string">&quot;pages/my/my&quot;</span>,<br>				<span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;我的&quot;</span>,<br>				<span class="hljs-string">&quot;iconPath&quot;</span>: <span class="hljs-string">&quot;static/uni.png&quot;</span>,<br>				<span class="hljs-string">&quot;selectedIconPath&quot;</span>: <span class="hljs-string">&quot;static/c9.png&quot;</span><br>			&#125;<br><br>		]<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php"><br>import &#123; <span class="hljs-variable">$http</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@escook/request-miniprogram&#x27;</span><br><br>uni.<span class="hljs-variable">$http</span> =  <span class="hljs-variable">$http</span><br><br><span class="hljs-comment">//请求拦截器</span><br><span class="hljs-variable">$http</span>.beforeRequest =  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>&#123;<br>	uni.<span class="hljs-title function_ invoke__">showLoading</span>(&#123;<br>		<span class="hljs-attr">title</span>:<span class="hljs-string">&#x27;加载中...&#x27;</span><br>	&#125;)<br>&#125;<br><span class="hljs-comment">//响应拦截器</span><br><span class="hljs-variable">$http</span>.afterRequest = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>&#123;<br>  uni.<span class="hljs-title function_ invoke__">hideLoading</span>()<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -324,8 +333,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Uni-app-tabBar</div>
-      <div>http://example.com/2020/06/01/Uni-app/Docs/1.Uni-app-tabBar/</div>
+      <div>2.Uni-app-Network</div>
+      <div>http://example.com/2020/06/02/Uni-app/Docs/2.Uni-app-Network/</div>
     </div>
     <div class="license-meta">
       
@@ -337,7 +346,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>June 1, 2020</div>
+          <div>June 2, 2020</div>
         </div>
       
       
@@ -369,9 +378,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/06/02/Uni-app/Docs/2.Uni-app-Network/" title="2.Uni-app-Network">
+                      <a href="/2020/06/03/Uni-app/Docs/3.Uni-app-Swiper%E8%BD%AE%E6%92%AD%E5%9B%BE/" title="3.Uni-app-Swiper轮播图">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2.Uni-app-Network</span>
+                        <span class="hidden-mobile">3.Uni-app-Swiper轮播图</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -379,8 +388,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/05/05/Uni-app/Docs/0.Uni-app/" title="0.Uni-app">
-                        <span class="hidden-mobile">0.Uni-app</span>
+                      <a href="/2020/06/01/Uni-app/Docs/1.Uni-app-tabBar/" title="Uni-app-tabBar">
+                        <span class="hidden-mobile">Uni-app-tabBar</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
