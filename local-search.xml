@@ -1106,7 +1106,7 @@
     <link href="/2020/06/07/Uni-app/Docs/7.Uni-app-%E5%B0%81%E8%A3%85uni.$showMsg()/"/>
     <url>/2020/06/07/Uni-app/Docs/7.Uni-app-%E5%B0%81%E8%A3%85uni.$showMsg()/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="uni封装Toast"><a href="#uni封装Toast" class="headerlink" title="uni封装Toast"></a>uni封装Toast</h1><blockquote><p>main.js</p></blockquote><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">//封装Toast</span><br>uni.<span class="hljs-variable">$showMsg</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">title = <span class="hljs-string">&#x27;数据请求失败&#x27;</span>, duration = <span class="hljs-number">1500</span></span>) </span>&#123;<br>uni.<span class="hljs-title function_ invoke__">showToast</span>(&#123;<br>title,<br>duration,<br><span class="hljs-attr">icon</span>: <span class="hljs-string">&#x27;none&#x27;</span><br>&#125;)<br>&#125;<br><br><br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
