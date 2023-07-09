@@ -1102,11 +1102,74 @@
   
   
   <entry>
+    <title>7.Uni-app-封装uni.$showMsg()</title>
+    <link href="/2020/06/07/Uni-app/Docs/7.Uni-app-%E5%B0%81%E8%A3%85uni.$showMsg()/"/>
+    <url>/2020/06/07/Uni-app/Docs/7.Uni-app-%E5%B0%81%E8%A3%85uni.$showMsg()/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Uni-app</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>6.Uni-app-Navigator跳转</title>
+    <link href="/2020/06/06/Uni-app/Docs/6.Uni-app-Navigator%E8%B7%B3%E8%BD%AC/"/>
+    <url>/2020/06/06/Uni-app/Docs/6.Uni-app-Navigator%E8%B7%B3%E8%BD%AC/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Navigator跳转"><a href="#Navigator跳转" class="headerlink" title="Navigator跳转"></a>Navigator跳转</h1><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arduino">&lt;navigator <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;swiper-item&quot;</span> :url=<span class="hljs-string">&quot;&#x27;/subpkg/goods_detail/goods_detail&#x27;+&#x27;?&#x27;+&#x27;goods_id=&#x27; + item.goods_id&quot;</span>&gt;<br>&lt;image <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;img&quot;</span> src=<span class="hljs-string">&quot;../../static/logo.png&quot;</span> mode=<span class="hljs-string">&quot;&quot;</span> &gt;&lt;/image&gt;<br>&lt;/navigator&gt;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Uni-app</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>4.Uni-app-image</title>
     <link href="/2020/06/04/Uni-app/Docs/4.Uni-app-image/"/>
     <url>/2020/06/04/Uni-app/Docs/4.Uni-app-image/</url>
     
     <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/i_am_a_div/article/details/118968418">资料</a></p><h1 id="图片引用"><a href="#图片引用" class="headerlink" title="图片引用"></a>图片引用</h1><blockquote><p>在js中通过require() 引入图片（图片大小不能超过3kb）</p></blockquote><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">&#123;<span class="hljs-selector-tag">img</span>:<span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@/static/xmkysc.png&#x27;</span>)&#125;,<br></code></pre></td></tr></table></figure><blockquote><p>在html中通过相对路径引入（绝对路径打包后图片不显示）</p></blockquote><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">&lt;image class<span class="hljs-operator">=</span><span class="hljs-string">&quot;img&quot;</span> src<span class="hljs-operator">=</span><span class="hljs-string">&quot;../../static/banner.png&quot;</span> mode<span class="hljs-operator">=</span><span class="hljs-string">&quot;&quot;</span> &gt;&lt;/image&gt;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Uni-app</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>5.Uni-app-小程序分包</title>
+    <link href="/2020/06/04/Uni-app/Docs/5.Uni-app-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%86%E5%8C%85/"/>
+    <url>/2020/06/04/Uni-app/Docs/5.Uni-app-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%86%E5%8C%85/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Uni-app-小程序分包-配置"><a href="#Uni-app-小程序分包-配置" class="headerlink" title="Uni-app-小程序分包 - 配置"></a>Uni-app-小程序分包 - 配置</h1><blockquote><p>在项目de根目录下，创建分包的根目录，命名为 subpkg<br>在page.json中，和pages节点平级 声明subPackages 节点，定义分包结构</p></blockquote>]]></content>
     
     
     <categories>
