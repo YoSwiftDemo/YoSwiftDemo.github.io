@@ -16,15 +16,15 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="title: 1.Uni-app-shop Api 创建订单date: 2020-08-01 00:00:01password: 999abstract: 加密博文message: 密码访问wrong_pass_message: ❎ERROR❎toc: truecategories:  Uni-app Demo Shop Api      简要描述：   创建订单  请求URL：   https">
+    <meta name="description" content="title: Uni-app-shop Api 商品列表搜索date: 2020-08-01 00:00:04password: 999abstract: 加密博文message: 密码访问wrong_pass_message: ❎ERROR❎toc: truecategories:  Uni-app Demo Shop Api   简要描述：   商品列表搜索  请求URL：   https:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="YoYo">
-<meta property="og:url" content="http://example.com/2022/02/15/Uni-app/Demo/Uni-app-shop/%E5%88%9B%E5%BB%BA%E8%AE%A2%E5%8D%95/index.html">
+<meta property="og:url" content="http://example.com/2022/02/15/Uni-app/Demo/Shop/%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8%E6%90%9C%E7%B4%A2/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="title: 1.Uni-app-shop Api 创建订单date: 2020-08-01 00:00:01password: 999abstract: 加密博文message: 密码访问wrong_pass_message: ❎ERROR❎toc: truecategories:  Uni-app Demo Shop Api      简要描述：   创建订单  请求URL：   https">
+<meta property="og:description" content="title: Uni-app-shop Api 商品列表搜索date: 2020-08-01 00:00:04password: 999abstract: 加密博文message: 密码访问wrong_pass_message: ❎ERROR❎toc: truecategories:  Uni-app Demo Shop Api   简要描述：   商品列表搜索  请求URL：   https:">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-15T04:53:40.000Z">
-<meta property="article:modified_time" content="2023-07-10T11:49:01.080Z">
+<meta property="article:published_time" content="2022-02-15T04:52:57.000Z">
+<meta property="article:modified_time" content="2023-07-10T11:49:52.607Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -206,7 +206,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-02-15 12:53" pubdate>
+        <time datetime="2022-02-15 12:52" pubdate>
           February 15, 2022 pm
         </time>
       </span>
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          903 words
+          1.3k words
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          8 mins
+          11 mins
         
       </span>
     
@@ -273,7 +273,7 @@
               <div class="markdown-body">
                 
                 <hr>
-<p>title: 1.Uni-app-shop Api 创建订单<br>date: 2020-08-01 00:00:01<br>password: 999<br>abstract: 加密博文<br>message: 密码访问<br>wrong_pass_message: ❎ERROR❎<br>toc: true<br>categories:</p>
+<p>title: Uni-app-shop Api 商品列表搜索<br>date: 2020-08-01 00:00:04<br>password: 999<br>abstract: 加密博文<br>message: 密码访问<br>wrong_pass_message: ❎ERROR❎<br>toc: true<br>categories:</p>
 <ul>
 <li>Uni-app</li>
 <li>Demo</li>
@@ -281,36 +281,19 @@
 <li>Api</li>
 </ul>
 <hr>
-<p>   <strong>简要描述：</strong> </p>
+<p><strong>简要描述：</strong> </p>
 <ul>
-<li>创建订单</li>
+<li>商品列表搜索</li>
 </ul>
 <p><strong>请求URL：</strong> </p>
 <ul>
-<li><code>https://api-ugo-web.itheima.net/api/public/v1/my/orders/create</code></li>
+<li><code>https://api-ugo-web.itheima.net/api/public/v1/goods/search</code></li>
 </ul>
 <p><strong>请求方式：</strong></p>
 <ul>
-<li>POST</li>
+<li>GET</li>
 </ul>
-<p><strong>请求头参数：</strong> </p>
-<table>
-<thead>
-<tr>
-<th>参数名</th>
-<th>必选</th>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Authorization</td>
-<td>是</td>
-<td>string</td>
-<td>用户登录成功获取的token值</td>
-</tr>
-</tbody></table>
-<p><strong>请求体参数</strong>：</p>
+<p><strong>参数：</strong> </p>
 <table>
 <thead>
 <tr>
@@ -321,101 +304,132 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">order_price</td>
-<td align="left">是</td>
+<td align="left">query</td>
+<td align="left">否</td>
 <td align="left">string</td>
-<td>订单总价格</td>
+<td>关键字</td>
 </tr>
 <tr>
-<td align="left">consignee_addr</td>
-<td align="left">是</td>
+<td align="left">cid</td>
+<td align="left">否</td>
 <td align="left">string</td>
-<td>收货地址</td>
+<td>分类id</td>
 </tr>
 <tr>
-<td align="left">goods</td>
-<td align="left">是</td>
-<td align="left">Array</td>
-<td>订单数组</td>
-</tr>
-</tbody></table>
-<p><strong>goods字段说明</strong></p>
-<table>
-<thead>
-<tr>
-<th>参数名</th>
-<th>必选</th>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>goods_id</td>
-<td>是</td>
-<td>number</td>
-<td>商品id</td>
+<td align="left">pagenum</td>
+<td align="left">否</td>
+<td align="left">number</td>
+<td>页码</td>
 </tr>
 <tr>
-<td>goods_number</td>
-<td>是</td>
-<td>number</td>
-<td>购买的数量</td>
-</tr>
-<tr>
-<td>goods_price</td>
-<td>是</td>
-<td>number</td>
-<td>单价</td>
+<td align="left">pagesize</td>
+<td align="left">否</td>
+<td align="left">number</td>
+<td>页容量</td>
 </tr>
 </tbody></table>
 <p> <strong>返回示例</strong></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;error_code&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;uid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;username&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;12154545&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;吴系挂&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;groupid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2</span> <span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;reg_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1436864169&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;last_login_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;message&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">10</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;pagenum&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;goods&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>            <span class="hljs-punctuation">&#123;</span><br>                <span class="hljs-attr">&quot;goods_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">57445</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;cat_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">9</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;goods_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;创维（Skyworth）65V9E 65英寸25核4K HDR高清智能电视&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;goods_price&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">6499</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;goods_number&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;goods_weight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">100</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;goods_big_logo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;goods_small_logo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;add_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1516663280</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;upd_time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1516663280</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;hot_mumber&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;is_promote&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;cat_one_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;cat_two_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">3</span><span class="hljs-punctuation">,</span><br>                <span class="hljs-attr">&quot;cat_three_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">9</span><br>            <span class="hljs-punctuation">&#125;</span><br>        <span class="hljs-punctuation">]</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;meta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;msg&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;获取成功&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;status&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">200</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
 
 <p> <strong>返回参数说明</strong> </p>
 <table>
 <thead>
 <tr>
-<th>参数名</th>
-<th>类型</th>
-<th>参数说明</th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>order_id</td>
-<td>string</td>
-<td>订单唯一ID</td>
+<td>参数名</td>
+<td>参数说明</td>
+<td>备注</td>
 </tr>
 <tr>
-<td>user_id</td>
-<td>string</td>
-<td>用户ID</td>
+<td>total</td>
+<td>总条数</td>
+<td></td>
 </tr>
 <tr>
-<td>order_number</td>
-<td>string</td>
-<td>订单编号</td>
+<td>pagenum</td>
+<td>当前页数</td>
+<td></td>
 </tr>
 <tr>
-<td>order_price</td>
-<td>number</td>
-<td>订单价格</td>
+<td>goods_id</td>
+<td>商品ID</td>
+<td></td>
 </tr>
 <tr>
-<td>order_pay</td>
-<td>number</td>
-<td>订单支付方式</td>
+<td>cat_id</td>
+<td>分类ID</td>
+<td></td>
 </tr>
 <tr>
-<td>consignee_addr</td>
-<td>string</td>
-<td>订单地址</td>
+<td>goods_name</td>
+<td>商品名称</td>
+<td></td>
 </tr>
 <tr>
-<td>pay_status</td>
-<td>number</td>
-<td>订单支付状态</td>
+<td>goods_price</td>
+<td>商品价格</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_number</td>
+<td>商品数量</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_weight</td>
+<td>商品重量</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_big_logo</td>
+<td>商品大图标</td>
+<td></td>
+</tr>
+<tr>
+<td>goods_small_logo</td>
+<td>商品小图标</td>
+<td></td>
+</tr>
+<tr>
+<td>add_time</td>
+<td>商品添加时间</td>
+<td></td>
+</tr>
+<tr>
+<td>upd_time</td>
+<td>商品更新时间</td>
+<td></td>
+</tr>
+<tr>
+<td>hot_mumber</td>
+<td>热门商品数</td>
+<td></td>
+</tr>
+<tr>
+<td>cat_one_id</td>
+<td>所属一级分类</td>
+<td></td>
+</tr>
+<tr>
+<td>cat_two_id</td>
+<td>所属二级分类</td>
+<td></td>
+</tr>
+<tr>
+<td>cat_three_id</td>
+<td>所属三级分类</td>
+<td></td>
 </tr>
 </tbody></table>
+<p> <strong>备注</strong> </p>
+<ul>
+<li>更多返回错误代码请看首页的错误代码描述</li>
+</ul>
 
                 
               </div>
@@ -434,7 +448,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div></div>
-      <div>http://example.com/2022/02/15/Uni-app/Demo/Uni-app-shop/创建订单/</div>
+      <div>http://example.com/2022/02/15/Uni-app/Demo/Shop/商品列表搜索/</div>
     </div>
     <div class="license-meta">
       
@@ -478,9 +492,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/23/Taro/Docs/3.Taro%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="3.Taro 生命周期.md">
+                      <a href="/2022/02/15/Uni-app/Demo/Shop/%E5%88%9B%E5%BB%BA%E8%AE%A2%E5%8D%95/" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">3.Taro 生命周期.md</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -488,8 +502,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/02/15/Uni-app/Demo/Uni-app-uni-pay-shop/%200.Uni-app-pay-shop%20%E9%85%8D%E7%BD%AE%20/" title="">
-                        <span class="hidden-mobile"></span>
+                      <a href="/2021/11/01/Vue/Dev/Vue-Error/" title="Vue-Error">
+                        <span class="hidden-mobile">Vue-Error</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
