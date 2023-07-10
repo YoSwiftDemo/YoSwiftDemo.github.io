@@ -1022,7 +1022,7 @@
     <link href="/2022/02/15/Uni-app/Demo/Uni-app-uni-pay-shop/0.Uni-app%20%E5%90%ABuni-pay%E6%94%AF%E4%BB%98%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/"/>
     <url>/2022/02/15/Uni-app/Demo/Uni-app-uni-pay-shop/0.Uni-app%20%E5%90%ABuni-pay%E6%94%AF%E4%BB%98%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/</url>
     
-    <content type="html"><![CDATA[<hr><p>title: 0.Uni-app 含uni-pay支付商城项目开发<br>date: 2020-09-01 00:00:01<br>password: 999<br>abstract: 加密博文<br>message: 密码访问<br>wrong_pass_message: ❎ERROR❎<br>toc: true<br>categories:</p><ul><li>Uni-app</li><li>Demo</li><li>pay-shop</li></ul><hr><p><a href="https://www.bilibili.com/video/BV1ts4y1B7rp?p=1&vd_source=35d887e513452db700d753cd11b73d41">视频</a></p>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: 0.Uni-app 含uni-pay支付商城项目开发<br>date: 2020-09-01 00:00:01<br>password: 999<br>abstract: 加密博文<br>message: 密码访问<br>wrong_pass_message: ❎ERROR❎<br>toc: true<br>categories:</p><ul><li>Uni-app</li><li>Demo</li><li>pay-shop</li></ul><hr><p><a href="https://www.bilibili.com/video/BV1ts4y1B7rp?p=1&vd_source=35d887e513452db700d753cd11b73d41">视频</a></p><h1 id="uview-ui"><a href="#uview-ui" class="headerlink" title="uview-ui"></a>uview-ui</h1><p>···<br>&#x2F;&#x2F; 如果您的项目是HX创建的，根目录又没有package.json文件的话，请先执行如下命令：<br> npm init -y</p><p>&#x2F;&#x2F; 安装<br>npm install uview-ui</p><p>&#x2F;&#x2F; 更新<br>npm update uview-ui<br>···</p>]]></content>
     
     
     
