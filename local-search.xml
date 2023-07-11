@@ -1143,7 +1143,7 @@
       
       <category>PayShop</category>
       
-      <category>App</category>
+      <category>UI</category>
       
     </categories>
     
@@ -1168,7 +1168,28 @@
       
       <category>PayShop</category>
       
-      <category>App</category>
+      <category>UI</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Uni-app-CSS-封装flex布局</title>
+    <link href="/2020/08/05/Uni-app/CSS/Uni-app-CSS-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    <url>/2020/08/05/Uni-app/CSS/Uni-app-CSS-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="关于height-100-和height-100vh的区别"><a href="#关于height-100-和height-100vh的区别" class="headerlink" title="关于height:100%和height:100vh的区别"></a>关于height:100%和height:100vh的区别</h1><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs arduino">vh就是当前屏幕可见高度的<span class="hljs-number">1</span>%，也就是说<br><br>height:<span class="hljs-number">100</span>vh == height:<span class="hljs-number">100</span>%;<br><br>但是当元素没有内容时候，设置height:<span class="hljs-number">100</span>%，该元素不会被撑开，此时高度为<span class="hljs-number">0</span>，<br><br>但是设置height:<span class="hljs-number">100</span>vh，该元素会被撑开屏幕高度一致<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Uni-app</category>
+      
+      <category>CSS</category>
       
     </categories>
     
