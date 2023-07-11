@@ -16,21 +16,21 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Uni-app-CSS-封装flex布局 定义demo.scss  12345678910111213141516171819202122 $flex-params: (	row: row,	column: column,	start: flex-start,	center: center,	around: space-around,	between: space-between,); @mixi">
+    <meta name="description" content="box-sizing CSS3新增的这个属性box-sizing   要想清楚这个属性的作用，首先要理解盒子模型  盒子模型是指：外边距（margin）+ border（边框） + 内边距（padding）+ content（内容）  可以把每一个容器，比如div，都看做是一个盒子模型  比如你给一个div设置宽高为500px，但实际你设置的只是content，之后你又设置了padding:10p">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Uni-app-CSS-封装flex布局">
-<meta property="og:url" content="http://example.com/2020/08/05/Uni-app/CSS/Uni-app-CSS-%E5%B0%81%E8%A3%85flex%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:title" content="Uni-app-CSS-box-sizing border-box的作用">
+<meta property="og:url" content="http://example.com/2020/08/05/Uni-app/CSS/Uni-app-CSS-box-sizing%20border-box%E7%9A%84%E4%BD%9C%E7%94%A8/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="Uni-app-CSS-封装flex布局 定义demo.scss  12345678910111213141516171819202122 $flex-params: (	row: row,	column: column,	start: flex-start,	center: center,	around: space-around,	between: space-between,); @mixi">
+<meta property="og:description" content="box-sizing CSS3新增的这个属性box-sizing   要想清楚这个属性的作用，首先要理解盒子模型  盒子模型是指：外边距（margin）+ border（边框） + 内边距（padding）+ content（内容）  可以把每一个容器，比如div，都看做是一个盒子模型  比如你给一个div设置宽高为500px，但实际你设置的只是content，之后你又设置了padding:10p">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-04T16:00:01.000Z">
-<meta property="article:modified_time" content="2023-07-10T15:23:17.803Z">
+<meta property="article:published_time" content="2020-08-05T02:10:01.000Z">
+<meta property="article:modified_time" content="2023-07-11T11:35:09.742Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Uni-app-CSS-封装flex布局 - YoYo</title>
+  <title>Uni-app-CSS-box-sizing border-box的作用 - YoYo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -183,7 +183,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Uni-app-CSS-封装flex布局"></span>
+            <span id="subtitle" data-typed-text="Uni-app-CSS-box-sizing border-box的作用"></span>
           
         </div>
 
@@ -194,7 +194,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-08-05 00:00" pubdate>
+        <time datetime="2020-08-05 10:10" pubdate>
           August 5, 2020 am
         </time>
       </span>
@@ -206,7 +206,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          891 words
+          375 words
         
       </span>
     
@@ -217,7 +217,7 @@
         
         
         
-          8 mins
+          4 mins
         
       </span>
     
@@ -255,20 +255,31 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Uni-app-CSS-封装flex布局</h1>
+            <h1 style="display: none">Uni-app-CSS-box-sizing border-box的作用</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Uni-app-CSS-封装flex布局"><a href="#Uni-app-CSS-封装flex布局" class="headerlink" title="Uni-app-CSS-封装flex布局"></a>Uni-app-CSS-封装flex布局</h1><blockquote>
-<p>定义demo.scss</p>
+                <h1 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h1><blockquote>
+<p>CSS3新增的这个属性box-sizing</p>
 </blockquote>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs autoit"> <br>$flex-params: (<br>	row: row,<br>	column: column,<br>	start: flex-start,<br>	center: center,<br>	around: space-around,<br>	between: space-between,<br>)<span class="hljs-comment">;</span><br> <br><span class="hljs-symbol">@mixin</span> flex($coor:<span class="hljs-literal">null</span>, $justify:<span class="hljs-literal">null</span>, $alignItems:<span class="hljs-literal">null</span>) &#123;<br>	display: flex<span class="hljs-comment">;</span><br>	<span class="hljs-symbol">@if</span> $coor &#123;<br>		flex-direction: map-get($flex-params, $coor)<span class="hljs-comment">;</span><br>	&#125;<br>	<span class="hljs-symbol">@if</span> $justify &#123;<br>		justify-content: map-get($flex-params, $justify)<span class="hljs-comment">;</span><br>	&#125;<br>	<span class="hljs-symbol">@if</span> $alignItems &#123;<br>		align-items: map-get($flex-params, $alignItems)<span class="hljs-comment">;</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p>scss文件导入到app.vue中,全局的样式中使用</p>
-</blockquote>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-comment">// 未使用混入</span><br><span class="hljs-selector-id">#container</span>&#123;<br>    <span class="hljs-attribute">display</span>:flex;<br>    <span class="hljs-attribute">flex-direction</span>:row;<br>    <span class="hljs-attribute">justify-content</span>:flex-start;<br>    <span class="hljs-attribute">align-items</span>:center;<br>&#125;<br><span class="hljs-selector-id">#container</span>&#123;<br>    <span class="hljs-attribute">display</span>:flex;<br>    <span class="hljs-attribute">flex-direction</span>:column;<br>    <span class="hljs-attribute">justify-content</span>:flex-start;<br>    <span class="hljs-attribute">align-items</span>:center;<br>&#125;<br><br><span class="hljs-selector-tag">-----------------------------------------------</span><br> <br><span class="hljs-comment">// 使用</span><br><span class="hljs-selector-id">#container</span>&#123;<br>    <span class="hljs-variable">@include</span> <span class="hljs-built_in">flex</span>(row,start,center)<br>&#125;<br><span class="hljs-selector-id">#container</span>&#123;<br>    <span class="hljs-variable">@include</span> <span class="hljs-built_in">flex</span>(column,start,center)<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>要想清楚这个属性的作用，首先要理解盒子模型</p>
+</li>
+<li><p>盒子模型是指：外边距（margin）+ border（边框） + 内边距（padding）+ content（内容）</p>
+</li>
+<li><p>可以把每一个容器，比如div，都看做是一个盒子模型</p>
+</li>
+<li><p>比如你给一个div设置宽高为500px，但实际你设置的只是content，之后你又设置了padding:10px;border:1px solid red；</p>
+</li>
+<li><p>这时div的宽高就会变为544px（content 500px + padding 40px + border 4px）</p>
+</li>
+<li><p>相当于一个元素的实际宽高是由：　padding + border + content 组成</p>
+</li>
+</ul>
+<h1 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h1><ul>
+<li>uni-app App.vue<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-comment">/*每个页面公共css */</span><br><span class="hljs-built_in">view</span>,text &#123; <span class="hljs-built_in">box</span>-sizing: <span class="hljs-built_in">border</span>-<span class="hljs-built_in">box</span>;&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
 
                 
               </div>
@@ -314,8 +325,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Uni-app-CSS-封装flex布局</div>
-      <div>http://example.com/2020/08/05/Uni-app/CSS/Uni-app-CSS-封装flex布局/</div>
+      <div>Uni-app-CSS-box-sizing border-box的作用</div>
+      <div>http://example.com/2020/08/05/Uni-app/CSS/Uni-app-CSS-box-sizing border-box的作用/</div>
     </div>
     <div class="license-meta">
       
@@ -359,9 +370,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/08/05/Uni-app/CSS/Uni-app-CSS-box-sizing%20border-box%E7%9A%84%E4%BD%9C%E7%94%A8/" title="Uni-app-CSS-box-sizing border-box的作用">
+                      <a href="/2020/08/05/Uni-app/CSS/Uni-app-CSS-100vh%E9%97%AE%E9%A2%98/" title="Uni-app-CSS-100vh问题">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Uni-app-CSS-box-sizing border-box的作用</span>
+                        <span class="hidden-mobile">Uni-app-CSS-100vh问题</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -369,8 +380,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/08/05/Uni-app/CSS/Uni-app-CSS-%E5%B0%81%E8%A3%85%E6%A0%B7%E5%BC%8F/" title="Uni-app-CSS-封装样式">
-                        <span class="hidden-mobile">Uni-app-CSS-封装样式</span>
+                      <a href="/2020/08/05/Uni-app/CSS/Uni-app-CSS-%E5%B0%81%E8%A3%85flex%E5%B8%83%E5%B1%80/" title="Uni-app-CSS-封装flex布局">
+                        <span class="hidden-mobile">Uni-app-CSS-封装flex布局</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
