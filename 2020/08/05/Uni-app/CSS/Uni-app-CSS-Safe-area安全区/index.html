@@ -16,21 +16,21 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Uni-app-CSS-封装flex布局 定义demo.scss  12345678910111213141516171819202122 $flex-params: (	row: row,	column: column,	start: flex-start,	center: center,	around: space-around,	between: space-between,); @mixi">
+    <meta name="description" content="uni-app css 系统状态栏高度 var(–status-bar-height) 此变量在微信小程序环境为固定 25px，在 App 里为手机实际状态栏高度当设置 “navigationStyle”:”custom” 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 var(–status-bar-height) 的 view 放在页面顶部，避免页面内容出现在状态">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Uni-app-CSS-封装flex布局">
-<meta property="og:url" content="http://example.com/2020/08/05/Uni-app/CSS/Uni-app-CSS-%E5%B0%81%E8%A3%85flex%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:title" content="Uni-app-CSS-Safe-area 安全区">
+<meta property="og:url" content="http://example.com/2020/08/05/Uni-app/CSS/Uni-app-CSS-Safe-area%E5%AE%89%E5%85%A8%E5%8C%BA/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="Uni-app-CSS-封装flex布局 定义demo.scss  12345678910111213141516171819202122 $flex-params: (	row: row,	column: column,	start: flex-start,	center: center,	around: space-around,	between: space-between,); @mixi">
+<meta property="og:description" content="uni-app css 系统状态栏高度 var(–status-bar-height) 此变量在微信小程序环境为固定 25px，在 App 里为手机实际状态栏高度当设置 “navigationStyle”:”custom” 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 var(–status-bar-height) 的 view 放在页面顶部，避免页面内容出现在状态">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-04T16:00:01.000Z">
-<meta property="article:modified_time" content="2023-07-10T15:23:17.803Z">
+<meta property="article:published_time" content="2020-08-05T02:10:01.000Z">
+<meta property="article:modified_time" content="2023-07-12T08:48:29.564Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Uni-app-CSS-封装flex布局 - YoYo</title>
+  <title>Uni-app-CSS-Safe-area 安全区 - YoYo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -183,7 +183,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Uni-app-CSS-封装flex布局"></span>
+            <span id="subtitle" data-typed-text="Uni-app-CSS-Safe-area 安全区"></span>
           
         </div>
 
@@ -194,7 +194,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-08-05 00:00" pubdate>
+        <time datetime="2020-08-05 10:10" pubdate>
           August 5, 2020 am
         </time>
       </span>
@@ -206,7 +206,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          891 words
+          1.6k words
         
       </span>
     
@@ -217,7 +217,7 @@
         
         
         
-          8 mins
+          13 mins
         
       </span>
     
@@ -255,20 +255,23 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Uni-app-CSS-封装flex布局</h1>
+            <h1 style="display: none">Uni-app-CSS-Safe-area 安全区</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Uni-app-CSS-封装flex布局"><a href="#Uni-app-CSS-封装flex布局" class="headerlink" title="Uni-app-CSS-封装flex布局"></a>Uni-app-CSS-封装flex布局</h1><blockquote>
-<p>定义demo.scss</p>
+                <p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-%E5%8F%98%E9%87%8F">uni-app css</a></p>
+<h1 id="系统状态栏高度"><a href="#系统状态栏高度" class="headerlink" title="系统状态栏高度"></a>系统状态栏高度</h1><blockquote>
+<p>var(–status-bar-height) 此变量在微信小程序环境为固定 25px，在 App 里为手机实际状态栏高度<br>当设置 “navigationStyle”:”custom” 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 var(–status-bar-height) 的 view 放在页面顶部，避免页面内容出现在状态栏。<br>由于在 H5 端，不存在原生导航栏和 tabbar，也是前端 div 模拟。如果设置了一个固定位置的居底 view，在小程序和 App 端是在 tabbar 上方，但在 H5 端会与 tabbar 重叠。此时可使用–window-bottom，不管在哪个端，都是固定在 tabbar 上方。<br>目前 nvue 在 App 端，还不支持 –status-bar-height变量，<br>替代方案是在页面 onLoad 时通过 uni.getSystemInfoSync().statusBarHeight 获取状态栏高度，然后通过 style 绑定方式给占位 view 设定高度。下方提供了示例代码</p>
 </blockquote>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs autoit"> <br>$flex-params: (<br>	row: row,<br>	column: column,<br>	start: flex-start,<br>	center: center,<br>	around: space-around,<br>	between: space-between,<br>)<span class="hljs-comment">;</span><br> <br><span class="hljs-symbol">@mixin</span> flex($coor:<span class="hljs-literal">null</span>, $justify:<span class="hljs-literal">null</span>, $alignItems:<span class="hljs-literal">null</span>) &#123;<br>	display: flex<span class="hljs-comment">;</span><br>	<span class="hljs-symbol">@if</span> $coor &#123;<br>		flex-direction: map-get($flex-params, $coor)<span class="hljs-comment">;</span><br>	&#125;<br>	<span class="hljs-symbol">@if</span> $justify &#123;<br>		justify-content: map-get($flex-params, $justify)<span class="hljs-comment">;</span><br>	&#125;<br>	<span class="hljs-symbol">@if</span> $alignItems &#123;<br>		align-items: map-get($flex-params, $alignItems)<span class="hljs-comment">;</span><br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- HBuilderX 2.6.3+ 新增 page-meta, 详情：https://uniapp.dcloud.io/component/page-meta --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">page-meta</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">navigation-bar</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">page-meta</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;status_bar&quot;</span>&gt;</span><br>			<span class="hljs-comment">&lt;!-- 这里是状态栏 --&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>状态栏下的文字<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">	<span class="hljs-selector-class">.status_bar</span> &#123;</span><br><span class="language-css">		<span class="hljs-attribute">height</span>: <span class="hljs-built_in">var</span>(--status-bar-height);</span><br><span class="language-css">		<span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">	&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toTop&quot;</span>&gt;</span><br>			<span class="hljs-comment">&lt;!-- 这里可以放一个向上箭头，它距离底部tabbar上浮10px--&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">	<span class="hljs-selector-class">.toTop</span> &#123;</span><br><span class="language-css">		<span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--window-bottom) + <span class="hljs-number">10px</span>);</span><br><span class="language-css">	&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
 
 <blockquote>
-<p>scss文件导入到app.vue中,全局的样式中使用</p>
+<p> nvue 页面获取状态栏高度(兼容性强)</p>
 </blockquote>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-comment">// 未使用混入</span><br><span class="hljs-selector-id">#container</span>&#123;<br>    <span class="hljs-attribute">display</span>:flex;<br>    <span class="hljs-attribute">flex-direction</span>:row;<br>    <span class="hljs-attribute">justify-content</span>:flex-start;<br>    <span class="hljs-attribute">align-items</span>:center;<br>&#125;<br><span class="hljs-selector-id">#container</span>&#123;<br>    <span class="hljs-attribute">display</span>:flex;<br>    <span class="hljs-attribute">flex-direction</span>:column;<br>    <span class="hljs-attribute">justify-content</span>:flex-start;<br>    <span class="hljs-attribute">align-items</span>:center;<br>&#125;<br><br><span class="hljs-selector-tag">-----------------------------------------------</span><br> <br><span class="hljs-comment">// 使用</span><br><span class="hljs-selector-id">#container</span>&#123;<br>    <span class="hljs-variable">@include</span> <span class="hljs-built_in">flex</span>(row,start,center)<br>&#125;<br><span class="hljs-selector-id">#container</span>&#123;<br>    <span class="hljs-variable">@include</span> <span class="hljs-built_in">flex</span>(column,start,center)<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;&#123; height: iStatusBarHeight + &#x27;px&#x27;&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">			<span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">				<span class="hljs-attr">iStatusBarHeight</span>: <span class="hljs-number">0</span>,</span><br><span class="language-javascript">			&#125;;</span><br><span class="language-javascript">		&#125;,</span><br><span class="language-javascript">		<span class="hljs-title function_">onLoad</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">			<span class="hljs-variable language_">this</span>.<span class="hljs-property">iStatusBarHeight</span> = uni.<span class="hljs-title function_">getSystemInfoSync</span>().<span class="hljs-property">statusBarHeight</span>;</span><br><span class="language-javascript">		&#125;,</span><br><span class="language-javascript">	&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -314,8 +317,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Uni-app-CSS-封装flex布局</div>
-      <div>http://example.com/2020/08/05/Uni-app/CSS/Uni-app-CSS-封装flex布局/</div>
+      <div>Uni-app-CSS-Safe-area 安全区</div>
+      <div>http://example.com/2020/08/05/Uni-app/CSS/Uni-app-CSS-Safe-area安全区/</div>
     </div>
     <div class="license-meta">
       
@@ -359,9 +362,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/08/05/Uni-app/CSS/Uni-app-CSS-Safe-area%E5%AE%89%E5%85%A8%E5%8C%BA/" title="Uni-app-CSS-Safe-area 安全区">
+                      <a href="/2020/08/05/Uni-app/CSS/Uni-app-CSS-box-sizing%20border-box%E7%9A%84%E4%BD%9C%E7%94%A8/" title="Uni-app-CSS-box-sizing border-box的作用">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Uni-app-CSS-Safe-area 安全区</span>
+                        <span class="hidden-mobile">Uni-app-CSS-box-sizing border-box的作用</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -369,8 +372,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/08/05/Uni-app/CSS/Uni-app-CSS-%E5%B0%81%E8%A3%85%E6%A0%B7%E5%BC%8F/" title="Uni-app-CSS-封装样式">
-                        <span class="hidden-mobile">Uni-app-CSS-封装样式</span>
+                      <a href="/2020/08/05/Uni-app/CSS/Uni-app-CSS-%E5%B0%81%E8%A3%85flex%E5%B8%83%E5%B1%80/" title="Uni-app-CSS-封装flex布局">
+                        <span class="hidden-mobile">Uni-app-CSS-封装flex布局</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
