@@ -661,27 +661,6 @@
   
   
   <entry>
-    <title>Hexo 命令</title>
-    <link href="/2022/11/03/Mac/Hexo/Hexo/"/>
-    <url>/2022/11/03/Mac/Hexo/Hexo/</url>
-    
-    <content type="html"><![CDATA[<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs swift">hexo n <span class="hljs-string">&quot;博客名称&quot;</span>  <span class="hljs-operator">=&gt;</span> hexo new <span class="hljs-string">&quot;博客名称&quot;</span>   #这两个都是创建新文章，前者是简写模式<br>hexo p  <span class="hljs-operator">=&gt;</span> hexo publish<br>hexo g  <span class="hljs-operator">=&gt;</span> hexo generate  #生成<br>hexo s  <span class="hljs-operator">=&gt;</span> hexo server  #启动服务预览<br>hexo d  <span class="hljs-operator">=&gt;</span> hexo deploy  #部署<br><br>hexo server   #<span class="hljs-type">Hexo</span> 会监视文件变动并自动更新，无须重启服务器<span class="hljs-operator">。</span><br>hexo server <span class="hljs-operator">-</span>s   #静态模式<br>hexo server <span class="hljs-operator">-</span>p <span class="hljs-number">5000</span>   #更改端口<br>hexo server <span class="hljs-operator">-</span>i <span class="hljs-number">192.168</span>.<span class="hljs-number">1.1</span>   #自定义<span class="hljs-type">IP</span><br>hexo clean   #清除缓存，网页正常情况下可以忽略此条命令<br>hexo g   #生成静态网页<br>hexo d   #开始部署<br></code></pre></td></tr></table></figure><p>title: YoYo #网站标题<br>subtitle: ‘Happy learning swift’<br>description: ‘’<br>keywords:<br>author: YoYo<br>language: zh-CN #en<br>timezone: ‘Asia&#x2F;Shanghai#网站时区’ #网站时区</p><p>deploy:<br>type: ‘git’<br>repo: <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;</a>:YoSwiftDemo&#x2F;YoSwiftDemo.github.io.git<br>branch: main</p><p><a href="https://segmentfault.com/a/1190000038373795">https://segmentfault.com/a/1190000038373795</a></p><p>图床<br><a href="https://www.imgurl.org/vip/manage/upload">https://www.imgurl.org/vip/manage/upload</a></p><h1 id="node-版本"><a href="#node-版本" class="headerlink" title=".node 版本"></a>.node 版本</h1><p>node 降级 npm 安装指定版本 macos<br>全局安装 n 模块</p><p>sudo npm install n -g</p><blockquote><p>安装当前稳定版本</p></blockquote><p>sudo n stable</p><blockquote><p>安装最新版本</p></blockquote><p>sudo n latest</p><blockquote><p>node 版本降级&#x2F;升级（安装指定 node 版本）</p></blockquote><p>sudo n 版本号<br>sudo n v14.18.2</p><blockquote><p>卸载指定 node 版本</p></blockquote><p>sudo n rm 版本号</p><blockquote><p>检测目前安装了哪些 node 版本</p></blockquote><p>n</p><blockquote><p>切换 node 版本（不会删除已安装的其他版本）</p></blockquote><p>n 版本号</p><blockquote><p>查看 node 版本号</p></blockquote><p>node -v</p><blockquote><p>查按所有 npm 版本<br>npm view npm versions<br>安装指定版本 npm<br>sudo npm install <a href="mailto:&#x6e;&#112;&#x6d;&#x40;&#x36;&#46;&#x31;&#52;&#x2e;&#49;&#x37;">&#x6e;&#112;&#x6d;&#x40;&#x36;&#46;&#x31;&#52;&#x2e;&#49;&#x37;</a> -g</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Mac</category>
-      
-      <category>Hexo</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>UWOOZ-Api-Mall-adress</title>
     <link href="/2022/11/03/Taro/Api/UWOOZ/0.Mall-adress/"/>
     <url>/2022/11/03/Taro/Api/UWOOZ/0.Mall-adress/</url>
@@ -1284,6 +1263,27 @@
       <category>PayShop</category>
       
       <category>UI</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2021/01/01/Mac/SH/%E5%95%86%E6%9D%AD/"/>
+    <url>/2021/01/01/Mac/SH/%E5%95%86%E6%9D%AD/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="❎ERROR❎" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="c36507b608b30b5c4234add6cbac48e72ccbed7c50a144797e28d64425609fb9">c8d6a724b68e0a127e5cca7999ad32934a9766c746c2b4288c55ab663a3063a9f769307f3ae0c0a531fa35bd54acc3607e7148141262ff3ab948ee4d1f39804914dcee58e491a698627a62f7dc9f81ab05d9c9a51b15677e01e6d1fa9a1bfaa045b7621eddfc40b811a9ecac0b89cb1bfb404d80562bb0d0351d786490b6b1ce2593e97c5f3a5ba7f33b8930b49168568b374f60a7f5efa30168575ba290f3eb985909d73c97ea8cc92c5ebd0f80565834d56a0149e19729eee38e1662bf978ee617d5919089e690182ec2f5fe922a268e7db6b499eccfcacbaf714f3dd5a3c25fb99efda7e1ab7219b3b8ac5d884a26e0d7815a1e45df23d1661a17624464ac79f96058dc95199501567eee0edd0e5d93c889c6b9b47cef2a5242fb415ac2670702c8b7b271401bcc41ce6dfb775678623daf45b0272234077920b9391ba30a4796ef1b81eb3e2dfaa2b483e6f6e623c3ea0dad1aefe3eee489636f7a1732f55028307626498a7f4d3ff59aafec0fa23282f7c847ba8223d3b489af91d8c42e59e42281c660d51e144fd2e32ff3d347acfa9caa7360352f1ad177a439a1ef4ebef7e280441bb647e6bc6321ea3ce2ba824713b51d89cc8d2eed49dccfa4e0b026675b25b0a72f7132301037a1584430645b8f166fb9307f8ac9d50af40304387a4cf296d85cf573d17864f1ea6c021a54dcab839b733c76104bf0f178de88f4c9703393b39d846c30241295f299bbd5807f52e43e462cadd93a434d665d011ebfbe77e654e467729f93ca9e41519277266dbea980d53b9ed96e2b8b0a07e20553ac1b537ac864555cde44dd0eab7c31739072d7b8aa8ecc63aaac56f73566a2deaf76ad5175f2d7f5b6efd52c942c36d3f64279b1d1a45d5caebded3b4aa85f1e4ec03647199fd07724ccc5e99f2efb5508991a21d558818e57db9a8ad9ebaeed9b7670c06ff971d6235378536d9145b6b60126f689b403f128abdaa517b0d8d0eb431876f4ac4fafddf3200692d954fba829c08a0d4ad357c805a631acc2c6150aef101bdfded31ae5cb7d92913785</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">密码访问</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <categories>
+      
+      <category>Mac</category>
+      
+      <category>SH</category>
       
     </categories>
     
