@@ -1,0 +1,726 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="YoYo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="title: 小兔鲜儿 -SKU 模块date: 2020-10-01 01:01:09toc: truecategories:  Uni-app Demo TuShop   小兔鲜儿 - SKU 模块学会使用插件市场，下载并使用 SKU 组件，实现商品详情页规格展示和交互。 存货单位（SKU）SKU 概念 存货单位（Stock Keeping Unit），库存管理的最小可用单元，通常称为“单品">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YoYo">
+<meta property="og:url" content="http://example.com/2023/08/20/Uni-app/Demo/tu-shop/09-SKU%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="YoYo">
+<meta property="og:description" content="title: 小兔鲜儿 -SKU 模块date: 2020-10-01 01:01:09toc: truecategories:  Uni-app Demo TuShop   小兔鲜儿 - SKU 模块学会使用插件市场，下载并使用 SKU 组件，实现商品详情页规格展示和交互。 存货单位（SKU）SKU 概念 存货单位（Stock Keeping Unit），库存管理的最小可用单元，通常称为“单品">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/sku_picture_1.png">
+<meta property="og:image" content="http://example.com/assets/sku_picture_2.png">
+<meta property="article:published_time" content="2023-08-20T06:28:38.965Z">
+<meta property="article:modified_time" content="2023-08-20T06:38:36.617Z">
+<meta property="article:author" content="YoYo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/assets/sku_picture_1.png">
+  
+  
+  
+  <title>YoYo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>YoSwift</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-20 14:28" pubdate>
+          August 20, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.6k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          64 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <hr>
+<p>title: 小兔鲜儿 -SKU 模块<br>date: 2020-10-01 01:01:09<br>toc: true<br>categories:</p>
+<ul>
+<li>Uni-app</li>
+<li>Demo</li>
+<li>TuShop</li>
+</ul>
+<hr>
+<h1 id="小兔鲜儿-SKU-模块"><a href="#小兔鲜儿-SKU-模块" class="headerlink" title="小兔鲜儿 - SKU 模块"></a>小兔鲜儿 - SKU 模块</h1><p>学会使用<a target="_blank" rel="noopener" href="https://ext.dcloud.net.cn/">插件市场</a>，下载并使用 <code>SKU</code> 组件，实现<strong>商品详情页</strong>规格展示和交互。</p>
+<h2 id="存货单位（SKU）"><a href="#存货单位（SKU）" class="headerlink" title="存货单位（SKU）"></a>存货单位（SKU）</h2><p><strong>SKU 概念</strong></p>
+<p>存货单位（Stock Keeping Unit），库存管理的最小可用单元，通常称为“单品”。</p>
+<p><code>SKU</code> 常见于电商领域，对于前端工程师而言，更多关注 <a target="_blank" rel="noopener" href="https://juejin.cn/post/7002746459456176158">SKU 算法</a> 和 <strong>用户交互体验</strong>。</p>
+<h2 id="插件市场"><a href="#插件市场" class="headerlink" title="插件市场"></a>插件市场</h2><p><a target="_blank" rel="noopener" href="https://ext.dcloud.net.cn/">uni-app 插件市场</a>，是 uni-app 官方插件生态集中地。</p>
+<p><code>SKU</code> 属于电商常见业务，插件市场有现成的 <code>SKU</code> 插件，我们下载并在项目中使用。</p>
+<p><img src="/./assets/sku_picture_1.png" srcset="/img/loading.gif" lazyload alt="插件市场"></p>
+<h3 id="下载-SKU-插件"><a href="#下载-SKU-插件" class="headerlink" title="下载 SKU 插件"></a>下载 SKU 插件</h3><p>经过综合评估，我们选择该<a target="_blank" rel="noopener" href="https://ext.dcloud.net.cn/plugin?id=2848">SKU 插件</a>，请下载插件到本地。</p>
+<p><strong>体验地址</strong></p>
+<p><img src="/./assets/sku_picture_2.png" srcset="/img/loading.gif" lazyload alt="插件市场"></p>
+<p>::: tip 常见问题</p>
+<p>Q：如何评估第三方插件的质量？</p>
+<p>A：查看插件的<strong>评分、评价、下载量、更新频率以及文档完整性</strong>，以确保插件具有良好的社区口碑、兼容性、性能和维护状况。</p>
+<p>:::</p>
+<h3 id="使用-SKU-插件"><a href="#使用-SKU-插件" class="headerlink" title="使用 SKU 插件"></a>使用 SKU 插件</h3><p><strong>组件安装到自己项目</strong></p>
+<ol>
+<li>复制 <code>vk-data-goods-sku-popup</code> 和 <code>vk-data-input-number-box</code> 到项目的根 <code>components</code> 目录下。</li>
+<li>复制例子代码并运行体验。</li>
+</ol>
+<p><strong>插件文档(部分)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Props 参数</th>
+<th align="center">说明</th>
+<th align="center">类型</th>
+<th align="center">默认值</th>
+<th align="center">可选值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">v-model</td>
+<td align="center">双向绑定，true 为打开组件，false 为关闭组件</td>
+<td align="center">Boolean</td>
+<td align="center">false</td>
+<td align="center">true、false</td>
+</tr>
+<tr>
+<td align="center">mode</td>
+<td align="center">模式 1:都显示 2:只显示购物车 3:只显示立即购买</td>
+<td align="center">Number</td>
+<td align="center">1</td>
+<td align="center">1、2、3</td>
+</tr>
+<tr>
+<td align="center">localdata</td>
+<td align="center">商品信息本地数据源</td>
+<td align="center">Object</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">Event 事件名</th>
+<th align="center">说明</th>
+<th align="center">回调参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">add-cart</td>
+<td align="center">点击添加到购物车时（需选择完 SKU 才会触发）</td>
+<td align="center">selectShop：当前选择的 sku 数据</td>
+</tr>
+<tr>
+<td align="center">buy-now</td>
+<td align="center">点击立即购买时（需选择完 SKU 才会触发）</td>
+<td align="center">selectShop：当前选择的 sku 数据</td>
+</tr>
+<tr>
+<td align="center">open</td>
+<td align="center">打开组件时</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">close</td>
+<td align="center">关闭组件时</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>::: tip 常见问题</p>
+<p>Q：为什么插件使用时无需导入？</p>
+<p>A：<code>pages.json</code> 的 <code>easycom</code> 配置中，默认自动扫描 <code>xxx/xxx.vue</code> 格式的组件，<strong>实现自动导入</strong>。</p>
+<p>Q：为什么组件代码 Git 提交时报错？</p>
+<p>A：插件未采用 <code>eslint</code> 校验代码，请在插件源文件中添加 <code>/* eslint-disable */</code>，禁用 <code>eslint</code>。</p>
+<p>:::</p>
+<p>在 <code>vk-data-goods-sku-popup.vue</code> 和 <code>vk-data-input-number-box.vue</code> 组件禁用 <code>eslint</code>。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;2&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script&gt;<br>/* eslint-disable */<br>// 省略组件源代码<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="插件类型问题"><a href="#插件类型问题" class="headerlink" title="插件类型问题"></a>插件类型问题</h2><p>尽管该插件未采用 TS 开发，但作者提供了详细的<a target="_blank" rel="noopener" href="https://ext.dcloud.net.cn/plugin?id=2848">插件文档</a>，我们可以依据文档为插件添加 TS 类型声明文件，从而提高项目数据校验的安全性。</p>
+<h3 id="类型声明文件"><a href="#类型声明文件" class="headerlink" title="类型声明文件"></a>类型声明文件</h3><p><code>vk-data-goods-sku-popup.d.ts</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Component</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@uni-helper/uni-app-types&#x27;</span><br><br><span class="hljs-comment">/** SKU 弹出层 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SkuPopup</span> = <span class="hljs-title class_">Component</span>&lt;<span class="hljs-title class_">SkuPopupProps</span>&gt;<br><br><span class="hljs-comment">/** SKU 弹出层实例 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SkuPopupInstanceType</span> = <span class="hljs-title class_">InstanceType</span>&lt;<span class="hljs-title class_">SkuPopup</span>&gt;<br><br><span class="hljs-comment">/** SKU 弹出层属性 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SkuPopupProps</span> = &#123;<br>  <span class="hljs-comment">/** 双向绑定，true 为打开组件，false 为关闭组件 */</span><br>  <span class="hljs-attr">modelValue</span>: <span class="hljs-built_in">boolean</span><br>  <span class="hljs-comment">/** 商品信息本地数据源 */</span><br>  <span class="hljs-attr">localdata</span>: <span class="hljs-title class_">SkuPopupLocaldata</span><br>  <span class="hljs-comment">/** 按钮模式 1:都显示 2:只显示购物车 3:只显示立即购买 */</span><br>  mode?: <span class="hljs-number">1</span> | <span class="hljs-number">2</span> | <span class="hljs-number">3</span><br>  <span class="hljs-comment">/** 该商品已抢完时的按钮文字 */</span><br>  noStockText?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 库存文字 */</span><br>  stockText?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 点击遮罩是否关闭组件 */</span><br>  maskCloseAble?: <span class="hljs-built_in">boolean</span><br>  <span class="hljs-comment">/** 顶部圆角值 */</span><br>  borderRadius?: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 最小购买数量 */</span><br>  minBuyNum?: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 最大购买数量 */</span><br>  maxBuyNum?: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 每次点击后的数量 */</span><br>  stepBuyNum?: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 是否只能输入 step 的倍数 */</span><br>  stepStrictly?: <span class="hljs-built_in">boolean</span><br>  <span class="hljs-comment">/** 是否隐藏库存的显示 */</span><br>  hideStock?: <span class="hljs-literal">false</span><br>  <span class="hljs-comment">/** 主题风格 */</span><br>  theme?: <span class="hljs-string">&#x27;default&#x27;</span> | <span class="hljs-string">&#x27;red-black&#x27;</span> | <span class="hljs-string">&#x27;black-white&#x27;</span> | <span class="hljs-string">&#x27;coffee&#x27;</span> | <span class="hljs-string">&#x27;green&#x27;</span><br>  <span class="hljs-comment">/** 默认金额会除以100（即100=1元），若设置为0，则不会除以100（即1=1元） */</span><br>  amountType?: <span class="hljs-number">1</span> | <span class="hljs-number">0</span><br>  <span class="hljs-comment">/** 自定义获取商品信息的函数（已知支付宝不支持，支付宝请改用localdata属性） */</span><br>  customAction?: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span><br>  <span class="hljs-comment">/** 是否显示右上角关闭按钮 */</span><br>  showClose?: <span class="hljs-built_in">boolean</span><br>  <span class="hljs-comment">/** 关闭按钮的图片地址 */</span><br>  closeImage?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 价格的字体颜色 */</span><br>  priceColor?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 立即购买 - 按钮的文字 */</span><br>  buyNowText?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 立即购买 - 按钮的字体颜色 */</span><br>  buyNowColor?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 立即购买 - 按钮的背景颜色 */</span><br>  buyNowBackgroundColor?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 加入购物车 - 按钮的文字 */</span><br>  addCartText?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 加入购物车 - 按钮的字体颜色 */</span><br>  addCartColor?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 加入购物车 - 按钮的背景颜色 */</span><br>  addCartBackgroundColor?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品缩略图背景颜色 */</span><br>  goodsThumbBackgroundColor?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 样式 - 不可点击时,按钮的样式 */</span><br>  disableStyle?: <span class="hljs-built_in">object</span><br>  <span class="hljs-comment">/** 样式 - 按钮点击时的样式 */</span><br>  activedStyle?: <span class="hljs-built_in">object</span><br>  <span class="hljs-comment">/** 样式 - 按钮常态的样式 */</span><br>  btnStyle?: <span class="hljs-built_in">object</span><br>  <span class="hljs-comment">/** 字段名 - 商品表id的字段名 */</span><br>  goodsIdName?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 字段名 - sku表id的字段名 */</span><br>  skuIdName?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 字段名 - 商品对应的sku列表的字段名 */</span><br>  skuListName?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 字段名 - 商品规格名称的字段名 */</span><br>  specListName?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 字段名 - sku库存的字段名 */</span><br>  stockName?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 字段名 - sku组合路径的字段名 */</span><br>  skuArrName?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 字段名 - 商品缩略图字段名(未选择sku时) */</span><br>  goodsThumbName?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 被选中的值 */</span><br>  selectArr?: <span class="hljs-built_in">string</span>[]<br><br>  <span class="hljs-comment">/** 打开弹出层 */</span><br>  <span class="hljs-attr">onOpen</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span><br>  <span class="hljs-comment">/** 关闭弹出层 */</span><br>  <span class="hljs-attr">onClose</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span><br>  <span class="hljs-comment">/** 点击加入购物车时（需选择完SKU才会触发）*/</span><br>  <span class="hljs-attr">onAddCart</span>: <span class="hljs-function">(<span class="hljs-params">event: SkuPopupEvent</span>) =&gt;</span> <span class="hljs-built_in">void</span><br>  <span class="hljs-comment">/** 点击立即购买时（需选择完SKU才会触发）*/</span><br>  <span class="hljs-attr">onBuyNow</span>: <span class="hljs-function">(<span class="hljs-params">event: SkuPopupEvent</span>) =&gt;</span> <span class="hljs-built_in">void</span><br>&#125;<br><br><span class="hljs-comment">/**  商品信息本地数据源 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SkuPopupLocaldata</span> = &#123;<br>  <span class="hljs-comment">/** 商品 ID */</span><br>  <span class="hljs-attr">_id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品名称 */</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品图片 */</span><br>  <span class="hljs-attr">goods_thumb</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品规格列表 */</span><br>  <span class="hljs-attr">spec_list</span>: <span class="hljs-title class_">SkuPopupSpecItem</span>[]<br>  <span class="hljs-comment">/** 商品SKU列表 */</span><br>  <span class="hljs-attr">sku_list</span>: <span class="hljs-title class_">SkuPopupSkuItem</span>[]<br>&#125;<br><br><span class="hljs-comment">/** 商品规格名称的集合 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SkuPopupSpecItem</span> = &#123;<br>  <span class="hljs-comment">/** 规格名称 */</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 规格集合 */</span><br>  <span class="hljs-attr">list</span>: &#123; <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span> &#125;[]<br>&#125;<br><br><span class="hljs-comment">/** 商品SKU列表 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SkuPopupSkuItem</span> = &#123;<br>  <span class="hljs-comment">/** SKU ID */</span><br>  <span class="hljs-attr">_id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/**  商品 ID */</span><br>  <span class="hljs-attr">goods_id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品名称 */</span><br>  <span class="hljs-attr">goods_name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品图片 */</span><br>  <span class="hljs-attr">image</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** SKU 价格 * 100, 注意：需要乘以 100 */</span><br>  <span class="hljs-attr">price</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** SKU 规格组成, 注意：需要与 spec_list 数组顺序对应 */</span><br>  <span class="hljs-attr">sku_name_arr</span>: <span class="hljs-built_in">string</span>[]<br>  <span class="hljs-comment">/** SKU 库存 */</span><br>  <span class="hljs-attr">stock</span>: <span class="hljs-built_in">number</span><br>&#125;<br><br><span class="hljs-comment">/** 当前选择的sku数据 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SkuPopupEvent</span> = <span class="hljs-title class_">SkuPopupSkuItem</span> &amp; &#123;<br>  <span class="hljs-comment">/** 商品购买数量 */</span><br>  <span class="hljs-attr">buy_num</span>: <span class="hljs-built_in">number</span><br>&#125;<br><br><span class="hljs-comment">/** 全局组件类型声明 */</span><br><span class="hljs-keyword">declare</span> <span class="hljs-variable language_">module</span> <span class="hljs-string">&#x27;@vue/runtime-core&#x27;</span> &#123;<br>  <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">GlobalComponents</span> &#123;<br>    <span class="hljs-string">&#x27;vk-data-goods-sku-popup&#x27;</span>: <span class="hljs-title class_">SkuPopup</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="核心业务"><a href="#核心业务" class="headerlink" title="核心业务"></a>核心业务</h2><h3 id="渲染商品规格"><a href="#渲染商品规格" class="headerlink" title="渲染商品规格"></a>渲染商品规格</h3><p>使用以下两个属性：</p>
+<ul>
+<li><code>localdata</code> 绑定商品 <code>SKU</code> 数据来源</li>
+<li><code>v-model</code> 双向绑定，显示&#x2F;隐藏组件</li>
+</ul>
+<p><strong>注意</strong>：后端返回的数据格式和插件所需的格式不一致，我们需要按插件要求进行处理。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;9-24,28,30,35,37&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import type &#123; SkuPopupLocaldata &#125; from &#x27;@/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup&#x27;<br><br>// 获取商品详情信息<br>const goods = ref&lt;GoodsResult&gt;()<br>const getGoodsByIdData = async () =&gt; &#123;<br>  const res = await getGoodsByIdAPI(query.id)<br>  goods.value = res.result<br>  // SKU组件所需格式<br>  localdata.value = &#123;<br>    _id: res.result.id,<br>    name: res.result.name,<br>    goods_thumb: res.result.mainPictures[0],<br>    spec_list: res.result.specs.map((v) =&gt; (&#123; name: v.name, list: v.values &#125;)),<br>    sku_list: res.result.skus.map((v) =&gt; (&#123;<br>      _id: v.id,<br>      goods_id: res.result.id,<br>      goods_name: res.result.name,<br>      image: v.picture,<br>      price: v.price * 100, // 注意：需要乘以 100<br>      stock: v.inventory,<br>      sku_name_arr: v.specs.map((vv) =&gt; vv.valueName),<br>    &#125;)),<br>  &#125;<br>&#125;<br><br>// 是否显示SKU组件<br>const isShowSku = ref(false)<br>// 商品信息<br>const localdata = ref(&#123;&#125; as SkuPopupLocaldata)<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;!-- SKU弹窗组件 --&gt;<br>  &lt;vk-data-goods-sku-popup v-model=&quot;isShowSku&quot; :localdata=&quot;localdata&quot; /&gt;<br>  &lt;!-- 弹窗测试 --&gt;<br>  &lt;button @tap=&quot;isShowSku = true&quot;&gt;打开 SKU 弹窗&lt;/button&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="打开弹窗交互"><a href="#打开弹窗交互" class="headerlink" title="打开弹窗交互"></a>打开弹窗交互</h3><p>SKU 弹窗的按钮有三种形式。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;23-25,29,31,32&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// 按钮模式<br>enum SkuMode &#123;<br>  Both = 1,<br>  Cart = 2,<br>  Buy = 3,<br>&#125;<br>const mode = ref&lt;SkuMode&gt;(SkuMode.Cart)<br>// 打开SKU弹窗修改按钮模式<br>const openSkuPopup = (val: SkuMode) =&gt; &#123;<br>  // 显示SKU弹窗<br>  isShowSku.value = true<br>  // 修改按钮模式<br>  mode.value = val<br>&#125;<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;!-- SKU弹窗组件 --&gt;<br>  &lt;vk-data-goods-sku-popup<br>    v-model=&quot;isShowSku&quot;<br>    :localdata=&quot;localdata&quot;<br>    :mode=&quot;mode&quot;<br>    add-cart-background-color=&quot;#FFA868&quot;<br>    buy-now-background-color=&quot;#27BA9B&quot;<br>  /&gt;<br><br>  &lt;!-- 显示两个按钮 --&gt;<br>  &lt;view @tap=&quot;openSkuPopup(SkuMode.Both)&quot; class=&quot;item arrow&quot;<br>    &gt;请选择商品规格&lt;/view<br>  &gt;<br>  &lt;!-- 显示一个按钮 --&gt;<br>  &lt;view @tap=&quot;openSkuPopup(SkuMode.Cart)&quot; class=&quot;addcart&quot;&gt; 加入购物车 &lt;/view&gt;<br>  &lt;view @tap=&quot;openSkuPopup(SkuMode.Buy)&quot; class=&quot;payment&quot;&gt; 立即购买 &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="渲染被选中的值"><a href="#渲染被选中的值" class="headerlink" title="渲染被选中的值"></a>渲染被选中的值</h3><ol>
+<li><p>通过 <code>ref</code> 获取组件实例。</p>
+</li>
+<li><p>通过 <code>computed</code> 计算出<strong>被选中的值</strong>，渲染到界面中。</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><figcaption><span>&#123;3,5-7,18-23,29&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// SKU组件实例<br>const skuPopupRef = ref&lt;SkuPopupInstance&gt;()<br>// 计算被选中的值<br>const selectArrText = computed(() =&gt; &#123;<br>  return skuPopupRef.value?.selectArr?.join(&#x27; &#x27;).trim() || &#x27;请选择商品规格&#x27;<br>&#125;)<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;!-- SKU弹窗组件 --&gt;<br>  &lt;vk-data-goods-sku-popup<br>    v-model=&quot;isShowSku&quot;<br>    :localdata=&quot;localdata&quot;<br>    :mode=&quot;mode&quot;<br>    add-cart-background-color=&quot;#FFA868&quot;<br>    buy-now-background-color=&quot;#27BA9B&quot;<br>    ref=&quot;skuPopupRef&quot;<br>    :actived-style=&quot;&#123;<br>      color: &#x27;#27BA9B&#x27;,<br>      borderColor: &#x27;#27BA9B&#x27;,<br>      backgroundColor: &#x27;#E9F8F5&#x27;,<br>    &#125;&quot;<br>  /&gt;<br>  &lt;!-- 操作面板 --&gt;<br>  &lt;view class=&quot;action&quot;&gt;<br>    &lt;view @tap=&quot;openSkuPopup(SkuMode.Both)&quot; class=&quot;item arrow&quot;&gt;<br>      &lt;text class=&quot;label&quot;&gt;选择&lt;/text&gt;<br>      &lt;text class=&quot;text ellipsis&quot;&gt; &#123;&#123; selectArrText &#125;&#125; &lt;/text&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<p>至此，已经完成 <code>SKU</code> 组件的交互，接下来进入到购物车模块，并实现加入购物车功能。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>http://example.com/2023/08/20/Uni-app/Demo/tu-shop/09-SKU模块/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>YoYo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 20, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/11/11/Taro/Dev/7.taro-ui%20AtSwipeAction%E4%B8%8D%E7%94%9F%E6%95%88%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="7.taro-ui AtSwipeAction不生效解决方法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">7.taro-ui AtSwipeAction不生效解决方法</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/20/Uni-app/Demo/tu-shop/10-%E8%B4%AD%E7%89%A9%E8%BD%A6%E6%A8%A1%E5%9D%97/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

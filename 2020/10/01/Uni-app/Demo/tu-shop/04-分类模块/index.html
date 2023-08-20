@@ -1,0 +1,694 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="YoYo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="小兔鲜儿 - 分类模块用户点击左菜单的一级分类，切换右侧对应的二级分类和商品。 准备工作参考效果 商品分类页中的广告位，可复用之前定义的轮播图组件 XtxSwiper。  静态结构 商品分类页静态结构： src&#x2F;pages&#x2F;category&#x2F;category.vue 123456789101112131415161718192021222324252627282930313233343536373">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小兔鲜儿 -  分类模块">
+<meta property="og:url" content="http://example.com/2020/10/01/Uni-app/Demo/tu-shop/04-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="YoYo">
+<meta property="og:description" content="小兔鲜儿 - 分类模块用户点击左菜单的一级分类，切换右侧对应的二级分类和商品。 准备工作参考效果 商品分类页中的广告位，可复用之前定义的轮播图组件 XtxSwiper。  静态结构 商品分类页静态结构： src&#x2F;pages&#x2F;category&#x2F;category.vue 123456789101112131415161718192021222324252627282930313233343536373">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/category_picture_1.png">
+<meta property="og:image" content="http://example.com/assets/category_picture_2.png">
+<meta property="article:published_time" content="2020-09-30T17:01:04.000Z">
+<meta property="article:modified_time" content="2023-08-20T06:37:22.657Z">
+<meta property="article:author" content="YoYo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/assets/category_picture_1.png">
+  
+  
+  
+  <title>小兔鲜儿 -  分类模块 - YoYo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>YoSwift</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="小兔鲜儿 -  分类模块"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-10-01 01:01" pubdate>
+          October 1, 2020 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          11k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          95 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">小兔鲜儿 -  分类模块</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="小兔鲜儿-分类模块"><a href="#小兔鲜儿-分类模块" class="headerlink" title="小兔鲜儿 - 分类模块"></a>小兔鲜儿 - 分类模块</h1><p>用户点击左菜单的一级分类，切换右侧对应的二级分类和商品。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p><strong>参考效果</strong></p>
+<p>商品分类页中的广告位，可复用之前定义的轮播图组件 <code>XtxSwiper</code>。</p>
+<p><img src="/./assets/category_picture_1.png" srcset="/img/loading.gif" lazyload alt="分类页"></p>
+<p><strong>静态结构</strong></p>
+<p>商品分类页静态结构： <code>src/pages/category/category.vue</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>//<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>    &lt;!-- 搜索框 --&gt;<br>    &lt;view class=&quot;search&quot;&gt;<br>      &lt;view class=&quot;input&quot;&gt;<br>        &lt;text class=&quot;icon-search&quot;&gt;女靴&lt;/text&gt;<br>      &lt;/view&gt;<br>    &lt;/view&gt;<br>    &lt;!-- 分类 --&gt;<br>    &lt;view class=&quot;categories&quot;&gt;<br>      &lt;!-- 左侧：一级分类 --&gt;<br>      &lt;scroll-view class=&quot;primary&quot; scroll-y&gt;<br>        &lt;view<br>          v-for=&quot;(item, index) in 10&quot;<br>          :key=&quot;item&quot;<br>          class=&quot;item&quot;<br>          :class=&quot;&#123; active: index === 0 &#125;&quot;<br>        &gt;<br>          &lt;text class=&quot;name&quot;&gt; 居家 &lt;/text&gt;<br>        &lt;/view&gt;<br>      &lt;/scroll-view&gt;<br>      &lt;!-- 右侧：二级分类 --&gt;<br>      &lt;scroll-view class=&quot;secondary&quot; scroll-y&gt;<br>        &lt;!-- 焦点图 --&gt;<br>        &lt;XtxSwiper class=&quot;banner&quot; :list=&quot;[]&quot; /&gt;<br>        &lt;!-- 内容区域 --&gt;<br>        &lt;view class=&quot;panel&quot; v-for=&quot;item in 3&quot; :key=&quot;item&quot;&gt;<br>          &lt;view class=&quot;title&quot;&gt;<br>            &lt;text class=&quot;name&quot;&gt;宠物用品&lt;/text&gt;<br>            &lt;navigator class=&quot;more&quot; hover-class=&quot;none&quot;&gt;全部&lt;/navigator&gt;<br>          &lt;/view&gt;<br>          &lt;view class=&quot;section&quot;&gt;<br>            &lt;navigator<br>              v-for=&quot;goods in 4&quot;<br>              :key=&quot;goods&quot;<br>              class=&quot;goods&quot;<br>              hover-class=&quot;none&quot;<br>              :url=&quot;`/pages/goods/goods?id=`&quot;<br>            &gt;<br>              &lt;image<br>                class=&quot;image&quot;<br>                src=&quot;https://yanxuan-item.nosdn.127.net/674ec7a88de58a026304983dd049ea69.jpg&quot;<br>              &gt;&lt;/image&gt;<br>              &lt;view class=&quot;name ellipsis&quot;&gt;木天蓼逗猫棍&lt;/view&gt;<br>              &lt;view class=&quot;price&quot;&gt;<br>                &lt;text class=&quot;symbol&quot;&gt;¥&lt;/text&gt;<br>                &lt;text class=&quot;number&quot;&gt;16.00&lt;/text&gt;<br>              &lt;/view&gt;<br>            &lt;/navigator&gt;<br>          &lt;/view&gt;<br>        &lt;/view&gt;<br>      &lt;/scroll-view&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br><br>&lt;style lang=&quot;scss&quot;&gt;<br>page &#123;<br>  height: 100%;<br>  overflow: hidden;<br>&#125;<br>.viewport &#123;<br>  height: 100%;<br>  display: flex;<br>  flex-direction: column;<br>&#125;<br>.search &#123;<br>  padding: 0 30rpx 20rpx;<br>  background-color: #fff;<br>  .input &#123;<br>    display: flex;<br>    align-items: center;<br>    justify-content: space-between;<br>    height: 64rpx;<br>    padding-left: 26rpx;<br>    color: #8b8b8b;<br>    font-size: 28rpx;<br>    border-radius: 32rpx;<br>    background-color: #f3f4f4;<br>  &#125;<br>&#125;<br>.icon-search &#123;<br>  &amp;::before &#123;<br>    margin-right: 10rpx;<br>  &#125;<br>&#125;<br>/* 分类 */<br>.categories &#123;<br>  flex: 1;<br>  min-height: 400rpx;<br>  display: flex;<br>&#125;<br>/* 一级分类 */<br>.primary &#123;<br>  overflow: hidden;<br>  width: 180rpx;<br>  flex: none;<br>  background-color: #f6f6f6;<br>  .item &#123;<br>    display: flex;<br>    justify-content: center;<br>    align-items: center;<br>    height: 96rpx;<br>    font-size: 26rpx;<br>    color: #595c63;<br>    position: relative;<br>    &amp;::after &#123;<br>      content: &#x27;&#x27;;<br>      position: absolute;<br>      left: 42rpx;<br>      bottom: 0;<br>      width: 96rpx;<br>      border-top: 1rpx solid #e3e4e7;<br>    &#125;<br>  &#125;<br>  .active &#123;<br>    background-color: #fff;<br>    &amp;::before &#123;<br>      content: &#x27;&#x27;;<br>      position: absolute;<br>      left: 0;<br>      top: 0;<br>      width: 8rpx;<br>      height: 100%;<br>      background-color: #27ba9b;<br>    &#125;<br>  &#125;<br>&#125;<br>.primary .item:last-child::after,<br>.primary .active::after &#123;<br>  display: none;<br>&#125;<br>/* 二级分类 */<br>.secondary &#123;<br>  background-color: #fff;<br>  .carousel &#123;<br>    height: 200rpx;<br>    margin: 0 30rpx 20rpx;<br>    border-radius: 4rpx;<br>    overflow: hidden;<br>  &#125;<br>  .panel &#123;<br>    margin: 0 30rpx 0rpx;<br>  &#125;<br>  .title &#123;<br>    height: 60rpx;<br>    line-height: 60rpx;<br>    color: #333;<br>    font-size: 28rpx;<br>    border-bottom: 1rpx solid #f7f7f8;<br>    .more &#123;<br>      float: right;<br>      padding-left: 20rpx;<br>      font-size: 24rpx;<br>      color: #999;<br>    &#125;<br>  &#125;<br>  .more &#123;<br>    &amp;::after &#123;<br>      font-family: &#x27;erabbit&#x27; !important;<br>      content: &#x27;\e6c2&#x27;;<br>    &#125;<br>  &#125;<br>  .section &#123;<br>    width: 100%;<br>    display: flex;<br>    flex-wrap: wrap;<br>    padding: 20rpx 0;<br>    .goods &#123;<br>      width: 150rpx;<br>      margin: 0rpx 30rpx 20rpx 0;<br>      &amp;:nth-child(3n) &#123;<br>        margin-right: 0;<br>      &#125;<br>      image &#123;<br>        width: 150rpx;<br>        height: 150rpx;<br>      &#125;<br>      .name &#123;<br>        padding: 5rpx;<br>        font-size: 22rpx;<br>        color: #333;<br>      &#125;<br>      .price &#123;<br>        padding: 5rpx;<br>        font-size: 18rpx;<br>        color: #cf4444;<br>      &#125;<br>      .number &#123;<br>        font-size: 24rpx;<br>        margin-left: 2rpx;<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="渲染轮播图"><a href="#渲染轮播图" class="headerlink" title="渲染轮播图"></a>渲染轮播图</h3><p><strong>接口调用</strong></p>
+<p>渲染轮播图数据业务功能对于前端来说比较简单，只需调用后端提供的接口将获得的数据展现。</p>
+<p>注意：传递参数 2 标识获取商品分类页广告。</p>
+<p>接口地址：&#x2F;home&#x2F;banner</p>
+<p>请求方式：GET</p>
+<p>请求参数：</p>
+<p><strong>Query:</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>distributionSite</td>
+<td>否</td>
+<td>1</td>
+<td>活动 banner 位置，1 代表首页，2 代表商品分类页，默认为 1</td>
+</tr>
+</tbody></table>
+<h2 id="一级分类"><a href="#一级分类" class="headerlink" title="一级分类"></a>一级分类</h2><h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><p>该接口同时包含一级分类和二级分类数据，二级分类数据需要先对数据进行处理，再进行渲染。</p>
+<p><strong>接口调用</strong></p>
+<p>接口地址：&#x2F;category&#x2F;top</p>
+<p>请求方式：GET</p>
+<p>请求参数：无</p>
+<p><strong>请求封装</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// src/services/category.ts</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 分类列表-小程序</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">getCategoryTopAPI</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> http&lt;<span class="hljs-title class_">CategoryTopItem</span>[]&gt;(&#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/category/top&#x27;</span>,<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>类型声明</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// src/types/category.d.ts</span><br><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> &#123; <span class="hljs-title class_">GoodsItem</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./global&#x27;</span><br><br><span class="hljs-comment">/** 一级分类项 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">CategoryTopItem</span> = &#123;<br>  <span class="hljs-comment">/** 二级分类集合[ 二级分类项 ] */</span><br>  <span class="hljs-attr">children</span>: <span class="hljs-title class_">CategoryChildItem</span>[]<br>  <span class="hljs-comment">/** 一级分类id */</span><br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 一级分类图片集[ 一级分类图片项 ] */</span><br>  <span class="hljs-attr">imageBanners</span>: <span class="hljs-built_in">string</span>[]<br>  <span class="hljs-comment">/** 一级分类名称 */</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 一级分类图片 */</span><br>  <span class="hljs-attr">picture</span>: <span class="hljs-built_in">string</span><br>&#125;<br><br><span class="hljs-comment">/** 二级分类项 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">CategoryChildItem</span> = &#123;<br>  <span class="hljs-comment">/** 商品集合[ 商品项 ] */</span><br>  <span class="hljs-attr">goods</span>: <span class="hljs-title class_">GoodsItem</span>[]<br>  <span class="hljs-comment">/** 二级分类id */</span><br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 二级分类名称 */</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 二级分类图片 */</span><br>  <span class="hljs-attr">picture</span>: <span class="hljs-built_in">string</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>接下来，先把一级分类数据结合模板语法渲染到页面中。</p>
+<h3 id="Tab-交互"><a href="#Tab-交互" class="headerlink" title="Tab 交互"></a>Tab 交互</h3><p>当用户点击一级分类时，需要高亮显示，即给它添加 <code>.active</code> 类名即可。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;8-11,15,19,31-34,36&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; getCategoryTopAPI &#125; from &#x27;@/services/category&#x27;<br>import type &#123; CategoryTopItem &#125; from &#x27;@/types/category&#x27;<br>import &#123; onLoad &#125; from &#x27;@dcloudio/uni-app&#x27;<br>import &#123; ref &#125; from &#x27;vue&#x27;<br><br>// 获取分类列表数据<br>const categoryList = ref&lt;CategoryTopItem[]&gt;([])<br>const getCategoryTopData = async () =&gt; &#123;<br>  const res = await getCategoryTopAPI()<br>  categoryList.value = res.result<br>&#125;<br><br>// 高亮下标<br>const activeIndex = ref(0)<br><br>// 页面加载<br>onLoad(() =&gt; &#123;<br>  getCategoryTopData()<br>&#125;)<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>    &lt;!-- 分类 --&gt;<br>    &lt;view class=&quot;categories&quot;&gt;<br>      &lt;!-- 左侧：一级分类 --&gt;<br>      &lt;scroll-view class=&quot;primary&quot; scroll-y&gt;<br>        &lt;view<br>          class=&quot;item&quot;<br>          v-for=&quot;(item, index) in categoryList&quot;<br>          :key=&quot;item.id&quot;<br>          :class=&quot;&#123; active: index === activeIndex &#125;&quot;<br>          @tap=&quot;activeIndex = index&quot;<br>        &gt;<br>          &#123;&#123; item.name &#125;&#125;<br>        &lt;/view&gt;<br>      &lt;/scroll-view&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="二级分类"><a href="#二级分类" class="headerlink" title="二级分类"></a>二级分类</h2><p>商品二级分类是从属于某个一级分类的，通过 <code>computed</code> 配合<strong>高亮下标</strong>提取当前二级分类数据。</p>
+<h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><figure class="highlight plaintext"><figcaption><span>&#123;7-9&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; computed &#125; from &#x27;vue&#x27;<br><br>// ...省略<br><br>// 提取当前二级分类数据<br>const subCategoryList = computed(() =&gt; &#123;<br>  return categoryList.value[activeIndex.value]?.children || []<br>&#125;)<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>      &lt;!-- ...省略 --&gt;<br>      &lt;!-- 右侧：二级分类 --&gt;<br>      &lt;scroll-view class=&quot;secondary&quot; scroll-y&gt;<br>        &lt;!-- 焦点图 --&gt;<br>        &lt;XtxSwiper class=&quot;banner&quot; :list=&quot;bannerList&quot; /&gt;<br>        &lt;!-- 内容区域 --&gt;<br>        &lt;view class=&quot;panel&quot; v-for=&quot;item in subCategoryList&quot; :key=&quot;item.id&quot;&gt;<br>          &lt;view class=&quot;title&quot;&gt;<br>            &lt;text class=&quot;name&quot;&gt;&#123;&#123; item.name &#125;&#125;&lt;/text&gt;<br>            &lt;navigator class=&quot;more&quot; hover-class=&quot;none&quot;&gt;全部&lt;/navigator&gt;<br>          &lt;/view&gt;<br>          &lt;view class=&quot;section&quot;&gt;<br>            &lt;navigator<br>              v-for=&quot;goods in item.goods&quot;<br>              :key=&quot;goods.id&quot;<br>              class=&quot;goods&quot;<br>              hover-class=&quot;none&quot;<br>              :url=&quot;`/pages/goods/goods?id=$&#123;goods.id&#125;`&quot;<br>            &gt;<br>              &lt;image class=&quot;image&quot; :src=&quot;goods.picture&quot;&gt;&lt;/image&gt;<br>              &lt;view class=&quot;name ellipsis&quot;&gt;&#123;&#123; goods.name &#125;&#125;&lt;/view&gt;<br>              &lt;view class=&quot;price&quot;&gt;<br>                &lt;text class=&quot;symbol&quot;&gt;¥&lt;/text&gt;<br>                &lt;text class=&quot;number&quot;&gt;&#123;&#123; goods.price &#125;&#125;&lt;/text&gt;<br>              &lt;/view&gt;<br>            &lt;/navigator&gt;<br>          &lt;/view&gt;<br>        &lt;/view&gt;<br>      &lt;/scroll-view&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<p>提取当前二级分类数据后，剩下的就是列表渲染。</p>
+<h2 id="骨架屏"><a href="#骨架屏" class="headerlink" title="骨架屏"></a>骨架屏</h2><p><strong>参考效果</strong></p>
+<p>实现步骤参考首页的骨架屏。</p>
+<p><img src="/./assets/category_picture_2.png" srcset="/img/loading.gif" lazyload alt="分类页骨架屏"></p>
+<h2 id="代码参考-总"><a href="#代码参考-总" class="headerlink" title="代码参考(总)"></a>代码参考(总)</h2><p>商品分类页</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;26,30,40,94&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; getCategoryTopAPI &#125; from &#x27;@/services/category&#x27;<br>import &#123; getHomeBannerAPI &#125; from &#x27;@/services/home&#x27;<br>import type &#123; CategoryTopItem &#125; from &#x27;@/types/category&#x27;<br>import type &#123; BannerItem &#125; from &#x27;@/types/home&#x27;<br>import &#123; onLoad &#125; from &#x27;@dcloudio/uni-app&#x27;<br>import &#123; computed, ref &#125; from &#x27;vue&#x27;<br>import PageSkeleton from &#x27;./components/PageSkeleton.vue&#x27;<br><br>// 获取轮播图数据<br>const bannerList = ref&lt;BannerItem[]&gt;([])<br>const getBannerData = async () =&gt; &#123;<br>  const res = await getHomeBannerAPI(2)<br>  bannerList.value = res.result<br>&#125;<br><br>// 获取分类列表数据<br>const categoryList = ref&lt;CategoryTopItem[]&gt;([])<br>const activeIndex = ref(0)<br>const getCategoryTopData = async () =&gt; &#123;<br>  const res = await getCategoryTopAPI()<br>  categoryList.value = res.result<br>&#125;<br><br>// 是否数据加载完毕<br>const isFinish = ref(false)<br>// 页面加载<br>onLoad(async () =&gt; &#123;<br>  await Promise.all([getBannerData(), getCategoryTopData()])<br>  isFinish.value = true<br>&#125;)<br><br>// 提取当前二级分类数据<br>const subCategoryList = computed(() =&gt; &#123;<br>  return categoryList.value[activeIndex.value]?.children || []<br>&#125;)<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot; v-if=&quot;isFinish&quot;&gt;<br>    &lt;!-- 搜索框 --&gt;<br>    &lt;view class=&quot;search&quot;&gt;<br>      &lt;view class=&quot;input&quot;&gt;<br>        &lt;text class=&quot;icon-search&quot;&gt;女靴&lt;/text&gt;<br>      &lt;/view&gt;<br>    &lt;/view&gt;<br>    &lt;!-- 分类 --&gt;<br>    &lt;view class=&quot;categories&quot;&gt;<br>      &lt;!-- 左侧：一级分类 --&gt;<br>      &lt;scroll-view class=&quot;primary&quot; scroll-y&gt;<br>        &lt;view<br>          v-for=&quot;(item, index) in categoryList&quot;<br>          :key=&quot;item.id&quot;<br>          class=&quot;item&quot;<br>          :class=&quot;&#123; active: index === activeIndex &#125;&quot;<br>          @tap=&quot;activeIndex = index&quot;<br>        &gt;<br>          &lt;text class=&quot;name&quot;&gt;<br>            &#123;&#123; item.name &#125;&#125;<br>          &lt;/text&gt;<br>        &lt;/view&gt;<br>      &lt;/scroll-view&gt;<br>      &lt;!-- 右侧：二级分类 --&gt;<br>      &lt;scroll-view class=&quot;secondary&quot; scroll-y&gt;<br>        &lt;!-- 焦点图 --&gt;<br>        &lt;XtxSwiper class=&quot;banner&quot; :list=&quot;bannerList&quot; /&gt;<br>        &lt;!-- 内容区域 --&gt;<br>        &lt;view class=&quot;panel&quot; v-for=&quot;item in subCategoryList&quot; :key=&quot;item.id&quot;&gt;<br>          &lt;view class=&quot;title&quot;&gt;<br>            &lt;text class=&quot;name&quot;&gt;&#123;&#123; item.name &#125;&#125;&lt;/text&gt;<br>            &lt;navigator class=&quot;more&quot; hover-class=&quot;none&quot;&gt;全部&lt;/navigator&gt;<br>          &lt;/view&gt;<br>          &lt;view class=&quot;section&quot;&gt;<br>            &lt;navigator<br>              v-for=&quot;goods in item.goods&quot;<br>              :key=&quot;goods.id&quot;<br>              class=&quot;goods&quot;<br>              hover-class=&quot;none&quot;<br>              :url=&quot;`/pages/goods/goods?id=$&#123;goods.id&#125;`&quot;<br>            &gt;<br>              &lt;image class=&quot;image&quot; :src=&quot;goods.picture&quot;&gt;&lt;/image&gt;<br>              &lt;view class=&quot;name ellipsis&quot;&gt;&#123;&#123; goods.name &#125;&#125;&lt;/view&gt;<br>              &lt;view class=&quot;price&quot;&gt;<br>                &lt;text class=&quot;symbol&quot;&gt;¥&lt;/text&gt;<br>                &lt;text class=&quot;number&quot;&gt;&#123;&#123; goods.price &#125;&#125;&lt;/text&gt;<br>              &lt;/view&gt;<br>            &lt;/navigator&gt;<br>          &lt;/view&gt;<br>        &lt;/view&gt;<br>      &lt;/scroll-view&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>  &lt;!-- 骨架屏 --&gt;<br>  &lt;PageSkeleton v-else /&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Uni-app/" class="category-chain-item">Uni-app</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Uni-app/Demo/" class="category-chain-item">Demo</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Uni-app/Demo/TuShop/" class="category-chain-item">TuShop</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>小兔鲜儿 -  分类模块</div>
+      <div>http://example.com/2020/10/01/Uni-app/Demo/tu-shop/04-分类模块/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>YoYo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 1, 2020</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/01/Uni-app/Demo/tu-shop/05-%E8%AF%A6%E6%83%85%E6%A8%A1%E5%9D%97/" title="小兔鲜儿 - 商品详情(登录前)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">小兔鲜儿 - 商品详情(登录前)</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/10/01/Uni-app/Demo/tu-shop/03-%E6%8E%A8%E8%8D%90%E6%A8%A1%E5%9D%97/" title="小兔鲜儿 -  推荐模块">
+                        <span class="hidden-mobile">小兔鲜儿 -  推荐模块</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

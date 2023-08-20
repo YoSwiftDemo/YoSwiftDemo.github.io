@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="YoYo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="小兔鲜儿 - 微信登录涉及知识点：微信授权登录，文件上传，Store 状态管理等。 微信登录微信小程序的开放能力，允许开发者获取微信用户的基本信息（昵称、性别、手机号码等），开发者常用来实现注册&#x2F;登录的功能。 登录方式常见登录&#x2F;注册方式：  用户名&#x2F;手机号 + 密码 手机号 + 验证码 授权登录  实际开发过程中常常需要实现以上的一种或多种方式，我们的项目主要实现授权">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小兔鲜儿 - 微信登录">
+<meta property="og:url" content="http://example.com/2020/10/01/Uni-app/Demo/tu-shop/06-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="YoYo">
+<meta property="og:description" content="小兔鲜儿 - 微信登录涉及知识点：微信授权登录，文件上传，Store 状态管理等。 微信登录微信小程序的开放能力，允许开发者获取微信用户的基本信息（昵称、性别、手机号码等），开发者常用来实现注册&#x2F;登录的功能。 登录方式常见登录&#x2F;注册方式：  用户名&#x2F;手机号 + 密码 手机号 + 验证码 授权登录  实际开发过程中常常需要实现以上的一种或多种方式，我们的项目主要实现授权">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/login_picture_1.png">
+<meta property="og:image" content="http://example.com/assets/login_picture_2.png">
+<meta property="og:image" content="http://example.com/assets/login_picture_3.png">
+<meta property="article:published_time" content="2020-09-30T17:01:06.000Z">
+<meta property="article:modified_time" content="2023-08-20T06:37:51.457Z">
+<meta property="article:author" content="YoYo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/assets/login_picture_1.png">
+  
+  
+  
+  <title>小兔鲜儿 - 微信登录 - YoYo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>YoSwift</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="小兔鲜儿 - 微信登录"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-10-01 01:01" pubdate>
+          October 1, 2020 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.7k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          73 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">小兔鲜儿 - 微信登录</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="小兔鲜儿-微信登录"><a href="#小兔鲜儿-微信登录" class="headerlink" title="小兔鲜儿 - 微信登录"></a>小兔鲜儿 - 微信登录</h1><p>涉及知识点：微信授权登录，文件上传，Store 状态管理等。</p>
+<h2 id="微信登录"><a href="#微信登录" class="headerlink" title="微信登录"></a>微信登录</h2><p>微信小程序的<strong>开放能力</strong>，允许开发者获取微信用户的基本信息（昵称、性别、手机号码等），开发者常用来实现注册&#x2F;登录的功能。</p>
+<h3 id="登录方式"><a href="#登录方式" class="headerlink" title="登录方式"></a>登录方式</h3><p>常见登录&#x2F;注册方式：</p>
+<ol>
+<li>用户名&#x2F;手机号 + 密码</li>
+<li>手机号 + 验证码</li>
+<li>授权登录</li>
+</ol>
+<p>实际开发过程中常常需要实现以上的一种或多种方式，我们的项目主要实现<strong>授权登录</strong>。</p>
+<p><strong>微信授权登录</strong></p>
+<p>用户在使用小程序时，其实已登录微信，其本质上就是：<strong>微信授权给小程序读取微信用户信息</strong>。</p>
+<p><img src="/./assets/login_picture_1.png" srcset="/img/loading.gif" lazyload alt="微信授权登录"></p>
+<p><strong>传统登录方式</strong></p>
+<p>传统登录方式，一般是通过输入密码或者手机验证码实现登录。</p>
+<p><img src="/./assets/login_picture_2.png" srcset="/img/loading.gif" lazyload alt="传统密码登录"></p>
+<p>温馨提示：接口文档中提供练习使用的登录接口，大家可在课后自行完成。</p>
+<h3 id="静态结构"><a href="#静态结构" class="headerlink" title="静态结构"></a>静态结构</h3><p>登录页</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><code class="hljs vue">// src/pages/login/login.vue<br><br>&lt;script setup lang=&quot;ts&quot;&gt;<br>//<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>    &lt;view class=&quot;logo&quot;&gt;<br>      &lt;image<br>        src=&quot;https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/logo_icon.png&quot;<br>      &gt;&lt;/image&gt;<br>    &lt;/view&gt;<br>    &lt;view class=&quot;login&quot;&gt;<br>      &lt;button class=&quot;button phone&quot;&gt;<br>        &lt;text class=&quot;icon icon-phone&quot;&gt;&lt;/text&gt;<br>        手机号快捷登录<br>      &lt;/button&gt;<br>      &lt;view class=&quot;extra&quot;&gt;<br>        &lt;view class=&quot;caption&quot;&gt;<br>          &lt;text&gt;其他登录方式&lt;/text&gt;<br>        &lt;/view&gt;<br>        &lt;view class=&quot;options&quot;&gt;<br>          &lt;button&gt;<br>            &lt;text class=&quot;icon icon-phone&quot;&gt;模拟快捷登录&lt;/text&gt;<br>          &lt;/button&gt;<br>        &lt;/view&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;tips&quot;<br>        &gt;登录/注册即视为你同意《服务条款》和《小兔鲜儿隐私协议》&lt;/view<br>      &gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br><br>&lt;style lang=&quot;scss&quot;&gt;<br>page &#123;<br>  height: 100%;<br>&#125;<br><br>.viewport &#123;<br>  display: flex;<br>  flex-direction: column;<br>  height: 100%;<br>  padding: 20rpx 40rpx;<br>&#125;<br><br>.logo &#123;<br>  flex: 1;<br>  text-align: center;<br>  image &#123;<br>    width: 220rpx;<br>    height: 220rpx;<br>    margin-top: 15vh;<br>  &#125;<br>&#125;<br><br>.login &#123;<br>  display: flex;<br>  flex-direction: column;<br>  height: 60vh;<br>  padding: 40rpx 20rpx 20rpx;<br><br>  .button &#123;<br>    display: flex;<br>    align-items: center;<br>    justify-content: center;<br>    width: 100%;<br>    height: 80rpx;<br>    font-size: 28rpx;<br>    border-radius: 72rpx;<br>    color: #fff;<br>    .icon &#123;<br>      font-size: 40rpx;<br>      margin-right: 6rpx;<br>    &#125;<br>  &#125;<br><br>  .phone &#123;<br>    background-color: #28bb9c;<br>  &#125;<br><br>  .wechat &#123;<br>    background-color: #06c05f;<br>  &#125;<br><br>  .extra &#123;<br>    flex: 1;<br>    padding: 70rpx 70rpx 0;<br>    .caption &#123;<br>      width: 440rpx;<br>      line-height: 1;<br>      border-top: 1rpx solid #ddd;<br>      font-size: 26rpx;<br>      color: #999;<br>      position: relative;<br>      text &#123;<br>        transform: translate(-40%);<br>        background-color: #fff;<br>        position: absolute;<br>        top: -12rpx;<br>        left: 50%;<br>      &#125;<br>    &#125;<br><br>    .options &#123;<br>      display: flex;<br>      justify-content: center;<br>      align-items: center;<br>      margin-top: 70rpx;<br>      button &#123;<br>        padding: 0;<br>        background-color: transparent;<br>      &#125;<br>    &#125;<br><br>    .icon &#123;<br>      font-size: 24rpx;<br>      color: #444;<br>      display: flex;<br>      flex-direction: column;<br>      align-items: center;<br><br>      &amp;::before &#123;<br>        display: flex;<br>        align-items: center;<br>        justify-content: center;<br>        width: 80rpx;<br>        height: 80rpx;<br>        margin-bottom: 6rpx;<br>        font-size: 40rpx;<br>        border: 1rpx solid #444;<br>        border-radius: 50%;<br>      &#125;<br>    &#125;<br>    .icon-weixin::before &#123;<br>      border-color: #06c05f;<br>      color: #06c05f;<br>    &#125;<br>  &#125;<br>&#125;<br><br>.tips &#123;<br>  position: absolute;<br>  bottom: 80rpx;<br>  left: 20rpx;<br>  right: 20rpx;<br>  font-size: 22rpx;<br>  color: #999;<br>  text-align: center;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="获取登录凭证"><a href="#获取登录凭证" class="headerlink" title="获取登录凭证"></a>获取登录凭证</h3><p>前端：调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html">wx.login()</a> 接口获取登录凭证（code）。</p>
+<p>后端：通过凭证（code）向微信服务器换取用户登录态信息。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;7&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; onLoad &#125; from &#x27;@dcloudio/uni-app&#x27;<br><br>// 获取 code 登录凭证<br>let code = &#x27;&#x27;<br>onLoad(async () =&gt; &#123;<br>  const res = await wx.login()<br>  code = res.code<br>&#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<p>::: warning 注意</p>
+<p>code 的获取<strong>不要</strong>在 getphonenumber 事件回调函数调用，否则可能会出现错误！！！</p>
+<p>:::</p>
+<p>::: tip 温馨提示</p>
+<p>用户登录态信息，不包含用户昵称、性别、手机号码等信息，作用是用于<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html">后端服务器与微信服务器通讯</a>。</p>
+<p>:::</p>
+<h3 id="获取手机号码"><a href="#获取手机号码" class="headerlink" title="获取手机号码"></a>获取手机号码</h3><p>出于安全限制，小程序【规定】想获取用户的手机号，必须由用户主动【点击按钮】并【允许申请】才可获取加密的手机号信息。</p>
+<p><img src="/./assets/login_picture_3.png" srcset="/img/loading.gif" lazyload alt="授权登录"></p>
+<p>前端：提供 <code>open-type</code> 按钮，在事件处理函数中获取加密的手机号信息。</p>
+<p>后端：解密手机号信息，把手机号和用户登录态关联在一起。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;3-5,13-14&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// 获取用户手机号码<br>const onGetphonenumber: UniHelper.ButtonOnGetphonenumber = (ev) =&gt; &#123;<br>  console.log(ev)<br>&#125;<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>    &lt;view class=&quot;login&quot;&gt;<br>      &lt;button<br>        class=&quot;button phone&quot;<br>        open-type=&quot;getPhoneNumber&quot;<br>        @getphonenumber=&quot;onGetphonenumber&quot;<br>      &gt;<br>        &lt;text class=&quot;icon icon-phone&quot;&gt;&lt;/text&gt;<br>        手机号快捷登录<br>      &lt;/button&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<p>::: warning 常见问题：</p>
+<p>Q：为什么我无法唤起获取手机号的界面？</p>
+<p>A：获取手机号功能<strong>目前针对非个人开发者</strong>，所以个人开发者无法唤起获取手机号界面，<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getPhoneNumber.html">详见文档</a>。</p>
+<p>:::</p>
+<p>项目提供了<a target="_blank" rel="noopener" href="https://apifox.com/apidoc/shared-0e6ee326-d646-41bd-9214-29dbf47648fa/api-43426851">模拟登录 API </a> 用于练习。</p>
+<h3 id="微信登录接口-生产环境"><a href="#微信登录接口-生产环境" class="headerlink" title="微信登录接口(生产环境)"></a>微信登录接口(生产环境)</h3><p><strong>接口调用</strong></p>
+<p>接口地址：&#x2F;login&#x2F;wxMin</p>
+<p>请求方式：POST</p>
+<p>请求参数：</p>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>code</td>
+<td>是</td>
+<td>无</td>
+<td>wx.login 获取</td>
+</tr>
+<tr>
+<td>iv</td>
+<td>是</td>
+<td>无</td>
+<td>getphonenumber 事件回调获取</td>
+</tr>
+<tr>
+<td>encryptedData</td>
+<td>是</td>
+<td>无</td>
+<td>getphonenumber 事件回调获取</td>
+</tr>
+</tbody></table>
+<p><strong>请求封装</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// src/services/login.ts</span><br><br><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> &#123; <span class="hljs-title class_">LoginResult</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/types/member&#x27;</span><br><span class="hljs-keyword">import</span> &#123; http &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/utils/http&#x27;</span><br><br><span class="hljs-keyword">type</span> <span class="hljs-title class_">LoginParams</span> = &#123;<br>  <span class="hljs-attr">code</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-attr">encryptedData</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-attr">iv</span>: <span class="hljs-built_in">string</span><br>&#125;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 小程序登录</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> data 请求参数</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">postLoginWxMinAPI</span> = (<span class="hljs-params">data: LoginParams</span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> http&lt;<span class="hljs-title class_">LoginResult</span>&gt;(&#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/login/wxMin&#x27;</span>,<br>    data,<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>类型声明</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// src/types/member.d.ts</span><br><br><span class="hljs-comment">/** 小程序登录 登录用户信息 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">LoginResult</span> = &#123;<br>  <span class="hljs-comment">/** 用户ID */</span><br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 头像  */</span><br>  <span class="hljs-attr">avatar</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 账户名  */</span><br>  <span class="hljs-attr">account</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 昵称 */</span><br>  nickname?: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 手机号 */</span><br>  <span class="hljs-attr">mobile</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 登录凭证 */</span><br>  <span class="hljs-attr">token</span>: <span class="hljs-built_in">string</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>参考代码</strong></p>
+<p>小兔鲜儿项目采用常见的 <strong>登录凭证 + 手机号</strong> 实现授权登录。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;10,31,32&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs vue">// src/pages/login/login.vue<br><br>&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; postLoginWxMinAPI &#125; from &#x27;@/services/login&#x27;<br>import &#123; onLoad &#125; from &#x27;@dcloudio/uni-app&#x27;<br><br>// 获取 code 登录凭证<br>let code = &#x27;&#x27;<br>onLoad(async () =&gt; &#123;<br>  const res = await wx.login()<br>  code = res.code<br>&#125;)<br><br>// 获取用户手机号码<br>const onGetphonenumber: UniHelper.ButtonOnGetphonenumber = async (ev) =&gt; &#123;<br>  // 获取参数<br>  const encryptedData = ev.detail.encryptedData!<br>  const iv = ev.detail.iv!<br>  // 登录请求<br>  await postLoginWxMinAPI(&#123; code, encryptedData, iv &#125;)<br>  // 成功提示<br>  uni.showToast(&#123; icon: &#x27;none&#x27;, title: &#x27;登录成功&#x27; &#125;)<br>&#125;<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>    &lt;view class=&quot;login&quot;&gt;<br>      &lt;button<br>        class=&quot;button phone&quot;<br>        open-type=&quot;getPhoneNumber&quot;<br>        @getphonenumber=&quot;onGetphonenumber&quot;<br>      &gt;<br>        &lt;text class=&quot;icon icon-phone&quot;&gt;&lt;/text&gt;<br>        手机号快捷登录<br>      &lt;/button&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="模拟手机登录-开发环境"><a href="#模拟手机登录-开发环境" class="headerlink" title="模拟手机登录(开发环境)"></a>模拟手机登录(开发环境)</h3><p>获取手机号功能，<strong>目前针对非个人开发者，且完成了认证的小程序开放</strong>，<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getPhoneNumber.html">详见文档</a>。</p>
+<p>::: tip 温馨提示</p>
+<p>为了更好实现登录后续的业务，后端提供了一个内部测试用的接口，只需要传手机号即可实现快捷登录。</p>
+<p>:::</p>
+<p><strong>请求接口</strong></p>
+<p>接口地址：&#x2F;login&#x2F;wxMin&#x2F;simple</p>
+<p>请求方式：POST</p>
+<p>请求参数：</p>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>phoneNumber</td>
+<td>是</td>
+<td>无</td>
+<td>模拟的手机号</td>
+</tr>
+</tbody></table>
+<p>该接口跟微信登录接口返回的数据格式是相同的。</p>
+<p><strong>请求封装</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 小程序登录_内测版</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> phoneNumber 模拟手机号码</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">postLoginWxMinSimpleAPI</span> = (<span class="hljs-params">phoneNumber: <span class="hljs-built_in">string</span></span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> http&lt;<span class="hljs-title class_">LoginResult</span>&gt;(&#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/login/wxMin/simple&#x27;</span>,<br>    <span class="hljs-attr">data</span>: &#123;<br>      phoneNumber,<br>    &#125;,<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="用户信息持久化存储"><a href="#用户信息持久化存储" class="headerlink" title="用户信息持久化存储"></a>用户信息持久化存储</h3><p>Pinia 的持久化存储插件在 <a href="/rabbit-shop/#pinia-persist">项目起步</a> 模块已经搭建完成，现在只需要在用户登录成功后，补充 TS 类型声明并保存用户信息即可。</p>
+<p><strong>参考代码</strong></p>
+<p>Store</p>
+<figure class="highlight ts"><figcaption><span>&#123;3,12,15&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// src/stores/modules/member.ts</span><br><br><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> &#123; <span class="hljs-title class_">LoginResult</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/types/member&#x27;</span><br><span class="hljs-keyword">import</span> &#123; defineStore &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;pinia&#x27;</span><br><span class="hljs-keyword">import</span> &#123; ref &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><br><span class="hljs-comment">// 定义 Store</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> useMemberStore = <span class="hljs-title function_">defineStore</span>(<br>  <span class="hljs-string">&#x27;member&#x27;</span>,<br>  <span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-comment">// 会员信息</span><br>    <span class="hljs-keyword">const</span> profile = ref&lt;<span class="hljs-title class_">LoginResult</span>&gt;() <span class="hljs-comment">// [!code ++]</span><br><br>    <span class="hljs-comment">// 保存会员信息，登录时使用</span><br>    <span class="hljs-keyword">const</span> <span class="hljs-title function_">setProfile</span> = (<span class="hljs-params">val: LoginResult</span>) =&gt; &#123;<br>      <span class="hljs-comment">// [!code ++]</span><br>      profile.<span class="hljs-property">value</span> = val<br>    &#125;<br><br>    <span class="hljs-comment">// 清理会员信息，退出时使用</span><br>    <span class="hljs-keyword">const</span> <span class="hljs-title function_">clearProfile</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>      profile.<span class="hljs-property">value</span> = <span class="hljs-literal">undefined</span><br>    &#125;<br><br>    <span class="hljs-comment">// 记得 return</span><br>    <span class="hljs-keyword">return</span> &#123; profile, setProfile, clearProfile &#125;<br>  &#125;,<br>  &#123;<br>    <span class="hljs-comment">// 小程序端配置</span><br>    <span class="hljs-attr">persist</span>: &#123;<br>      <span class="hljs-attr">storage</span>: &#123;<br>        <span class="hljs-title function_">getItem</span>(<span class="hljs-params">key</span>) &#123;<br>          <span class="hljs-keyword">return</span> uni.<span class="hljs-title function_">getStorageSync</span>(key)<br>        &#125;,<br>        <span class="hljs-title function_">setItem</span>(<span class="hljs-params">key, value</span>) &#123;<br>          uni.<span class="hljs-title function_">setStorageSync</span>(key, value)<br>        &#125;,<br>      &#125;,<br>    &#125;,<br>  &#125;,<br>)<br></code></pre></td></tr></table></figure>
+
+<p>登录页</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;3,30,31&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; postLoginWxMinAPI, postLoginWxMinSimpleAPI &#125; from &#x27;@/services/login&#x27;<br>import &#123; useMemberStore &#125; from &#x27;@/stores&#x27;<br>import type &#123; LoginResult &#125; from &#x27;@/types/member&#x27;<br>import &#123; onLoad &#125; from &#x27;@dcloudio/uni-app&#x27;<br><br>// 获取 code 登录凭证<br>let code = &#x27;&#x27;<br>onLoad(async () =&gt; &#123;<br>  const res = await wx.login()<br>  code = res.code<br>&#125;)<br><br>// 获取用户手机号码（企业中写法）<br>const onGetphonenumber: UniHelper.ButtonOnGetphonenumber = async (ev) =&gt; &#123;<br>  const encryptedData = ev.detail!.encryptedData!<br>  const iv = ev.detail!.iv!<br>  const res = await postLoginWxMinAPI(&#123; code, encryptedData, iv &#125;)<br>  loginSuccess(res.result)<br>&#125;<br><br>// 模拟手机号码快捷登录（开发练习）<br>const onGetphonenumberSimple = async () =&gt; &#123;<br>  const res = await postLoginWxMinSimpleAPI(&#x27;13123456789&#x27;)<br>  loginSuccess(res.result)<br>&#125;<br><br>const loginSuccess = (profile: LoginResult) =&gt; &#123;<br>  // 保存会员信息<br>  const memberStore = useMemberStore() // [!code ++]<br>  memberStore.setProfile(profile) // [!code ++]<br>  // 成功提示<br>  uni.showToast(&#123; icon: &#x27;success&#x27;, title: &#x27;登录成功&#x27; &#125;)<br>  setTimeout(() =&gt; &#123;<br>    // 页面跳转<br>    uni.switchTab(&#123; url: &#x27;/pages/my/my&#x27; &#125;)<br>  &#125;, 500)<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<p>到此，微信登录模块已经完成，接下来进入到用户模块。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Uni-app/" class="category-chain-item">Uni-app</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Uni-app/Demo/" class="category-chain-item">Demo</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Uni-app/Demo/TuShop/" class="category-chain-item">TuShop</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>小兔鲜儿 - 微信登录</div>
+      <div>http://example.com/2020/10/01/Uni-app/Demo/tu-shop/06-登录模块/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>YoYo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 1, 2020</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/01/Uni-app/Demo/tu-shop/07-%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9D%97/" title="小兔鲜儿 -用户模块">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">小兔鲜儿 -用户模块</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/10/01/Uni-app/Demo/tu-shop/05-%E8%AF%A6%E6%83%85%E6%A8%A1%E5%9D%97/" title="小兔鲜儿 - 商品详情(登录前)">
+                        <span class="hidden-mobile">小兔鲜儿 - 商品详情(登录前)</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

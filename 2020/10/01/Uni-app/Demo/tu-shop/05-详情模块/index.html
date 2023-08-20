@@ -1,0 +1,714 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="YoYo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="小兔鲜儿 - 商品详情(登录前)商品详情页分为两部分讲解：  登录前：展示商品信息，轮播图交互（当前模块） 登录后：加入购物车，立即购买（SKU 模块）  准备工作参考效果 用户点击商品列表，跳转到对应的商品详情页。  静态结构 新建商品详情页。 1234567891011121314151617181920212223242526272829303132333435363738394041424">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小兔鲜儿 - 商品详情(登录前)">
+<meta property="og:url" content="http://example.com/2020/10/01/Uni-app/Demo/tu-shop/05-%E8%AF%A6%E6%83%85%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="YoYo">
+<meta property="og:description" content="小兔鲜儿 - 商品详情(登录前)商品详情页分为两部分讲解：  登录前：展示商品信息，轮播图交互（当前模块） 登录后：加入购物车，立即购买（SKU 模块）  准备工作参考效果 用户点击商品列表，跳转到对应的商品详情页。  静态结构 新建商品详情页。 1234567891011121314151617181920212223242526272829303132333435363738394041424">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/goods_picture_1.png">
+<meta property="og:image" content="http://example.com/assets/goods_picture_2.png">
+<meta property="og:image" content="http://example.com/assets/goods_picture_3.png">
+<meta property="og:image" content="http://example.com/assets/goods_picture_4.png">
+<meta property="article:published_time" content="2020-09-30T17:01:05.000Z">
+<meta property="article:modified_time" content="2023-08-20T06:37:34.784Z">
+<meta property="article:author" content="YoYo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/assets/goods_picture_1.png">
+  
+  
+  
+  <title>小兔鲜儿 - 商品详情(登录前) - YoYo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>YoSwift</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="小兔鲜儿 - 商品详情(登录前)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-10-01 01:01" pubdate>
+          October 1, 2020 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          30k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          253 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">小兔鲜儿 - 商品详情(登录前)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="小兔鲜儿-商品详情-登录前"><a href="#小兔鲜儿-商品详情-登录前" class="headerlink" title="小兔鲜儿 - 商品详情(登录前)"></a>小兔鲜儿 - 商品详情(登录前)</h1><p>商品详情页分为两部分讲解：</p>
+<ol>
+<li>登录前：展示商品信息，轮播图交互（当前模块）</li>
+<li>登录后：加入购物车，立即购买（SKU 模块）</li>
+</ol>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p><strong>参考效果</strong></p>
+<p>用户点击商品列表，跳转到对应的商品详情页。</p>
+<p><img src="/./assets/goods_picture_1.png" srcset="/img/loading.gif" lazyload alt="商品详情"></p>
+<p><strong>静态结构</strong></p>
+<p>新建商品详情页。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br></pre></td><td class="code"><pre><code class="hljs vue">// src/pages/goods/goods.vue<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>// 获取屏幕边界到安全区域距离<br>const &#123; safeAreaInsets &#125; = uni.getSystemInfoSync()<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;scroll-view scroll-y class=&quot;viewport&quot;&gt;<br>    &lt;!-- 基本信息 --&gt;<br>    &lt;view class=&quot;goods&quot;&gt;<br>      &lt;!-- 商品主图 --&gt;<br>      &lt;view class=&quot;preview&quot;&gt;<br>        &lt;swiper circular&gt;<br>          &lt;swiper-item&gt;<br>            &lt;image<br>              mode=&quot;aspectFill&quot;<br>              src=&quot;https://yanxuan-item.nosdn.127.net/99c83709ca5f9fd5c5bb35d207ad7822.png&quot;<br>            /&gt;<br>          &lt;/swiper-item&gt;<br>          &lt;swiper-item&gt;<br>            &lt;image<br>              mode=&quot;aspectFill&quot;<br>              src=&quot;https://yanxuan-item.nosdn.127.net/f9107d47c08f0b99c097e30055c39e1a.png&quot;<br>            /&gt;<br>          &lt;/swiper-item&gt;<br>          &lt;swiper-item&gt;<br>            &lt;image<br>              mode=&quot;aspectFill&quot;<br>              src=&quot;https://yanxuan-item.nosdn.127.net/754c56785cc8c39f7414752f62d79872.png&quot;<br>            /&gt;<br>          &lt;/swiper-item&gt;<br>          &lt;swiper-item&gt;<br>            &lt;image<br>              mode=&quot;aspectFill&quot;<br>              src=&quot;https://yanxuan-item.nosdn.127.net/ef16f8127610ef56a2a10466d6dae157.jpg&quot;<br>            /&gt;<br>          &lt;/swiper-item&gt;<br>          &lt;swiper-item&gt;<br>            &lt;image<br>              mode=&quot;aspectFill&quot;<br>              src=&quot;https://yanxuan-item.nosdn.127.net/1f0c3f5d32b0e804deb9b3d56ea6c3b2.png&quot;<br>            /&gt;<br>          &lt;/swiper-item&gt;<br>        &lt;/swiper&gt;<br>        &lt;view class=&quot;indicator&quot;&gt;<br>          &lt;text class=&quot;current&quot;&gt;1&lt;/text&gt;<br>          &lt;text class=&quot;split&quot;&gt;/&lt;/text&gt;<br>          &lt;text class=&quot;total&quot;&gt;5&lt;/text&gt;<br>        &lt;/view&gt;<br>      &lt;/view&gt;<br><br>      &lt;!-- 商品简介 --&gt;<br>      &lt;view class=&quot;meta&quot;&gt;<br>        &lt;view class=&quot;price&quot;&gt;<br>          &lt;text class=&quot;symbol&quot;&gt;¥&lt;/text&gt;<br>          &lt;text class=&quot;number&quot;&gt;29.90&lt;/text&gt;<br>        &lt;/view&gt;<br>        &lt;view class=&quot;name ellipsis&quot;&gt;云珍·轻软旅行长绒棉方巾 &lt;/view&gt;<br>        &lt;view class=&quot;desc&quot;&gt; 轻巧无捻小方巾，旅行便携 &lt;/view&gt;<br>      &lt;/view&gt;<br><br>      &lt;!-- 操作面板 --&gt;<br>      &lt;view class=&quot;action&quot;&gt;<br>        &lt;view class=&quot;item arrow&quot;&gt;<br>          &lt;text class=&quot;label&quot;&gt;选择&lt;/text&gt;<br>          &lt;text class=&quot;text ellipsis&quot;&gt; 请选择商品规格 &lt;/text&gt;<br>        &lt;/view&gt;<br>        &lt;view class=&quot;item arrow&quot;&gt;<br>          &lt;text class=&quot;label&quot;&gt;送至&lt;/text&gt;<br>          &lt;text class=&quot;text ellipsis&quot;&gt; 请选择收获地址 &lt;/text&gt;<br>        &lt;/view&gt;<br>        &lt;view class=&quot;item arrow&quot;&gt;<br>          &lt;text class=&quot;label&quot;&gt;服务&lt;/text&gt;<br>          &lt;text class=&quot;text ellipsis&quot;&gt; 无忧退 快速退款 免费包邮 &lt;/text&gt;<br>        &lt;/view&gt;<br>      &lt;/view&gt;<br>    &lt;/view&gt;<br><br>    &lt;!-- 商品详情 --&gt;<br>    &lt;view class=&quot;detail panel&quot;&gt;<br>      &lt;view class=&quot;title&quot;&gt;<br>        &lt;text&gt;详情&lt;/text&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;content&quot;&gt;<br>        &lt;view class=&quot;properties&quot;&gt;<br>          &lt;!-- 属性详情 --&gt;<br>          &lt;view class=&quot;item&quot;&gt;<br>            &lt;text class=&quot;label&quot;&gt;属性名&lt;/text&gt;<br>            &lt;text class=&quot;value&quot;&gt;属性值&lt;/text&gt;<br>          &lt;/view&gt;<br>          &lt;view class=&quot;item&quot;&gt;<br>            &lt;text class=&quot;label&quot;&gt;属性名&lt;/text&gt;<br>            &lt;text class=&quot;value&quot;&gt;属性值&lt;/text&gt;<br>          &lt;/view&gt;<br>        &lt;/view&gt;<br>        &lt;!-- 图片详情 --&gt;<br>        &lt;image<br>          mode=&quot;widthFix&quot;<br>          src=&quot;https://yanxuan-item.nosdn.127.net/a8d266886d31f6eb0d7333c815769305.jpg&quot;<br>        &gt;&lt;/image&gt;<br>        &lt;image<br>          mode=&quot;widthFix&quot;<br>          src=&quot;https://yanxuan-item.nosdn.127.net/a9bee1cb53d72e6cdcda210071cbd46a.jpg&quot;<br>        &gt;&lt;/image&gt;<br>      &lt;/view&gt;<br>    &lt;/view&gt;<br><br>    &lt;!-- 同类推荐 --&gt;<br>    &lt;view class=&quot;similar panel&quot;&gt;<br>      &lt;view class=&quot;title&quot;&gt;<br>        &lt;text&gt;同类推荐&lt;/text&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;content&quot;&gt;<br>        &lt;navigator<br>          v-for=&quot;item in 4&quot;<br>          :key=&quot;item&quot;<br>          class=&quot;goods&quot;<br>          hover-class=&quot;none&quot;<br>          :url=&quot;`/pages/goods/goods?id=`&quot;<br>        &gt;<br>          &lt;image<br>            class=&quot;image&quot;<br>            mode=&quot;aspectFill&quot;<br>            src=&quot;https://yanxuan-item.nosdn.127.net/e0cea368f41da1587b3b7fc523f169d7.png&quot;<br>          &gt;&lt;/image&gt;<br>          &lt;view class=&quot;name ellipsis&quot;&gt;简约山形纹全棉提花毛巾&lt;/view&gt;<br>          &lt;view class=&quot;price&quot;&gt;<br>            &lt;text class=&quot;symbol&quot;&gt;¥&lt;/text&gt;<br>            &lt;text class=&quot;number&quot;&gt;18.50&lt;/text&gt;<br>          &lt;/view&gt;<br>        &lt;/navigator&gt;<br>      &lt;/view&gt;<br>    &lt;/view&gt;<br>  &lt;/scroll-view&gt;<br><br>  &lt;!-- 用户操作 --&gt;<br>  &lt;view<br>    class=&quot;toolbar&quot;<br>    :style=&quot;&#123; paddingBottom: safeAreaInsets?.bottom + &#x27;px&#x27; &#125;&quot;<br>  &gt;<br>    &lt;view class=&quot;icons&quot;&gt;<br>      &lt;button class=&quot;icons-button&quot;&gt;&lt;text class=&quot;icon-heart&quot;&gt;&lt;/text&gt;收藏&lt;/button&gt;<br>      &lt;button class=&quot;icons-button&quot; open-type=&quot;contact&quot;&gt;<br>        &lt;text class=&quot;icon-handset&quot;&gt;&lt;/text&gt;客服<br>      &lt;/button&gt;<br>      &lt;navigator<br>        class=&quot;icons-button&quot;<br>        url=&quot;/pages/cart/cart&quot;<br>        open-type=&quot;switchTab&quot;<br>      &gt;<br>        &lt;text class=&quot;icon-cart&quot;&gt;&lt;/text&gt;购物车<br>      &lt;/navigator&gt;<br>    &lt;/view&gt;<br>    &lt;view class=&quot;buttons&quot;&gt;<br>      &lt;view class=&quot;addcart&quot;&gt; 加入购物车 &lt;/view&gt;<br>      &lt;view class=&quot;buynow&quot;&gt; 立即购买 &lt;/view&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br><br>&lt;style lang=&quot;scss&quot;&gt;<br>page &#123;<br>  height: 100%;<br>  overflow: hidden;<br>  display: flex;<br>  flex-direction: column;<br>&#125;<br><br>.viewport &#123;<br>  background-color: #f4f4f4;<br>&#125;<br><br>.panel &#123;<br>  margin-top: 20rpx;<br>  background-color: #fff;<br>  .title &#123;<br>    display: flex;<br>    justify-content: space-between;<br>    align-items: center;<br>    height: 90rpx;<br>    line-height: 1;<br>    padding: 30rpx 60rpx 30rpx 6rpx;<br>    position: relative;<br>    text &#123;<br>      padding-left: 10rpx;<br>      font-size: 28rpx;<br>      color: #333;<br>      font-weight: 600;<br>      border-left: 4rpx solid #27ba9b;<br>    &#125;<br>    navigator &#123;<br>      font-size: 24rpx;<br>      color: #666;<br>    &#125;<br>  &#125;<br>&#125;<br><br>.arrow &#123;<br>  &amp;::after &#123;<br>    position: absolute;<br>    top: 50%;<br>    right: 30rpx;<br>    content: &#x27;\e6c2&#x27;;<br>    color: #ccc;<br>    font-family: &#x27;erabbit&#x27; !important;<br>    font-size: 32rpx;<br>    transform: translateY(-50%);<br>  &#125;<br>&#125;<br><br>/* 商品信息 */<br>.goods &#123;<br>  background-color: #fff;<br>  .preview &#123;<br>    height: 750rpx;<br>    position: relative;<br>    .indicator &#123;<br>      height: 40rpx;<br>      padding: 0 24rpx;<br>      line-height: 40rpx;<br>      border-radius: 30rpx;<br>      color: #fff;<br>      font-family: Arial, Helvetica, sans-serif;<br>      background-color: rgba(0, 0, 0, 0.3);<br>      position: absolute;<br>      bottom: 30rpx;<br>      right: 30rpx;<br>      .current &#123;<br>        font-size: 26rpx;<br>      &#125;<br>      .split &#123;<br>        font-size: 24rpx;<br>        margin: 0 1rpx 0 2rpx;<br>      &#125;<br>      .total &#123;<br>        font-size: 24rpx;<br>      &#125;<br>    &#125;<br>  &#125;<br>  .meta &#123;<br>    position: relative;<br>    border-bottom: 1rpx solid #eaeaea;<br>    .price &#123;<br>      height: 130rpx;<br>      padding: 25rpx 30rpx 0;<br>      color: #fff;<br>      font-size: 34rpx;<br>      box-sizing: border-box;<br>      background-color: #35c8a9;<br>    &#125;<br>    .number &#123;<br>      font-size: 56rpx;<br>    &#125;<br>    .brand &#123;<br>      width: 160rpx;<br>      height: 80rpx;<br>      overflow: hidden;<br>      position: absolute;<br>      top: 26rpx;<br>      right: 30rpx;<br>    &#125;<br>    .name &#123;<br>      max-height: 88rpx;<br>      line-height: 1.4;<br>      margin: 20rpx;<br>      font-size: 32rpx;<br>      color: #333;<br>    &#125;<br>    .desc &#123;<br>      line-height: 1;<br>      padding: 0 20rpx 30rpx;<br>      font-size: 24rpx;<br>      color: #cf4444;<br>    &#125;<br>  &#125;<br>  .action &#123;<br>    padding-left: 20rpx;<br>    .item &#123;<br>      height: 90rpx;<br>      padding-right: 60rpx;<br>      border-bottom: 1rpx solid #eaeaea;<br>      font-size: 26rpx;<br>      color: #333;<br>      position: relative;<br>      display: flex;<br>      align-items: center;<br>      &amp;:last-child &#123;<br>        border-bottom: 0 none;<br>      &#125;<br>    &#125;<br>    .label &#123;<br>      width: 60rpx;<br>      color: #898b94;<br>      margin: 0 16rpx 0 10rpx;<br>    &#125;<br>    .text &#123;<br>      flex: 1;<br>      -webkit-line-clamp: 1;<br>    &#125;<br>  &#125;<br>&#125;<br><br>/* 商品详情 */<br>.detail &#123;<br>  padding-left: 20rpx;<br>  .content &#123;<br>    margin-left: -20rpx;<br>  &#125;<br>  .properties &#123;<br>    padding: 0 20rpx;<br>    margin-bottom: 30rpx;<br>    .item &#123;<br>      display: flex;<br>      line-height: 2;<br>      padding: 10rpx;<br>      font-size: 26rpx;<br>      color: #333;<br>      border-bottom: 1rpx dashed #ccc;<br>    &#125;<br>    .label &#123;<br>      width: 200rpx;<br>    &#125;<br>    .value &#123;<br>      flex: 1;<br>    &#125;<br>  &#125;<br>&#125;<br><br>/* 同类推荐 */<br>.similar &#123;<br>  padding-left: 20rpx;<br>  .content &#123;<br>    padding: 0 20rpx 20rpx;<br>    margin-left: -20rpx;<br>    background-color: #f4f4f4;<br>    overflow: hidden;<br>    navigator &#123;<br>      width: 345rpx;<br>      padding: 24rpx 20rpx 20rpx;<br>      margin: 20rpx 20rpx 0 0;<br>      border-radius: 10rpx;<br>      background-color: #fff;<br>      float: left;<br>    &#125;<br>    .image &#123;<br>      height: 260rpx;<br>    &#125;<br>    .name &#123;<br>      height: 80rpx;<br>      margin: 10rpx 0;<br>      font-size: 26rpx;<br>      color: #262626;<br>    &#125;<br>    .price &#123;<br>      line-height: 1;<br>      font-size: 20rpx;<br>      color: #cf4444;<br>    &#125;<br>    .number &#123;<br>      font-size: 26rpx;<br>      margin-left: 2rpx;<br>    &#125;<br>  &#125;<br>  navigator &#123;<br>    &amp;:nth-child(even) &#123;<br>      margin-right: 0;<br>    &#125;<br>  &#125;<br>&#125;<br><br>/* 底部工具栏 */<br>.toolbar &#123;<br>  background-color: #fff;<br>  height: 100rpx;<br>  padding: 0 20rpx;<br>  border-top: 1rpx solid #eaeaea;<br>  display: flex;<br>  justify-content: space-between;<br>  align-items: center;<br>  box-sizing: content-box;<br>  .buttons &#123;<br>    display: flex;<br>    &amp; &gt; view &#123;<br>      width: 220rpx;<br>      text-align: center;<br>      line-height: 72rpx;<br>      font-size: 26rpx;<br>      color: #fff;<br>      border-radius: 72rpx;<br>    &#125;<br>    .addcart &#123;<br>      background-color: #ffa868;<br>    &#125;<br>    .buynow &#123;<br>      background-color: #27ba9b;<br>      margin-left: 20rpx;<br>    &#125;<br>  &#125;<br>  .icons &#123;<br>    padding-right: 10rpx;<br>    display: flex;<br>    align-items: center;<br>    flex: 1;<br>    .icons-button &#123;<br>      flex: 1;<br>      text-align: center;<br>      line-height: 1.4;<br>      padding: 0;<br>      margin: 0;<br>      border-radius: 0;<br>      font-size: 20rpx;<br>      color: #333;<br>      background-color: #fff;<br>    &#125;<br>    text &#123;<br>      display: block;<br>      font-size: 34rpx;<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><p><strong>获取页面参数</strong></p>
+<p>根据商品的 id 查询到某个商品的详细信息，如图片、价格、型号等展示给用户。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// 接收页面参数</span><br><span class="hljs-keyword">const</span> query = defineProps&lt;&#123;<br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span><br>&#125;&gt;()<br></code></pre></td></tr></table></figure>
+
+<p><strong>接口调用</strong></p>
+<p>接口信息如下：</p>
+<p>接口地址：&#x2F;goods</p>
+<p>请求方式：GET</p>
+<p>请求参数：</p>
+<p><strong>Query</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>是</td>
+<td>无</td>
+<td>商品 id</td>
+</tr>
+</tbody></table>
+<p><strong>请求封装</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 商品详情</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> id 商品id</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">getGoodsByIdAPI</span> = (<span class="hljs-params">id: <span class="hljs-built_in">string</span></span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> http&lt;<span class="hljs-title class_">GoodsResult</span>&gt;(&#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/goods&#x27;</span>,<br>    <span class="hljs-attr">data</span>: &#123; id &#125;,<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>类型声明</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> &#123; <span class="hljs-title class_">GoodsItem</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./global&#x27;</span><br><br><span class="hljs-comment">/** 商品信息 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">GoodsResult</span> = &#123;<br>  <span class="hljs-comment">/** id */</span><br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品名称 */</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品描述 */</span><br>  <span class="hljs-attr">desc</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 当前价格 */</span><br>  <span class="hljs-attr">price</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 原价 */</span><br>  <span class="hljs-attr">oldPrice</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 商品详情: 包含详情属性 + 详情图片 */</span><br>  <span class="hljs-attr">details</span>: <span class="hljs-title class_">Details</span><br>  <span class="hljs-comment">/** 主图图片集合[ 主图图片链接 ] */</span><br>  <span class="hljs-attr">mainPictures</span>: <span class="hljs-built_in">string</span>[]<br>  <span class="hljs-comment">/** 同类商品[ 商品信息 ] */</span><br>  <span class="hljs-attr">similarProducts</span>: <span class="hljs-title class_">GoodsItem</span>[]<br>  <span class="hljs-comment">/** sku集合[ sku信息 ] */</span><br>  <span class="hljs-attr">skus</span>: <span class="hljs-title class_">SkuItem</span>[]<br>  <span class="hljs-comment">/** 可选规格集合备注[ 可选规格信息 ] */</span><br>  <span class="hljs-attr">specs</span>: <span class="hljs-title class_">SpecItem</span>[]<br>  <span class="hljs-comment">/** 用户地址列表[ 地址信息 ] */</span><br>  <span class="hljs-attr">userAddresses</span>: <span class="hljs-title class_">AddressItem</span>[]<br>&#125;<br><br><span class="hljs-comment">/** 商品详情: 包含详情属性 + 详情图片 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">Details</span> = &#123;<br>  <span class="hljs-comment">/** 商品属性集合[ 属性信息 ] */</span><br>  <span class="hljs-attr">properties</span>: <span class="hljs-title class_">DetailsPropertyItem</span>[]<br>  <span class="hljs-comment">/** 商品详情图片集合[ 图片链接 ] */</span><br>  <span class="hljs-attr">pictures</span>: <span class="hljs-built_in">string</span>[]<br>&#125;<br><br><span class="hljs-comment">/** 属性信息 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">DetailsPropertyItem</span> = &#123;<br>  <span class="hljs-comment">/** 属性名称 */</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 属性值 */</span><br>  <span class="hljs-attr">value</span>: <span class="hljs-built_in">string</span><br>&#125;<br><br><span class="hljs-comment">/** sku信息 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SkuItem</span> = &#123;<br>  <span class="hljs-comment">/** id */</span><br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 库存 */</span><br>  <span class="hljs-attr">inventory</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 原价 */</span><br>  <span class="hljs-attr">oldPrice</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** sku图片 */</span><br>  <span class="hljs-attr">picture</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 当前价格 */</span><br>  <span class="hljs-attr">price</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** sku编码 */</span><br>  <span class="hljs-attr">skuCode</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 规格集合[ 规格信息 ] */</span><br>  <span class="hljs-attr">specs</span>: <span class="hljs-title class_">SkuSpecItem</span>[]<br>&#125;<br><br><span class="hljs-comment">/** 规格信息 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SkuSpecItem</span> = &#123;<br>  <span class="hljs-comment">/** 规格名称 */</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 可选值名称 */</span><br>  <span class="hljs-attr">valueName</span>: <span class="hljs-built_in">string</span><br>&#125;<br><br><span class="hljs-comment">/** 可选规格信息 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SpecItem</span> = &#123;<br>  <span class="hljs-comment">/** 规格名称 */</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 可选值集合[ 可选值信息 ] */</span><br>  <span class="hljs-attr">values</span>: <span class="hljs-title class_">SpecValueItem</span>[]<br>&#125;<br><br><span class="hljs-comment">/** 可选值信息 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SpecValueItem</span> = &#123;<br>  <span class="hljs-comment">/** 是否可售 */</span><br>  <span class="hljs-attr">available</span>: <span class="hljs-built_in">boolean</span><br>  <span class="hljs-comment">/** 可选值备注 */</span><br>  <span class="hljs-attr">desc</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 可选值名称 */</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 可选值图片链接 */</span><br>  <span class="hljs-attr">picture</span>: <span class="hljs-built_in">string</span><br>&#125;<br><br><span class="hljs-comment">/** 地址信息 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">AddressItem</span> = &#123;<br>  <span class="hljs-comment">/** 收货人姓名 */</span><br>  <span class="hljs-attr">receiver</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 联系方式 */</span><br>  <span class="hljs-attr">contact</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 省份编码 */</span><br>  <span class="hljs-attr">provinceCode</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 城市编码 */</span><br>  <span class="hljs-attr">cityCode</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 区/县编码 */</span><br>  <span class="hljs-attr">countyCode</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 详细地址 */</span><br>  <span class="hljs-attr">address</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 默认地址，1为是，0为否 */</span><br>  <span class="hljs-attr">isDefault</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 收货地址 id */</span><br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 省市区 */</span><br>  <span class="hljs-attr">fullLocation</span>: <span class="hljs-built_in">string</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>接下来，将获取到的数据结合模板语法渲染到页面中。</p>
+<h2 id="轮播图交互"><a href="#轮播图交互" class="headerlink" title="轮播图交互"></a>轮播图交互</h2><p><strong>参考效果</strong></p>
+<p>当轮播图滑动切换的时候更新<strong>自定义下标</strong>，当图片被点击的时候<strong>大图预览</strong>。</p>
+<p><img src="/./assets/goods_picture_2.png" srcset="/img/loading.gif" lazyload alt="轮播图交互"></p>
+<h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><p>商品详情页轮播图交互</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// 轮播图变化时<br>const currentIndex = ref(0)<br>const onChange: UniHelper.SwiperOnChange = (ev) =&gt; &#123;<br>  currentIndex.value = ev.detail.current<br>&#125;<br><br>// 点击图片时<br>const onTapImage = (url: string) =&gt; &#123;<br>  // 大图预览<br>  uni.previewImage(&#123;<br>    current: url,<br>    urls: goods.value!.mainPictures,<br>  &#125;)<br>&#125;<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;!-- 商品主图 --&gt;<br>  &lt;view class=&quot;preview&quot;&gt;<br>    &lt;swiper @change=&quot;onChange&quot; circular&gt;<br>      &lt;swiper-item v-for=&quot;item in goods?.mainPictures&quot; :key=&quot;item&quot;&gt;<br>        &lt;image @tap=&quot;onTapImage(item)&quot; mode=&quot;aspectFill&quot; :src=&quot;item&quot; /&gt;<br>      &lt;/swiper-item&gt;<br>    &lt;/swiper&gt;<br>    &lt;view class=&quot;indicator&quot;&gt;<br>      &lt;text class=&quot;current&quot;&gt;&#123;&#123; currentIndex + 1 &#125;&#125;&lt;/text&gt;<br>      &lt;text class=&quot;split&quot;&gt;/&lt;/text&gt;<br>      &lt;text class=&quot;total&quot;&gt;&#123;&#123; goods?.mainPictures.length &#125;&#125;&lt;/text&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="弹出层交互"><a href="#弹出层交互" class="headerlink" title="弹出层交互"></a>弹出层交互</h2><p><strong>参考效果</strong></p>
+<p><code>uni-ui</code> 弹出层组件：<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/uniui/uni-popup.html">uni-popup</a></p>
+<p><img src="/./assets/goods_picture_3.png" srcset="/img/loading.gif" lazyload alt="弹出层交互"></p>
+<p><strong>静态结构</strong></p>
+<p>提供 <strong>服务说明</strong> 和 <strong>收获地址</strong> 两个组件的静态结构，实现弹出层交互。</p>
+<p><strong>组件 1：服务说明</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><code class="hljs vue">// ServicePanel.vue<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>//<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;service-panel&quot;&gt;<br>    &lt;!-- 关闭按钮 --&gt;<br>    &lt;text class=&quot;close icon-close&quot;&gt;&lt;/text&gt;<br>    &lt;!-- 标题 --&gt;<br>    &lt;view class=&quot;title&quot;&gt;服务说明&lt;/view&gt;<br>    &lt;!-- 内容 --&gt;<br>    &lt;view class=&quot;content&quot;&gt;<br>      &lt;view class=&quot;item&quot;&gt;<br>        &lt;view class=&quot;dt&quot;&gt;无忧退货&lt;/view&gt;<br>        &lt;view class=&quot;dd&quot;&gt;<br>          自收到商品之日起30天内，可在线申请无忧退货服务（食品等特殊商品除外）<br>        &lt;/view&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;item&quot;&gt;<br>        &lt;view class=&quot;dt&quot;&gt;快速退款&lt;/view&gt;<br>        &lt;view class=&quot;dd&quot;&gt;<br>          收到退货包裹并确认无误后，将在48小时内办理退款，<br>          退款将原路返回，不同银行处理时间不同，预计1-5个工作日到账<br>        &lt;/view&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;item&quot;&gt;<br>        &lt;view class=&quot;dt&quot;&gt;满88元免邮费&lt;/view&gt;<br>        &lt;view class=&quot;dd&quot;&gt;<br>          单笔订单金额(不含运费)满88元可免邮费，不满88元， 单笔订单收取10元邮费<br>        &lt;/view&gt;<br>      &lt;/view&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br><br>&lt;style lang=&quot;scss&quot;&gt;<br>.service-panel &#123;<br>  padding: 0 30rpx;<br>  border-radius: 10rpx 10rpx 0 0;<br>  position: relative;<br>  background-color: #fff;<br>&#125;<br><br>.title &#123;<br>  line-height: 1;<br>  padding: 40rpx 0;<br>  text-align: center;<br>  font-size: 32rpx;<br>  font-weight: normal;<br>  border-bottom: 1rpx solid #ddd;<br>  color: #444;<br>&#125;<br><br>.close &#123;<br>  position: absolute;<br>  right: 24rpx;<br>  top: 24rpx;<br>&#125;<br><br>.content &#123;<br>  padding: 20rpx 20rpx 100rpx 20rpx;<br><br>  .item &#123;<br>    margin-top: 20rpx;<br>  &#125;<br><br>  .dt &#123;<br>    margin-bottom: 10rpx;<br>    font-size: 28rpx;<br>    color: #333;<br>    font-weight: 500;<br>    position: relative;<br><br>    &amp;::before &#123;<br>      content: &#x27;&#x27;;<br>      width: 10rpx;<br>      height: 10rpx;<br>      border-radius: 50%;<br>      background-color: #eaeaea;<br>      transform: translateY(-50%);<br>      position: absolute;<br>      top: 50%;<br>      left: -20rpx;<br>    &#125;<br>  &#125;<br><br>  .dd &#123;<br>    line-height: 1.6;<br>    font-size: 26rpx;<br>    color: #999;<br>  &#125;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<p><strong>组件 2：收获地址组件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><code class="hljs vue">// AddressPanel.vue<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>//<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;address-panel&quot;&gt;<br>    &lt;!-- 关闭按钮 --&gt;<br>    &lt;text class=&quot;close icon-close&quot;&gt;&lt;/text&gt;<br>    &lt;!-- 标题 --&gt;<br>    &lt;view class=&quot;title&quot;&gt;配送至&lt;/view&gt;<br>    &lt;!-- 内容 --&gt;<br>    &lt;view class=&quot;content&quot;&gt;<br>      &lt;view class=&quot;item&quot;&gt;<br>        &lt;view class=&quot;user&quot;&gt;李明 13824686868&lt;/view&gt;<br>        &lt;view class=&quot;address&quot;&gt;北京市顺义区后沙峪地区安平北街6号院&lt;/view&gt;<br>        &lt;text class=&quot;icon icon-checked&quot;&gt;&lt;/text&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;item&quot;&gt;<br>        &lt;view class=&quot;user&quot;&gt;王东 13824686868&lt;/view&gt;<br>        &lt;view class=&quot;address&quot;&gt;北京市顺义区后沙峪地区安平北街6号院&lt;/view&gt;<br>        &lt;text class=&quot;icon icon-ring&quot;&gt;&lt;/text&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;item&quot;&gt;<br>        &lt;view class=&quot;user&quot;&gt;张三 13824686868&lt;/view&gt;<br>        &lt;view class=&quot;address&quot;&gt;北京市朝阳区孙河安平北街6号院&lt;/view&gt;<br>        &lt;text class=&quot;icon icon-ring&quot;&gt;&lt;/text&gt;<br>      &lt;/view&gt;<br>    &lt;/view&gt;<br>    &lt;view class=&quot;footer&quot;&gt;<br>      &lt;view class=&quot;button primary&quot;&gt; 新建地址 &lt;/view&gt;<br>      &lt;view v-if=&quot;false&quot; class=&quot;button primary&quot;&gt;确定&lt;/view&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br><br>&lt;style lang=&quot;scss&quot;&gt;<br>.address-panel &#123;<br>  padding: 0 30rpx;<br>  border-radius: 10rpx 10rpx 0 0;<br>  position: relative;<br>  background-color: #fff;<br>&#125;<br><br>.title &#123;<br>  line-height: 1;<br>  padding: 40rpx 0;<br>  text-align: center;<br>  font-size: 32rpx;<br>  font-weight: normal;<br>  border-bottom: 1rpx solid #ddd;<br>  color: #444;<br>&#125;<br><br>.close &#123;<br>  position: absolute;<br>  right: 24rpx;<br>  top: 24rpx;<br>&#125;<br><br>.content &#123;<br>  min-height: 300rpx;<br>  max-height: 540rpx;<br>  overflow: auto;<br>  padding: 20rpx;<br>  .item &#123;<br>    padding: 30rpx 50rpx 30rpx 60rpx;<br>    background-size: 40rpx;<br>    background-repeat: no-repeat;<br>    background-position: 0 center;<br>    background-image: url(https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/locate.png);<br>    position: relative;<br>  &#125;<br>  .icon &#123;<br>    color: #999;<br>    font-size: 40rpx;<br>    transform: translateY(-50%);<br>    position: absolute;<br>    top: 50%;<br>    right: 0;<br>  &#125;<br>  .icon-checked &#123;<br>    color: #27ba9b;<br>  &#125;<br>  .icon-ring &#123;<br>    color: #444;<br>  &#125;<br>  .user &#123;<br>    font-size: 28rpx;<br>    color: #444;<br>    font-weight: 500;<br>  &#125;<br>  .address &#123;<br>    font-size: 26rpx;<br>    color: #666;<br>  &#125;<br>&#125;<br><br>.footer &#123;<br>  display: flex;<br>  justify-content: space-between;<br>  padding: 20rpx 0 40rpx;<br>  font-size: 28rpx;<br>  color: #444;<br><br>  .button &#123;<br>    flex: 1;<br>    height: 72rpx;<br>    text-align: center;<br>    line-height: 72rpx;<br>    margin: 0 20rpx;<br>    color: #fff;<br>    border-radius: 72rpx;<br>  &#125;<br><br>  .primary &#123;<br>    color: #fff;<br>    background-color: #27ba9b;<br>  &#125;<br><br>  .secondary &#123;<br>    background-color: #ffa868;<br>  &#125;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h3><p>商品详情页：通过组件 <code>ref</code> 获取弹出层组件实例，调用打开弹出层方法。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;5-9,17,28,32,38-41&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import AddressPanel from &#x27;./components/AddressPanel.vue&#x27;<br>import ServicePanel from &#x27;./components/ServicePanel.vue&#x27;<br><br>// uni-ui 弹出层组件 ref<br>const popup = ref&lt;&#123;<br>  open: (type?: UniHelper.UniPopupType) =&gt; void<br>  close: () =&gt; void<br>&#125;&gt;()<br><br>// 弹出层条件渲染<br>const popupName = ref&lt;&#x27;address&#x27; | &#x27;service&#x27;&gt;()<br>const openPopup = (name: typeof popupName.value) =&gt; &#123;<br>  // 修改弹出层名称<br>  popupName.value = name<br>  // 打开弹出层<br>  popup.value?.open()<br>&#125;<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;!-- 操作面板 --&gt;<br>  &lt;view class=&quot;action&quot;&gt;<br>    &lt;view class=&quot;item arrow&quot;&gt;<br>      &lt;text class=&quot;label&quot;&gt;选择&lt;/text&gt;<br>      &lt;text class=&quot;text ellipsis&quot;&gt; 请选择商品规格 &lt;/text&gt;<br>    &lt;/view&gt;<br>    &lt;view @tap=&quot;openPopup(&#x27;address&#x27;)&quot; class=&quot;item arrow&quot;&gt;<br>      &lt;text class=&quot;label&quot;&gt;送至&lt;/text&gt;<br>      &lt;text class=&quot;text ellipsis&quot;&gt; 请选择收获地址 &lt;/text&gt;<br>    &lt;/view&gt;<br>    &lt;view @tap=&quot;openPopup(&#x27;service&#x27;)&quot; class=&quot;item arrow&quot;&gt;<br>      &lt;text class=&quot;label&quot;&gt;服务&lt;/text&gt;<br>      &lt;text class=&quot;text ellipsis&quot;&gt; 无忧退 快速退款 免费包邮 &lt;/text&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>  &lt;!-- uni-ui 弹出层 --&gt;<br>  &lt;uni-popup ref=&quot;popup&quot; type=&quot;bottom&quot; background-color=&quot;#fff&quot;&gt;<br>    &lt;AddressPanel v-if=&quot;popupName === &#x27;address&#x27;&quot; @close=&quot;popup?.close()&quot; /&gt;<br>    &lt;ServicePanel v-if=&quot;popupName === &#x27;service&#x27;&quot; @close=&quot;popup?.close()&quot; /&gt;<br>  &lt;/uni-popup&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<p><strong>服务说明</strong> 和 <strong>收获地址</strong> 组件通讯：通过子调父，关闭弹出层。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// 子调父<br>const emit = defineEmits&lt;&#123;<br>  (event: &#x27;close&#x27;): void<br>&#125;&gt;()<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;service-panel&quot;&gt;<br>    &lt;!-- 关闭按钮 --&gt;<br>    &lt;text class=&quot;close icon-close&quot; @tap=&quot;emit(&#x27;close&#x27;)&quot;&gt;&lt;/text&gt;<br>    ...省略<br>  &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="骨架屏"><a href="#骨架屏" class="headerlink" title="骨架屏"></a>骨架屏</h2><p><strong>参考效果</strong></p>
+<p>课后练习，大家自主独立完成。</p>
+<p><img src="/./assets/goods_picture_4.png" srcset="/img/loading.gif" lazyload alt="骨架屏"></p>
+<h2 id="参考代码-总"><a href="#参考代码-总" class="headerlink" title="参考代码(总)"></a>参考代码(总)</h2><p>商品详情页</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; getGoodsByIdAPI &#125; from &#x27;@/services/goods&#x27;<br>import type &#123; GoodsResult &#125; from &#x27;@/types/goods&#x27;<br>import &#123; onLoad &#125; from &#x27;@dcloudio/uni-app&#x27;<br>import &#123; ref &#125; from &#x27;vue&#x27;<br>import AddressPanel from &#x27;./components/AddressPanel.vue&#x27;<br>import ServicePanel from &#x27;./components/ServicePanel.vue&#x27;<br><br>// 获取屏幕边界到安全区域距离<br>const &#123; safeAreaInsets &#125; = uni.getSystemInfoSync()<br><br>// 接收页面参数<br>const query = defineProps&lt;&#123;<br>  id: string<br>&#125;&gt;()<br><br>// 获取商品详情信息<br>const goods = ref&lt;GoodsResult&gt;()<br>const getGoodsByIdData = async () =&gt; &#123;<br>  const res = await getGoodsByIdAPI(query.id)<br>  goods.value = res.result<br>&#125;<br><br>// 页面加载<br>onLoad(() =&gt; &#123;<br>  getGoodsByIdData()<br>&#125;)<br><br>// 轮播图变化时<br>const currentIndex = ref(0)<br>const onChange: UniHelper.SwiperOnChange = (ev) =&gt; &#123;<br>  currentIndex.value = ev.detail!.current<br>&#125;<br><br>// 点击图片时<br>const onTapImage = (url: string) =&gt; &#123;<br>  // 大图预览<br>  uni.previewImage(&#123;<br>    current: url,<br>    urls: goods.value!.mainPictures,<br>  &#125;)<br>&#125;<br><br>// uni-ui 弹出层组件 ref<br>const popup = ref&lt;&#123;<br>  open: (type?: UniHelper.UniPopupType) =&gt; void<br>  close: () =&gt; void<br>&#125;&gt;()<br><br>// 弹出层条件渲染<br>const popupName = ref&lt;&#x27;address&#x27; | &#x27;service&#x27;&gt;()<br>const openPopup = (name: typeof popupName.value) =&gt; &#123;<br>  // 修改弹出层名称<br>  popupName.value = name<br>  popup.value?.open()<br>&#125;<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;scroll-view scroll-y class=&quot;viewport&quot;&gt;<br>    &lt;!-- 基本信息 --&gt;<br>    &lt;view class=&quot;goods&quot;&gt;<br>      &lt;!-- 商品主图 --&gt;<br>      &lt;view class=&quot;preview&quot;&gt;<br>        &lt;swiper @change=&quot;onChange&quot; circular&gt;<br>          &lt;swiper-item v-for=&quot;item in goods?.mainPictures&quot; :key=&quot;item&quot;&gt;<br>            &lt;image @tap=&quot;onTapImage(item)&quot; mode=&quot;aspectFill&quot; :src=&quot;item&quot; /&gt;<br>          &lt;/swiper-item&gt;<br>        &lt;/swiper&gt;<br>        &lt;view class=&quot;indicator&quot;&gt;<br>          &lt;text class=&quot;current&quot;&gt;&#123;&#123; currentIndex + 1 &#125;&#125;&lt;/text&gt;<br>          &lt;text class=&quot;split&quot;&gt;/&lt;/text&gt;<br>          &lt;text class=&quot;total&quot;&gt;&#123;&#123; goods?.mainPictures.length &#125;&#125;&lt;/text&gt;<br>        &lt;/view&gt;<br>      &lt;/view&gt;<br><br>      &lt;!-- 商品简介 --&gt;<br>      &lt;view class=&quot;meta&quot;&gt;<br>        &lt;view class=&quot;price&quot;&gt;<br>          &lt;text class=&quot;symbol&quot;&gt;¥&lt;/text&gt;<br>          &lt;text class=&quot;number&quot;&gt;&#123;&#123; goods?.price &#125;&#125;&lt;/text&gt;<br>        &lt;/view&gt;<br>        &lt;view class=&quot;name ellipsis&quot;&gt;&#123;&#123; goods?.name &#125;&#125;&lt;/view&gt;<br>        &lt;view class=&quot;desc&quot;&gt; &#123;&#123; goods?.desc &#125;&#125; &lt;/view&gt;<br>      &lt;/view&gt;<br><br>      &lt;!-- 操作面板 --&gt;<br>      &lt;view class=&quot;action&quot;&gt;<br>        &lt;view class=&quot;item arrow&quot;&gt;<br>          &lt;text class=&quot;label&quot;&gt;选择&lt;/text&gt;<br>          &lt;text class=&quot;text ellipsis&quot;&gt; 请选择商品规格 &lt;/text&gt;<br>        &lt;/view&gt;<br>        &lt;view @tap=&quot;openPopup(&#x27;address&#x27;)&quot; class=&quot;item arrow&quot;&gt;<br>          &lt;text class=&quot;label&quot;&gt;送至&lt;/text&gt;<br>          &lt;text class=&quot;text ellipsis&quot;&gt; 请选择收获地址 &lt;/text&gt;<br>        &lt;/view&gt;<br>        &lt;view @tap=&quot;openPopup(&#x27;service&#x27;)&quot; class=&quot;item arrow&quot;&gt;<br>          &lt;text class=&quot;label&quot;&gt;服务&lt;/text&gt;<br>          &lt;text class=&quot;text ellipsis&quot;&gt; 无忧退 快速退款 免费包邮 &lt;/text&gt;<br>        &lt;/view&gt;<br>      &lt;/view&gt;<br>    &lt;/view&gt;<br><br>    &lt;!-- 商品详情 --&gt;<br>    &lt;view class=&quot;detail panel&quot;&gt;<br>      &lt;view class=&quot;title&quot;&gt;<br>        &lt;text&gt;详情&lt;/text&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;content&quot;&gt;<br>        &lt;view class=&quot;properties&quot;&gt;<br>          &lt;!-- 属性详情 --&gt;<br>          &lt;view<br>            class=&quot;item&quot;<br>            v-for=&quot;item in goods?.details.properties&quot;<br>            :key=&quot;item.name&quot;<br>          &gt;<br>            &lt;text class=&quot;label&quot;&gt;&#123;&#123; item.name &#125;&#125;&lt;/text&gt;<br>            &lt;text class=&quot;value&quot;&gt;&#123;&#123; item.value &#125;&#125;&lt;/text&gt;<br>          &lt;/view&gt;<br>        &lt;/view&gt;<br>        &lt;!-- 图片详情 --&gt;<br>        &lt;image<br>          v-for=&quot;item in goods?.details.pictures&quot;<br>          :key=&quot;item&quot;<br>          mode=&quot;widthFix&quot;<br>          :src=&quot;item&quot;<br>        &gt;&lt;/image&gt;<br>      &lt;/view&gt;<br>    &lt;/view&gt;<br><br>    &lt;!-- 同类推荐 --&gt;<br>    &lt;view class=&quot;similar panel&quot;&gt;<br>      &lt;view class=&quot;title&quot;&gt;<br>        &lt;text&gt;同类推荐&lt;/text&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;content&quot;&gt;<br>        &lt;navigator<br>          v-for=&quot;item in goods?.similarProducts&quot;<br>          :key=&quot;item.id&quot;<br>          class=&quot;goods&quot;<br>          hover-class=&quot;none&quot;<br>          :url=&quot;`/pages/goods/goods?id=$&#123;item.id&#125;`&quot;<br>        &gt;<br>          &lt;image class=&quot;image&quot; mode=&quot;aspectFill&quot; :src=&quot;item.picture&quot;&gt;&lt;/image&gt;<br>          &lt;view class=&quot;name ellipsis&quot;&gt;&#123;&#123; item.name &#125;&#125;&lt;/view&gt;<br>          &lt;view class=&quot;price&quot;&gt;<br>            &lt;text class=&quot;symbol&quot;&gt;¥&lt;/text&gt;<br>            &lt;text class=&quot;number&quot;&gt;&#123;&#123; item.price &#125;&#125;&lt;/text&gt;<br>          &lt;/view&gt;<br>        &lt;/navigator&gt;<br>      &lt;/view&gt;<br>    &lt;/view&gt;<br>  &lt;/scroll-view&gt;<br><br>  &lt;!-- 用户操作 --&gt;<br>  &lt;view<br>    class=&quot;toolbar&quot;<br>    :style=&quot;&#123; paddingBottom: safeAreaInsets?.bottom + &#x27;px&#x27; &#125;&quot;<br>  &gt;<br>    &lt;view class=&quot;icons&quot;&gt;<br>      &lt;button class=&quot;icons-button&quot;&gt;&lt;text class=&quot;icon-heart&quot;&gt;&lt;/text&gt;收藏&lt;/button&gt;<br>      &lt;button class=&quot;icons-button&quot; open-type=&quot;contact&quot;&gt;<br>        &lt;text class=&quot;icon-handset&quot;&gt;&lt;/text&gt;客服<br>      &lt;/button&gt;<br>      &lt;navigator class=&quot;icons-button&quot;<br>        &gt;&lt;text class=&quot;icon-cart&quot;&gt;&lt;/text&gt;购物车&lt;/navigator<br>      &gt;<br>    &lt;/view&gt;<br>    &lt;view class=&quot;buttons&quot;&gt;<br>      &lt;view class=&quot;addcart&quot;&gt; 加入购物车 &lt;/view&gt;<br>      &lt;view class=&quot;payment&quot;&gt; 立即购买 &lt;/view&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br><br>  &lt;!-- uni-ui 弹出层 --&gt;<br>  &lt;uni-popup ref=&quot;popup&quot; type=&quot;bottom&quot; background-color=&quot;#fff&quot;&gt;<br>    &lt;AddressPanel v-if=&quot;popupName === &#x27;address&#x27;&quot; @close=&quot;popup?.close()&quot; /&gt;<br>    &lt;ServicePanel v-if=&quot;popupName === &#x27;service&#x27;&quot; @close=&quot;popup?.close()&quot; /&gt;<br>  &lt;/uni-popup&gt;<br>&lt;/template&gt;<br><br>&lt;style lang=&quot;scss&quot;&gt;<br>page &#123;<br>  height: 100%;<br>  overflow: hidden;<br>  display: flex;<br>  flex-direction: column;<br>&#125;<br><br>.viewport &#123;<br>  background-color: #f4f4f4;<br>&#125;<br><br>.panel &#123;<br>  margin-top: 20rpx;<br>  background-color: #fff;<br>  .title &#123;<br>    display: flex;<br>    justify-content: space-between;<br>    align-items: center;<br>    height: 90rpx;<br>    line-height: 1;<br>    padding: 30rpx 60rpx 30rpx 6rpx;<br>    position: relative;<br>    text &#123;<br>      padding-left: 10rpx;<br>      font-size: 28rpx;<br>      color: #333;<br>      font-weight: 600;<br>      border-left: 4rpx solid #27ba9b;<br>    &#125;<br>    navigator &#123;<br>      font-size: 24rpx;<br>      color: #666;<br>    &#125;<br>  &#125;<br>&#125;<br><br>.arrow &#123;<br>  &amp;::after &#123;<br>    position: absolute;<br>    top: 50%;<br>    right: 30rpx;<br>    content: &#x27;\e6c2&#x27;;<br>    color: #ccc;<br>    font-family: &#x27;erabbit&#x27; !important;<br>    font-size: 32rpx;<br>    transform: translateY(-50%);<br>  &#125;<br>&#125;<br><br>/* 商品信息 */<br>.goods &#123;<br>  background-color: #fff;<br>  .preview &#123;<br>    height: 750rpx;<br>    position: relative;<br>    .indicator &#123;<br>      height: 40rpx;<br>      padding: 0 24rpx;<br>      line-height: 40rpx;<br>      border-radius: 30rpx;<br>      color: #fff;<br>      font-family: Arial, Helvetica, sans-serif;<br>      background-color: rgba(0, 0, 0, 0.3);<br>      position: absolute;<br>      bottom: 30rpx;<br>      right: 30rpx;<br>      .current &#123;<br>        font-size: 26rpx;<br>      &#125;<br>      .split &#123;<br>        font-size: 24rpx;<br>        margin: 0 1rpx 0 2rpx;<br>      &#125;<br>      .total &#123;<br>        font-size: 24rpx;<br>      &#125;<br>    &#125;<br>  &#125;<br>  .meta &#123;<br>    position: relative;<br>    border-bottom: 1rpx solid #eaeaea;<br>    .price &#123;<br>      height: 130rpx;<br>      padding: 25rpx 30rpx 0;<br>      color: #fff;<br>      font-size: 34rpx;<br>      box-sizing: border-box;<br>      background-color: #35c8a9;<br>    &#125;<br>    .number &#123;<br>      font-size: 56rpx;<br>    &#125;<br>    .brand &#123;<br>      width: 160rpx;<br>      height: 80rpx;<br>      overflow: hidden;<br>      position: absolute;<br>      top: 26rpx;<br>      right: 30rpx;<br>    &#125;<br>    .name &#123;<br>      max-height: 88rpx;<br>      line-height: 1.4;<br>      margin: 20rpx;<br>      font-size: 32rpx;<br>      color: #333;<br>    &#125;<br>    .desc &#123;<br>      line-height: 1;<br>      padding: 0 20rpx 30rpx;<br>      font-size: 24rpx;<br>      color: #cf4444;<br>    &#125;<br>  &#125;<br>  .action &#123;<br>    padding-left: 20rpx;<br>    .item &#123;<br>      height: 90rpx;<br>      padding-right: 60rpx;<br>      border-bottom: 1rpx solid #eaeaea;<br>      font-size: 26rpx;<br>      color: #333;<br>      position: relative;<br>      display: flex;<br>      align-items: center;<br>      &amp;:last-child &#123;<br>        border-bottom: 0 none;<br>      &#125;<br>    &#125;<br>    .label &#123;<br>      width: 60rpx;<br>      color: #898b94;<br>      margin: 0 16rpx 0 10rpx;<br>    &#125;<br>    .text &#123;<br>      flex: 1;<br>      -webkit-line-clamp: 1;<br>    &#125;<br>  &#125;<br>&#125;<br><br>/* 商品详情 */<br>.detail &#123;<br>  padding-left: 20rpx;<br>  .content &#123;<br>    margin-left: -20rpx;<br>  &#125;<br>  .properties &#123;<br>    padding: 0 20rpx;<br>    margin-bottom: 30rpx;<br>    .item &#123;<br>      display: flex;<br>      line-height: 2;<br>      padding: 10rpx;<br>      font-size: 26rpx;<br>      color: #333;<br>      border-bottom: 1rpx dashed #ccc;<br>    &#125;<br>    .label &#123;<br>      width: 200rpx;<br>    &#125;<br>    .value &#123;<br>      flex: 1;<br>    &#125;<br>  &#125;<br>&#125;<br><br>/* 同类推荐 */<br>.similar &#123;<br>  padding-left: 20rpx;<br>  .content &#123;<br>    padding: 0 20rpx 20rpx;<br>    margin-left: -20rpx;<br>    background-color: #f4f4f4;<br>    overflow: hidden;<br>    navigator &#123;<br>      width: 345rpx;<br>      padding: 24rpx 20rpx 20rpx;<br>      margin: 20rpx 20rpx 0 0;<br>      border-radius: 10rpx;<br>      background-color: #fff;<br>      float: left;<br>    &#125;<br>    .image &#123;<br>      height: 260rpx;<br>    &#125;<br>    .name &#123;<br>      height: 80rpx;<br>      margin: 10rpx 0;<br>      font-size: 26rpx;<br>      color: #262626;<br>    &#125;<br>    .price &#123;<br>      line-height: 1;<br>      font-size: 20rpx;<br>      color: #cf4444;<br>    &#125;<br>    .number &#123;<br>      font-size: 26rpx;<br>      margin-left: 2rpx;<br>    &#125;<br>  &#125;<br>  navigator &#123;<br>    &amp;:nth-child(even) &#123;<br>      margin-right: 0;<br>    &#125;<br>  &#125;<br>&#125;<br><br>/* 底部工具栏 */<br>.toolbar &#123;<br>  background-color: #fff;<br>  height: 100rpx;<br>  padding: 0 20rpx;<br>  border-top: 1rpx solid #eaeaea;<br>  display: flex;<br>  justify-content: space-between;<br>  align-items: center;<br>  box-sizing: content-box;<br>  .buttons &#123;<br>    display: flex;<br>    &amp; &gt; view &#123;<br>      width: 220rpx;<br>      text-align: center;<br>      line-height: 72rpx;<br>      font-size: 26rpx;<br>      color: #fff;<br>      border-radius: 72rpx;<br>    &#125;<br>    .addcart &#123;<br>      background-color: #ffa868;<br>    &#125;<br>    .payment &#123;<br>      background-color: #27ba9b;<br>      margin-left: 20rpx;<br>    &#125;<br>  &#125;<br>  .icons &#123;<br>    padding-right: 10rpx;<br>    display: flex;<br>    align-items: center;<br>    flex: 1;<br>    .icons-button &#123;<br>      flex: 1;<br>      text-align: center;<br>      line-height: 1.4;<br>      padding: 0;<br>      margin: 0;<br>      border-radius: 0;<br>      font-size: 20rpx;<br>      color: #333;<br>      background-color: #fff;<br>    &#125;<br>    text &#123;<br>      display: block;<br>      font-size: 34rpx;<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Uni-app/" class="category-chain-item">Uni-app</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Uni-app/Demo/" class="category-chain-item">Demo</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Uni-app/Demo/TuShop/" class="category-chain-item">TuShop</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>小兔鲜儿 - 商品详情(登录前)</div>
+      <div>http://example.com/2020/10/01/Uni-app/Demo/tu-shop/05-详情模块/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>YoYo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 1, 2020</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/01/Uni-app/Demo/tu-shop/06-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/" title="小兔鲜儿 - 微信登录">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">小兔鲜儿 - 微信登录</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/10/01/Uni-app/Demo/tu-shop/04-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9D%97/" title="小兔鲜儿 -  分类模块">
+                        <span class="hidden-mobile">小兔鲜儿 -  分类模块</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

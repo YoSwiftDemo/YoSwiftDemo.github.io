@@ -1,0 +1,750 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="YoYo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="小兔鲜儿 - 推荐模块主要实现 Tabs 交互、多 Tabs 列表分页加载数据。 动态获取数据参考效果 推荐模块的布局结构是相同的，因此我们可以复用相同的页面及交互，只是所展示的数据不同。  静态结构 新建热门推荐页面文件，并在 pages.json 中添加路由（VS Code 插件自动完成）。 123456789101112131415161718192021222324252627282930">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小兔鲜儿 -  推荐模块">
+<meta property="og:url" content="http://example.com/2020/10/01/Uni-app/Demo/tu-shop/03-%E6%8E%A8%E8%8D%90%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="YoYo">
+<meta property="og:description" content="小兔鲜儿 - 推荐模块主要实现 Tabs 交互、多 Tabs 列表分页加载数据。 动态获取数据参考效果 推荐模块的布局结构是相同的，因此我们可以复用相同的页面及交互，只是所展示的数据不同。  静态结构 新建热门推荐页面文件，并在 pages.json 中添加路由（VS Code 插件自动完成）。 123456789101112131415161718192021222324252627282930">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/hot_picture_1.png">
+<meta property="og:image" content="http://example.com/assets/hot_picture_2.png">
+<meta property="article:published_time" content="2020-09-30T17:01:03.000Z">
+<meta property="article:modified_time" content="2023-08-20T06:37:09.806Z">
+<meta property="article:author" content="YoYo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/assets/hot_picture_1.png">
+  
+  
+  
+  <title>小兔鲜儿 -  推荐模块 - YoYo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>YoSwift</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="小兔鲜儿 -  推荐模块"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-10-01 01:01" pubdate>
+          October 1, 2020 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          11k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          90 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">小兔鲜儿 -  推荐模块</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="小兔鲜儿-推荐模块"><a href="#小兔鲜儿-推荐模块" class="headerlink" title="小兔鲜儿 - 推荐模块"></a>小兔鲜儿 - 推荐模块</h1><p>主要实现 Tabs 交互、多 Tabs 列表分页加载数据。</p>
+<h2 id="动态获取数据"><a href="#动态获取数据" class="headerlink" title="动态获取数据"></a>动态获取数据</h2><p><strong>参考效果</strong></p>
+<p>推荐模块的布局结构是相同的，因此我们可以复用相同的页面及交互，只是所展示的数据不同。</p>
+<p><img src="/./assets/hot_picture_1.png" srcset="/img/loading.gif" lazyload alt="热门推荐"></p>
+<p><strong>静态结构</strong></p>
+<p>新建热门推荐页面文件，并在 <code>pages.json</code> 中添加路由（VS Code 插件自动完成）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><code class="hljs vue">// /src/pages/hot/hot.vue<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>// 热门推荐页 标题和url<br>const hotMap = [<br>  &#123; type: &#x27;1&#x27;, title: &#x27;特惠推荐&#x27;, url: &#x27;/hot/preference&#x27; &#125;,<br>  &#123; type: &#x27;2&#x27;, title: &#x27;爆款推荐&#x27;, url: &#x27;/hot/inVogue&#x27; &#125;,<br>  &#123; type: &#x27;3&#x27;, title: &#x27;一站买全&#x27;, url: &#x27;/hot/oneStop&#x27; &#125;,<br>  &#123; type: &#x27;4&#x27;, title: &#x27;新鲜好物&#x27;, url: &#x27;/hot/new&#x27; &#125;,<br>]<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>    &lt;!-- 推荐封面图 --&gt;<br>    &lt;view class=&quot;cover&quot;&gt;<br>      &lt;image<br>        src=&quot;http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-20/84abb5b1-8344-49ae-afc1-9cb932f3d593.jpg&quot;<br>      &gt;&lt;/image&gt;<br>    &lt;/view&gt;<br>    &lt;!-- 推荐选项 --&gt;<br>    &lt;view class=&quot;tabs&quot;&gt;<br>      &lt;text class=&quot;text active&quot;&gt;抢先尝鲜&lt;/text&gt;<br>      &lt;text class=&quot;text&quot;&gt;新品预告&lt;/text&gt;<br>    &lt;/view&gt;<br>    &lt;!-- 推荐列表 --&gt;<br>    &lt;scroll-view scroll-y class=&quot;scroll-view&quot;&gt;<br>      &lt;view class=&quot;goods&quot;&gt;<br>        &lt;navigator<br>          hover-class=&quot;none&quot;<br>          class=&quot;navigator&quot;<br>          v-for=&quot;goods in 10&quot;<br>          :key=&quot;goods&quot;<br>          :url=&quot;`/pages/goods/goods?id=`&quot;<br>        &gt;<br>          &lt;image<br>            class=&quot;thumb&quot;<br>            src=&quot;https://yanxuan-item.nosdn.127.net/5e7864647286c7447eeee7f0025f8c11.png&quot;<br>          &gt;&lt;/image&gt;<br>          &lt;view class=&quot;name ellipsis&quot;&gt;不含酒精，使用安心爽肤清洁湿巾&lt;/view&gt;<br>          &lt;view class=&quot;price&quot;&gt;<br>            &lt;text class=&quot;symbol&quot;&gt;¥&lt;/text&gt;<br>            &lt;text class=&quot;number&quot;&gt;29.90&lt;/text&gt;<br>          &lt;/view&gt;<br>        &lt;/navigator&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;loading-text&quot;&gt;正在加载...&lt;/view&gt;<br>    &lt;/scroll-view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br><br>&lt;style lang=&quot;scss&quot;&gt;<br>page &#123;<br>  height: 100%;<br>  background-color: #f4f4f4;<br>&#125;<br>.viewport &#123;<br>  display: flex;<br>  flex-direction: column;<br>  height: 100%;<br>  padding: 180rpx 0 0;<br>  position: relative;<br>&#125;<br>.cover &#123;<br>  width: 750rpx;<br>  height: 225rpx;<br>  border-radius: 0 0 40rpx 40rpx;<br>  overflow: hidden;<br>  position: absolute;<br>  left: 0;<br>  top: 0;<br>&#125;<br>.scroll-view &#123;<br>  flex: 1;<br>&#125;<br>.tabs &#123;<br>  display: flex;<br>  justify-content: space-evenly;<br>  height: 100rpx;<br>  line-height: 90rpx;<br>  margin: 0 20rpx;<br>  font-size: 28rpx;<br>  border-radius: 10rpx;<br>  box-shadow: 0 4rpx 5rpx rgba(200, 200, 200, 0.3);<br>  color: #333;<br>  background-color: #fff;<br>  position: relative;<br>  z-index: 9;<br>  .text &#123;<br>    margin: 0 20rpx;<br>    position: relative;<br>  &#125;<br>  .active &#123;<br>    &amp;::after &#123;<br>      content: &#x27;&#x27;;<br>      width: 40rpx;<br>      height: 4rpx;<br>      transform: translate(-50%);<br>      background-color: #27ba9b;<br>      position: absolute;<br>      left: 50%;<br>      bottom: 24rpx;<br>    &#125;<br>  &#125;<br>&#125;<br>.goods &#123;<br>  display: flex;<br>  flex-wrap: wrap;<br>  justify-content: space-between;<br>  padding: 0 20rpx 20rpx;<br>  .navigator &#123;<br>    width: 345rpx;<br>    padding: 20rpx;<br>    margin-top: 20rpx;<br>    border-radius: 10rpx;<br>    background-color: #fff;<br>  &#125;<br>  .thumb &#123;<br>    width: 305rpx;<br>    height: 305rpx;<br>  &#125;<br>  .name &#123;<br>    height: 88rpx;<br>    font-size: 26rpx;<br>  &#125;<br>  .price &#123;<br>    line-height: 1;<br>    color: #cf4444;<br>    font-size: 30rpx;<br>  &#125;<br>  .symbol &#123;<br>    font-size: 70%;<br>  &#125;<br>  .decimal &#123;<br>    font-size: 70%;<br>  &#125;<br>&#125;<br><br>.loading-text &#123;<br>  text-align: center;<br>  font-size: 28rpx;<br>  color: #666;<br>  padding: 20rpx 0 50rpx;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="获取页面参数"><a href="#获取页面参数" class="headerlink" title="获取页面参数"></a>获取页面参数</h3><p>热门推荐页要根据页面参数区分需要获取的是哪种类型的推荐列表，然后再去调用相应的接口，来获取不同的数据，再渲染到页面当中。</p>
+<p>项目首页（传递参数）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs vue">// src/pages/index/components/HotPanel.vue<br>&lt;navigator :url=&quot;`/pages/hot/hot?type=$&#123;item.type&#125;`&quot;&gt;<br>  …省略  <br>&lt;/navigator&gt;<br></code></pre></td></tr></table></figure>
+
+<p>热门推荐页（获取参数）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs vue">// src/pages/hot/hot.vue<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>// 热门推荐页 标题和url<br>const hotMap = [<br>  &#123; type: &#x27;1&#x27;, title: &#x27;特惠推荐&#x27;, url: &#x27;/hot/preference&#x27; &#125;,<br>  &#123; type: &#x27;2&#x27;, title: &#x27;爆款推荐&#x27;, url: &#x27;/hot/inVogue&#x27; &#125;,<br>  &#123; type: &#x27;3&#x27;, title: &#x27;一站买全&#x27;, url: &#x27;/hot/oneStop&#x27; &#125;,<br>  &#123; type: &#x27;4&#x27;, title: &#x27;新鲜好物&#x27;, url: &#x27;/hot/new&#x27; &#125;,<br>]<br>// uniapp 获取页面参数<br>const query = defineProps&lt;&#123;<br>  type: string<br>&#125;&gt;()<br>// console.log(query)<br>const currHot = hotMap.find((v) =&gt; v.type === query.type)<br>// 动态设置标题<br>uni.setNavigationBarTitle(&#123; title: currHot!.title &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<p>传递不同的页面参数，动态设置推荐页标题。</p>
+<h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><p><strong>地址参数</strong></p>
+<p>不同类型的推荐，需要调用不同的 API 接口：</p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>推荐类型</th>
+<th>接口路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>特惠推荐</td>
+<td>&#x2F;hot&#x2F;preference</td>
+</tr>
+<tr>
+<td>2</td>
+<td>爆款推荐</td>
+<td>&#x2F;hot&#x2F;inVogue</td>
+</tr>
+<tr>
+<td>3</td>
+<td>一站买全</td>
+<td>&#x2F;hot&#x2F;oneStop</td>
+</tr>
+<tr>
+<td>4</td>
+<td>新鲜好物</td>
+<td>&#x2F;hot&#x2F;new</td>
+</tr>
+</tbody></table>
+<p><strong>接口调用</strong></p>
+<p>调用接口获取推荐商品列表的数据，然后再将这些数据渲染出来。</p>
+<p>接口地址：见上表</p>
+<p>请求方式：GET</p>
+<p>请求参数：</p>
+<p><strong>Query:</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>subType</td>
+<td>否</td>
+<td>无</td>
+<td>推荐列表 Tab 项的 id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>否</td>
+<td>1</td>
+<td>页码</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>否</td>
+<td>10</td>
+<td>每页商品数量</td>
+</tr>
+</tbody></table>
+<p><strong>请求封装</strong></p>
+<p>经过分析，尽管不同类型推荐的请求 url 不同，但请求参数及响应格式都具有一致性，因此可以将接口的调用进行封装，参考代码如下所示：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; http &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/utils/http&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> &#123; <span class="hljs-title class_">PageParams</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/types/global&#x27;</span><br><br><span class="hljs-keyword">type</span> <span class="hljs-title class_">HotParams</span> = <span class="hljs-title class_">PageParams</span> &amp; &#123;<br>  <span class="hljs-comment">/** Tab 项的 id，默认查询全部 Tab 项的第 1 页数据 */</span><br>  subType?: <span class="hljs-built_in">string</span><br>&#125;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 通用热门推荐类型</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> url 请求地址</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> data 请求参数</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">getHotRecommendAPI</span> = (<span class="hljs-params">url: <span class="hljs-built_in">string</span>, data?: HotParams</span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> http&lt;<span class="hljs-title class_">HotResult</span>&gt;(&#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,<br>    url,<br>    data,<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>类型声明</strong></p>
+<p>电商项目较为常见商品展示，商品的类型是可复用的，封装到 <code>src/types/global.d.ts</code> 文件中：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// src/types/global.d.ts</span><br><span class="hljs-comment">/** 通用商品类型 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">GoodsItem</span> = &#123;<br>  <span class="hljs-comment">/** 商品描述 */</span><br>  <span class="hljs-attr">desc</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品折扣 */</span><br>  <span class="hljs-attr">discount</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** id */</span><br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品名称 */</span><br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品已下单数量 */</span><br>  <span class="hljs-attr">orderNum</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 商品图片 */</span><br>  <span class="hljs-attr">picture</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 商品价格 */</span><br>  <span class="hljs-attr">price</span>: <span class="hljs-built_in">number</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>其实猜你喜欢的商品类型也相同，可复用通用商品类型，封装到 <code>src/services/home.ts</code> 文件中：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// src/services/home.ts</span><br><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> &#123; <span class="hljs-title class_">GoodsItem</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/types/global&#x27;</span><br><br><span class="hljs-comment">// GuessItem 和 GoodsItem 类型相同</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">GuessItem</span> = <span class="hljs-title class_">GoodsItem</span><br></code></pre></td></tr></table></figure>
+
+<p>热门推荐类型如下，新建 <code>src/types/hot.d.ts</code> 文件：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> &#123; <span class="hljs-title class_">PageResult</span>, <span class="hljs-title class_">GoodsItem</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./global&#x27;</span><br><br><span class="hljs-comment">/** 热门推荐 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">HotResult</span> = &#123;<br>  <span class="hljs-comment">/** id信息 */</span><br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 活动图片 */</span><br>  <span class="hljs-attr">bannerPicture</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 活动标题 */</span><br>  <span class="hljs-attr">title</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 子类选项 */</span><br>  <span class="hljs-attr">subTypes</span>: <span class="hljs-title class_">SubTypeItem</span>[]<br>&#125;<br><br><span class="hljs-comment">/** 热门推荐-子类选项 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">SubTypeItem</span> = &#123;<br>  <span class="hljs-comment">/** 子类id */</span><br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 子类标题 */</span><br>  <span class="hljs-attr">title</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 子类对应的商品集合 */</span><br>  <span class="hljs-attr">goodsItems</span>: <span class="hljs-title class_">PageResult</span>&lt;<span class="hljs-title class_">GoodsItem</span>&gt;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>最后，把获取到的数据结合模板语法渲染到页面中。</p>
+<h2 id="多-Tabs-分页加载"><a href="#多-Tabs-分页加载" class="headerlink" title="多 Tabs 分页加载"></a>多 Tabs 分页加载</h2><p>需要根据当前用户选中的 Tabs 加载对应的列表数据。</p>
+<p><img src="/./assets/hot_picture_2.png" srcset="/img/loading.gif" lazyload alt="Tab 交互"></p>
+<h3 id="Tabs-交互基础"><a href="#Tabs-交互基础" class="headerlink" title="Tabs 交互基础"></a>Tabs 交互基础</h3><p>当用户点击页面中的 Tab 后，切换展示相应的商品列表，功能相对简单，快速实现即可。</p>
+<p>参考代码</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;2,3,13,14,25&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// 高亮的下标<br>const activeIndex = ref(0)<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;!-- 推荐选项 --&gt;<br>  &lt;view class=&quot;tabs&quot;&gt;<br>    &lt;text<br>      class=&quot;text&quot;<br>      v-for=&quot;(item, index) in subTypes&quot;<br>      :key=&quot;item.id&quot;<br>      :class=&quot;&#123; active: index === activeIndex &#125;&quot;<br>      @tap=&quot;activeIndex = index&quot;<br>    &gt;<br>      &#123;&#123; item.title &#125;&#125;<br>    &lt;/text&gt;<br>  &lt;/view&gt;<br>  &lt;!-- 推荐列表 --&gt;<br>  &lt;scroll-view<br>    scroll-y<br>    class=&quot;scroll-view&quot;<br>    v-for=&quot;(item, index) in subTypes&quot;<br>    :key=&quot;item.id&quot;<br>    v-show=&quot;activeIndex === index&quot;<br>  &gt;<br>    ...省略<br>  &lt;/scroll-view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="加载选中-Tabs-分页数据"><a href="#加载选中-Tabs-分页数据" class="headerlink" title="加载选中 Tabs 分页数据"></a>加载选中 Tabs 分页数据</h3><p>根据当前用户选中的 Tabs 加载对应的列表数据。</p>
+<p><strong>操作流程</strong></p>
+<ol>
+<li>根据高亮下标，获取对应列表数据</li>
+<li>提取列表的分页参数，用于发送请求</li>
+<li>滚动触底事件，页码累加，数组追加，退出判断等业务和常规分页基本一致</li>
+</ol>
+<h2 id="参考代码-总"><a href="#参考代码-总" class="headerlink" title="参考代码(总)"></a>参考代码(总)</h2><p>热门推荐页</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; getHotRecommendAPI &#125; from &#x27;@/services/hot&#x27;<br>import type &#123; SubTypeItem &#125; from &#x27;@/types/hot&#x27;<br>import &#123; onLoad &#125; from &#x27;@dcloudio/uni-app&#x27;<br>import &#123; ref &#125; from &#x27;vue&#x27;<br><br>// 热门推荐页 标题和url<br>const hotMap = [<br>  &#123; type: &#x27;1&#x27;, title: &#x27;特惠推荐&#x27;, url: &#x27;/hot/preference&#x27; &#125;,<br>  &#123; type: &#x27;2&#x27;, title: &#x27;爆款推荐&#x27;, url: &#x27;/hot/inVogue&#x27; &#125;,<br>  &#123; type: &#x27;3&#x27;, title: &#x27;一站买全&#x27;, url: &#x27;/hot/oneStop&#x27; &#125;,<br>  &#123; type: &#x27;4&#x27;, title: &#x27;新鲜好物&#x27;, url: &#x27;/hot/new&#x27; &#125;,<br>]<br><br>// uniapp 获取页面参数<br>const query = defineProps&lt;&#123;<br>  type: string<br>&#125;&gt;()<br>// 获取当前推荐信息<br>const currHot = hotMap.find((v) =&gt; v.type === query.type)<br>// 动态设置标题<br>uni.setNavigationBarTitle(&#123; title: currHot!.title &#125;)<br><br>// 推荐封面图<br>const bannerPicture = ref(&#x27;&#x27;)<br>// 推荐选项<br>const subTypes = ref&lt;(SubTypeItem &amp; &#123; finish?: boolean &#125;)[]&gt;([])<br>// 高亮的下标<br>const activeIndex = ref(0)<br>// 获取热门推荐数据<br>const getHotRecommendData = async () =&gt; &#123;<br>  const res = await getHotRecommendAPI(currHot!.url, &#123;<br>    // 技巧：环境变量，开发环境，修改初始页面方便测试分页结束<br>    page: import.meta.env.DEV ? 30 : 1,<br>    pageSize: 10,<br>  &#125;)<br>  // 保存封面<br>  bannerPicture.value = res.result.bannerPicture<br>  // 保存列表<br>  subTypes.value = res.result.subTypes<br>&#125;<br><br>// 页面加载<br>onLoad(() =&gt; &#123;<br>  getHotRecommendData()<br>&#125;)<br><br>// 滚动触底<br>const onScrolltolower = async () =&gt; &#123;<br>  // 获取当前选项<br>  const currsubTypes = subTypes.value[activeIndex.value]<br>  // 分页条件<br>  if (currsubTypes.goodsItems.page &lt; currsubTypes.goodsItems.pages) &#123;<br>    // 当前页码累加<br>    currsubTypes.goodsItems.page++<br>  &#125; else &#123;<br>    // 标记已结束<br>    currsubTypes.finish = true<br>    // 退出并轻提示<br>    return uni.showToast(&#123; icon: &#x27;none&#x27;, title: &#x27;没有更多数据了~&#x27; &#125;)<br>  &#125;<br><br>  // 调用API传参<br>  const res = await getHotRecommendAPI(currHot!.url, &#123;<br>    subType: currsubTypes.id,<br>    page: currsubTypes.goodsItems.page,<br>    pageSize: currsubTypes.goodsItems.pageSize,<br>  &#125;)<br>  // 新的列表选项<br>  const newsubTypes = res.result.subTypes[activeIndex.value]<br>  // 数组追加<br>  currsubTypes.goodsItems.items.push(...newsubTypes.goodsItems.items)<br>&#125;<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>    &lt;!-- 推荐封面图 --&gt;<br>    &lt;view class=&quot;cover&quot;&gt;<br>      &lt;image :src=&quot;bannerPicture&quot;&gt;&lt;/image&gt;<br>    &lt;/view&gt;<br>    &lt;!-- 推荐选项 --&gt;<br>    &lt;view class=&quot;tabs&quot;&gt;<br>      &lt;text<br>        v-for=&quot;(item, index) in subTypes&quot;<br>        :key=&quot;item.id&quot;<br>        class=&quot;text&quot;<br>        :class=&quot;&#123; active: index === activeIndex &#125;&quot;<br>        @tap=&quot;activeIndex = index&quot;<br>        &gt;&#123;&#123; item.title &#125;&#125;&lt;/text<br>      &gt;<br>    &lt;/view&gt;<br>    &lt;!-- 推荐列表 --&gt;<br>    &lt;scroll-view<br>      v-for=&quot;(item, index) in subTypes&quot;<br>      :key=&quot;item.id&quot;<br>      v-show=&quot;activeIndex === index&quot;<br>      scroll-y<br>      class=&quot;scroll-view&quot;<br>      @scrolltolower=&quot;onScrolltolower&quot;<br>    &gt;<br>      &lt;view class=&quot;goods&quot;&gt;<br>        &lt;navigator<br>          hover-class=&quot;none&quot;<br>          class=&quot;navigator&quot;<br>          v-for=&quot;goods in item.goodsItems.items&quot;<br>          :key=&quot;goods.id&quot;<br>          :url=&quot;`/pages/goods/goods?id=$&#123;goods.id&#125;`&quot;<br>        &gt;<br>          &lt;image class=&quot;thumb&quot; :src=&quot;goods.picture&quot;&gt;&lt;/image&gt;<br>          &lt;view class=&quot;name ellipsis&quot;&gt;&#123;&#123; goods.name &#125;&#125;&lt;/view&gt;<br>          &lt;view class=&quot;price&quot;&gt;<br>            &lt;text class=&quot;symbol&quot;&gt;¥&lt;/text&gt;<br>            &lt;text class=&quot;number&quot;&gt;&#123;&#123; goods.price &#125;&#125;&lt;/text&gt;<br>          &lt;/view&gt;<br>        &lt;/navigator&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;loading-text&quot;&gt;<br>        &#123;&#123; item.finish ? &#x27;没有更多数据了~&#x27; : &#x27;正在加载...&#x27; &#125;&#125;<br>      &lt;/view&gt;<br>    &lt;/scroll-view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Uni-app/" class="category-chain-item">Uni-app</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Uni-app/Demo/" class="category-chain-item">Demo</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Uni-app/Demo/TuShop/" class="category-chain-item">TuShop</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>小兔鲜儿 -  推荐模块</div>
+      <div>http://example.com/2020/10/01/Uni-app/Demo/tu-shop/03-推荐模块/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>YoYo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 1, 2020</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/01/Uni-app/Demo/tu-shop/04-%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9D%97/" title="小兔鲜儿 -  分类模块">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">小兔鲜儿 -  分类模块</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/10/01/Uni-app/Demo/tu-shop/02-%E9%A6%96%E9%A1%B5%E6%A8%A1%E5%9D%97/" title="小兔鲜儿 -  首页模块">
+                        <span class="hidden-mobile">小兔鲜儿 -  首页模块</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,912 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="YoYo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="小兔鲜儿 - 地址模块 能够获取不同类型的表单数据 能够动态设置导航栏的标题 能够使用 uni-ui 组件库的组件 能够完成收货地址的增删改查的功能  准备工作静态结构地址模块共两个页面：地址管理页，地址表单页 ，划分到会员分包中。  地址管理页src&#x2F;pagesMember&#x2F;address&#x2F;address.vue 12345678910111213141516171819202122232425">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小兔鲜儿 -地址模块">
+<meta property="og:url" content="http://example.com/2020/10/01/Uni-app/Demo/tu-shop/08-%E5%9C%B0%E5%9D%80%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="YoYo">
+<meta property="og:description" content="小兔鲜儿 - 地址模块 能够获取不同类型的表单数据 能够动态设置导航栏的标题 能够使用 uni-ui 组件库的组件 能够完成收货地址的增删改查的功能  准备工作静态结构地址模块共两个页面：地址管理页，地址表单页 ，划分到会员分包中。  地址管理页src&#x2F;pagesMember&#x2F;address&#x2F;address.vue 12345678910111213141516171819202122232425">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/address_picture_1.png">
+<meta property="og:image" content="http://example.com/assets/address_picture_2.png">
+<meta property="og:image" content="http://example.com/assets/address_picture_3.png">
+<meta property="og:image" content="http://example.com/assets/address_picture_4.png">
+<meta property="og:image" content="http://example.com/assets/address_picture_5.png">
+<meta property="og:image" content="http://example.com/assets/address_picture_6.png">
+<meta property="article:published_time" content="2020-09-30T17:01:08.000Z">
+<meta property="article:modified_time" content="2023-08-20T06:38:20.154Z">
+<meta property="article:author" content="YoYo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/assets/address_picture_1.png">
+  
+  
+  
+  <title>小兔鲜儿 -地址模块 - YoYo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>YoSwift</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="小兔鲜儿 -地址模块"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-10-01 01:01" pubdate>
+          October 1, 2020 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          21k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          178 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">小兔鲜儿 -地址模块</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="小兔鲜儿-地址模块"><a href="#小兔鲜儿-地址模块" class="headerlink" title="小兔鲜儿 - 地址模块"></a>小兔鲜儿 - 地址模块</h1><ul>
+<li>能够获取不同类型的表单数据</li>
+<li>能够动态设置导航栏的标题</li>
+<li>能够使用 uni-ui 组件库的组件</li>
+<li>能够完成收货地址的增删改查的功能</li>
+</ul>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="静态结构"><a href="#静态结构" class="headerlink" title="静态结构"></a>静态结构</h3><p>地址模块共两个页面：地址管理页，地址表单页 ，划分到会员分包中。</p>
+<p><img src="/./assets/address_picture_1.png" srcset="/img/loading.gif" lazyload alt="picture_31"></p>
+<h4 id="地址管理页"><a href="#地址管理页" class="headerlink" title="地址管理页"></a>地址管理页</h4><p><code>src/pagesMember/address/address.vue</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>//<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>    &lt;!-- 地址列表 --&gt;<br>    &lt;scroll-view class=&quot;scroll-view&quot; scroll-y&gt;<br>      &lt;view v-if=&quot;true&quot; class=&quot;address&quot;&gt;<br>        &lt;view class=&quot;address-list&quot;&gt;<br>          &lt;!-- 收货地址项 --&gt;<br>          &lt;view class=&quot;item&quot;&gt;<br>            &lt;view class=&quot;item-content&quot;&gt;<br>              &lt;view class=&quot;user&quot;&gt;<br>                黑马小王子<br>                &lt;text class=&quot;contact&quot;&gt;13111111111&lt;/text&gt;<br>                &lt;text v-if=&quot;true&quot; class=&quot;badge&quot;&gt;默认&lt;/text&gt;<br>              &lt;/view&gt;<br>              &lt;view class=&quot;locate&quot;&gt;广东省 广州市 天河区 黑马程序员&lt;/view&gt;<br>              &lt;navigator<br>                class=&quot;edit&quot;<br>                hover-class=&quot;none&quot;<br>                :url=&quot;`/pagesMember/address-form/address-form?id=1`&quot;<br>              &gt;<br>                修改<br>              &lt;/navigator&gt;<br>            &lt;/view&gt;<br>          &lt;/view&gt;<br>          &lt;!-- 收货地址项 --&gt;<br>          &lt;view class=&quot;item&quot;&gt;<br>            &lt;view class=&quot;item-content&quot;&gt;<br>              &lt;view class=&quot;user&quot;&gt;<br>                黑马小公主<br>                &lt;text class=&quot;contact&quot;&gt;13222222222&lt;/text&gt;<br>                &lt;text v-if=&quot;false&quot; class=&quot;badge&quot;&gt;默认&lt;/text&gt;<br>              &lt;/view&gt;<br>              &lt;view class=&quot;locate&quot;&gt;北京市 北京市 顺义区 黑马程序员&lt;/view&gt;<br>              &lt;navigator<br>                class=&quot;edit&quot;<br>                hover-class=&quot;none&quot;<br>                :url=&quot;`/pagesMember/address-form/address-form?id=2`&quot;<br>              &gt;<br>                修改<br>              &lt;/navigator&gt;<br>            &lt;/view&gt;<br>          &lt;/view&gt;<br>        &lt;/view&gt;<br>      &lt;/view&gt;<br>      &lt;view v-else class=&quot;blank&quot;&gt;暂无收货地址&lt;/view&gt;<br>    &lt;/scroll-view&gt;<br>    &lt;!-- 添加按钮 --&gt;<br>    &lt;view class=&quot;add-btn&quot;&gt;<br>      &lt;navigator<br>        hover-class=&quot;none&quot;<br>        url=&quot;/pagesMember/address-form/address-form&quot;<br>      &gt;<br>        新建地址<br>      &lt;/navigator&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br><br>&lt;style lang=&quot;scss&quot;&gt;<br>page &#123;<br>  height: 100%;<br>  overflow: hidden;<br>&#125;<br><br>/* 删除按钮 */<br>.delete-button &#123;<br>  display: flex;<br>  justify-content: center;<br>  align-items: center;<br>  width: 50px;<br>  height: 100%;<br>  font-size: 28rpx;<br>  color: #fff;<br>  border-radius: 0;<br>  padding: 0;<br>  background-color: #cf4444;<br>&#125;<br><br>.viewport &#123;<br>  display: flex;<br>  flex-direction: column;<br>  height: 100%;<br>  background-color: #f4f4f4;<br><br>  .scroll-view &#123;<br>    padding-top: 20rpx;<br>  &#125;<br>&#125;<br><br>.address &#123;<br>  padding: 0 20rpx;<br>  margin: 0 20rpx;<br>  border-radius: 10rpx;<br>  background-color: #fff;<br><br>  .item-content &#123;<br>    line-height: 1;<br>    padding: 40rpx 10rpx 38rpx;<br>    border-bottom: 1rpx solid #ddd;<br>    position: relative;<br><br>    .edit &#123;<br>      position: absolute;<br>      top: 36rpx;<br>      right: 30rpx;<br>      padding: 2rpx 0 2rpx 20rpx;<br>      border-left: 1rpx solid #666;<br>      font-size: 26rpx;<br>      color: #666;<br>      line-height: 1;<br>    &#125;<br>  &#125;<br><br>  .item:last-child .item-content &#123;<br>    border: none;<br>  &#125;<br><br>  .user &#123;<br>    font-size: 28rpx;<br>    margin-bottom: 20rpx;<br>    color: #333;<br><br>    .contact &#123;<br>      color: #666;<br>    &#125;<br><br>    .badge &#123;<br>      display: inline-block;<br>      padding: 4rpx 10rpx 2rpx 14rpx;<br>      margin: 2rpx 0 0 10rpx;<br>      font-size: 26rpx;<br>      color: #27ba9b;<br>      border-radius: 6rpx;<br>      border: 1rpx solid #27ba9b;<br>    &#125;<br>  &#125;<br><br>  .locate &#123;<br>    line-height: 1.6;<br>    font-size: 26rpx;<br>    color: #333;<br>  &#125;<br>&#125;<br><br>.blank &#123;<br>  margin-top: 300rpx;<br>  text-align: center;<br>  font-size: 32rpx;<br>  color: #888;<br>&#125;<br><br>.add-btn &#123;<br>  height: 80rpx;<br>  text-align: center;<br>  line-height: 80rpx;<br>  margin: 30rpx 20rpx;<br>  color: #fff;<br>  border-radius: 80rpx;<br>  font-size: 30rpx;<br>  background-color: #27ba9b;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<h4 id="地址表单页"><a href="#地址表单页" class="headerlink" title="地址表单页"></a>地址表单页</h4><p><code>src/pagesMember/address-form/address-form.vue</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; ref &#125; from &#x27;vue&#x27;<br><br>// 表单数据<br>const form = ref(&#123;<br>  receiver: &#x27;&#x27;, // 收货人<br>  contact: &#x27;&#x27;, // 联系方式<br>  fullLocation: &#x27;&#x27;, // 省市区(前端展示)<br>  provinceCode: &#x27;&#x27;, // 省份编码(后端参数)<br>  cityCode: &#x27;&#x27;, // 城市编码(后端参数)<br>  countyCode: &#x27;&#x27;, // 区/县编码(后端参数)<br>  address: &#x27;&#x27;, // 详细地址<br>  isDefault: 0, // 默认地址，1为是，0为否<br>&#125;)<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;content&quot;&gt;<br>    &lt;form&gt;<br>      &lt;!-- 表单内容 --&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;收货人&lt;/text&gt;<br>        &lt;input class=&quot;input&quot; placeholder=&quot;请填写收货人姓名&quot; value=&quot;&quot; /&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;手机号码&lt;/text&gt;<br>        &lt;input class=&quot;input&quot; placeholder=&quot;请填写收货人手机号码&quot; value=&quot;&quot; /&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;所在地区&lt;/text&gt;<br>        &lt;picker class=&quot;picker&quot; mode=&quot;region&quot; value=&quot;&quot;&gt;<br>          &lt;view v-if=&quot;false&quot;&gt;广东省 广州市 天河区&lt;/view&gt;<br>          &lt;view v-else class=&quot;placeholder&quot;&gt;请选择省/市/区(县)&lt;/view&gt;<br>        &lt;/picker&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;详细地址&lt;/text&gt;<br>        &lt;input class=&quot;input&quot; placeholder=&quot;街道、楼牌号等信息&quot; value=&quot;&quot; /&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;label class=&quot;label&quot;&gt;设为默认地址&lt;/label&gt;<br>        &lt;switch class=&quot;switch&quot; color=&quot;#27ba9b&quot; :checked=&quot;true&quot; /&gt;<br>      &lt;/view&gt;<br>    &lt;/form&gt;<br>  &lt;/view&gt;<br>  &lt;!-- 提交按钮 --&gt;<br>  &lt;button class=&quot;button&quot;&gt;保存并使用&lt;/button&gt;<br>&lt;/template&gt;<br><br>&lt;style lang=&quot;scss&quot;&gt;<br>page &#123;<br>  background-color: #f4f4f4;<br>&#125;<br><br>.content &#123;<br>  margin: 20rpx 20rpx 0;<br>  padding: 0 20rpx;<br>  border-radius: 10rpx;<br>  background-color: #fff;<br><br>  .form-item,<br>  .uni-forms-item &#123;<br>    display: flex;<br>    align-items: center;<br>    min-height: 96rpx;<br>    padding: 25rpx 10rpx;<br>    background-color: #fff;<br>    font-size: 28rpx;<br>    border-bottom: 1rpx solid #ddd;<br>    position: relative;<br>    margin-bottom: 0;<br><br>    // 调整 uni-forms 样式<br>    .uni-forms-item__content &#123;<br>      display: flex;<br>    &#125;<br><br>    .uni-forms-item__error &#123;<br>      margin-left: 200rpx;<br>    &#125;<br><br>    &amp;:last-child &#123;<br>      border: none;<br>    &#125;<br><br>    .label &#123;<br>      width: 200rpx;<br>      color: #333;<br>    &#125;<br><br>    .input &#123;<br>      flex: 1;<br>      display: block;<br>      height: 46rpx;<br>    &#125;<br><br>    .switch &#123;<br>      position: absolute;<br>      right: -20rpx;<br>      transform: scale(0.8);<br>    &#125;<br><br>    .picker &#123;<br>      flex: 1;<br>    &#125;<br><br>    .placeholder &#123;<br>      color: #808080;<br>    &#125;<br>  &#125;<br>&#125;<br><br>.button &#123;<br>  height: 80rpx;<br>  margin: 30rpx 20rpx;<br>  color: #fff;<br>  border-radius: 80rpx;<br>  font-size: 30rpx;<br>  background-color: #27ba9b;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="动态设置标题"><a href="#动态设置标题" class="headerlink" title="动态设置标题"></a>动态设置标题</h3><p><strong>新建地址</strong> 和 <strong>修改地址</strong> 复用同一个地址表单页，需要根据页面参数 <code>id</code> 动态设置页面标题。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// 获取页面参数<br>const query = defineProps&lt;&#123;<br>  id?: string<br>&#125;&gt;()<br><br>// 动态设置标题<br>uni.setNavigationBarTitle(&#123; title: query.id ? &#x27;修改地址&#x27; : &#x27;新建地址&#x27; &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="新建地址页"><a href="#新建地址页" class="headerlink" title="新建地址页"></a>新建地址页</h2><p>新用户没有收货地址，先完成新建地址，新建成功返回地址管理页。</p>
+<p>主要功能：前端收集表单的数据，提交表单给后端。</p>
+<p><img src="/./assets/address_picture_2.png" srcset="/img/loading.gif" lazyload alt="添加地址"></p>
+<h3 id="接口封装"><a href="#接口封装" class="headerlink" title="接口封装"></a>接口封装</h3><p><strong>接口调用</strong></p>
+<p>接口地址：&#x2F;member&#x2F;address</p>
+<p>请求方式：POST</p>
+<p>登录权限: <strong>是</strong></p>
+<p>请求参数：</p>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>receiver</td>
+<td>是</td>
+<td>string</td>
+<td>收货人姓名</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>是</td>
+<td>string</td>
+<td>收货人联系方式</td>
+</tr>
+<tr>
+<td>provinceCode</td>
+<td>是</td>
+<td>string</td>
+<td>省对应的 code</td>
+</tr>
+<tr>
+<td>cityCode</td>
+<td>是</td>
+<td>string</td>
+<td>市对应的 code</td>
+</tr>
+<tr>
+<td>countyCode</td>
+<td>是</td>
+<td>string</td>
+<td>区&#x2F;县对应的 code</td>
+</tr>
+<tr>
+<td>address</td>
+<td>是</td>
+<td>string</td>
+<td>收货人详细地址</td>
+</tr>
+<tr>
+<td>isDefault</td>
+<td>是</td>
+<td>number</td>
+<td>是否设置为默认地址（数值类型）</td>
+</tr>
+</tbody></table>
+<p><strong>接口封装</strong></p>
+<p><code>src/services/address.ts</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> &#123; <span class="hljs-title class_">AddressParams</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/types/address&#x27;</span><br><span class="hljs-keyword">import</span> &#123; http &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/utils/http&#x27;</span><br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 添加收货地址</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> data 请求参数</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">postMemberAddressAPI</span> = (<span class="hljs-params">data: AddressParams</span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_">http</span>(&#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/member/address&#x27;</span>,<br>    data,<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>类型声明</strong></p>
+<p><code>src/types/address.d.ts</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/** 添加收货地址: 请求参数 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">AddressParams</span> = &#123;<br>  <span class="hljs-comment">/** 收货人姓名 */</span><br>  <span class="hljs-attr">receiver</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 联系方式 */</span><br>  <span class="hljs-attr">contact</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 省份编码 */</span><br>  <span class="hljs-attr">provinceCode</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 城市编码 */</span><br>  <span class="hljs-attr">cityCode</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 区/县编码 */</span><br>  <span class="hljs-attr">countyCode</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 详细地址 */</span><br>  <span class="hljs-attr">address</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 默认地址，1为是，0为否 */</span><br>  <span class="hljs-attr">isDefault</span>: <span class="hljs-built_in">number</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h3><p>地址表单页，<code>input</code> 组件通过 <code>v-model</code> 获取数据，其他表单组件结合 <code>@change</code> 事件获取。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;24,33-42,51,55,63,71,79,85&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; postMemberAddressAPI &#125; from &#x27;@/services/address&#x27;<br>import &#123; ref &#125; from &#x27;vue&#x27;<br><br>// 表单数据<br>const form = ref(&#123;<br>  receiver: &#x27;&#x27;, // 收货人<br>  contact: &#x27;&#x27;, // 联系方式<br>  fullLocation: &#x27;&#x27;, // 省市区(前端展示)<br>  provinceCode: &#x27;&#x27;, // 省份编码(后端参数)<br>  cityCode: &#x27;&#x27;, // 城市编码(后端参数)<br>  countyCode: &#x27;&#x27;, // 区/县编码(后端参数)<br>  address: &#x27;&#x27;, // 详细地址<br>  isDefault: 0, // 默认地址，1为是，0为否<br>&#125;)<br><br>// 收集所在地区<br>const onRegionChange: UniHelper.RegionPickerOnChange = (ev) =&gt; &#123;<br>  // 省市区(前端展示)<br>  form.value.fullLocation = ev.detail.value.join(&#x27; &#x27;)<br>  // 省市区(后端参数)<br>  const [provinceCode, cityCode, countyCode] = ev.detail.code!<br>  // 合并数据<br>  Object.assign(form.value, &#123; provinceCode, cityCode, countyCode &#125;)<br>&#125;<br><br>// 收集是否默认收货地址<br>const onSwitchChange: UniHelper.SwitchOnChange = (ev) =&gt; &#123;<br>  form.value.isDefault = ev.detail.value ? 1 : 0<br>&#125;<br><br>// 提交表单<br>const onSubmit = async () =&gt; &#123;<br>  // 新建地址请求<br>  await postMemberAddressAPI(form.value)<br>  // 成功提示<br>  uni.showToast(&#123; icon: &#x27;success&#x27;, title: &#x27;添加成功&#x27; &#125;)<br>  // 返回上一页<br>  setTimeout(() =&gt; &#123;<br>    uni.navigateBack()<br>  &#125;, 400)<br>&#125;<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;content&quot;&gt;<br>    &lt;form&gt;<br>      &lt;!-- 表单内容 --&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;收货人&lt;/text&gt;<br>        &lt;input<br>          class=&quot;input&quot;<br>          placeholder=&quot;请填写收货人姓名&quot;<br>          v-model=&quot;form.receiver&quot;<br>        /&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;手机号码&lt;/text&gt;<br>        &lt;input<br>          class=&quot;input&quot;<br>          placeholder=&quot;请填写收货人手机号码&quot;<br>          v-model=&quot;form.contact&quot;<br>        /&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;所在地区&lt;/text&gt;<br>        &lt;picker<br>          class=&quot;picker&quot;<br>          mode=&quot;region&quot;<br>          :value=&quot;form.fullLocation.split(&#x27; &#x27;)&quot;<br>          @change=&quot;onRegionChange&quot;<br>        &gt;<br>          &lt;view v-if=&quot;form.fullLocation&quot;&gt;&#123;&#123; form.fullLocation &#125;&#125;&lt;/view&gt;<br>          &lt;view v-else class=&quot;placeholder&quot;&gt;请选择省/市/区(县)&lt;/view&gt;<br>        &lt;/picker&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;详细地址&lt;/text&gt;<br>        &lt;input<br>          class=&quot;input&quot;<br>          placeholder=&quot;街道、楼牌号等信息&quot;<br>          v-model=&quot;form.address&quot;<br>        /&gt;<br>      &lt;/view&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;label class=&quot;label&quot;&gt;设为默认地址&lt;/label&gt;<br>        &lt;switch<br>          class=&quot;switch&quot;<br>          color=&quot;#27ba9b&quot;<br>          :checked=&quot;form.isDefault === 1&quot;<br>          @change=&quot;onSwitchChange&quot;<br>        /&gt;<br>      &lt;/view&gt;<br>    &lt;/form&gt;<br>  &lt;/view&gt;<br>  &lt;!-- 提交按钮 --&gt;<br>  &lt;button @tap=&quot;onSubmit&quot; class=&quot;button&quot;&gt;保存并使用&lt;/button&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="地址管理页-1"><a href="#地址管理页-1" class="headerlink" title="地址管理页"></a>地址管理页</h2><p>为了能及时看到新建的收货地址，需在 <code>onShow</code> 生命周期中获取地址列表数据。</p>
+<p><img src="/./assets/address_picture_3.png" srcset="/img/loading.gif" lazyload alt="地址管理页"></p>
+<h3 id="接口调用"><a href="#接口调用" class="headerlink" title="接口调用"></a>接口调用</h3><p>接口地址：&#x2F;member&#x2F;address</p>
+<p>请求方式：GET</p>
+<p>登录权限: <strong>是</strong></p>
+<p>请求参数：无</p>
+<p><strong>接口封装</strong></p>
+<p><code>src/types/address.ts</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 获取收货地址列表</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">getMemberAddressAPI</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> http&lt;<span class="hljs-title class_">AddressItem</span>[]&gt;(&#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/member/address&#x27;</span>,<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>类型声明</strong></p>
+<p><code>src/types/address.d.ts</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/** 收货地址项 */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">AddressItem</span> = &#123;<br>  <span class="hljs-comment">/** 收货人姓名 */</span><br>  <span class="hljs-attr">receiver</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 联系方式 */</span><br>  <span class="hljs-attr">contact</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 省份编码 */</span><br>  <span class="hljs-attr">provinceCode</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 城市编码 */</span><br>  <span class="hljs-attr">cityCode</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 区/县编码 */</span><br>  <span class="hljs-attr">countyCode</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 详细地址 */</span><br>  <span class="hljs-attr">address</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 默认地址，1为是，0为否 */</span><br>  <span class="hljs-attr">isDefault</span>: <span class="hljs-built_in">number</span><br>  <span class="hljs-comment">/** 收货地址 id */</span><br>  <span class="hljs-attr">id</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-comment">/** 省市区 */</span><br>  <span class="hljs-attr">fullLocation</span>: <span class="hljs-built_in">string</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>商品详情复用地址类型：<code>src/types/goods.d.ts</code></p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-addition">+ import type &#123; AddressItem &#125; from &#x27;./global&#x27;</span><br><br><span class="hljs-deletion">- /** 地址信息 */</span><br><span class="hljs-deletion">- export type AddressItem = &#123;</span><br><span class="hljs-deletion">-   receiver: string</span><br><span class="hljs-deletion">-   contact: string</span><br><span class="hljs-deletion">-   provinceCode: string</span><br><span class="hljs-deletion">-   cityCode: string</span><br><span class="hljs-deletion">-   countyCode: string</span><br><span class="hljs-deletion">-   address: string</span><br><span class="hljs-deletion">-   isDefault: number</span><br><span class="hljs-deletion">-   id: string</span><br><span class="hljs-deletion">-   fullLocation: string</span><br><span class="hljs-deletion">- &#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>::: tip 温馨提示</p>
+<p>用户登录后再访问<strong>商品详情</strong>，商品详情字段中包含用户收货地址列表，可以<strong>复用收货地址类型</strong>。</p>
+<p>:::</p>
+<h3 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h3><p>地址管理页</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;14-17&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; getMemberAddressAPI &#125; from &#x27;@/services/address&#x27;<br>import type &#123; AddressItem &#125; from &#x27;@/types/address&#x27;<br>import &#123; onShow &#125; from &#x27;@dcloudio/uni-app&#x27;<br>import &#123; ref &#125; from &#x27;vue&#x27;<br><br>// 获取收货地址列表数据<br>const addressList = ref&lt;AddressItem[]&gt;([])<br>const getMemberAddressData = async () =&gt; &#123;<br>  const res = await getMemberAddressAPI()<br>  addressList.value = res.result<br>&#125;<br><br>// 初始化调用(页面显示)<br>onShow(() =&gt; &#123;<br>  getMemberAddressData()<br>&#125;)<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>    &lt;!-- 地址列表 --&gt;<br>    &lt;scroll-view class=&quot;scroll-view&quot; scroll-y&gt;<br>      &lt;view v-if=&quot;true&quot; class=&quot;address&quot;&gt;<br>        &lt;view class=&quot;address-list&quot;&gt;<br>          &lt;!-- 收获地址项 --&gt;<br>          &lt;view class=&quot;item&quot; v-for=&quot;item in addressList&quot; :key=&quot;item.id&quot;&gt;<br>            &lt;view class=&quot;item-content&quot;&gt;<br>              &lt;view class=&quot;user&quot;&gt;<br>                &#123;&#123; item.receiver &#125;&#125;<br>                &lt;text class=&quot;contact&quot;&gt;&#123;&#123; item.contact &#125;&#125;&lt;/text&gt;<br>                &lt;text v-if=&quot;item.isDefault&quot; class=&quot;badge&quot;&gt;默认&lt;/text&gt;<br>              &lt;/view&gt;<br>              &lt;view class=&quot;locate&quot;<br>                &gt;&#123;&#123; item.fullLocation &#125;&#125; &#123;&#123; item.address &#125;&#125;&lt;/view<br>              &gt;<br>              &lt;navigator<br>                class=&quot;edit&quot;<br>                hover-class=&quot;none&quot;<br>                :url=&quot;`/pagesMember/address-form/address-form?id=$&#123;item.id&#125;`&quot;<br>              &gt;<br>                修改<br>              &lt;/navigator&gt;<br>            &lt;/view&gt;<br>          &lt;/view&gt;<br>        &lt;/view&gt;<br>      &lt;/view&gt;<br>      &lt;view v-else class=&quot;blank&quot;&gt;暂无收货地址&lt;/view&gt;<br>    &lt;/scroll-view&gt;<br>    &lt;!-- 添加按钮 --&gt;<br>    &lt;view class=&quot;add-btn&quot;&gt;<br>      &lt;navigator<br>        hover-class=&quot;none&quot;<br>        url=&quot;/pagesMember/address-form/address-form&quot;<br>      &gt;<br>        新建地址<br>      &lt;/navigator&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="修改地址页"><a href="#修改地址页" class="headerlink" title="修改地址页"></a>修改地址页</h2><p>通过页面参数 <code>id</code> 来区分当前是<strong>修改地址</strong>还是<strong>新建地址</strong>。</p>
+<p><img src="/./assets/address_picture_4.png" srcset="/img/loading.gif" lazyload alt="修改地址页"></p>
+<h3 id="数据回显"><a href="#数据回显" class="headerlink" title="数据回显"></a>数据回显</h3><p>修改地址之前，需要先实现数据回显，用户再进行有针对性的修改。</p>
+<p><strong>接口详情</strong></p>
+<p>接口地址：&#x2F;member&#x2F;address&#x2F;:id</p>
+<p>请求方式：GET</p>
+<p>登录权限: <strong>是</strong></p>
+<p>请求参数：</p>
+<p><strong>路径参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>是</td>
+<td>无</td>
+<td>收货地址 ID</td>
+</tr>
+</tbody></table>
+<p><strong>接口封装</strong></p>
+<p><code>src/services/address.ts</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 获取收货地址详情</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> id 地址id(路径参数)</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">getMemberAddressByIdAPI</span> = (<span class="hljs-params">id: <span class="hljs-built_in">string</span></span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> http&lt;<span class="hljs-title class_">AddressItem</span>&gt;(&#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">`/member/address/<span class="hljs-subst">$&#123;id&#125;</span>`</span>,<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>参考代码</strong></p>
+<p>页面初始化的时候根据 <code>id</code> 获取地址详情，把获取的数据合并到表单数据中，用于数据回显。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// 获取收货地址详情数据<br>const getMemberAddressByIdData = async () =&gt; &#123;<br>  // 有 id 才调用接口<br>  if (query.id) &#123;<br>    // 发送请求<br>    const res = await getMemberAddressByIdAPI(query.id)<br>    // 把数据合并到表单中<br>    Object.assign(form.value, res.result)<br>  &#125;<br>&#125;<br><br>// 页面加载<br>onLoad(() =&gt; &#123;<br>  getMemberAddressByIdData()<br>&#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="更新地址"><a href="#更新地址" class="headerlink" title="更新地址"></a>更新地址</h3><p>将用户修改后的地址信息重新发送到服务端进行存储。</p>
+<p><strong>接口详情</strong></p>
+<p>接口地址：&#x2F;member&#x2F;address&#x2F;:id</p>
+<p>请求方式：PUT</p>
+<p>登录权限: <strong>是</strong></p>
+<p>请求参数：</p>
+<p><strong>路径参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>是</td>
+<td>无</td>
+<td>收货地址 ID</td>
+</tr>
+</tbody></table>
+<p><strong>Body</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>receiver</td>
+<td>是</td>
+<td>无</td>
+<td>收货人姓名</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>是</td>
+<td>无</td>
+<td>收货人联系方式</td>
+</tr>
+<tr>
+<td>provinceCode</td>
+<td>是</td>
+<td>无</td>
+<td>行政省对应的 code</td>
+</tr>
+<tr>
+<td>cityCode</td>
+<td>是</td>
+<td>无</td>
+<td>行政市对应的 code</td>
+</tr>
+<tr>
+<td>countyCode</td>
+<td>是</td>
+<td>无</td>
+<td>行政区县对应的 code</td>
+</tr>
+<tr>
+<td>address</td>
+<td>是</td>
+<td>无</td>
+<td>收货人详细地址</td>
+</tr>
+<tr>
+<td>isDefault</td>
+<td>是</td>
+<td>无</td>
+<td>是否设置为默认地址（数值类型）</td>
+</tr>
+</tbody></table>
+<p><strong>接口封装</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 修改收货地址</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> id 地址id(路径参数)</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> data 表单数据(请求体参数)</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">putMemberAddressByIdAPI</span> = (<span class="hljs-params">id: <span class="hljs-built_in">string</span>, data: AddressParams</span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_">http</span>(&#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;PUT&#x27;</span>,<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">`/member/address/<span class="hljs-subst">$&#123;id&#125;</span>`</span>,<br>    data,<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>参考代码</strong></p>
+<p>根据是否有地址 id 来判断提交表单到底是新建地址还是更新地址。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;5-11,13&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// 提交表单<br>const onSubmit = async () =&gt; &#123;<br>  // 判断当前页面是否有地址 id<br>  if (query.id) &#123;<br>    // 修改地址请求<br>    await putMemberAddressByIdAPI(query.id, form.value)<br>  &#125; else &#123;<br>    // 新建地址请求<br>    await postMemberAddressAPI(form.value)<br>  &#125;<br>  // 成功提示<br>  uni.showToast(&#123; icon: &#x27;success&#x27;, title: query.id ? &#x27;修改成功&#x27; : &#x27;添加成功&#x27; &#125;)<br>  // 返回上一页<br>  setTimeout(() =&gt; &#123;<br>    uni.navigateBack()<br>  &#125;, 400)<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="表单校验"><a href="#表单校验" class="headerlink" title="表单校验"></a>表单校验</h2><p>通过 <code>uni-ui</code> 组件库的 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/uniui/uni-swipe-action.html">uni-forms</a> 组件实现表单校验。</p>
+<p><img src="/./assets/address_picture_5.png" srcset="/img/loading.gif" lazyload alt="表单校验"></p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ol>
+<li>定义校验规则</li>
+<li>修改表单结构</li>
+<li>绑定校验规则</li>
+<li>提交时校验表单</li>
+</ol>
+<h3 id="参考代码-2"><a href="#参考代码-2" class="headerlink" title="参考代码"></a>参考代码</h3><figure class="highlight plaintext"><figcaption><span>&#123;3-19,51,53,56,57,65,66,77,78,81,91&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// 定义校验规则<br>const rules: UniHelper.UniFormsRules = &#123;<br>  receiver: &#123;<br>    rules: [&#123; required: true, errorMessage: &#x27;请输入收货人姓名&#x27; &#125;],<br>  &#125;,<br>  contact: &#123;<br>    rules: [<br>      &#123; required: true, errorMessage: &#x27;请输入联系方式&#x27; &#125;,<br>      &#123; pattern: /^1[3-9]\d&#123;9&#125;$/, errorMessage: &#x27;手机号格式不正确&#x27; &#125;,<br>    ],<br>  &#125;,<br>  fullLocation: &#123;<br>    rules: [&#123; required: true, errorMessage: &#x27;请选择所在地区&#x27; &#125;],<br>  &#125;,<br>  address: &#123;<br>    rules: [&#123; required: true, errorMessage: &#x27;请选择详细地址&#x27; &#125;],<br>  &#125;,<br>&#125;<br><br>// 获取表单组件实例，用于调用表单方法<br>const formRef = ref&lt;UniHelper.UniFormsInstance&gt;() // [!code ++]<br><br>// 提交表单<br>const onSubmit = async () =&gt; &#123;<br>  try &#123;<br>    // 表单校验<br>    await formRef.value?.validate?.() // [!code ++]<br>    // 校验通过后再发送请求<br>    if (query.id) &#123;<br>      // 修改地址请求<br>      await putMemberAddressByIdAPI(query.id, form.value)<br>    &#125; else &#123;<br>      // 新建地址请求<br>      await postMemberAddressAPI(form.value)<br>    &#125;<br>    // 成功提示<br>    uni.showToast(&#123;<br>      icon: &#x27;success&#x27;,<br>      title: query.id ? &#x27;修改成功&#x27; : &#x27;添加成功&#x27;,<br>    &#125;)<br>    // 返回上一页<br>    setTimeout(() =&gt; &#123;<br>      uni.navigateBack()<br>    &#125;, 400)<br>  &#125; catch (error) &#123;<br>    uni.showToast(&#123; icon: &#x27;error&#x27;, title: &#x27;请填写完整信息&#x27; &#125;) // [!code ++]<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;content&quot;&gt;<br>    &lt;uni-forms :rules=&quot;rules&quot; :model=&quot;form&quot; ref=&quot;formRef&quot;&gt;<br>      &lt;!-- 表单内容 --&gt;<br>      &lt;uni-forms-item name=&quot;receiver&quot; class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;收货人&lt;/text&gt;<br>        &lt;input<br>          class=&quot;input&quot;<br>          placeholder=&quot;请填写收货人姓名&quot;<br>          v-model=&quot;form.receiver&quot;<br>        /&gt;<br>      &lt;/uni-forms-item&gt;<br>      &lt;uni-forms-item name=&quot;contact&quot; class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;手机号码&lt;/text&gt;<br>        &lt;input<br>          class=&quot;input&quot;<br>          placeholder=&quot;请填写收货人手机号码&quot;<br>          :maxlength=&quot;11&quot;<br>          v-model=&quot;form.contact&quot;<br>        /&gt;<br>      &lt;/uni-forms-item&gt;<br>      &lt;uni-forms-item name=&quot;fullLocation&quot; class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;所在地区&lt;/text&gt;<br>        &lt;picker<br>          @change=&quot;onRegionChange&quot;<br>          class=&quot;picker&quot;<br>          mode=&quot;region&quot;<br>          :value=&quot;form.fullLocation.split(&#x27; &#x27;)&quot;<br>        &gt;<br>          &lt;view v-if=&quot;form.fullLocation&quot;&gt;&#123;&#123; form.fullLocation &#125;&#125;&lt;/view&gt;<br>          &lt;view v-else class=&quot;placeholder&quot;&gt;请选择省/市/区(县)&lt;/view&gt;<br>        &lt;/picker&gt;<br>      &lt;/uni-forms-item&gt;<br>      &lt;uni-forms-item name=&quot;address&quot; class=&quot;form-item&quot;&gt;<br>        &lt;text class=&quot;label&quot;&gt;详细地址&lt;/text&gt;<br>        &lt;input<br>          class=&quot;input&quot;<br>          placeholder=&quot;街道、楼牌号等信息&quot;<br>          v-model=&quot;form.address&quot;<br>        /&gt;<br>      &lt;/uni-forms-item&gt;<br>      &lt;view class=&quot;form-item&quot;&gt;<br>        &lt;label class=&quot;label&quot;&gt;设为默认地址&lt;/label&gt;<br>        &lt;switch<br>          @change=&quot;onSwitchChange&quot;<br>          class=&quot;switch&quot;<br>          color=&quot;#27ba9b&quot;<br>          :checked=&quot;form.isDefault === 1&quot;<br>        /&gt;<br>      &lt;/view&gt;<br>    &lt;/uni-forms&gt;<br>  &lt;/view&gt;<br>  &lt;!-- 提交按钮 --&gt;<br>  &lt;button @tap=&quot;onSubmit&quot; class=&quot;button&quot;&gt;保存并使用&lt;/button&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="删除地址"><a href="#删除地址" class="headerlink" title="删除地址"></a>删除地址</h2><p>通过 <code>uni-ui</code> 组件库的 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/uniui/uni-swipe-action.html">uni-swipe-action</a> 组件实现侧滑删除。</p>
+<p><img src="/./assets/address_picture_6.png" srcset="/img/loading.gif" lazyload alt="侧滑删除"></p>
+<h3 id="侧滑组件用法"><a href="#侧滑组件用法" class="headerlink" title="侧滑组件用法"></a>侧滑组件用法</h3><figure class="highlight plaintext"><figcaption><span>&#123;3,5,9&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;!-- 滑动操作分区 --&gt;<br>  &lt;uni-swipe-action&gt;<br>    &lt;!-- 滑动操作项 --&gt;<br>    &lt;uni-swipe-action-item&gt;<br>      &lt;!-- 默认插槽 --&gt;<br>      &lt;view&gt;内容&lt;/view&gt;<br>      &lt;!-- 右侧插槽 --&gt;<br>      &lt;template #right&gt;<br>        &lt;button class=&quot;delete-button&quot;&gt;删除&lt;/button&gt;<br>      &lt;/template&gt;<br>    &lt;/uni-swipe-action-item&gt;<br>  &lt;/uni-swipe-action&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+<h3 id="接口封装-1"><a href="#接口封装-1" class="headerlink" title="接口封装"></a>接口封装</h3><p><strong>接口详情</strong></p>
+<p>接口地址：&#x2F;member&#x2F;address&#x2F;:id</p>
+<p>请求方式：DELETE</p>
+<p>登录权限: 是</p>
+<p>请求参数：</p>
+<p><strong>路径参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>是</td>
+<td>无</td>
+<td>ID</td>
+</tr>
+</tbody></table>
+<p><strong>接口封装</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 删除收货地址</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> id 地址id(路径参数)</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">deleteMemberAddressByIdAPI</span> = (<span class="hljs-params">id: <span class="hljs-built_in">string</span></span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_">http</span>(&#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;DELETE&#x27;</span>,<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">`/member/address/<span class="hljs-subst">$&#123;id&#125;</span>`</span>,<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="参考代码-3"><a href="#参考代码-3" class="headerlink" title="参考代码"></a>参考代码</h3><p>侧滑地址列表项，右侧显示删除按钮，删除地址前需二次确认。</p>
+<figure class="highlight plaintext"><figcaption><span>&#123;24,26,42-47&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;script setup lang=&quot;ts&quot;&gt;<br>// 删除收货地址<br>const onDeleteAddress = (id: string) =&gt; &#123;<br>  // 二次确认<br>  uni.showModal(&#123;<br>    content: &#x27;删除地址?&#x27;,<br>    success: async (res) =&gt; &#123;<br>      if (res.confirm) &#123;<br>        // 根据id删除收货地址<br>        await deleteMemberAddressByIdAPI(id)<br>        // 重新获取收货地址列表<br>        getMemberAddressData()<br>      &#125;<br>    &#125;,<br>  &#125;)<br>&#125;<br>&lt;/script&gt;<br><br>&lt;template&gt;<br>  &lt;view class=&quot;viewport&quot;&gt;<br>    &lt;!-- 地址列表 --&gt;<br>    &lt;scroll-view class=&quot;scroll-view&quot; scroll-y&gt;<br>      &lt;view v-if=&quot;addressList.length&quot; class=&quot;address&quot;&gt;<br>        &lt;uni-swipe-action class=&quot;address-list&quot;&gt;<br>          &lt;!-- 收货地址项 --&gt;<br>          &lt;uni-swipe-action-item<br>            class=&quot;item&quot;<br>            v-for=&quot;item in addressList&quot;<br>            :key=&quot;item.id&quot;<br>          &gt;<br>            &lt;view class=&quot;item-content&quot;&gt;<br>              &lt;view class=&quot;user&quot;&gt;<br>                &#123;&#123; item.receiver &#125;&#125;<br>                &lt;text class=&quot;contact&quot;&gt;&#123;&#123; item.contact &#125;&#125;&lt;/text&gt;<br>                &lt;text v-if=&quot;item.isDefault&quot; class=&quot;badge&quot;&gt;默认&lt;/text&gt;<br>              &lt;/view&gt;<br>              &lt;view class=&quot;locate&quot;<br>                &gt;&#123;&#123; item.fullLocation &#125;&#125; &#123;&#123; item.address &#125;&#125;&lt;/view<br>              &gt;<br>              &lt;navigator<br>                class=&quot;edit&quot;<br>                hover-class=&quot;none&quot;<br>                :url=&quot;`/pagesMember/address-form/address-form?id=$&#123;item.id&#125;`&quot;<br>              &gt;<br>                修改<br>              &lt;/navigator&gt;<br>            &lt;/view&gt;<br>            &lt;!-- 右侧插槽 --&gt;<br>            &lt;template #right&gt;<br>              &lt;button @tap=&quot;onDeleteAddress(item.id)&quot; class=&quot;delete-button&quot;<br>                &gt;删除&lt;/button<br>              &gt;<br>            &lt;/template&gt;<br>          &lt;/uni-swipe-action-item&gt;<br>        &lt;/uni-swipe-action&gt;<br>      &lt;/view&gt;<br>      &lt;view v-else class=&quot;blank&quot;&gt;暂无收货地址&lt;/view&gt;<br>    &lt;/scroll-view&gt;<br>    &lt;!-- 添加按钮 --&gt;<br>    &lt;view class=&quot;add-btn&quot;&gt;<br>      &lt;navigator<br>        hover-class=&quot;none&quot;<br>        url=&quot;/pagesMember/address-form/address-form&quot;<br>      &gt;<br>        新建地址<br>      &lt;/navigator&gt;<br>    &lt;/view&gt;<br>  &lt;/view&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Uni-app/" class="category-chain-item">Uni-app</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Uni-app/Demo/" class="category-chain-item">Demo</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Uni-app/Demo/TuShop/" class="category-chain-item">TuShop</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>小兔鲜儿 -地址模块</div>
+      <div>http://example.com/2020/10/01/Uni-app/Demo/tu-shop/08-地址模块/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>YoYo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 1, 2020</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/01/Uni-app/Demo/tu-shop/11-%E8%AE%A2%E5%8D%95%E6%A8%A1%E5%9D%97/" title="小兔鲜儿 - 订单模块">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">小兔鲜儿 - 订单模块</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/10/01/Uni-app/Demo/tu-shop/07-%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9D%97/" title="小兔鲜儿 -用户模块">
+                        <span class="hidden-mobile">小兔鲜儿 -用户模块</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
