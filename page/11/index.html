@@ -587,14 +587,14 @@
       <h1 class="index-header">
         
         <a href="/2020/06/02/Uni-app/UI/scroll-view%E9%97%AE%E9%A2%98/" target="_self">
-          scroll-view
+          uni-app 中scroll-view高度适配问题
         </a>
       </h1>
 
       
       <a class="index-excerpt index-excerpt__noimg" href="/2020/06/02/Uni-app/UI/scroll-view%E9%97%AE%E9%A2%98/" target="_self">
         <div>
-          scroll-into-view 属性踩坑 scroll-into-view	String	值应为某子元素id（id不能以数字开头）。设置哪个方向可滚动，则在哪个方向滚动到该元素 聊天界面，每添加一条消息，将滚动条滚动至底部 如果没有动态设置 scroll-into-view 指定的 id，则滚动条不会进行滚动因此，每次添加一条消息在底部都需要改变一次 scroll-into-view 指向的 i
+          scroll-view 文档中要设置 固定高度，但设置100%高度 不生效 150rpx 可根据手机需要进行调节 值越大 底部留出的空间越大height: calc(100vh - 150rpx - env(safe-area-inset-bottom));12345678910111213141516171819&lt;view class=&quot;view-content&quot;&gt
         </div>
       </a>
 
@@ -602,7 +602,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2020-06-02 11:31" pubdate>
+            <time datetime="2020-06-02 10:21" pubdate>
               2020-06-02
             </time>
           </div>
