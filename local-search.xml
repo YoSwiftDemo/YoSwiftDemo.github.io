@@ -2591,11 +2591,11 @@
   
   
   <entry>
-    <title>https请求工具</title>
-    <link href="/2020/04/21/Uni-app/Setting/https%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7/"/>
-    <url>/2020/04/21/Uni-app/Setting/https%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7/</url>
+    <title>tsconfig.json</title>
+    <link href="/2020/04/21/Uni-app/Setting/tsconfig.json/"/>
+    <url>/2020/04/21/Uni-app/Setting/tsconfig.json/</url>
     
-    <content type="html"><![CDATA[<h1 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h1><ul><li>request 请求</li><li>uploadFile 上传文件</li><li>基础地址+超时时间+请求头+token</li></ul><h1 id="请求函数"><a href="#请求函数" class="headerlink" title="请求函数"></a>请求函数</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="配置参考"><a href="#配置参考" class="headerlink" title="配置参考"></a>配置参考</h1><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs perl">&#123;<br>  <span class="hljs-string">&quot;extends&quot;</span>: <span class="hljs-string">&quot;@vue/tsconfig/tsconfig.json&quot;</span>,<br>  <span class="hljs-string">&quot;compilerOptions&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;sourceMap&quot;</span>: true,<br>    <span class="hljs-string">&quot;baseUrl&quot;</span>: <span class="hljs-string">&quot;.&quot;</span>,<br>    <span class="hljs-string">&quot;paths&quot;</span>: &#123;<br>      <span class="hljs-string">&quot;@/*&quot;</span>: [<span class="hljs-string">&quot;./src/*&quot;</span>]<br>    &#125;,<br>    <span class="hljs-string">&quot;lib&quot;</span>: [<span class="hljs-string">&quot;esnext&quot;</span>, <span class="hljs-string">&quot;dom&quot;</span>],<br>    <span class="hljs-string">&quot;types&quot;</span>: [<br>      <span class="hljs-string">&quot;@dcloudio/types&quot;</span>,<br>      <span class="hljs-string">&quot;@types/wechat-miniprogram&quot;</span>,<br>      <span class="hljs-string">&quot;@uni-helper/uni-app-types&quot;</span>,<br>      <span class="hljs-string">&quot;@uni-helper/uni-ui-types&quot;</span><br>    ],<br>    <span class="hljs-string">&quot;moduleResolution&quot;</span>: <span class="hljs-string">&quot;node&quot;</span><br>  &#125;,<br>  <span class="hljs-string">&quot;vueCompilerOptions&quot;</span>: &#123;<br>    <span class="hljs-regexp">//</span><span class="hljs-string">&quot;experimentalRuntimeMode&quot;</span>: <span class="hljs-string">&quot;runtime-uni-app&quot;</span><br>    //现调整为 <span class="hljs-string">`nativeTags`</span><br>    <span class="hljs-string">&quot;nativeTags&quot;</span>: [<span class="hljs-string">&quot;block&quot;</span>, <span class="hljs-string">&quot;component&quot;</span>, <span class="hljs-string">&quot;template&quot;</span>, <span class="hljs-string">&quot;slot&quot;</span>]<br>  &#125;,<br>  <span class="hljs-string">&quot;include&quot;</span>: [<span class="hljs-string">&quot;src/**/*.ts&quot;</span>, <span class="hljs-string">&quot;src/**/*.d.ts&quot;</span>, <span class="hljs-string">&quot;src/**/*.tsx&quot;</span>, <span class="hljs-string">&quot;src/**/*.vue&quot;</span>]<br>&#125;<br><br></code></pre></td></tr></table></figure><blockquote><p>“types” 导入依赖 后追加</p></blockquote><ul><li>“@types&#x2F;wechat-miniprogram”,</li><li>“@uni-helper&#x2F;uni-app-types”,</li><li>“@uni-helper&#x2F;uni-ui-types”</li></ul><blockquote><p>解决vscode 提示 vue未导入</p></blockquote><ul><li>“moduleResolution”: “node”</li></ul>]]></content>
     
     
     <categories>
@@ -2613,8 +2613,8 @@
   
   <entry>
     <title>https请求工具</title>
-    <link href="/2020/04/21/Uni-app/Setting/tsconfig.json/"/>
-    <url>/2020/04/21/Uni-app/Setting/tsconfig.json/</url>
+    <link href="/2020/04/21/Uni-app/Setting/https%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7/"/>
+    <url>/2020/04/21/Uni-app/Setting/https%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7/</url>
     
     <content type="html"><![CDATA[<h1 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h1><ul><li>request 请求</li><li>uploadFile 上传文件</li><li>基础地址+超时时间+请求头+token</li></ul><h1 id="请求函数"><a href="#请求函数" class="headerlink" title="请求函数"></a>请求函数</h1>]]></content>
     
