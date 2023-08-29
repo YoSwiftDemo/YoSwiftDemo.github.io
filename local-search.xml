@@ -1172,11 +1172,11 @@
   
   
   <entry>
-    <title>ui 资料</title>
-    <link href="/2021/06/12/Uni-app/UI/ui/"/>
-    <url>/2021/06/12/Uni-app/UI/ui/</url>
+    <title>引入 uni-ui 组件库</title>
+    <link href="/2021/06/12/Uni-app/UI/uni-ui/"/>
+    <url>/2021/06/12/Uni-app/UI/uni-ui/</url>
     
-    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/qq_40745143/category_9622141.html">不错博主</a></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>安装 uni-ui 组件库</p></blockquote><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> i @dcloudio/uni-ui<br></code></pre></td></tr></table></figure><blockquote><p>配置自动导入组件</p></blockquote><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> pages.json<br>&#123;<br>  <span class="hljs-regexp">//</span> 组件自动导入<br>  <span class="hljs-string">&quot;easycom&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;autoscan&quot;</span>: true,<br>    <span class="hljs-string">&quot;custom&quot;</span>: &#123;<br>      <span class="hljs-regexp">//</span> uni-ui 规则如下配置  <br>      <span class="hljs-string">&quot;^uni-(.*)&quot;</span>: <span class="hljs-string">&quot;@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue&quot;</span> <br>    &#125;<br>  &#125;,<br>  <span class="hljs-string">&quot;pages&quot;</span>: [<br>    <span class="hljs-regexp">//</span> …省略<br>  ]<br>&#125;<br></code></pre></td></tr></table></figure><blockquote><p>安装类型声明文件</p></blockquote><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> i -D @uni-helper/uni-ui-types<br></code></pre></td></tr></table></figure><blockquote><p>配置类型声明文件</p></blockquote><ul><li>tsconfig.json</li></ul><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs perl">&#123;<br>  <span class="hljs-string">&quot;compilerOptions&quot;</span>: &#123;<br>    <span class="hljs-regexp">//</span> ...<br>    <span class="hljs-string">&quot;types&quot;</span>: [<br>      <span class="hljs-string">&quot;@dcloudio/types&quot;</span>,<br>      <span class="hljs-string">&quot;@uni-helper/uni-app-types&quot;</span>,<br>      <span class="hljs-string">&quot;@uni-helper/uni-ui-types&quot;</span> <br>    ]<br>  &#125;,<br>  <span class="hljs-regexp">//</span> vue 编译器类型，校验标签类型<br>  <span class="hljs-string">&quot;vueCompilerOptions&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;nativeTags&quot;</span>: [<span class="hljs-string">&quot;block&quot;</span>, <span class="hljs-string">&quot;component&quot;</span>, <span class="hljs-string">&quot;template&quot;</span>, <span class="hljs-string">&quot;slot&quot;</span>]<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -1185,7 +1185,7 @@
       
       <category>UI</category>
       
-      <category>ui</category>
+      <category>uni-ui</category>
       
     </categories>
     
@@ -1825,6 +1825,27 @@
   
   
   <entry>
+    <title>pinia-持久化-小程序端</title>
+    <link href="/2020/08/02/Uni-app/Setting/pinia-%E6%8C%81%E4%B9%85%E5%8C%96-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AB%AF/"/>
+    <url>/2020/08/02/Uni-app/Setting/pinia-%E6%8C%81%E4%B9%85%E5%8C%96-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AB%AF/</url>
+    
+    <content type="html"><![CDATA[<h1 id="pinia-持久化-小程序端"><a href="#pinia-持久化-小程序端" class="headerlink" title="pinia-持久化-小程序端"></a>pinia-持久化-小程序端</h1><ul><li>Pinia 用法与 Vue3 项目完全一致，uni-app 项目仅需解决持久化插件兼容性问</li></ul><blockquote><p>安装持久化存储插件：</p></blockquote><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> i pinia-plugin-persistedstate<br></code></pre></td></tr></table></figure><h1 id="插件默认使用-localStorage-实现持久化，小程序端不兼容，需要替换持久化-API"><a href="#插件默认使用-localStorage-实现持久化，小程序端不兼容，需要替换持久化-API" class="headerlink" title="插件默认使用 localStorage 实现持久化，小程序端不兼容，需要替换持久化 API"></a>插件默认使用 localStorage 实现持久化，小程序端不兼容，需要替换持久化 API</h1><blockquote><p>main.ts</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; createSSRApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> pinia <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./stores&#x27;</span><br><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">createApp</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createSSRApp</span>(<span class="hljs-title class_">App</span>)<br><br>  app.<span class="hljs-title function_">use</span>(pinia)<br>  <span class="hljs-keyword">return</span> &#123;<br>    app,<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure><blockquote><p>stores&#x2F;index.ts</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; createPinia &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;pinia&#x27;</span><br><span class="hljs-keyword">import</span> persist <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;pinia-plugin-persistedstate&#x27;</span><br><br><span class="hljs-comment">// 创建 pinia 实例</span><br><span class="hljs-keyword">const</span> pinia = <span class="hljs-title function_">createPinia</span>()<br><span class="hljs-comment">// 使用持久化存储插件</span><br>pinia.<span class="hljs-title function_">use</span>(persist)<br><br><span class="hljs-comment">// 默认导出，给 main.ts 使用</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> pinia<br><br><span class="hljs-comment">// 模块统一导出</span><br><span class="hljs-keyword">export</span> * <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./modules/member&#x27;</span><br></code></pre></td></tr></table></figure><blockquote><p>stores&#x2F;modules&#x2F;member.ts</p></blockquote><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; defineStore &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;pinia&#x27;</span><br><span class="hljs-keyword">import</span> &#123; ref &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><br><span class="hljs-comment">// 定义 Store</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> useMemberStore = <span class="hljs-title function_">defineStore</span>(<br>  <span class="hljs-string">&#x27;member&#x27;</span>,<br>  <span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-comment">// 会员信息</span><br>    <span class="hljs-keyword">const</span> profile = ref&lt;<span class="hljs-built_in">any</span>&gt;()<br><br>    <span class="hljs-comment">// 保存会员信息，登录时使用</span><br>    <span class="hljs-keyword">const</span> <span class="hljs-title function_">setProfile</span> = (<span class="hljs-params">val: <span class="hljs-built_in">any</span></span>) =&gt; &#123;<br>      profile.<span class="hljs-property">value</span> = val<br>    &#125;<br><br>    <span class="hljs-comment">// 清理会员信息，退出时使用</span><br>    <span class="hljs-keyword">const</span> <span class="hljs-title function_">clearProfile</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>      profile.<span class="hljs-property">value</span> = <span class="hljs-literal">undefined</span><br>    &#125;<br><br>    <span class="hljs-comment">// 记得 return</span><br>    <span class="hljs-keyword">return</span> &#123;<br>      profile,<br>      setProfile,<br>      clearProfile,<br>    &#125;<br>  &#125;,<br>  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 持久化</span><br>  &#123;<br>    <span class="hljs-attr">persist</span>: <span class="hljs-literal">true</span>,<br>  &#125;,<br>)<br></code></pre></td></tr></table></figure><h1 id="多端兼容"><a href="#多端兼容" class="headerlink" title="多端兼容"></a>多端兼容</h1><ul><li>网页端API<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gcode">localStorage.setItem<span class="hljs-comment">()</span><br>localStorage.getItem<span class="hljs-comment">()</span><br></code></pre></td></tr></table></figure></li><li>多端持久化 API<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">uni.set<span class="hljs-constructor">StorageSync()</span><br>uni.get<span class="hljs-constructor">StorageSync()</span><br></code></pre></td></tr></table></figure></li><li>参考代码<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// stores/modules/member.ts</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> useMemberStore = <span class="hljs-title function_">defineStore</span>(<br>  <span class="hljs-string">&#x27;member&#x27;</span>,<br>  <span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-comment">//…省略</span><br>  &#125;,<br>  &#123;<br>    <span class="hljs-comment">// 配置持久化</span><br>    <span class="hljs-attr">persist</span>: &#123;<br>      <span class="hljs-comment">// 调整为兼容多端的API</span><br>      <span class="hljs-attr">storage</span>: &#123;<br>        <span class="hljs-title function_">setItem</span>(<span class="hljs-params">key, value</span>) &#123;<br>          uni.<span class="hljs-title function_">setStorageSync</span>(key, value) <br>        &#125;,<br>        <span class="hljs-title function_">getItem</span>(<span class="hljs-params">key</span>) &#123;<br>          <span class="hljs-keyword">return</span> uni.<span class="hljs-title function_">getStorageSync</span>(key) <br>        &#125;,<br>      &#125;,<br>    &#125;,<br>  &#125;,<br>)<br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Uni-app</category>
+      
+      <category>Setting</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Pinia</title>
     <link href="/2020/08/02/Uni-app/Setting/pinia-code/"/>
     <url>/2020/08/02/Uni-app/Setting/pinia-code/</url>
@@ -2449,7 +2470,7 @@
       
       <category>Uni-app</category>
       
-      <category>UI</category>
+      <category>ui</category>
       
       <category>scroll-view</category>
       
@@ -2461,7 +2482,7 @@
   
   
   <entry>
-    <title>scroll-view</title>
+    <title>uni-popup</title>
     <link href="/2020/06/02/Uni-app/UI/uni-popup/"/>
     <url>/2020/06/02/Uni-app/UI/uni-popup/</url>
     
@@ -2505,7 +2526,7 @@
   
   
   <entry>
-    <title>Uni-app  tabBar</title>
+    <title>tabBar</title>
     <link href="/2020/06/01/Uni-app/UI/tabBar/"/>
     <url>/2020/06/01/Uni-app/UI/tabBar/</url>
     

@@ -18,8 +18,8 @@
   
     <meta name="description" content="YoYo Swift">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Categories - UI">
-<meta property="og:url" content="http://example.com/categories/Uni-app/UI/index.html">
+<meta property="og:title" content="Categories - ui">
+<meta property="og:url" content="http://example.com/categories/Uni-app/ui/index.html">
 <meta property="og:site_name" content="YoYo">
 <meta property="og:description" content="YoYo Swift">
 <meta property="og:locale" content="en_US">
@@ -28,7 +28,7 @@
   
   
   
-  <title>Categories - UI - YoYo</title>
+  <title>Categories - ui - YoYo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -187,7 +187,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Categories - UI"></span>
+            <span id="subtitle" data-typed-text="Categories - ui"></span>
           
         </div>
 
@@ -215,44 +215,17 @@
                 
 
 <div class="list-group">
-  <p class="h4">3 posts in total</p>
+  <p class="h4">1 posts in total</p>
   <hr>
   
   
     
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/06/12/Uni-app/UI/ui/" class="list-group-item list-group-item-action">
-      <time>06-12</time>
-      <div class="list-group-item-title">ui 资料</div>
-    </a>
-  
-    
-      
       <p class="h5">2020</p>
-    
-    <a href="/2020/06/02/Uni-app/UI/scroll-view/" class="list-group-item list-group-item-action">
-      <time>06-02</time>
-      <div class="list-group-item-title">scroll-view</div>
-    </a>
-  
     
     <a href="/2020/06/02/Uni-app/UI/scroll-view%E9%97%AE%E9%A2%98/" class="list-group-item list-group-item-action">
       <time>06-02</time>
       <div class="list-group-item-title">uni-app 中scroll-view高度适配问题</div>
-    </a>
-  
-    
-    <a href="/2020/06/02/Uni-app/UI/uni-popup/" class="list-group-item list-group-item-action">
-      <time>06-02</time>
-      <div class="list-group-item-title">scroll-view</div>
-    </a>
-  
-    
-    <a href="/2020/06/01/Uni-app/UI/tabBar/" class="list-group-item list-group-item-action">
-      <time>06-01</time>
-      <div class="list-group-item-title">Uni-app  tabBar</div>
     </a>
   
 </div>
@@ -340,6 +313,44 @@
     (function (window, document) {
       var typing = Fluid.plugins.typing;
       var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
       if (!subtitle || !typing) {
         return;
       }
