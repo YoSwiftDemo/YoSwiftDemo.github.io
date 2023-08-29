@@ -16,21 +16,21 @@
   <meta name="author" content="YoYo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="安装 eslint + prettier  1npm i -D eslint prettier eslint-plugin-vue @vue&#x2F;eslint-config-prettier @vue&#x2F;eslint-config-typescript @rushstack&#x2F;eslint-patch @vue&#x2F;tsconfig   新建 .eslintrc.cjs 文件，添加以下 eslint 配置">
+    <meta name="description" content="拦截器 request 请求 uploadFile 上传文件 基础地址+超时时间+请求头+token  请求函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置.eslintrc.cjs文件">
-<meta property="og:url" content="http://example.com/2020/07/02/Uni-app/Setting/%E9%85%8D%E7%BD%AE.eslintrc.cjs%E6%96%87%E4%BB%B6/index.html">
+<meta property="og:title" content="https请求工具">
+<meta property="og:url" content="http://example.com/2020/04/21/Uni-app/Setting/tsconfig.json/index.html">
 <meta property="og:site_name" content="YoYo">
-<meta property="og:description" content="安装 eslint + prettier  1npm i -D eslint prettier eslint-plugin-vue @vue&#x2F;eslint-config-prettier @vue&#x2F;eslint-config-typescript @rushstack&#x2F;eslint-patch @vue&#x2F;tsconfig   新建 .eslintrc.cjs 文件，添加以下 eslint 配置">
+<meta property="og:description" content="拦截器 request 请求 uploadFile 上传文件 基础地址+超时时间+请求头+token  请求函数">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-02T03:53:49.000Z">
-<meta property="article:modified_time" content="2023-08-28T15:00:32.823Z">
+<meta property="article:published_time" content="2020-04-21T02:53:41.000Z">
+<meta property="article:modified_time" content="2023-08-22T06:50:36.906Z">
 <meta property="article:author" content="YoYo">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>配置.eslintrc.cjs文件 - YoYo</title>
+  <title>https请求工具 - YoYo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="配置.eslintrc.cjs文件"></span>
+            <span id="subtitle" data-typed-text="https请求工具"></span>
           
         </div>
 
@@ -206,8 +206,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-07-02 11:53" pubdate>
-          July 2, 2020 am
+        <time datetime="2020-04-21 10:53" pubdate>
+          April 21, 2020 am
         </time>
       </span>
     
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k words
+          49 words
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          15 mins
+          1 mins
         
       </span>
     
@@ -267,39 +267,17 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">配置.eslintrc.cjs文件</h1>
+            <h1 style="display: none">https请求工具</h1>
             
             
               <div class="markdown-body">
                 
-                <ul>
-<li>安装 <code>eslint</code> + <code>prettier</code></li>
+                <h1 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h1><ul>
+<li>request 请求</li>
+<li>uploadFile 上传文件</li>
+<li>基础地址+超时时间+请求头+token</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm i -D eslint prettier eslint-plugin-vue @vue/eslint-config-prettier @vue/eslint-config-typescript @rushstack/eslint-patch @vue/tsconfig<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>新建 <code>.eslintrc.cjs</code> 文件，添加以下 <code>eslint</code> 配置</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/* eslint-env node */</span><br><span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@rushstack/eslint-patch/modern-module-resolution&#x27;</span>)<br><br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>  <span class="hljs-attr">root</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">extends</span>: [<br>    <span class="hljs-string">&#x27;plugin:vue/vue3-essential&#x27;</span>,<br>    <span class="hljs-string">&#x27;eslint:recommended&#x27;</span>,<br>    <span class="hljs-string">&#x27;@vue/eslint-config-typescript&#x27;</span>,<br>    <span class="hljs-string">&#x27;@vue/eslint-config-prettier&#x27;</span>,<br>  ],<br>  <span class="hljs-comment">// 小程序全局变量</span><br>  <span class="hljs-attr">globals</span>: &#123;<br>    <span class="hljs-attr">uni</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">wx</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-title class_">WechatMiniprogram</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">getCurrentPages</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-title class_">UniApp</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-title class_">UniHelper</span>: <span class="hljs-literal">true</span>,<br>  &#125;,<br>  <span class="hljs-attr">parserOptions</span>: &#123;<br>    <span class="hljs-attr">ecmaVersion</span>: <span class="hljs-string">&#x27;latest&#x27;</span>,<br>  &#125;,<br>  <span class="hljs-attr">rules</span>: &#123;<br>    <span class="hljs-string">&#x27;prettier/prettier&#x27;</span>: [<br>      <span class="hljs-string">&#x27;warn&#x27;</span>,<br>      &#123;<br>        <span class="hljs-attr">singleQuote</span>: <span class="hljs-literal">true</span>,<br>        <span class="hljs-attr">semi</span>: <span class="hljs-literal">false</span>,<br>        <span class="hljs-attr">printWidth</span>: <span class="hljs-number">100</span>,<br>        <span class="hljs-attr">trailingComma</span>: <span class="hljs-string">&#x27;all&#x27;</span>,<br>        <span class="hljs-attr">endOfLine</span>: <span class="hljs-string">&#x27;auto&#x27;</span>,<br>      &#125;,<br>    ],<br>    <span class="hljs-string">&#x27;vue/multi-word-component-names&#x27;</span>: [<span class="hljs-string">&#x27;off&#x27;</span>],<br>    <span class="hljs-string">&#x27;vue/no-setup-props-destructure&#x27;</span>: [<span class="hljs-string">&#x27;off&#x27;</span>],<br>    <span class="hljs-string">&#x27;vue/no-deprecated-html-element-is&#x27;</span>: [<span class="hljs-string">&#x27;off&#x27;</span>],<br>    <span class="hljs-string">&#x27;@typescript-eslint/no-unused-vars&#x27;</span>: [<span class="hljs-string">&#x27;off&#x27;</span>],<br>  &#125;,<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>配置 <code>package.json</code></li>
-</ul>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;script&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-comment">// ... 省略 ...</span><br>    <span class="hljs-attr">&quot;lint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;eslint . --ext .vue,.js,.ts --fix --ignore-path .gitignore&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>运行</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm run lint<br></code></pre></td></tr></table></figure>
-
-
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-attr">&quot;tsc&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;vue-tsc --noEmit --skipLibCheck&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-attr">&quot;lint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-attr">&quot;prepare&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;husky install&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-attr">&quot;lint-staged&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;lint-staged&quot;</span><br><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs json"> <span class="hljs-attr">&quot;type-check&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;vue-tsc --noEmit&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-attr">&quot;lint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore&quot;</span><br></code></pre></td></tr></table></figure>
-
-
-<p>到此，你已完成 <code>eslint</code> + <code>prettier</code> 的配置。</p>
-
+<h1 id="请求函数"><a href="#请求函数" class="headerlink" title="请求函数"></a>请求函数</h1>
                 
               </div>
             
@@ -344,8 +322,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>配置.eslintrc.cjs文件</div>
-      <div>http://example.com/2020/07/02/Uni-app/Setting/配置.eslintrc.cjs文件/</div>
+      <div>https请求工具</div>
+      <div>http://example.com/2020/04/21/Uni-app/Setting/tsconfig.json/</div>
     </div>
     <div class="license-meta">
       
@@ -357,7 +335,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 2, 2020</div>
+          <div>April 21, 2020</div>
         </div>
       
       
@@ -389,9 +367,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/08/01/Uni-app/Demo/Shop/%E8%8E%B7%E5%8F%96%E6%94%AF%E4%BB%98%E5%8F%82%E6%95%B0/" title="Uni-app-shop Api  获取支付参数">
+                      <a href="/2020/04/21/Uni-app/Setting/https%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7/" title="https请求工具">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Uni-app-shop Api  获取支付参数</span>
+                        <span class="hidden-mobile">https请求工具</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -399,8 +377,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/07/01/Uni-app/Setting/manifest.json%E6%96%87%E4%BB%B6/" title="manifest.json配置文件">
-                        <span class="hidden-mobile">manifest.json配置文件</span>
+                      <a href="/2020/01/20/MiniProgram/Docs/20.%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%88%86%E5%8C%85/" title="20.小程序-分包">
+                        <span class="hidden-mobile">20.小程序-分包</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
