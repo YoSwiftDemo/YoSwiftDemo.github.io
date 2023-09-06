@@ -538,7 +538,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/05/15/Uni-app/Docs/base/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/" target="_self">
         <div>
-          生命周期函数 onLoad 可以获取页面传递的参数  12345678910111213141516171819&lt;script setup lang=&quot;ts&quot;&gt;import &#123; ref &#125; from &#x27;vue&#x27;import &#123; onShow, onHide, onLoad &#125; from &#x27;@dcl
+          生命周期函数 因为 setup 是围绕 beforeCreate 和 created 生命周期钩子运行的，所以不需要显式地定义它们   onLoad 可以获取页面传递的参数  12345678910111213141516171819&lt;script setup lang=&quot;ts&quot;&gt;import &#123; ref &#125; from &#x27;vue&#x2
         </div>
       </a>
 
@@ -713,15 +713,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/05/14/Uni-app/Docs/base/%E4%BA%8B%E4%BB%B6%20emit/" target="_self">
-          Uni-app  事件 emit
+        <a href="/2023/05/14/Uni-app/Docs/base/%E8%8E%B7%E5%8F%96%20slots%20%E5%92%8C%20attrs/" target="_self">
+          Uni-app  监听 watch
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/14/Uni-app/Docs/base/%E4%BA%8B%E4%BB%B6%20emit/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/14/Uni-app/Docs/base/%E8%8E%B7%E5%8F%96%20slots%20%E5%92%8C%20attrs/" target="_self">
         <div>
-          事件 emit1234567891011121314151617181920212223&lt;template&gt;  &lt;view @click=&quot;handleClick&quot;&gt;&lt;/view&gt;    &lt;!-- 阻止事件冒泡 --&gt;  &lt;view @click.stop=&quot;handleClick&quot;&gt;&lt;/vi
+          获取 slots 和 attrs 注：useContext API 被弃用，取而代之的是更加细分的 api。   可以通过useContext从上下文中获取 slots 和 attrs不过提案在正式通过后，废除了这个语法，被拆分成了useAttrs和useSlots   useAttrs：见名知意，这是用来获取 attrs 数据，但是这和 vue2 不同，里面包含了 class、属性、方法  12
         </div>
       </a>
 
@@ -729,7 +729,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-14 09:00" pubdate>
+            <time datetime="2023-05-14 09:08" pubdate>
               2023-05-14
             </time>
           </div>
@@ -774,15 +774,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2023/05/14/Uni-app/Docs/base/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F%20custom-class/" target="_self">
-          Uni-app  自定义样式 custom-class
+        <a href="/2023/05/14/Uni-app/Docs/base/%E4%BA%8B%E4%BB%B6%20emit/" target="_self">
+          Uni-app  事件 emit
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/14/Uni-app/Docs/base/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F%20custom-class/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/14/Uni-app/Docs/base/%E4%BA%8B%E4%BB%B6%20emit/" target="_self">
         <div>
-          自定义样式 custom-class 在使用自定义组件 不支持 ，因此需要提供一个customClass prop来传递类名进行样式绑定  父组件12345678910111213&lt;template&gt;  &lt;view :class=&quot;[customClass]&quot;&gt;&lt;/view&gt;&lt;/template&gt;&lt;script lang=&
+          事件 emit1234567891011121314151617181920212223&lt;template&gt;  &lt;view @click=&quot;handleClick&quot;&gt;&lt;/view&gt;    &lt;!-- 阻止事件冒泡 --&gt;  &lt;view @click.stop=&quot;handleClick&quot;&gt;&lt;/vi
         </div>
       </a>
 
