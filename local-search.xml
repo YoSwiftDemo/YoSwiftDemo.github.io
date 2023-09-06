@@ -4,90 +4,6 @@
   
   
   <entry>
-    <title>4.taro上传阿里OSS图片</title>
-    <link href="/2023/12/01/Taro/Dev/4.taro%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8COSS%E5%9B%BE%E7%89%87/"/>
-    <url>/2023/12/01/Taro/Dev/4.taro%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8COSS%E5%9B%BE%E7%89%87/</url>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.freesion.com/article/86921005562/">TARO框架中引入阿里云</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Taro</category>
-      
-      <category>Dev</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>5.Taro -刷新问题.md</title>
-    <link href="/2023/12/01/Taro/Dev/5.taro%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98/"/>
-    <url>/2023/12/01/Taro/Dev/5.taro%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98/</url>
-    
-    <content type="html"><![CDATA[<h1 id="刷新"><a href="#刷新" class="headerlink" title="刷新"></a>刷新</h1><p><a href="https://www.jianshu.com/p/27bdf0fb0773">修改完成后跳转回上一个页面刷新</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Taro</category>
-      
-      <category>Dev</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>6.taro瀑布流</title>
-    <link href="/2023/12/01/Taro/Dev/6.taro%E7%80%91%E5%B8%83%E6%B5%81/"/>
-    <url>/2023/12/01/Taro/Dev/6.taro%E7%80%91%E5%B8%83%E6%B5%81/</url>
-    
-    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-title function_">componentWillMount</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-title class_">Taro</span>.<span class="hljs-title function_">getSystemInfo</span>(&#123;<br>        <span class="hljs-attr">success</span>: (<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>            <span class="hljs-keyword">let</span> ww = res.<span class="hljs-property">windowWidth</span>;<br>            <span class="hljs-keyword">let</span> wh = res.<span class="hljs-property">windowHeight</span>;<br>            <span class="hljs-keyword">let</span> imgWidth = ww * <span class="hljs-number">0.5</span>;<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setState</span>(&#123;<br>                imgWidth<br>            &#125;)<br>        &#125;)<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>Taro</category>
-      
-      <category>Dev</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>7.taro-ui AtSwipeAction不生效解决方法</title>
-    <link href="/2023/11/11/Taro/Dev/7.taro-ui%20AtSwipeAction%E4%B8%8D%E7%94%9F%E6%95%88%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <url>/2023/11/11/Taro/Dev/7.taro-ui%20AtSwipeAction%E4%B8%8D%E7%94%9F%E6%95%88%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    
-    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/qq_45812488/article/details/123168827">https://blog.csdn.net/qq_45812488/article/details/123168827</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Taro</category>
-      
-      <category>Dev</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>uniCloud</title>
     <link href="/2023/08/28/Uni-app/uniCloud/uniCloud/"/>
     <url>/2023/08/28/Uni-app/uniCloud/uniCloud/</url>
@@ -771,6 +687,90 @@
     <url>/2022/12/01/Taro/Dev/3.taro%E4%BA%91%E5%87%BD%E6%95%B0/</url>
     
     <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/weixin_43616817/article/details/119353512">配置</a></p><p>不是所有函数都支持</p><p><a href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF">https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/#用户信息</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Taro</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>4.taro上传阿里OSS图片</title>
+    <link href="/2022/12/01/Taro/Dev/4.taro%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8COSS%E5%9B%BE%E7%89%87/"/>
+    <url>/2022/12/01/Taro/Dev/4.taro%E4%B8%8A%E4%BC%A0%E9%98%BF%E9%87%8COSS%E5%9B%BE%E7%89%87/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.freesion.com/article/86921005562/">TARO框架中引入阿里云</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Taro</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>5.Taro -刷新问题.md</title>
+    <link href="/2022/12/01/Taro/Dev/5.taro%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98/"/>
+    <url>/2022/12/01/Taro/Dev/5.taro%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="刷新"><a href="#刷新" class="headerlink" title="刷新"></a>刷新</h1><p><a href="https://www.jianshu.com/p/27bdf0fb0773">修改完成后跳转回上一个页面刷新</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Taro</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>6.taro瀑布流</title>
+    <link href="/2022/12/01/Taro/Dev/6.taro%E7%80%91%E5%B8%83%E6%B5%81/"/>
+    <url>/2022/12/01/Taro/Dev/6.taro%E7%80%91%E5%B8%83%E6%B5%81/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-title function_">componentWillMount</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-title class_">Taro</span>.<span class="hljs-title function_">getSystemInfo</span>(&#123;<br>        <span class="hljs-attr">success</span>: (<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>            <span class="hljs-keyword">let</span> ww = res.<span class="hljs-property">windowWidth</span>;<br>            <span class="hljs-keyword">let</span> wh = res.<span class="hljs-property">windowHeight</span>;<br>            <span class="hljs-keyword">let</span> imgWidth = ww * <span class="hljs-number">0.5</span>;<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setState</span>(&#123;<br>                imgWidth<br>            &#125;)<br>        &#125;)<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Taro</category>
+      
+      <category>Dev</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>7.taro-ui AtSwipeAction不生效解决方法</title>
+    <link href="/2022/11/11/Taro/Dev/7.taro-ui%20AtSwipeAction%E4%B8%8D%E7%94%9F%E6%95%88%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <url>/2022/11/11/Taro/Dev/7.taro-ui%20AtSwipeAction%E4%B8%8D%E7%94%9F%E6%95%88%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/qq_45812488/article/details/123168827">https://blog.csdn.net/qq_45812488/article/details/123168827</a></p>]]></content>
     
     
     <categories>
