@@ -110,10 +110,115 @@
   
   <entry>
     <title>Uni-app  CompositionAPI</title>
+    <link href="/2023/05/15/Uni-app/Docs/base/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/"/>
+    <url>/2023/05/15/Uni-app/Docs/base/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h1><blockquote><p>onLoad 可以获取页面传递的参数</p></blockquote><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> </span></span><span class="hljs-template-variable">&#123; ref &#125;</span><span class="language-xml"><span class="language-javascript"> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> </span></span><span class="hljs-template-variable">&#123; onShow, onHide, onLoad &#125;</span><span class="language-xml"><span class="language-javascript"> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@dcloudio/uni-app&#x27;</span></span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">const</span> title = <span class="hljs-title function_">ref</span>(<span class="hljs-string">&#x27;&#x27;</span>)</span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-title function_">onLoad</span>(<span class="hljs-function">(<span class="hljs-params">options</span>) =&gt;</span> </span></span><span class="hljs-template-variable">&#123;</span><br><span class="hljs-template-variable">  console.log(&#x27;page query&#x27;, options)</span><br><span class="hljs-template-variable">&#125;</span><span class="language-xml"><span class="language-javascript">)</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-comment">// 页面切换到前台时</span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-title function_">onShow</span>(<span class="hljs-function">() =&gt;</span> </span></span><span class="hljs-template-variable">&#123;</span><br><span class="hljs-template-variable">  title.value = &#x27;hello uni-app-vue3 setup&#x27;</span><br><span class="hljs-template-variable">&#125;</span><span class="language-xml"><span class="language-javascript">)</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-comment">// 页面切换到后台时</span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-title function_">onHide</span>(<span class="hljs-function">() =&gt;</span> </span></span><span class="hljs-template-variable">&#123;</span><br><span class="hljs-template-variable">  title.value = &#x27;see you&#x27;</span><br><span class="hljs-template-variable">&#125;</span><span class="language-xml">)</span><br><span class="language-xml">。</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Uni-app</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Uni-app  CompositionAPI</title>
     <link href="/2023/05/15/Uni-app/Docs/base/CompositionAPI/"/>
     <url>/2023/05/15/Uni-app/Docs/base/CompositionAPI/</url>
     
     <content type="html"><![CDATA[<h1 id="OptionsAPI"><a href="#OptionsAPI" class="headerlink" title="OptionsAPI"></a>OptionsAPI</h1><ul><li><p>OptionsAPI需要将逻辑分散到以下六个部分</p></li><li><p>components</p></li><li><p>props</p></li><li><p>data</p></li><li><p>computed</p></li><li><p>methods</p></li><li><p>lifecycle methods</p></li></ul><h1 id="CompositionAPI"><a href="#CompositionAPI" class="headerlink" title="CompositionAPI"></a>CompositionAPI</h1><h2 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h2><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arduino">一个组件选项，在创建组件之前执行，并作为Composition API的入口。setup中是没有<span class="hljs-keyword">this</span>上下文的。<br><br>可以简单理解为组件的一个配置项，值是一个函数。组件中所使用到的数据，方法，计算属性等都要配置在setup里<br></code></pre></td></tr></table></figure><blockquote><p>使用setup时，它接受两个参数：</p></blockquote><ul><li>props：组件传入的属性，是一个响应式对象，不能使用ES6解构，和Vue2.x中的props一致</li><li>context：上下文对象</li></ul><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs awk">setup (props,context) &#123;<br>console.log(props, <span class="hljs-string">&#x27;props&#x27;</span>);<br>  console.log(context, <span class="hljs-string">&#x27;context&#x27;</span>);<br>  <span class="hljs-regexp">//</span> context.attrs; <span class="hljs-regexp">//</span>Attributes<br>  <span class="hljs-regexp">//</span> context.slots; <span class="hljs-regexp">//</span>slots<br>  <span class="hljs-regexp">//</span> context.emit; <span class="hljs-regexp">//</span>tirgger event<br>  <span class="hljs-regexp">//</span> context.listeners; <span class="hljs-regexp">//</span> events<br>  <span class="hljs-regexp">//</span> context.root; <span class="hljs-regexp">//</span> root component instance<br>  <span class="hljs-regexp">//</span> context.parent; <span class="hljs-regexp">//</span> parent component isntance<br>  <span class="hljs-regexp">//</span> context.refs; <span class="hljs-regexp">//</span> all refs<br>const &#123;attrs,slots,emit&#125; = context <span class="hljs-regexp">//</span> 分别对应Vue2.x中的<span class="hljs-variable">$attr</span>属性、slot插槽和<span class="hljs-variable">$emit</span>发射事件。并且这几个属性都是自动同步最新的值，所以我们每次使用拿到的都是最新值<br>&#125;<br></code></pre></td></tr></table></figure><blockquote><p>context属性说明</p></blockquote><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mel">attrs：组件外部传递过来的，但是没有在props配置中声明的属性，内部组件实例上对应项的代理<br>slots：收到的插槽内容。内部组件实例上对应项的代理，默认名是<span class="hljs-keyword">default</span><br><span class="hljs-keyword">emit</span>：分发自定义事件的函数<br>root：根组件的实例<br></code></pre></td></tr></table></figure><blockquote><p>执行时机</p></blockquote><ul><li>在beforeCreate之前执行</li><li>由于setup()是在beforeCreate,created之前执行，因此：</li><li>不能在setup()函数中使用this，因为此时组件并没有完全实例化</li><li>不能在setup()函数中使用beforeCreate与created两个组合生命周期</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineComponent</span>(&#123;<br>  <span class="hljs-title function_">beforeCreate</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;----beforeCreate----&quot;</span>);<br>  &#125;,<br>  <span class="hljs-title function_">created</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;----created----&quot;</span>);<br>  &#125;,<br>  <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;----setup----&quot;</span>);<br>  &#125;,<br>&#125;);<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Uni-app</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Uni-app  数据 props \ ref \ reactive \ computed</title>
+    <link href="/2023/05/14/Uni-app/Docs/base/%E6%95%B0%E6%8D%AE%20props%20%5C%20ref%20%5C%20reactive%20%5C%20computed/"/>
+    <url>/2023/05/14/Uni-app/Docs/base/%E6%95%B0%E6%8D%AE%20props%20%5C%20ref%20%5C%20reactive%20%5C%20computed/</url>
+    
+    <content type="html"><![CDATA[<h1 id="数据-props-ref-reactive-computed"><a href="#数据-props-ref-reactive-computed" class="headerlink" title="数据 props \ ref \ reactive \ computed"></a>数据 props \ ref \ reactive \ computed</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> &#123; defineComponent, <span class="hljs-title class_">PropType</span>, ref, reactive, computed &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span></span><br><span class="language-javascript"></span><br><span class="language-javascript">type <span class="hljs-title class_">Data</span> = &#123; <span class="hljs-attr">id</span>: string &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineComponent</span>(&#123;</span><br><span class="language-javascript">  <span class="hljs-attr">props</span>: &#123;</span><br><span class="language-javascript">    <span class="hljs-attr">data</span>: &#123; <span class="hljs-attr">type</span>: <span class="hljs-title class_">Object</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">PropType</span>&lt;<span class="hljs-title class_">Data</span>&gt;, <span class="hljs-attr">default</span>: <span class="hljs-literal">false</span> &#125;,</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">  <span class="hljs-title function_">setup</span>(<span class="hljs-params">props</span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-comment">// ref更适合一个对象赋值</span></span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> data = <span class="hljs-title function_">ref</span>(props.<span class="hljs-property">data</span>)</span><br><span class="language-javascript">    </span><br><span class="language-javascript">    <span class="hljs-comment">// reactive更适合小规模逻辑的封装</span></span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> popup = <span class="hljs-title function_">reactive</span>(&#123;</span><br><span class="language-javascript">      <span class="hljs-attr">isShow</span>: <span class="hljs-literal">false</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">show</span>: <span class="hljs-function">() =&gt;</span> (popup.<span class="hljs-property">isShow</span> = <span class="hljs-literal">true</span>)</span><br><span class="language-javascript">      <span class="hljs-attr">hide</span>: <span class="hljs-function">() =&gt;</span> (popup.<span class="hljs-property">isShow</span> = <span class="hljs-literal">false</span>)</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">    </span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> id1 = <span class="hljs-title function_">computed</span>(<span class="hljs-function">() =&gt;</span> props.<span class="hljs-property">data</span> ? props.<span class="hljs-property">data</span>.<span class="hljs-property">id</span> : <span class="hljs-string">&#x27;&#x27;</span>) </span><br><span class="language-javascript">    <span class="hljs-comment">// 由于uni和vue生命周期不一致，在初始化过程中props.data 可能还未定义 需要保证不会报错，也可以用下面ts的语法糖来简化</span></span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> id2 = <span class="hljs-title function_">computed</span>(<span class="hljs-function">() =&gt;</span> props.<span class="hljs-property">data</span>?.<span class="hljs-property">id</span>)</span><br><span class="language-javascript">    </span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      isShow,</span><br><span class="language-javascript">      popup,</span><br><span class="language-javascript">      id1, id2,</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">&#125;)</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Uni-app</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Uni-app  事件 emit</title>
+    <link href="/2023/05/14/Uni-app/Docs/base/%E4%BA%8B%E4%BB%B6%20emit/"/>
+    <url>/2023/05/14/Uni-app/Docs/base/%E4%BA%8B%E4%BB%B6%20emit/</url>
+    
+    <content type="html"><![CDATA[<h1 id="事件-emit"><a href="#事件-emit" class="headerlink" title="事件 emit"></a>事件 emit</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;handleClick&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>  <br>  <span class="hljs-comment">&lt;!-- 阻止事件冒泡 --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> @<span class="hljs-attr">click.stop</span>=<span class="hljs-string">&quot;handleClick&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> &#123; defineComponent &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineComponent</span>(&#123;</span><br><span class="language-javascript">  <span class="hljs-attr">emits</span>: [<span class="hljs-string">&#x27;click&#x27;</span>], <span class="hljs-comment">// 显性描述事件后 会对emit进行约束</span></span><br><span class="language-javascript">  <span class="hljs-title function_">setup</span>(<span class="hljs-params">props, &#123;emit&#125;</span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">function</span> <span class="hljs-title function_">handleClick</span>(<span class="hljs-params">e</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-title function_">emit</span>(<span class="hljs-string">&#x27;click&#x27;</span>, e)</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">    </span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      handleClick,</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">&#125;)</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Uni-app</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Uni-app  自定义样式 custom-class</title>
+    <link href="/2023/05/14/Uni-app/Docs/base/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F%20custom-class/"/>
+    <url>/2023/05/14/Uni-app/Docs/base/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F%20custom-class/</url>
+    
+    <content type="html"><![CDATA[<h1 id="自定义样式-custom-class"><a href="#自定义样式-custom-class" class="headerlink" title="自定义样式 custom-class"></a>自定义样式 custom-class</h1><blockquote><p>在使用自定义组件 不支持 <component class="class-name"></component>，因此需要提供一个customClass prop来传递类名进行样式绑定</p></blockquote><h2 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h2><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">&quot;[customClass]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> </span></span><span class="hljs-template-variable">&#123; defineComponent &#125;</span><span class="language-xml"><span class="language-javascript"> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineComponent</span>(</span></span><span class="hljs-template-variable">&#123;</span><br><span class="hljs-template-variable">  props: &#123;</span><br><span class="hljs-template-variable">    customClass: &#123; type: String, <span class="hljs-keyword">default</span>: &#x27;&#x27; &#125;</span><span class="language-xml"><span class="language-javascript">, <span class="hljs-comment">// 自定义类</span></span></span><br><span class="language-javascript"><span class="language-xml">  &#125;,</span></span><br><span class="language-javascript"><span class="language-xml">&#125;)</span></span><br><span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="language-xml"></span><br></code></pre></td></tr></table></figure><h2 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h2><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">custom-class</span>=<span class="hljs-string">&quot;custom-class&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css"></span></span><br><span class="language-css"><span class="language-xml"><span class="hljs-comment">/* 如使用 scoped 则需要/deep/ */</span></span></span><br><span class="language-css"><span class="language-xml">/deep/ <span class="hljs-selector-class">.custom-class</span> </span></span><span class="hljs-template-variable">&#123;&#125;</span><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Uni-app</category>
+      
+      <category>Docs</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Uni-app  监听 watch</title>
+    <link href="/2023/05/14/Uni-app/Docs/base/%E7%9B%91%E5%90%AC%20watch/"/>
+    <url>/2023/05/14/Uni-app/Docs/base/%E7%9B%91%E5%90%AC%20watch/</url>
+    
+    <content type="html"><![CDATA[<h1 id="事件-emit"><a href="#事件-emit" class="headerlink" title="事件 emit"></a>事件 emit</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> &#123; defineComponent, <span class="hljs-title class_">PropType</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span></span><br><span class="language-javascript"></span><br><span class="language-javascript">type <span class="hljs-title class_">Data</span> = &#123; <span class="hljs-attr">id</span>: string &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineComponent</span>(&#123;</span><br><span class="language-javascript">  <span class="hljs-attr">props</span>: &#123;</span><br><span class="language-javascript">    <span class="hljs-attr">data</span>: &#123; <span class="hljs-attr">type</span>: <span class="hljs-title class_">Object</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">PropType</span>&lt;<span class="hljs-title class_">Data</span>&gt;, <span class="hljs-attr">default</span>: <span class="hljs-literal">false</span> &#125;,</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">  <span class="hljs-title function_">setup</span>(<span class="hljs-params">props</span>) &#123;</span><br><span class="language-javascript">    </span><br><span class="language-javascript">    <span class="hljs-title function_">watch</span>(props, <span class="hljs-function">(<span class="hljs-params">val, oldVal</span>) =&gt;</span> &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (!props) <span class="hljs-keyword">return</span> <span class="hljs-comment">// 规避uni和vue生命周期不一致的问题</span></span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (val.<span class="hljs-property">data</span>?.<span class="hljs-property">id</span> !== oldVal.<span class="hljs-property">data</span>?.<span class="hljs-property">id</span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;props.data.id 变了&#x27;</span>)</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">    </span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> data = <span class="hljs-title function_">ref</span>(props.<span class="hljs-property">data</span>)</span><br><span class="language-javascript">    <span class="hljs-title function_">watch</span>(data, <span class="hljs-function">(<span class="hljs-params">val, oldVal</span>) =&gt;</span> &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (val.<span class="hljs-property">id</span> !== oldVal.<span class="hljs-property">id</span>) &#123;  </span><br><span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;data.id变了&#x27;</span>)</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">    </span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">&#125;)</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -1421,9 +1526,9 @@
   
   
   <entry>
-    <title>0.tu-shop</title>
-    <link href="/2020/10/01/Uni-app/Demo/tu-shop/0.tu-shop/"/>
-    <url>/2020/10/01/Uni-app/Demo/tu-shop/0.tu-shop/</url>
+    <title>0.rabbit-shop</title>
+    <link href="/2020/10/01/Uni-app/Demo/tu-shop/0.rabbit-shop/"/>
+    <url>/2020/10/01/Uni-app/Demo/tu-shop/0.rabbit-shop/</url>
     
     <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="❎ERROR❎" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="699419503267045b9a29a93040e382eed9c432a77ab47cad7c8e9b76e89fd0c0">c8d6a724b68e0a127e5cca7999ad3293655c3457ae5d174a88d97eb4055058a5c0a10e356248921536cc0afd3d5b1dd7c6d55b69f8785446e897eef330ca74dda3935971f6be3855f15ddc174623318f7116a52091d1041f907ce4fee518843fdc08ce1dd6ea089a0d77bf855243ddd74d0d1b892848e6f01cd9d1660b939589862d14c1a861131a4b8d5a4630e7f009</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">密码访问</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
     
@@ -1457,7 +1562,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1480,7 +1585,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1503,7 +1608,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1526,7 +1631,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1549,7 +1654,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1572,7 +1677,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1595,7 +1700,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1618,7 +1723,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1641,7 +1746,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1664,7 +1769,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1687,7 +1792,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
@@ -1710,7 +1815,7 @@
       
       <category>Demo</category>
       
-      <category>TuShop</category>
+      <category>Rabbit</category>
       
     </categories>
     
