@@ -1487,6 +1487,27 @@
   
   
   <entry>
+    <title>uni-app工程配置.gitignore</title>
+    <link href="/2022/10/21/uni-app/Setting/gitignore/"/>
+    <url>/2022/10/21/uni-app/Setting/gitignore/</url>
+    
+    <content type="html"><![CDATA[<h1 id="配置-gitignore文件"><a href="#配置-gitignore文件" class="headerlink" title="配置.gitignore文件"></a>配置.gitignore文件</h1><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">touch <span class="hljs-string">.gitignore</span><br>open <span class="hljs-string">.gitignore</span><br></code></pre></td></tr></table></figure><blockquote><p>编辑后保存</p></blockquote><ul><li>unpackage&#x2F;也可以写成xx项目工程名&#x2F;unpackage&#x2F;</li></ul><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">node_modules/<br><span class="hljs-string">.project</span><br>unpackage/<br><span class="hljs-string">.DS_Store</span><br>unpackage/<br></code></pre></td></tr></table></figure><h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">git rm -r <span class="hljs-comment">--cached .</span><br></code></pre></td></tr></table></figure><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">git</span> <span class="hljs-keyword">add</span> .<br><span class="hljs-symbol">git</span> commit -m <span class="hljs-string">&quot;清理unpackage缓存&quot;</span><br><span class="hljs-symbol">git</span> pull <br><span class="hljs-symbol">git</span> <span class="hljs-keyword">push</span><br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>uni-app</category>
+      
+      <category>setting</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>0.学习参考</title>
     <link href="/2022/10/10/Php/Docs/0.%E5%AD%A6%E4%B9%A0%E5%8F%82%E8%80%83/"/>
     <url>/2022/10/10/Php/Docs/0.%E5%AD%A6%E4%B9%A0%E5%8F%82%E8%80%83/</url>
