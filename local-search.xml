@@ -2707,16 +2707,18 @@
   
   
   <entry>
-    <title>vue3 setup + ts + vite 项目问题解决：Cannot find module ... or its corresponding type d</title>
+    <title>Cannot find module</title>
     <link href="/2020/06/21/uni-app/Error/Cannot%20find%20module/"/>
     <url>/2020/06/21/uni-app/Error/Cannot%20find%20module/</url>
     
-    <content type="html"><![CDATA[<p><a href="https://juejin.cn/post/7130887368042610718">https://juejin.cn/post/7130887368042610718</a></p>]]></content>
+    <content type="html"><![CDATA[<p>vue3 setup + ts + vite 项目问题解决：Cannot find module … or its corresponding type d</p><p><a href="https://juejin.cn/post/7130887368042610718">https://juejin.cn/post/7130887368042610718</a></p>]]></content>
     
     
     <categories>
       
-      <category>uni-app - error</category>
+      <category>uni-app</category>
+      
+      <category>error</category>
       
     </categories>
     
